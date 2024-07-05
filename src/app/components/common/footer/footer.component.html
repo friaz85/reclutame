@@ -1,0 +1,354 @@
+<!-- Deafult Footer -->
+<div
+    [ngClass]="{'d-none': router.url === '/index-3'}"
+>
+
+    <footer
+        class="footer-area pt-100"
+        [ngClass]="{'bg-color': router.url === '/index-2'}"
+    >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6" data-aos="fade-in" data-aos-duration="500">
+                    <div class="single-footer-widget">
+                        <a
+                            routerLink="/"
+                            class="logo d-inline-block"
+                            [ngClass]="{'d-none': router.url === '/index-2'}"
+                        >
+                            <img src="assets/images/logo.png" alt="logo">
+                        </a>
+                        <a
+                            routerLink="/"
+                            class="logo d-inline-block"
+                            *ngIf="router.url === '/index-2'"
+                        >
+                            <img src="assets/images/white-logo2.png" alt="white-logo">
+                        </a>
+                        <ul class="socials-link mb-0 ps-0 list-unstyled">
+                            <li>
+                                <a href="#" target="_blank" class="facebook d-flex align-items-center">
+                                    <span class="d-block">
+                                        <i class="ri-facebook-fill"></i>
+                                    </span>
+                                    Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="twitter d-flex align-items-center">
+                                    <span class="d-block">
+                                        <i class="ri-twitter-x-line"></i>
+                                    </span>
+                                    Twitter
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="linkedin d-flex align-items-center">
+                                    <span class="d-block">
+                                        <i class="ri-linkedin-fill"></i>
+                                    </span>
+                                    Linkedin
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6" data-aos="fade-in" data-aos-duration="500" data-aos-delay="100">
+                    <div class="single-footer-widget">
+                        <h3 class="fw-semibold">
+                            For candidates
+                        </h3>
+                        <ul class="custom-links ps-0 mb-0 list-unstyled">
+                            <li>
+                                <a routerLink="/jobs-grid">
+                                    Browse jobs
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/categories">
+                                    Browse categories
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/employers">
+                                    Browse employers
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/contact">
+                                    Contact us
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/candidates">
+                                    Browse candidates
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/candidate-details">
+                                    Candidate details
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6" data-aos="fade-in" data-aos-duration="500" data-aos-delay="200">
+                    <div class="single-footer-widget">
+                        <h3 class="fw-semibold">
+                            Information
+                        </h3>
+                        <ul class="custom-links ps-0 mb-0 list-unstyled">
+                            <li>
+                                <a routerLink="/about">
+                                    About us
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/contact">
+                                    Contact us
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/terms-conditions">
+                                    Terms of use
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/privacy-policy">
+                                    Cookie policy
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/privacy-policy">
+                                    Privacy center
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/blog">
+                                    Blog right sidebar
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6" data-aos="fade-in" data-aos-duration="500" data-aos-delay="300">
+                    <div class="single-footer-widget">
+                        <h3 class="fw-semibold">
+                            Contact Info
+                        </h3>
+                        <ul class="contact-info ps-0 mb-0 list-unstyled">
+                            <li>
+                                <span class="d-block">Address:</span>
+                                <a href="#" target="_blank">
+                                    84 Wexham Road RH19 8EA, USA
+                                </a>
+                            </li>
+                            <li>
+                                <span class="d-block">Email:</span>
+                                <a href="mailto:hello@jove.com">
+                                    hello&#64;jove.com
+                                </a>
+                            </li>
+                            <li>
+                                <span class="d-block">Phone:</span>
+                                <a href="mailto:+1 (514) 312-5678">
+                                    +1 (514) 312-5678
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-area">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <p>© Jove is Proudly Owned by <a href="https://hibootstrap.com/" target="_blank">HiBootstrap</a></p>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <select class="form-select fw-medium">
+                            <option selected>English</option>
+                            <option value="1">Spanish</option>
+                            <option value="2">French</option>
+                            <option value="3">Portuguese</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="assets/images/shapes/shape3.png" class="shape" alt="shape">
+    </footer>
+    
+</div>
+
+<!-- Footer for Only Home Demo - 3 -->
+<div
+    *ngIf="router.url === '/index-3'"
+>
+
+    <footer
+        class="footer-area pt-100"
+        [ngClass]="{'bg-black': router.url === '/index-3'}"
+    >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-sm-6" data-aos="fade-in" data-aos-duration="500">
+                    <div class="single-footer-widget">
+                        <a
+                            routerLink="/"
+                            class="logo d-inline-block"
+                        >
+                            <img src="assets/images/white-logo.png" alt="white-logo">
+                        </a>
+                        <ul class="socials-link mb-0 ps-0 list-unstyled">
+                            <li>
+                                <a href="#" target="_blank" class="facebook d-flex align-items-center">
+                                    <span class="d-block">
+                                        <i class="ri-facebook-fill"></i>
+                                    </span>
+                                    Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="twitter d-flex align-items-center">
+                                    <span class="d-block">
+                                        <i class="ri-twitter-x-line"></i>
+                                    </span>
+                                    Twitter
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank" class="linkedin d-flex align-items-center">
+                                    <span class="d-block">
+                                        <i class="ri-linkedin-fill"></i>
+                                    </span>
+                                    Linkedin
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6" data-aos="fade-in" data-aos-duration="500" data-aos-delay="100">
+                    <div class="single-footer-widget">
+                        <h3 class="fw-semibold">
+                            For candidates
+                        </h3>
+                        <ul class="custom-links ps-0 mb-0 list-unstyled">
+                            <li>
+                                <a routerLink="/jobs-grid">
+                                    Browse jobs
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/categories">
+                                    Browse categories
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/employers">
+                                    Browse employers
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/contact">
+                                    Contact us
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/candidates">
+                                    Browse candidates
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/candidate-details">
+                                    Candidate details
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6" data-aos="fade-in" data-aos-duration="500" data-aos-delay="200">
+                    <div class="single-footer-widget">
+                        <h3 class="fw-semibold">
+                            Information
+                        </h3>
+                        <ul class="custom-links ps-0 mb-0 list-unstyled">
+                            <li>
+                                <a routerLink="/about">
+                                    About us
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/contact">
+                                    Contact us
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/terms-conditions">
+                                    Terms of use
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/privacy-policy">
+                                    Cookie policy
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/privacy-policy">
+                                    Privacy center
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/blog">
+                                    Blog right sidebar
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6" data-aos="fade-in" data-aos-duration="500" data-aos-delay="300">
+                    <div class="single-footer-widget">
+                        <h3 class="fw-semibold">
+                            Contact Info
+                        </h3>
+                        <ul class="contact-info ps-0 mb-0 list-unstyled">
+                            <li>
+                                <span class="d-block">Address:</span>
+                                <a href="#" target="_blank">
+                                    84 Wexham Road RH19 8EA, USA
+                                </a>
+                            </li>
+                            <li>
+                                <span class="d-block">Email:</span>
+                                <a href="mailto:hello@jove.com">
+                                    hello&#64;jove.com
+                                </a>
+                            </li>
+                            <li>
+                                <span class="d-block">Phone:</span>
+                                <a href="mailto:+1 (514) 312-5678">
+                                    +1 (514) 312-5678
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-area">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-6">
+                        <p>© Jove is Proudly Owned by <a href="https://hibootstrap.com/" target="_blank">HiBootstrap</a></p>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <select class="form-select fw-medium">
+                            <option selected>English</option>
+                            <option value="1">Spanish</option>
+                            <option value="2">French</option>
+                            <option value="3">Portuguese</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</div>

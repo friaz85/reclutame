@@ -1,0 +1,678 @@
+.bg-image {
+    background: {
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+    };
+}
+
+// Banner Area
+.banner-area {
+    .users-list {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        position: absolute;
+        pointer-events: none;
+
+        img {
+            position: absolute;
+
+            &:nth-child(1) {
+                width: 100px;
+                left: 7.6%;
+                top: 13.4%;
+            }
+            &:nth-child(2) {
+                left: 3%;
+                width: 150px;
+                bottom: 13.1%;
+            }
+            &:nth-child(3) {
+                top: 9%;
+                right: 3%;
+                width: 150px;
+            }
+            &:nth-child(4) {
+                right: 7%;
+                width: 100px;
+                bottom: 10%;
+            }
+        }
+    }
+}
+.banner-content {
+    max-width: 920px;
+
+    h1 {
+        line-height: 1.2;
+        font-size: 80px;
+        margin: {
+            top: -15px;
+            bottom: 25px;
+        };
+        span {
+            color: var(--whiteColor);
+            display: block;
+            font: {
+                size: 64px;
+                weight: 500;
+            };
+        }
+    }
+    .info {
+        margin-bottom: 17px;
+
+        span {
+            color: var(--headingColor);
+        }
+    }
+    .banner-form {
+        background-color: var(--whiteColor);
+        padding: 10px 10px 10px 30px;
+        border-radius: 10px;
+
+        .col-4 {
+            width: 39.5%;
+
+            &:nth-child(2) {
+                .form-group {
+                    padding-right: 30px;
+                }
+            }
+            &:last-child {
+                width: 21%;
+            }
+        }
+        .form-group {
+            i {
+                left: 0;
+                top: 50%;
+                font-size: 22px;
+                margin-top: -.4px;
+                position: absolute;
+                color: var(--primaryColor);
+                transform: translateY(-50%);
+            }
+            .form-control {
+                height: auto;
+                border: none;
+                font-size: var(--fontSize);
+                color: var(--headingColor);
+                box-shadow: unset !important;
+                padding: {
+                    bottom: 13px;
+                    left: 30px;
+                    top: 13px;
+                    right: 0;
+                };
+                &::placeholder {
+                    color: var(--bodyColor);
+                }
+            }
+            .form-select {
+                height: auto;
+                border: none;
+                cursor: pointer;
+                color: var(--bodyColor);
+                font-size: var(--fontSize);
+                box-shadow: unset !important;
+                background-position: right 0 center;
+                padding: {
+                    bottom: 13px;
+                    left: 30px;
+                    top: 13px;
+                    right: 0;
+                };
+            }
+        }
+        .default-btn {
+            display: block;
+            width: 100%;
+            padding: {
+                left: 30px;
+                right: 30px;
+            };
+        }
+    }
+    .upload-cv-btn {
+        margin-top: 45px;
+
+        a {
+            border-bottom: 1px solid var(--whiteColor);
+            color: var(--whiteColor);
+            display: inline-block;
+            font-size: 18px;
+        }
+    }
+}
+
+// Banner Jobs Categories
+.banner-jobs-categories {
+    &::before {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 50%;
+        z-index: -1;
+        content: '';
+        position: absolute;
+        background-color: #eaf0f3;
+    }
+    .inner {
+        background-color: var(--whiteColor);
+        padding: 45px 30px 30px 30px;
+        border-radius: 15px;
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+        .wrap {
+            border-radius: 15px;
+            border: 1px solid var(--borderColor);
+
+            .box {
+                h3 {
+                    padding: 15px 30px;
+                    margin-bottom: 0;
+                    font-size: 16px;
+                    border: {
+                        bottom: 1px solid var(--borderColor);
+                        right: 1px solid var(--borderColor);
+                    };
+                }
+                ul {
+                    padding: 30px;
+
+                    li {
+                        margin-bottom: 12px;
+
+                        a {
+                            color: var(--bodyColor);
+
+                            span {
+                                color: var(--primaryColor);
+                            }
+                            &:hover {
+                                color: var(--primaryColor);
+                            }
+                        }
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+            .col-lg-4 {
+                &:last-child {
+                    .box {
+                        h3 {
+                            border-right: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    // Banner Area
+    .banner-area {
+        .users-list {
+            z-index: inherit;
+            margin-top: 15px;
+            position: relative;
+            text-align: center;
+
+            img {
+                top: 0 !important;
+                position: relative;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                display: inline-block;
+                width: 100px !important;
+                margin: {
+                    top: 14px;
+                    left: 7px;
+                    right: 7px;
+                };
+            }
+        }
+    }
+    .banner-content {
+        max-width: 100%;
+
+        h1 {
+            font-size: 32px;
+            margin: {
+                top: -5px;
+                bottom: 15px;
+            };
+            span {
+                color: var(--headingColor);
+                display: inline;
+                font-size: 32px;
+            }
+        }
+        .info {
+            margin-bottom: 17px;
+        }
+        .banner-form {
+            padding: 0;
+            border-radius: 5px;
+
+            .col-4 {
+                width: 100%;
+
+                &:nth-child(2) {
+                    border-top: 1px solid var(--borderColor);
+
+                    .form-group {
+                        padding-right: 0;
+                    }
+                }
+                &:last-child {
+                    width: 100%;
+                }
+            }
+            .form-group {
+                padding: {
+                    left: 14px;
+                    right: 14px;
+                };
+                i {
+                    left: 15px;
+                    font-size: 20px;
+                }
+                .form-control {
+                    font-size: 14px;
+                    padding: {
+                        bottom: 14px;
+                        left: 28px;
+                        top: 14px;
+                        right: 0;
+                    };
+                }
+                .form-select {
+                    background-position: right 15px center;
+                    font-size: 14px;
+                    padding: {
+                        bottom: 14px;
+                        left: 28px;
+                        top: 14px;
+                        right: 0;
+                    };
+                }
+            }
+        }
+        .upload-cv-btn {
+            margin-top: 15px;
+
+            a {
+                font-size: 14px;
+            }
+        }
+    }
+
+    // Banner Jobs Categories
+    .banner-jobs-categories {
+        .inner {
+            padding: 25px 15px 15px 15px;
+            border-radius: 5px;
+
+            h2 {
+                font-size: 20px;
+                line-height: 1.4;
+                margin-bottom: 15px;
+            }
+            .wrap {
+                border-radius: 5px;
+
+                .col-lg-4 {
+                    &:first-child {
+                        .box {
+                            h3 {
+                                border-top: none;
+                            }
+                        }
+                    }
+                }
+                .box {
+                    h3 {
+                        font-size: 15px;
+                        padding: 13px 20px;
+                        border: {
+                            right: none;
+                            top: 1px solid var(--borderColor);
+                        };
+                    }
+                    ul {
+                        padding: 20px;
+
+                        li {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    // Banner Area
+    .banner-area {
+        .users-list {
+            z-index: inherit;
+            margin-top: 20px;
+            position: relative;
+            text-align: center;
+
+            img {
+                top: 0 !important;
+                position: relative;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                display: inline-block;
+                width: 100px !important;
+                margin: {
+                    top: 14px;
+                    left: 7px;
+                    right: 7px;
+                };
+            }
+        }
+    }
+    .banner-content {
+        max-width: 100%;
+
+        h1 {
+            font-size: 47px;
+            margin: {
+                top: -7px;
+                bottom: 17px;
+            };
+            span {
+                color: var(--headingColor);
+                display: inline;
+                font-size: 50px;
+            }
+        }
+        .info {
+            margin-bottom: 17px;
+        }
+        .banner-form {
+            padding-left: 10px;
+            border-radius: 10px;
+
+            .col-4 {
+                &:nth-child(2) {
+                    .form-group {
+                        padding-right: 20px;
+                    }
+                }
+            }
+            .form-group {
+                padding-left: 10px;
+
+                i {
+                    left: 10px;
+                    font-size: 20px;
+                }
+                .form-control {
+                    font-size: 15px;
+                    padding: {
+                        bottom: 12px;
+                        left: 28px;
+                        top: 12px;
+                    };
+                }
+                .form-select {
+                    font-size: 15px;
+                    padding: {
+                        bottom: 12px;
+                        left: 28px;
+                        top: 12px;
+                    };
+                }
+            }
+            .default-btn {
+                padding: {
+                    left: 25px;
+                    right: 25px;
+                };
+            }
+        }
+        .upload-cv-btn {
+            margin-top: 25px;
+
+            a {
+                font-size: 16px;
+            }
+        }
+    }
+
+    // Banner Jobs Categories
+    .banner-jobs-categories {
+        .inner {
+            padding: 35px 25px 25px 25px;
+            border-radius: 10px;
+
+            h2 {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+            .wrap {
+                border-radius: 10px;
+
+                .box {
+                    h3 {
+                        padding: 14px 25px;
+                        font-size: 16px;
+                    }
+                    ul {
+                        padding: 20px 25px;
+                    }
+                }
+                .col-lg-4 {
+                    &:nth-child(2) {
+                        .box {
+                            h3 {
+                                border-right: none;
+                            }
+                        }
+                    }
+                    &:nth-child(3) {
+                        .box {
+                            h3 {
+                                border-top: 1px solid var(--borderColor);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    // Banner Area
+    .banner-area {
+        .users-list {
+            z-index: inherit;
+            margin-top: 20px;
+            position: relative;
+            text-align: center;
+
+            img {
+                top: 0 !important;
+                position: relative;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                display: inline-block;
+                width: 100px !important;
+                margin: {
+                    top: 14px;
+                    left: 7px;
+                    right: 7px;
+                };
+            }
+        }
+    }
+    .banner-content {
+        max-width: 780px;
+
+        h1 {
+            font-size: 65px;
+            margin: {
+                top: -11px;
+                bottom: 20px;
+            };
+            span {
+                font-size: 50px;
+            }
+        }
+        .banner-form {
+            padding-left: 25px;
+        }
+        .upload-cv-btn {
+            margin-top: 30px;
+
+            a {
+                font-size: 16px;
+            }
+        }
+    }
+
+    // Banner Jobs Categories
+    .banner-jobs-categories {
+        .inner {
+            padding: 35px 25px 25px 25px;
+            border-radius: 10px;
+
+            h2 {
+                margin-bottom: 20px;
+            }
+            .wrap {
+                border-radius: 10px;
+
+                .box {
+                    h3 {
+                        padding: 15px 25px;
+                        font-size: 15px;
+                    }
+                    ul {
+                        padding: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    // Banner Area
+    .banner-area {
+        .users-list {
+            img {
+                &:nth-child(1) {
+                    width: 80px;
+                    left: 5%;
+                    top: 8%;
+                }
+                &:nth-child(2) {
+                    left: 5%;
+                    bottom: 6.5%;
+                    width: 100px;
+                }
+                &:nth-child(3) {
+                    top: 7%;
+                    right: 5%;
+                    width: 100px;
+                }
+                &:nth-child(4) {
+                    right: 5%;
+                    width: 80px;
+                    bottom: 8%;
+                }
+            }
+        }
+    }
+    .banner-content {
+        max-width: 880px;
+
+        h1 {
+            font-size: 70px;
+            margin-top: -13px;
+
+            span {
+                font-size: 60px;
+            }
+        }
+        .banner-form {
+            padding-left: 25px;
+
+            .col-4 {
+                &:nth-child(2) {
+                    .form-group {
+                        padding-right: 40px;
+                    }
+                }
+            }
+        }
+        .upload-cv-btn {
+            margin-top: 35px;
+
+            a {
+                font-size: 17px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    .banner-area {
+        .users-list {
+            img {
+                &:nth-child(1) {
+                    left: 15.6%;
+                    top: 13.4%;
+                }
+                &:nth-child(2) {
+                    left: 7.8%;
+                    bottom: 13.1%;
+                }
+                &:nth-child(3) {
+                    top: 9%;
+                    right: 7.9%;
+                }
+                &:nth-child(4) {
+                    right: 15.7%;
+                    bottom: 17.3%;
+                }
+            }
+        }
+    }
+
+}

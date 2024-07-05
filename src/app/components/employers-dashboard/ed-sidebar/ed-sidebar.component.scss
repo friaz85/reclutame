@@ -1,0 +1,187 @@
+.sidebar-area {
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 270px;
+    height: 100%;
+    position: fixed;
+    background-color: var(--whiteColor);
+    overflow: {
+        y: scroll;
+        x: hidden;
+    };
+    padding: {
+        top: 130px;
+        left: 30px;
+        right: 30px;
+        bottom: 30px;
+    };
+    ul {
+        li {
+            a {
+                border-radius: 5px;
+                color: var(--bodyColor);
+                padding: 11px 15px 11px 42px;
+                
+                i {
+                    top: 50%;
+                    left: 15px;
+                    font-size: 18px;
+                    position: absolute;
+                    color: var(--primaryColor);
+                    transform: translateY(-50%);
+                    transition: var(--transition);
+                }
+                &:hover, &.active {
+                    background-color: var(--primaryColor);
+                    color: var(--whiteColor);
+
+                    i {
+                        color: var(--whiteColor);
+                    }
+                }
+            }
+        }
+    }
+    /* width */
+    &::-webkit-scrollbar {
+        width: 5px;
+		height: 5px;
+		border-radius: 15px;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+		border-radius: 15px;
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: #f2f2f2;
+		border-radius: 15px;
+    }
+}
+
+// Sidebar Button
+.sidebar-btn {
+    top: calc(50% - 35px);
+    position: fixed;
+    z-index: 9991;
+    width: 35px;
+    right: 0;
+
+    button {
+        border: 0;
+        width: 100%;
+        min-width: 100%;
+        cursor: pointer;
+        min-height: 35px;
+        border-radius: 0;
+        padding: 10px 0px;
+        align-items: center;
+        display: inline-flex;
+        justify-content: center;
+        color: var(--whiteColor);
+        -webkit-box-pack: center;
+        text-transform: uppercase;
+        -webkit-box-align: center;
+        background-color: var(--primaryColor);
+        box-shadow: rgb(0, 0, 0, .15) 0px 0px 10px;
+        font: {
+            size: 14px;
+            weight: 500;
+        };
+        span {
+            -webkit-writing-mode: vertical-rl;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .sidebar-area {
+        opacity: 0;
+        width: 250px;
+        visibility: hidden;
+        padding: {
+            top: 105px;
+            left: 15px;
+            right: 15px;
+            bottom: 25px;
+        };
+        ul {
+            li {
+                a {
+                    padding: 10px 15px 10px 40px;
+                    
+                    i {
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .sidebar-area {
+        opacity: 0;
+        width: 270px;
+        visibility: hidden;
+        padding: {
+            top: 105px;
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+        };
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .sidebar-area {
+        opacity: 0;
+        width: 270px;
+        visibility: hidden;
+        padding: {
+            top: 105px;
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+        };
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    .sidebar-area {
+        width: 330px;
+    }
+
+}

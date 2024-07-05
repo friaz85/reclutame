@@ -1,0 +1,475 @@
+<div
+    class="navbar-area"
+    [ngClass]="{'white-navbar': router.url === '/index-2', 'sticky': isSticky}"
+>
+    <div class="container-fluid">
+        <nav
+            class="navbar navbar-expand-lg"
+            [class.active]="classApplied"
+        >
+            <a
+                class="navbar-brand"
+                routerLink="/"
+                [ngClass]="{'d-none': router.url === '/index-2'}"
+            >
+                <img src="assets/images/logo.png" alt="logo">
+            </a>
+            <a
+                class="navbar-brand"
+                routerLink="/"
+                *ngIf="router.url === '/index-2'"
+            >
+                <img src="assets/images/white-logo2.png" alt="white-logo">
+            </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                (click)="toggleClass()"
+            >
+                <span class="burger-menu">
+                    <span class="top-bar"></span>
+                    <span class="middle-bar"></span>
+                    <span class="bottom-bar"></span>
+                </span>
+            </button>
+            <div
+                class="collapse navbar-collapse"
+                [ngClass]="{'style-two': router.url === '/index-3'}"
+            >
+                <div
+                    class="navbar-categories d-none d-xl-block"
+                    *ngIf="router.url === '/index-3'"
+                >
+                    <button type="button" class="d-inline-block bg-transparent position-relative border-0">
+                        <i class="ri-grid-fill"></i>
+                        Browse Category
+                    </button>
+                    <ul class="categories-menu mb-0 list-unstyled">
+                        <li>
+                            <a routerLink="/">Engineering</a>
+                        </li>
+                        <li>
+                            <a routerLink="/">Banking</a>
+                        </li>
+                        <li>
+                            <a routerLink="/">Beauty Care</a>
+                        </li>
+                        <li>
+                            <a routerLink="/">Cleaning</a>
+                        </li>
+                        <li>
+                            <a routerLink="/">Construction</a>
+                        </li>
+                        <li>
+                            <a routerLink="/">Finance</a>
+                        </li>
+                        <li>
+                            <a routerLink="/">Technology</a>
+                        </li>
+                        <li>
+                            <a routerLink="/">Healthcare</a>
+                        </li>
+                        <li>
+                            <a routerLink="/">IT Consultant</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    Home Demo - 1
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/index-2" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    Home Demo - 2
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/index-3" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    Home Demo - 3
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                            Jobs
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/jobs-grid" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    Jobs Grid
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/jobs-listing" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    Jobs Listing
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/job-details" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    Job Details
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/categories" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    Categories
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                            Employers
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/employers" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    Employers
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/employer-details" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    Employer Details
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/dashboard" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    Employers Dashboard
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                            Candidates
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/candidates" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    Candidates
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/candidate-details" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    Candidate Details
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/candidates-dashboard" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    Candidates Dashboard
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                            Pages
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/about" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    About Us
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/pricing" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    Pricing
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/contact" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    Contact Us
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/faq" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    FAQ
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                                    Blog
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a routerLink="/blog" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            Blog
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/blog-details" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            Blog Details
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/privacy-policy" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    Privacy Policy
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/terms-conditions" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    Terms & Conditions
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/not-found" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    404 Error Page
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="others-option d-md-flex align-items-center">
+                    <div class="option-item">
+                        <span
+                            class="d-block login-register"
+                            (click)="openPopup()"
+                        >
+                            <i class="ri-user-line"></i>
+                            Login/Register
+                        </span>
+                    </div>
+                    <div class="option-item">
+                        <a routerLink="/dashboard/post-a-new-job" class="default-btn">
+                            Post A Job
+                        </a>
+                    </div>
+                    <div
+                        class="option-item"
+                        [ngClass]="{'d-none': router.url === '/index-2' || router.url === '/index-3'}"
+                    >
+                        <a href="tel:+1 (514) 312-5678" class="d-inline-block hotline fw-medium">
+                            <i class="ri-phone-line"></i>
+                            <span class="d-block fw-normal">
+                                Call Us
+                            </span>
+                            +1 (514) 312-5678
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!-- Modal -->
+<div
+    class="modal fade loginRegisterModal" tabindex="-1" aria-hidden="true"
+    *ngIf="isOpen"
+>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <ul class="nav nav-tabs d-block border-0">
+                    <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab1'}">
+                        <button type="button" class="nav-link fw-semibold position-relative shadow-none mb-0 rounded-0" (click)="switchTab($event, 'tab1')">
+                            Login
+                        </button>
+                    </li>
+                    <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab2'}">
+                        <button type="button" class="nav-link fw-semibold position-relative shadow-none mb-0 rounded-0" (click)="switchTab($event, 'tab2')">
+                            Register
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade d-block opacity-100" *ngIf="currentTab === 'tab1'">
+                        <div class="info">
+                            <p>
+                                Username: <span class="fw-semibold">employer</span> or <span class="fw-semibold">candidate</span>
+                            </p>
+                            <p>
+                                Password: <span class="fw-semibold">jove</span>
+                            </p>
+                        </div>
+                        <form class="authentication-form">
+                            <div class="form-group">
+                                <label>
+                                    Account or Email
+                                </label>
+                                <input type="text" class="form-control shadow-none" placeholder="Enter account or email">
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    Password
+                                </label>
+                                <input type="password" class="form-control shadow-none" placeholder="Enter password">
+                            </div>
+                            <div class="form-group forgot-password">
+                                Forgot your password? <a routerLink="/">Reset password.</a>
+                            </div>
+                            <button type="submit" class="default-btn d-block w-100">
+                                Login Now
+                            </button>
+                            <div class="login-with-socials text-center">
+                                <span class="d-block fw-medium">
+                                    Or Continue with
+                                </span>
+                                <a href="#" target="_blank" class="facebook d-inline-block">
+                                    <i class="ri-facebook-fill"></i>
+                                </a>
+                                <a href="#" target="_blank" class="google d-inline-block">
+                                    <i class="ri-google-fill"></i>
+                                </a>
+                                <a href="#" target="_blank" class="linkedin d-inline-block">
+                                    <i class="ri-linkedin-fill"></i>
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade d-block opacity-100" *ngIf="currentTab === 'tab2'">
+                        <ul class="nav nav-tabs d-block border-0">
+                            <li class="nav-item d-inline-block" [ngClass]="{'active': currentInnerTab === 'innerTab1'}">
+                                <button type="button" class="nav-link fw-semibold shadow-none mb-0" (click)="switchInnerTab($event, 'innerTab1')">
+                                    Candidate
+                                </button>
+                            </li>
+                            <li class="nav-item d-inline-block" [ngClass]="{'active': currentInnerTab === 'innerTab2'}">
+                                <button type="button" class="nav-link fw-semibold shadow-none mb-0" (click)="switchInnerTab($event, 'innerTab2')">
+                                    Employer
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade d-block opacity-100" *ngIf="currentInnerTab === 'innerTab1'">
+                                <form class="authentication-form">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>
+                                                    First Name
+                                                </label>
+                                                <input type="text" class="form-control shadow-none" placeholder="Enter name">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>
+                                                    Last Name
+                                                </label>
+                                                <input type="text" class="form-control shadow-none" placeholder="Enter name">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>
+                                                    Username
+                                                </label>
+                                                <input type="text" class="form-control shadow-none" placeholder="Enter username">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>
+                                                    Email
+                                                </label>
+                                                <input type="email" class="form-control shadow-none" placeholder="Enter email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>
+                                            Phone number
+                                        </label>
+                                        <input type="text" class="form-control shadow-none" placeholder="Enter phone number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>
+                                            Password
+                                        </label>
+                                        <input type="text" class="form-control shadow-none" placeholder="Enter password">
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input shadow-none" type="checkbox" id="termsPrivacyPolicy">
+                                        <label class="form-check-label" for="termsPrivacyPolicy">
+                                            Accept the <a routerLink="/">Terms</a> and <a routerLink="/">Privacy Policy</a>
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="default-btn d-block w-100">
+                                        Register Now
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade d-block opacity-100" *ngIf="currentInnerTab === 'innerTab2'">
+                                <form class="authentication-form">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>
+                                                    First Name
+                                                </label>
+                                                <input type="text" class="form-control shadow-none" placeholder="Enter name">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>
+                                                    Last Name
+                                                </label>
+                                                <input type="text" class="form-control shadow-none" placeholder="Enter name">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>
+                                                    Username
+                                                </label>
+                                                <input type="text" class="form-control shadow-none" placeholder="Enter username">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>
+                                                    Email
+                                                </label>
+                                                <input type="email" class="form-control shadow-none" placeholder="Enter email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>
+                                            Phone number
+                                        </label>
+                                        <input type="text" class="form-control shadow-none" placeholder="Enter phone number">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>
+                                            Password
+                                        </label>
+                                        <input type="text" class="form-control shadow-none" placeholder="Enter password">
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input shadow-none" type="checkbox" id="termsPrivacyPolicy">
+                                        <label class="form-check-label" for="termsPrivacyPolicy">
+                                            Accept the <a routerLink="/">Terms</a> and <a routerLink="/">Privacy Policy</a>
+                                        </label>
+                                    </div>
+                                    <button type="submit" class="default-btn d-block w-100">
+                                        Register Now
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    (click)="closePopup()"
+                    type="button"
+                    class="close-btn"
+                >
+                    <i class="ri-close-fill"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-backdrop fade show"></div>
+</div>

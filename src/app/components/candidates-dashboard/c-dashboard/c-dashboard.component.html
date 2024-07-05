@@ -1,0 +1,763 @@
+<!-- Title -->
+<div class="breadcrumb-title">
+    <h1 class="mb-0 fw-semibold">
+        Hello, Alina!
+    </h1>
+</div>
+
+<!-- Stats -->
+<div class="row">
+    <div class="col-xxl-3 col-xl-6 col-lg-3 col-6">
+        <div class="single-stats-box d-md-flex align-items-center">
+            <div class="icon">
+                <i class="ri-briefcase-line"></i>
+            </div>
+            <div>
+                <h3>
+                    70
+                </h3>
+                <span class="d-block">
+                    Applied jobs
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-3 col-xl-6 col-lg-3 col-6">
+        <div class="single-stats-box d-md-flex align-items-center">
+            <div class="icon">
+                <i class="ri-article-line"></i>
+            </div>
+            <div>
+                <h3>
+                    2839
+                </h3>
+                <span class="d-block">
+                    Job alerts
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-3 col-xl-6 col-lg-3 col-6">
+        <div class="single-stats-box d-md-flex align-items-center">
+            <div class="icon">
+                <i class="ri-message-2-line"></i>
+            </div>
+            <div>
+                <h3>
+                    50
+                </h3>
+                <span class="d-block">
+                    Messages
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-3 col-xl-6 col-lg-3 col-6">
+        <div class="single-stats-box d-md-flex align-items-center">
+            <div class="icon">
+                <i class="ri-bookmark-line"></i>
+            </div>
+            <div>
+                <h3>
+                    44
+                </h3>
+                <span class="d-block">
+                    Shortlist
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Profile Views & Notifications -->
+<div class="row">
+    <div class="col-xxl-7 col-md-12">
+        <div class="jove-card">
+            <h3 class="title">
+                Profile views
+            </h3>
+            <div class="chart">
+                <apx-chart
+                    [series]="chartOptions.series!"
+                    [chart]="chartOptions.chart!"
+                    [xaxis]="chartOptions.xaxis!"
+                    [dataLabels]="chartOptions.dataLabels!"
+                    [grid]="chartOptions.grid!"
+                    [yaxis]="chartOptions.yaxis!"
+                    [stroke]="chartOptions.stroke!"
+                    [colors]="chartOptions.colors!"
+                ></apx-chart>
+            </div>
+        </div>
+    </div>
+    <div class="col-xxl-5 col-md-12">
+        <div class="jove-card">
+            <h3 class="title">
+                Notifications
+            </h3>
+            <ul class="mb-0 list-unstyled ps-0 notifications-list">
+                <li class="position-relative">
+                    <div class="icon">
+                        <i class="ri-briefcase-line"></i>
+                    </div>
+                    <span class="fw-semibold">Donald Darnell</span> applied for a job <span class="color">Software Engineer</span>
+                </li>
+                <li class="position-relative">
+                    <div class="icon">
+                        <i class="ri-briefcase-line"></i>
+                    </div>
+                    <span class="fw-semibold">Olivie Riquier</span> applied for a job <span class="color">Accountant</span>
+                </li>
+                <li class="position-relative color">
+                    <div class="icon">
+                        <i class="ri-briefcase-line"></i>
+                    </div>
+                    <span class="fw-semibold">Edwin Lloyd</span> applied for a job <span class="color">Data Scientist</span>
+                </li>
+                <li class="position-relative">
+                    <div class="icon">
+                        <i class="ri-briefcase-line"></i>
+                    </div>
+                    <span class="fw-semibold">Bryant Hills</span> applied for a job <span class="color">UI/UX Designer</span>
+                </li>
+                <li class="position-relative color">
+                    <div class="icon">
+                        <i class="ri-briefcase-line"></i>
+                    </div>
+                    <span class="fw-semibold">Melissa Rodgers</span> applied for a job <span class="color">Pharmacist</span>
+                </li>
+                <li class="position-relative">
+                    <div class="icon">
+                        <i class="ri-briefcase-line"></i>
+                    </div>
+                    <span class="fw-semibold">Jeanne Richardson</span> applied for a job <span class="color">Marketing Manager</span>
+                </li>
+                <li class="position-relative">
+                    <div class="icon">
+                        <i class="ri-briefcase-line"></i>
+                    </div>
+                    <span class="fw-semibold">Bruce Saunders</span> applied for a job <span class="color">Systems Analyst</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Jobs Applied Recently -->
+<div class="jove-card">
+    <h3 class="title">
+        Jobs applied recently
+    </h3>
+    <div class="row jobs-applied-recently">
+        <div class="col-xxl-12">
+            <div class="single-job-box">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                    <div class="d-sm-flex align-items-center">
+                        <div class="image">
+                            <img src="assets/images/companies/company8.png" alt="company-image">
+                        </div>
+                        <div class="content">
+                            <h3 class="fw-semibold">
+                                <a routerLink="/job-details">
+                                    Mechanical Engineer
+                                </a>
+                            </h3>
+                            <span class="location d-block">
+                                Topoint in London
+                            </span>
+                            <span class="job-type d-block">
+                                Full Time
+                            </span>
+                        </div>
+                    </div>
+                    <div class="custom-info d-sm-flex align-items-center">
+                        <span class="active fw-medium d-block">
+                            Active
+                        </span>
+                        <ul class="ps-0 mb-0 list-unstyled">
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-check-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info d-sm-flex align-items-center justify-content-between">
+                    <span class="salary d-block">
+                        <span class="fw-semibold">Salary:</span>
+                        <span>$1K - $3K</span>
+                        /monthly
+                    </span>
+                    <span class="created d-block">
+                        <span class="fw-semibold">Created:</span>
+                        Oct 21, 2023
+                    </span>
+                    <span class="deadline d-block">
+                        <span class="fw-semibold">Deadline:</span>
+                        Oct 30, 2023
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-12">
+            <div class="single-job-box">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                    <div class="d-sm-flex align-items-center">
+                        <div class="image">
+                            <img src="assets/images/companies/company9.png" alt="company-image">
+                        </div>
+                        <div class="content">
+                            <h3 class="fw-semibold">
+                                <a routerLink="/job-details">
+                                    Senior Support Engineer
+                                </a>
+                            </h3>
+                            <span class="location d-block">
+                                Zayper in Barcelona
+                            </span>
+                            <span class="job-type d-block">
+                                Part Time
+                            </span>
+                        </div>
+                    </div>
+                    <div class="custom-info d-sm-flex align-items-center">
+                        <span class="active fw-medium closed d-block">
+                            Closed
+                        </span>
+                        <ul class="ps-0 mb-0 list-unstyled">
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-check-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info d-sm-flex align-items-center justify-content-between">
+                    <span class="salary d-block">
+                        <span class="fw-semibold">Salary:</span>
+                        <span>$10 - $50</span>
+                        /hourly
+                    </span>
+                    <span class="created d-block">
+                        <span class="fw-semibold">Created:</span>
+                        Oct 21, 2023
+                    </span>
+                    <span class="deadline d-block">
+                        <span class="fw-semibold">Deadline:</span>
+                        Nov 10, 2023
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-12">
+            <div class="single-job-box">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                    <div class="d-sm-flex align-items-center">
+                        <div class="image">
+                            <img src="assets/images/companies/company10.png" alt="company-image">
+                        </div>
+                        <div class="content">
+                            <h3 class="fw-semibold">
+                                <a routerLink="/job-details">
+                                    Senior C# / .NET Developer
+                                </a>
+                            </h3>
+                            <span class="location d-block">
+                                Doca in São Paulo
+                            </span>
+                            <span class="job-type d-block">
+                                Full Time
+                            </span>
+                        </div>
+                    </div>
+                    <div class="custom-info d-sm-flex align-items-center">
+                        <span class="active fw-medium d-block">
+                            Active
+                        </span>
+                        <ul class="ps-0 mb-0 list-unstyled">
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-check-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info d-sm-flex align-items-center justify-content-between">
+                    <span class="salary d-block">
+                        <span class="fw-semibold">Salary:</span>
+                        <span>$6K - $7K</span>
+                        /monthly
+                    </span>
+                    <span class="created d-block">
+                        <span class="fw-semibold">Created:</span>
+                        Oct 21, 2023
+                    </span>
+                    <span class="deadline d-block">
+                        <span class="fw-semibold">Deadline:</span>
+                        Nov 11, 2023
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-12">
+            <div class="single-job-box">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                    <div class="d-sm-flex align-items-center">
+                        <div class="image">
+                            <img src="assets/images/companies/company11.png" alt="company-image">
+                        </div>
+                        <div class="content">
+                            <h3 class="fw-semibold">
+                                <a routerLink="/job-details">
+                                    Senior Project Manager
+                                </a>
+                            </h3>
+                            <span class="location d-block">
+                                Techstar in Chicago
+                            </span>
+                            <span class="job-type d-block">
+                                Full Time
+                            </span>
+                        </div>
+                    </div>
+                    <div class="custom-info d-sm-flex align-items-center">
+                        <span class="active fw-medium d-block">
+                            Active
+                        </span>
+                        <ul class="ps-0 mb-0 list-unstyled">
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-check-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info d-sm-flex align-items-center justify-content-between">
+                    <span class="salary d-block">
+                        <span class="fw-semibold">Salary:</span>
+                        <span>$2K - $3K</span>
+                        /monthly
+                    </span>
+                    <span class="created d-block">
+                        <span class="fw-semibold">Created:</span>
+                        Oct 21, 2023
+                    </span>
+                    <span class="deadline d-block">
+                        <span class="fw-semibold">Deadline:</span>
+                        Nov 12, 2023
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-12">
+            <div class="single-job-box">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                    <div class="d-sm-flex align-items-center">
+                        <div class="image">
+                            <img src="assets/images/companies/company12.png" alt="company-image">
+                        </div>
+                        <div class="content">
+                            <h3 class="fw-semibold">
+                                <a routerLink="/job-details">
+                                    Assistant Manager
+                                </a>
+                            </h3>
+                            <span class="location d-block">
+                                Mund in Seoul
+                            </span>
+                            <span class="job-type d-block">
+                                Full Time
+                            </span>
+                        </div>
+                    </div>
+                    <div class="custom-info d-sm-flex align-items-center">
+                        <span class="active fw-medium closed d-block">
+                            Closed
+                        </span>
+                        <ul class="ps-0 mb-0 list-unstyled">
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-check-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info d-sm-flex align-items-center justify-content-between">
+                    <span class="salary d-block">
+                        <span class="fw-semibold">Salary:</span>
+                        <span>$11K - $23K</span>
+                        /monthly
+                    </span>
+                    <span class="created d-block">
+                        <span class="fw-semibold">Created:</span>
+                        Oct 21, 2023
+                    </span>
+                    <span class="deadline d-block">
+                        <span class="fw-semibold">Deadline:</span>
+                        Nov 13, 2023
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-12">
+            <div class="single-job-box">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                    <div class="d-sm-flex align-items-center">
+                        <div class="image">
+                            <img src="assets/images/companies/company13.png" alt="company-image">
+                        </div>
+                        <div class="content">
+                            <h3 class="fw-semibold">
+                                <a routerLink="/job-details">
+                                    Junior Banker
+                                </a>
+                            </h3>
+                            <span class="location d-block">
+                                Finix in Hong Kong
+                            </span>
+                            <span class="job-type d-block">
+                                Full Time
+                            </span>
+                        </div>
+                    </div>
+                    <div class="custom-info d-sm-flex align-items-center">
+                        <span class="active fw-medium d-block">
+                            Active
+                        </span>
+                        <ul class="ps-0 mb-0 list-unstyled">
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-check-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info d-sm-flex align-items-center justify-content-between">
+                    <span class="salary d-block">
+                        <span class="fw-semibold">Salary:</span>
+                        <span>$50 - $100</span>
+                        /hourly
+                    </span>
+                    <span class="created d-block">
+                        <span class="fw-semibold">Created:</span>
+                        Oct 21, 2023
+                    </span>
+                    <span class="deadline d-block">
+                        <span class="fw-semibold">Deadline:</span>
+                        Nov 14, 2023
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-12">
+            <div class="single-job-box">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                    <div class="d-sm-flex align-items-center">
+                        <div class="image">
+                            <img src="assets/images/companies/company14.png" alt="company-image">
+                        </div>
+                        <div class="content">
+                            <h3 class="fw-semibold">
+                                <a routerLink="/job-details">
+                                    Founder Associate
+                                </a>
+                            </h3>
+                            <span class="location d-block">
+                                Aoriv in Toronto
+                            </span>
+                            <span class="job-type d-block">
+                                Full Time
+                            </span>
+                        </div>
+                    </div>
+                    <div class="custom-info d-sm-flex align-items-center">
+                        <span class="active fw-medium d-block">
+                            Active
+                        </span>
+                        <ul class="ps-0 mb-0 list-unstyled">
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-check-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info d-sm-flex align-items-center justify-content-between">
+                    <span class="salary d-block">
+                        <span class="fw-semibold">Salary:</span>
+                        <span>$10K - $33K</span>
+                        /monthly
+                    </span>
+                    <span class="created d-block">
+                        <span class="fw-semibold">Created:</span>
+                        Oct 21, 2023
+                    </span>
+                    <span class="deadline d-block">
+                        <span class="fw-semibold">Deadline:</span>
+                        Nov 15, 2023
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-12">
+            <div class="single-job-box">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                    <div class="d-sm-flex align-items-center">
+                        <div class="image">
+                            <img src="assets/images/companies/company15.png" alt="company-image">
+                        </div>
+                        <div class="content">
+                            <h3 class="fw-semibold">
+                                <a routerLink="/job-details">
+                                    Marketing Executive
+                                </a>
+                            </h3>
+                            <span class="location d-block">
+                                Dking in Beijing
+                            </span>
+                            <span class="job-type d-block">
+                                Full Time
+                            </span>
+                        </div>
+                    </div>
+                    <div class="custom-info d-sm-flex align-items-center">
+                        <span class="active fw-medium d-block">
+                            Active
+                        </span>
+                        <ul class="ps-0 mb-0 list-unstyled">
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-check-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info d-sm-flex align-items-center justify-content-between">
+                    <span class="salary d-block">
+                        <span class="fw-semibold">Salary:</span>
+                        <span>$3K - $5K</span>
+                        /monthly
+                    </span>
+                    <span class="created d-block">
+                        <span class="fw-semibold">Created:</span>
+                        Oct 21, 2023
+                    </span>
+                    <span class="deadline d-block">
+                        <span class="fw-semibold">Deadline:</span>
+                        Nov 16, 2023
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-12">
+            <div class="single-job-box">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                    <div class="d-sm-flex align-items-center">
+                        <div class="image">
+                            <img src="assets/images/companies/company16.png" alt="company-image">
+                        </div>
+                        <div class="content">
+                            <h3 class="fw-semibold">
+                                <a routerLink="/job-details">
+                                    Digital Marketing Manager
+                                </a>
+                            </h3>
+                            <span class="location d-block">
+                                Oxygen in New York
+                            </span>
+                            <span class="job-type d-block">
+                                Full Time
+                            </span>
+                        </div>
+                    </div>
+                    <div class="custom-info d-sm-flex align-items-center">
+                        <span class="active fw-medium d-block">
+                            Active
+                        </span>
+                        <ul class="ps-0 mb-0 list-unstyled">
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-check-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info d-sm-flex align-items-center justify-content-between">
+                    <span class="salary d-block">
+                        <span class="fw-semibold">Salary:</span>
+                        <span>$2K - $2.5K</span>
+                        /monthly
+                    </span>
+                    <span class="created d-block">
+                        <span class="fw-semibold">Created:</span>
+                        Oct 21, 2023
+                    </span>
+                    <span class="deadline d-block">
+                        <span class="fw-semibold">Deadline:</span>
+                        Nov 17, 2023
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-12">
+            <div class="single-job-box">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                    <div class="d-sm-flex align-items-center">
+                        <div class="image">
+                            <img src="assets/images/companies/company17.png" alt="company-image">
+                        </div>
+                        <div class="content">
+                            <h3 class="fw-semibold">
+                                <a routerLink="/job-details">
+                                    Technical SEO Manager
+                                </a>
+                            </h3>
+                            <span class="location d-block">
+                                Affort in Tokyo
+                            </span>
+                            <span class="job-type d-block">
+                                Full Time
+                            </span>
+                        </div>
+                    </div>
+                    <div class="custom-info d-sm-flex align-items-center">
+                        <span class="active fw-medium d-block">
+                            Active
+                        </span>
+                        <ul class="ps-0 mb-0 list-unstyled">
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-eye-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-check-line"></i>
+                                </button>
+                            </li>
+                            <li class="d-inline-block">
+                                <button type="button" class="d-inline-block rounded-circle">
+                                    <i class="ri-close-line"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="info d-sm-flex align-items-center justify-content-between">
+                    <span class="salary d-block">
+                        <span class="fw-semibold">Salary:</span>
+                        <span>$15 - $25</span>
+                        /hourly
+                    </span>
+                    <span class="created d-block">
+                        <span class="fw-semibold">Created:</span>
+                        Oct 21, 2023
+                    </span>
+                    <span class="deadline d-block">
+                        <span class="fw-semibold">Deadline:</span>
+                        Nov 18, 2023
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

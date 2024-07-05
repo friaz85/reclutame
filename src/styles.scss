@@ -1,0 +1,554 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --fontFamily: 'Lato', sans-serif;
+    --headingFontFamily: 'Montserrat', sans-serif;
+    --primaryColor: #1cbe72;
+    --secondaryColor: #fdc56b;
+    --headingColor: #404145;
+    --bodyColor: #62646A;
+    --whiteColor: #ffffff;
+    --borderColor: #e0e6e9;
+    --transition: all ease 0.5s; 
+    --fontSize: 16px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--bodyColor);
+    font: {
+        size: var(--fontSize);
+        family: var(--fontFamily);
+    };
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    color: var(--headingColor);
+    font: {
+        family: var(--headingFontFamily);
+        weight: 700;
+    };
+}
+a {
+    transition: var(--transition);
+    color: var(--headingColor);
+    text-decoration: none;
+    outline: 0 !important;
+
+    &:hover {
+        color: var(--primaryColor);
+        text-decoration: none;
+    }
+}
+:focus {
+    outline: 0 !important;
+}
+.d-table {
+    width: 100%;
+    height: 100%;
+
+    &-cell {
+        vertical-align: middle;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+p {
+    font-size: var(--fontSize);
+    color: var(--bodyColor);
+    margin-bottom: 15px;
+    line-height: 1.8;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.ptb-100 {
+    padding: {
+        top: 100px;
+        bottom: 100px;
+    };
+}
+.pt-100 {
+    padding-top: 100px;
+}
+.pb-100 {
+    padding-bottom: 100px;
+}
+.ptb-75 {
+    padding: {
+        top: 75px;
+        bottom: 75px;
+    };
+}
+.pt-75 {
+    padding-top: 75px;
+}
+.pb-75 {
+    padding-bottom: 75px;
+}
+.bg-eaf0f3 {
+    background-color: #eaf0f3;
+}
+.bg-f8f8fb {
+    background-color: #f8f8fb;
+}
+.bg-fafafa {
+    background-color: #fafafa;
+}
+.bg-f5f9fc {
+    background-color: #f5f9fc;
+}
+.bg-c29a94 {
+    background-color: #c29a94;
+}
+.bg-faf5f2 {
+    background-color: #faf5f2;
+}
+.bg-f4f5f7 {
+    background-color: #f4f5f7;
+}
+.bg-e9e7e7 {
+    background-color: #e9e7e7;
+}
+
+// Default Button
+.default-btn {
+    background-color: var(--primaryColor);
+    transition: var(--transition);
+    color: var(--headingColor);
+    color: var(--whiteColor);
+    display: inline-block;
+    border-radius: 5px;
+    padding: 15px 50px;
+    box-shadow: unset;
+    border: 0;
+    font: {
+        size: var(--fontSize);
+        weight: 600;
+    };
+    &:hover {
+        background-color: var(--secondaryColor);
+        color: var(--whiteColor);
+    }
+    &.two {
+        background-color: var(--secondaryColor);
+        color: var(--headingColor);
+
+        &:hover {
+            color: var(--whiteColor);
+            background-color: var(--primaryColor);
+        }
+    }
+}
+
+// Section Title
+.section-title {
+    max-width: 860px;
+    position: relative;
+    margin-bottom: 45px;
+    
+    h2 {
+        font-size: 24px;
+    }
+    .link-btn {
+        right: 0;
+        top: 50%;
+        position: absolute;
+        padding-right: 21px;
+        transform: translateY(-50%);
+        font: {
+            size: 15.5px;
+            family: var(--headingFontFamily);
+        };
+        i {
+            top: 50%;
+            right: -5px;
+            line-height: 1;
+            font-size: 22px;
+            margin-top: 1px;
+            position: absolute;
+            transform: translateY(-50%);
+        }
+        &:hover {
+            padding-right: 30px;
+        }
+        &.two {
+            &:hover {
+                color: var(--secondaryColor);
+            }
+        }
+    }
+    .form-select {
+        right: 0;
+        top: 50%;
+        border: 0;
+        width: auto;
+        box-shadow: unset;
+        position: absolute;
+        padding: 0 35px 0 0;
+        font-size: var(--fontSize);
+        color: var(--headingColor);
+        transform: translateY(-50%);
+        background-position: right 0 center;
+    }
+    &.text-start {
+        max-width: 100%;
+        padding-right: 195px;
+    }
+}
+
+// Back to Top
+.scrolltop-button {
+    right: 30px !important;
+    z-index: 99 !important;
+    width: 45px !important;
+    height: 45px !important;
+    bottom: 30px !important;
+    display: block !important;
+    transition: var(--transition) !important;
+    background-color: var(--whiteColor) !important;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+
+    .symbol-container {
+        color: var(--headingColor) !important;
+        transition: var(--transition);
+        position: relative;
+
+        &::before {
+            left: 0;
+            right: 0;
+            top: 50%;
+            line-height: 1;
+            content: "\ea78";
+            margin-top: -1px;
+            position: absolute;
+            color: var(--headingColor);
+            transform: translateY(-50%);
+            transition: var(--transition);
+            font: {
+                size: 28px;
+                family: remixicon;
+            };
+        }
+    }
+    svg {
+        display: none !important;
+    }
+    &:hover {
+        background-color: var(--primaryColor) !important;
+
+        .symbol-container {
+            color: var(--whiteColor) !important;
+
+            &::before {
+                color: var(--whiteColor);
+            }
+        }
+    }
+}
+
+// Page Banner CSS
+.page-banner-area {
+    background-color: #f4f7fb;
+    padding: {
+        top: 40px;
+        bottom: 40px;
+    };
+    h1 {
+        font-size: 24px;
+        margin-bottom: 0;
+    }
+    ul {
+        text-align: end;
+
+        li {
+            margin: {
+                left: 12px;
+                right: 12px;
+            };
+            &::before {
+                top: 50%;
+                width: 5px;
+                height: 5px;
+                content: '';
+                right: -15px;
+                margin-top: -0.8px;
+                position: absolute;
+                border-radius: 50%;
+                background: #d2d8e1;
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// Pagination CSS
+.pagination-area {
+    margin-top: 35px;
+    
+    .page-numbers {
+        width: 50px;
+        height: 50px;
+        margin: 0 3px;
+        font-size: 18px;
+        line-height: 48px;
+        text-align: center;
+        position: relative;
+        border-radius: 3px;
+        display: inline-block;
+        text-decoration: none;
+        color: var(--bodyColor);
+        transition: var(--transition);
+        background-color: var(--whiteColor);
+        border: 1px solid var(--borderColor);
+
+        &.current, &:hover {
+            background-color: var(--primaryColor);
+            border-color: var(--primaryColor);
+            color: var(--whiteColor);
+        }
+        &.current {
+            pointer-events: none;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    // Default CSS
+    body {
+        font-size: 14px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .ptb-100 {
+        padding: {
+            top: 60px;
+            bottom: 60px;
+        };
+    }
+    .pt-100 {
+        padding-top: 60px;
+    }
+    .pb-100 {
+        padding-bottom: 60px;
+    }
+    .ptb-75 {
+        padding: {
+            top: 35px;
+            bottom: 35px;
+        };
+    }
+    .pt-75 {
+        padding-top: 35px;
+    }
+    .pb-75 {
+        padding-bottom: 35px;
+    }
+
+    // Default Button
+    .default-btn {
+        padding: 14px 30px;
+        font-size: 14px;
+    }
+
+    // Section Title
+    .section-title {
+        max-width: 100%;
+        margin-bottom: 25px;
+        
+        h2 {
+            font-size: 20px;
+        }
+        .link-btn {
+            top: 0;
+            margin-top: 10px;
+            font-size: 13.5px;
+            position: relative;
+            padding-right: 21px;
+            transform: translateY(0);
+        }
+        .form-select {
+            top: 0;
+            font-size: 14px;
+            margin-top: 12px;
+            position: relative;
+            transform: translateY(0);
+        }
+        &.text-start {
+            padding-right: 0;
+        }
+    }
+
+    // Back to Top
+    .scrolltop-button {
+        right: 15px !important;
+        bottom: 15px !important;
+    }
+
+    // Page Banner CSS
+    .page-banner-area {
+        text-align: center;
+        padding: {
+            top: 30px;
+            bottom: 30px;
+        };
+        h1 {
+            font-size: 20px;
+        }
+        ul {
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+
+    // Pagination CSS
+    .pagination-area {
+        margin-top: 5px;
+        
+        .page-numbers {
+            width: 35px;
+            height: 35px;
+            font-size: 16px;
+            line-height: 32px;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    // Default CSS
+    body {
+        font-size: 15px;
+    }
+    p {
+        font-size: 15px;
+    }
+    .ptb-100 {
+        padding: {
+            top: 80px;
+            bottom: 80px;
+        };
+    }
+    .pt-100 {
+        padding-top: 80px;
+    }
+    .pb-100 {
+        padding-bottom: 80px;
+    }
+    .ptb-75 {
+        padding: {
+            top: 55px;
+            bottom: 55px;
+        };
+    }
+    .pt-75 {
+        padding-top: 55px;
+    }
+    .pb-75 {
+        padding-bottom: 55px;
+    }
+
+    // Default Button
+    .default-btn {
+        padding: 14px 40px;
+        font-size: 15px;
+    }
+
+    // Section Title
+    .section-title {
+        max-width: 100%;
+        margin-bottom: 35px;
+        
+        h2 {
+            font-size: 22px;
+        }
+        .link-btn {
+            font-size: 14.5px;
+        }
+        &.text-start {
+            padding-right: 185px;
+        }
+    }
+
+    // Back to Top
+    .scrolltop-button {
+        right: 20px !important;
+        bottom: 20px !important;
+    }
+
+    // Page Banner CSS
+    .page-banner-area {
+        text-align: center;
+        padding: {
+            top: 35px;
+            bottom: 35px;
+        };
+        h1 {
+            font-size: 22px;
+        }
+        ul {
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+
+    // Pagination CSS
+    .pagination-area {
+        margin-top: 10px;
+        
+        .page-numbers {
+            width: 45px;
+            height: 45px;
+            font-size: 16px;
+            line-height: 43px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    // Section Title
+    .section-title {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    // Pagination CSS
+    .pagination-area {
+        margin-top: 25px;
+        
+        .page-numbers {
+            width: 45px;
+            height: 45px;
+            font-size: 16px;
+            line-height: 43px;
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {}

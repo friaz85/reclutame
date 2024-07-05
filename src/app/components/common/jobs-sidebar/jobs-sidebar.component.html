@@ -1,0 +1,311 @@
+<aside class="widget-area">
+    <div
+        class="widget"
+        *ngIf="router.url === '/candidates'"
+    >
+        <h3 class="widget-title fw-semibold">
+            Search by keywords
+        </h3>
+        <form class="search-box position-relative">
+            <input type="text" class="input-search" placeholder="Search....">
+            <button type="submit">
+                <i class="ri-search-line"></i>
+            </button>
+        </form>
+    </div>
+    <div class="widget">
+        <h3 class="widget-title fw-semibold">
+            Job type
+        </h3>
+        <ul class="ps-0 mb-0 list-unstyled">
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="jobTypeOptions" id="jb-all">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="jb-all">
+                       All
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="jobTypeOptions" id="jb-full-time">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="jb-full-time">
+                        Full time <span>(1,210)</span>
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="jobTypeOptions" id="jb-part-time">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="jb-part-time">
+                        Part time <span>(568)</span>
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="jobTypeOptions" id="jb-temporary">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="jb-temporary">
+                        Temporary <span>(19)</span>
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="jobTypeOptions" id="jb-contract">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="jb-contract">
+                        Contract <span>(48)</span>
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="jobTypeOptions" id="jb-internship">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="jb-internship">
+                        Internship <span>(51)</span>
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="jobTypeOptions" id="jb-freelancer">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="jb-freelancer">
+                        Freelancer <span>(458)</span>
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="widget">
+        <h3 class="widget-title fw-semibold">
+            Date posted
+        </h3>
+        <ul class="ps-0 mb-0 list-unstyled">
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="datePostedOptions" id="dp-all">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="dp-all">
+                       All
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="datePostedOptions" id="dp-last-hour">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="dp-last-hour">
+                        Last hour
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="datePostedOptions" id="dp-twenty-four-hours">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="dp-twenty-four-hours">
+                        Last 24 hours
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="datePostedOptions" id="dp-last-seven-days">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="dp-last-seven-days">
+                        Last 7 days
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="datePostedOptions" id="dp-last-fifteen-days">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="dp-last-fifteen-days">
+                        Last 15 days
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="datePostedOptions" id="dp-last-thirty-days">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="dp-last-thirty-days">
+                        Last 30 days
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="widget">
+        <h3 class="widget-title fw-semibold">
+            Salary
+        </h3>
+        <select class="form-select shadow-none">
+            <option selected>All</option>
+            <option value="1">$0 - $2000</option>
+            <option value="2">$2000 - $3000</option>
+            <option value="3">$3000 - $4000</option>
+            <option value="4">$4000 - $5000</option>
+            <option value="5">$5000 - $6000</option>
+        </select>
+    </div>
+    <div class="widget">
+        <h3 class="widget-title fw-semibold">
+            Career level
+        </h3>
+        <ul class="ps-0 mb-0 list-unstyled">
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="careerLevelOptions" id="cl-manager">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="cl-manager">
+                        Manager
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="careerLevelOptions" id="cl-officer">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="cl-officer">
+                        Officer
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="careerLevelOptions" id="cl-student">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="cl-student">
+                        Student
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="careerLevelOptions" id="cl-executive">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="cl-executive">
+                        Executive
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="careerLevelOptions" id="cl-others">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="cl-others">
+                        Others
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="widget">
+        <h3 class="widget-title fw-semibold">
+            Experience
+        </h3>
+        <ul class="ps-0 mb-0 list-unstyled">
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="experienceOptions" id="experience-fresher">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="experience-fresher">
+                        Fresher
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="experienceOptions" id="experience-one-year">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="experience-one-year">
+                        1 year
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="experienceOptions" id="experience-three-years">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="experience-three-years">
+                        3 years
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="experienceOptions" id="experience-five-years">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="experience-five-years">
+                        5 years
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="experienceOptions" id="experience-ten-years">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="experience-ten-years">
+                        10 years
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="widget">
+        <h3 class="widget-title fw-semibold">
+            Qualifications
+        </h3>
+        <ul class="ps-0 mb-0 list-unstyled">
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="qualificationsOptions" id="qualifications-certificate">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="qualifications-certificate">
+                        Certificate
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="qualificationsOptions" id="qualifications-diploma">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="qualifications-diploma">
+                        Diploma
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="qualificationsOptions" id="qualifications-bachelor-degree">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="qualifications-bachelor-degree">
+                        Bachelor degree
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="qualificationsOptions" id="qualifications-masters-degree">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="qualifications-masters-degree">
+                        Master’s degree
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="qualificationsOptions" id="qualifications-associate">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="qualifications-associate">
+                        Associate
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="widget">
+        <h3 class="widget-title fw-semibold">
+            Gender
+        </h3>
+        <ul class="ps-0 mb-0 list-unstyled">
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="genderOptions" id="gender-male">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="gender-male">
+                        Male
+                    </label>
+                </div>
+            </li>
+            <li>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="genderOptions" id="gender-female">
+                    <label class="form-check-label d-flex align-items-center justify-content-between" for="gender-female">
+                        Female
+                    </label>
+                </div>
+            </li>
+        </ul>
+    </div>
+</aside>

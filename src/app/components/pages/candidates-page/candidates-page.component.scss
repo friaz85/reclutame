@@ -1,0 +1,191 @@
+.jove-grid-sorting {
+    margin-bottom: 25px;
+
+    .result-count {
+        p {
+            .count {
+                font-weight: 600;
+                color: var(--headingColor);
+            }
+        }
+    }
+    .ordering {
+        text-align: end;
+
+        label {
+            color: var(--bodyColor);
+            display: inline-block;
+            font-weight: 500;
+            margin: {
+                right: 5px;
+                bottom: 0;
+            };
+        }
+        select {
+            height: 45px;
+            width: 215px;
+            cursor: pointer;
+            line-height: 44px;
+            box-shadow: unset;
+            padding: 0 0 0 15px;
+            display: inline-block;
+            border-color: #eeeeee;
+            color: var(--headingColor);
+            background-color: #f8f8f8;
+            transition: var(--transition);
+            font: {
+                size: var(--fontSize);
+                weight: 500;
+            };
+            &:hover {
+                border-color: var(--primaryColor);
+                background-color: transparent;
+            }
+        }
+    }
+}
+.single-candidate-box {
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    background-color: var(--whiteColor);
+    border: 1px solid var(--borderColor);
+
+    .image {
+        max-width: 100px;
+    }
+    .content {
+        margin-left: 18px;
+
+        h3 {
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+        .designation {
+            margin-bottom: 6px;
+        }
+        .location {
+            span {
+                color: var(--primaryColor);
+            }
+        }
+    }
+    .view-profile {
+        span {
+            margin-right: 25px;
+        }
+        .default-btn {
+            padding: 8px 30px 10px;
+            font-weight: normal;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .jove-grid-sorting {
+        text-align: center;
+
+        .ordering {
+            text-align: center;
+            margin-top: 12px;
+        }
+    }
+    .single-candidate-box {
+        padding: 15px;
+        border-radius: 5px;
+        text-align: center;
+    
+        .image {
+            margin: {
+                left: auto;
+                right: auto;
+            };
+        }
+        .content {
+            margin: {
+                left: 0;
+                top: 15px;
+            };
+            h3 {
+                font-size: 16px;
+            }
+        }
+        .view-profile {
+            span {
+                margin: {
+                    right: 0;
+                    top: 10px;
+                    bottom: 10px;
+                };
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .single-candidate-box {
+        text-align: start;
+    
+        .content {
+            margin: {
+                left: 15px;
+                top: 0;
+            };
+        }
+        .view-profile {
+            span {
+                margin: {
+                    right: 15px;
+                    bottom: 0;
+                    top: 0;
+                };
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .single-candidate-box {
+        padding: 20px;
+        border-radius: 10px;
+    
+        .content {
+            margin-left: 17px;
+        }
+        .view-profile {
+            span {
+                margin-right: 20px;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .single-candidate-box {
+        padding: 20px;
+    
+        .content {
+            margin-left: 18px;
+        }
+        .view-profile {
+            span {
+                margin-right: 20px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}

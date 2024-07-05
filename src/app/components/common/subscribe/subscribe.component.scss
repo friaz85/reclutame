@@ -1,0 +1,260 @@
+.subscribe-area {
+    &.bg-color {
+        background-color: transparent;
+        position: relative;
+        padding-top: 0;
+        z-index: 2;
+
+        &::before {
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            height: 50%;
+            content: '';
+            position: absolute;
+            background-color: #325343;
+        }
+    }
+    &.bg-black {
+        background-color: #202037 !important;
+
+        .subscribe-content {
+            h2 {
+                color: var(--whiteColor);
+            }
+            p {
+                color: #e0e6e9;
+            }
+        }
+    }
+}
+.subscribe-image {
+    padding-right: 95px;
+}
+.subscribe-content {
+    h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    form {
+        margin-top: 22px;
+
+        .input-newsletter {
+            height: 55px;
+            border-radius: 5px;
+            font-size: var(--fontSize);
+            color: var(--headingColor);
+            background-color: var(--whiteColor);
+            border: 1px solid var(--borderColor);
+            padding: {
+                left: 20px;
+                right: 20px;
+            };
+            &::placeholder {
+                color: var(--bodyColor);
+                transition: var(--transition);
+            }
+            &:focus {
+                &::placeholder {
+                    color: transparent;
+                }
+            }
+        }
+        .default-btn {
+            margin-top: 20px;
+        }
+    }
+}
+.subscribe-inner {
+    &.style-two {
+        border-radius: 15px;
+        background-color: var(--secondaryColor);
+        padding: {
+            top: 25px;
+            left: 70px;
+            right: 70px;
+        };
+        .subscribe-image {
+            padding-right: 0;
+        }
+        .subscribe-content {
+            padding-left: 15px;
+
+            form {
+                position: relative;
+        
+                .default-btn {
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    margin-top: 0;
+                    position: absolute;
+                    background-color: #325343;
+
+                    &:hover {
+                        background-color: var(--primaryColor);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .subscribe-image {
+        padding-right: 0;
+        margin-bottom: 25px;
+    }
+    .subscribe-content {
+        h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        form {
+            margin-top: 15px;
+    
+            .input-newsletter {
+                height: 49px;
+                font-size: 14px;
+                padding: {
+                    left: 15px;
+                    right: 15px;
+                };
+            }
+            .default-btn {
+                margin-top: 15px;
+            }
+        }
+    }
+    .subscribe-inner {
+        &.style-two {
+            border-radius: 5px;
+            padding: 25px 20px;
+            
+            .subscribe-content {
+                padding-left: 0;
+    
+                form {
+                    .default-btn {
+                        margin-top: 15px;
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .subscribe-inner {
+        &.style-two {
+            .subscribe-content {
+                form {
+                    .default-btn {
+                        margin-top: 0;
+                        position: absolute;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .subscribe-image {
+        margin-bottom: 25px;
+        padding-right: 0;
+    }
+    .subscribe-content {
+        h2 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+        form {
+            margin-top: 18px;
+    
+            .input-newsletter {
+                height: 53px;
+                font-size: 15px;
+                padding: {
+                    left: 17px;
+                    right: 17px;
+                };
+            }
+            .default-btn {
+                margin-top: 15px;
+            }
+        }
+    }
+    .subscribe-inner {
+        &.style-two {
+            border-radius: 10px;
+            padding: 50px;
+            
+            .subscribe-content {
+                padding-left: 0;
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .subscribe-image {
+        padding-right: 0;
+    }
+    .subscribe-content {
+        h2 {
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+        form {
+            margin-top: 20px;
+        }
+    }
+    .subscribe-inner {
+        &.style-two {
+            padding: {
+                left: 25px;
+                right: 25px;
+            };
+            .subscribe-content {
+                padding-left: 0;
+
+                h2 {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .subscribe-image {
+        padding-right: 25px;
+    }
+    .subscribe-inner {
+        &.style-two {
+            .subscribe-content {
+                h2 {
+                    font-size: 23px;
+                }
+            }
+        }
+    }
+
+}

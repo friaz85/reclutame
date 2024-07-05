@@ -1,0 +1,388 @@
+.app-area {
+    &.bg-color {
+        background: {
+            position: center center;
+            repeat: no-repeat;
+            size: cover;
+        };
+    }
+}
+.app-inner {
+    padding-top: 100px;
+    border-radius: 15px;
+    background: #e7e8dc;
+}
+.app-image {
+    padding-right: 50px;
+
+    &.style-two {
+        padding-right: 0;
+    }
+}
+.app-content {
+    padding-right: 100px;
+    margin-top: 25px;
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 13px;
+    }
+    p {
+        font-size: 17px;
+    }
+    h4 {
+        font-size: 18px;
+        margin: {
+            top: 30px;
+            bottom: 20px;
+        };
+    }
+    .features-list {
+        margin-bottom: 30px;
+
+        li {
+            margin-bottom: 11px;
+            padding-left: 27px;
+            font-size: 17px;
+
+            i {
+                top: 50%;
+                left: -1px;
+                font-size: 22px;
+                position: absolute;
+                color: var(--primaryColor);
+                transform: translateY(-50%);
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .btn-box {
+        a {
+            margin-right: 15px;
+            border-radius: 5px;
+
+            img {
+                border-radius: 5px;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            &:hover {
+                transform: translateY(-5px);
+            }
+        }
+    }
+    &.style-two {
+        margin-top: 0;
+        padding: {
+            left: 50px;
+            bottom: 0;
+            right: 0;
+            top: 0;
+        };
+    }
+}
+.app-text {
+    max-width: 750px;
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: var(--whiteColor);
+    }
+    p {
+        color: #e0e6e9;
+    }
+    h3 {
+        font-size: 18px;
+        color: var(--whiteColor);
+        margin: {
+            bottom: 15px;
+            top: 35px;
+        };
+    }
+    .btn-box {
+        margin-top: 30px;
+
+        a {
+            border-radius: 5px;
+            margin: {
+                left: 7px;
+                right: 7px;
+            };
+            img {
+                border-radius: 5px;
+            }
+            &:hover {
+                transform: translateY(-5px);
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .app-inner {
+        padding-top: 60px;
+        border-radius: 5px;
+    }
+    .app-image {
+        padding-right: 0;
+        margin-top: 25px;
+    }
+    .app-content {
+        margin-top: 0;
+        padding: {
+            left: 15px;
+            right: 15px;
+        };
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 14px;
+        }
+        h4 {
+            font-size: 16px;
+            margin: {
+                top: 20px;
+                bottom: 15px;
+            };
+        }
+        .features-list {
+            margin-bottom: 20px;
+
+            li {
+                margin-bottom: 10px;
+                padding-left: 24px;
+                font-size: 14px;
+
+                i {
+                    left: 0;
+                    font-size: 20px;
+                }
+            }
+        }
+        &.style-two {
+            padding: {
+                left: 0;
+                right: 0;
+            };
+        }
+    }
+    .app-text {
+        max-width: 100%;
+    
+        h2 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+        h3 {
+            font-size: 16px;
+            margin: {
+                bottom: 15px;
+                top: 20px;
+            };
+        }
+        .btn-box {
+            margin-top: 20px;
+    
+            a {
+                margin: {
+                    left: 5px;
+                    right: 5px;
+                };
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .app-content {
+        padding: {
+            left: 25px;
+            right: 25px;
+        };
+        &.style-two {
+            padding: {
+                left: 0;
+                right: 0;
+            };
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .app-inner {
+        padding-top: 80px;
+        border-radius: 10px;
+    }
+    .app-image {
+        padding-right: 0;
+        margin-top: 25px;
+    }
+    .app-content {
+        margin-top: 0;
+        padding: {
+            left: 50px;
+            right: 50px;
+        };
+        h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 15px;
+        }
+        h4 {
+            font-size: 17px;
+            margin: {
+                top: 22px;
+                bottom: 15px;
+            };
+        }
+        .features-list {
+            margin-bottom: 22px;
+
+            li {
+                margin-bottom: 10px;
+                padding-left: 25px;
+                font-size: 15px;
+
+                i {
+                    font-size: 21px;
+                }
+            }
+        }
+        &.style-two {
+            padding: {
+                left: 0;
+                right: 0;
+            };
+        }
+    }
+    .app-text {
+        max-width: 100%;
+    
+        h2 {
+            font-size: 22px;
+            margin-bottom: 14px;
+        }
+        h3 {
+            margin: {
+                bottom: 15px;
+                top: 25px;
+            };
+        }
+        .btn-box {
+            margin-top: 25px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .app-inner {
+        padding-top: 0;
+
+        .row {
+            align-items: center;
+        }
+    }
+    .app-image {
+        padding-right: 0;
+    }
+    .app-content {
+        margin-top: 0;
+        padding: {
+            top: 100px;
+            right: 25px;
+            bottom: 100px;
+        };
+        h2 {
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+        }
+        h4 {
+            font-size: 17px;
+            margin: {
+                top: 25px;
+                bottom: 15px;
+            };
+        }
+        .features-list {
+            margin-bottom: 20px;
+
+            li {
+                margin-bottom: 10px;
+                font-size: 16px;
+            }
+        }
+        &.style-two {
+            padding: {
+                left: 0;
+                right: 0;
+            };
+        }
+    }
+    .app-text {
+        h3 {
+            margin: {
+                bottom: 15px;
+                top: 25px;
+            };
+        }
+        .btn-box {
+            margin-top: 25px;
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .app-image {
+        padding-right: 20px;
+    }
+    .app-content {
+        padding-right: 50px;
+        margin-top: 15px;
+
+        h2 {
+            margin-bottom: 12px;
+        }
+        p {
+            font-size: 16px;
+        }
+        .features-list {
+            margin-bottom: 25px;
+
+            li {
+                margin-bottom: 10px;
+                font-size: 16px;
+            }
+        }
+        &.style-two {
+            padding: {
+                left: 20px;
+                right: 0;
+            };
+        }
+    }
+
+}

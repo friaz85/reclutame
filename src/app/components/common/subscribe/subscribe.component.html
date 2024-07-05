@@ -1,0 +1,78 @@
+<!-- Deafult Subscribe -->
+<div
+    [ngClass]="{'d-none': router.url === '/index-3'}"
+>
+    <div
+        class="subscribe-area bg-f5f9fc pt-100"
+        [ngClass]="{'bg-color': router.url === '/index-2'}"
+    >
+        <div class="container">
+            <div
+                class="subscribe-inner"
+                [ngClass]="{'style-two': router.url === '/index-2'}"
+            >
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12" data-aos="fade-in" data-aos-duration="500">
+                        <div class="subscribe-image text-center">
+                            <img src="assets/images/subscribe.png" alt="subscribe-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12" data-aos="fade-in" data-aos-duration="500" data-aos-delay="100">
+                        <div class="subscribe-content">
+                            <h2>
+                                Find your next great job opportunity!
+                            </h2>
+                            <p>
+                                Join the Newsletter 10,000 users already!
+                            </p>
+                            <form>
+                                <input type="text" class="input-newsletter d-block w-100" placeholder="Enter your email">
+                                <button type="submit" class="default-btn">
+                                    Subscribe
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Subscribe for Only Home Demo - 3 -->
+<div
+    *ngIf="router.url === '/index-3'"
+>
+    <div
+        class="subscribe-area bg-f5f9fc pt-100"
+        [ngClass]="{'bg-black': router.url === '/index-3'}"
+    >
+        <div class="container">
+            <div class="subscribe-inner">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12" data-aos="fade-in" data-aos-duration="500">
+                        <div class="subscribe-image text-center">
+                            <img src="assets/images/subscribe.png" alt="subscribe-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12" data-aos="fade-in" data-aos-duration="500" data-aos-delay="100">
+                        <div class="subscribe-content">
+                            <h2>
+                                Find your next great job opportunity!
+                            </h2>
+                            <p>
+                                Join the Newsletter 10,000 users already!
+                            </p>
+                            <form>
+                                <input type="text" class="input-newsletter d-block w-100" placeholder="Enter your email">
+                                <button type="submit" class="default-btn">
+                                    Subscribe
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

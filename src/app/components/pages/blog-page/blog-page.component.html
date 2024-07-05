@@ -1,0 +1,143 @@
+<app-navbar></app-navbar>
+
+<!-- Page Banner -->
+<div class="page-banner-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 col-md-12">
+                <h1>
+                    Blog Right Sidebar
+                </h1>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <ul class="ps-0 mb-0 list-unstyled">
+                    <li class="d-inline-block position-relative">
+                        <a routerLink="/">
+                            Home
+                        </a>
+                    </li>
+                    <li class="d-inline-block position-relative">
+                        Blog
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Banner -->
+
+<!-- Blog Area -->
+<div class="blog-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="single-blog-post">
+                            <a routerLink="/blog-details" class="d-block image">
+                                <img src="assets/images/blogs/blog1.jpg" alt="blog-image">
+                            </a>
+                            <div class="content">
+                                <ul class="meta ps-0 list-unstyled">
+                                    <li class="d-inline-block">
+                                        By:
+                                        <a routerLink="/blog">
+                                            Jove
+                                        </a>
+                                    </li>
+                                    <li class="d-inline-block">
+                                        25 Oct, 2023
+                                    </li>
+                                </ul>
+                                <h3 class="fw-semibold">
+                                    <a routerLink="/blog-details">
+                                        Define both short-term and long-term career objectives
+                                    </a>
+                                </h3>
+                                <p>
+                                    Enim urna pulvinar orci leo viverra. A augue nisl convallis amet pellentesque sollicitudin. Commodo volutpat euismod nec duis iaculis mattis quam diam. Sollicitudin eu mi aliquet at tellus sed pellentesque. Id non in pharetra massa urna ullamcorper tempor.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="single-blog-post">
+                            <a routerLink="/blog-details" class="d-block image">
+                                <img src="assets/images/blogs/blog2.jpg" alt="blog-image">
+                            </a>
+                            <div class="content">
+                                <ul class="meta ps-0 list-unstyled">
+                                    <li class="d-inline-block">
+                                        By:
+                                        <a routerLink="/blog">
+                                            Jove
+                                        </a>
+                                    </li>
+                                    <li class="d-inline-block">
+                                        24 Oct, 2023
+                                    </li>
+                                </ul>
+                                <h3 class="fw-semibold">
+                                    <a routerLink="/blog-details">
+                                        Stay updated and enhance your skills regularly
+                                    </a>
+                                </h3>
+                                <p>
+                                    Enim urna pulvinar orci leo viverra. A augue nisl convallis amet pellentesque sollicitudin. Commodo volutpat euismod nec duis iaculis mattis quam diam. Sollicitudin eu mi aliquet at tellus sed pellentesque. Id non in pharetra massa urna ullamcorper tempor.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="single-blog-post">
+                            <a routerLink="/blog-details" class="d-block image">
+                                <img src="assets/images/blogs/blog3.jpg" alt="blog-image">
+                            </a>
+                            <div class="content">
+                                <ul class="meta ps-0 list-unstyled">
+                                    <li class="d-inline-block">
+                                        By:
+                                        <a routerLink="/blog">
+                                            Jove
+                                        </a>
+                                    </li>
+                                    <li class="d-inline-block">
+                                        23 Oct, 2023
+                                    </li>
+                                </ul>
+                                <h3 class="fw-semibold">
+                                    <a routerLink="/blog-details">
+                                        Prioritize tasks and manage your time effectively
+                                    </a>
+                                </h3>
+                                <p>
+                                    Enim urna pulvinar orci leo viverra. A augue nisl convallis amet pellentesque sollicitudin. Commodo volutpat euismod nec duis iaculis mattis quam diam. Sollicitudin eu mi aliquet at tellus sed pellentesque. Id non in pharetra massa urna ullamcorper tempor.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination-area">
+                    <a routerLink="/blog" class="next page-numbers">
+                        <i class="ri-arrow-left-line"></i>
+                    </a>
+                    <span class="page-numbers current" aria-current="page">1</span>
+                    <a routerLink="/blog" class="page-numbers">2</a>
+                    <a routerLink="/blog" class="page-numbers">3</a>
+                    <a routerLink="/blog" class="next page-numbers">
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <app-blog-sidebar></app-blog-sidebar>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-subscribe></app-subscribe>
+
+<app-footer></app-footer>
+
+<ngx-scrolltop></ngx-scrolltop>

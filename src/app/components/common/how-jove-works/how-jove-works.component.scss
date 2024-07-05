@@ -1,0 +1,201 @@
+.how-jove-works-area {
+    .row {
+        .col {
+            flex: 0 0 auto;
+            width: 20%;
+
+            &:last-child {
+                .box {
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+            &:nth-child(2), &:nth-child(4) {
+                .box {
+                    &::before {
+                        transform: scaleY(-1);
+                    }
+                }
+            }
+        }
+    }
+    &.bg-color {
+        background-color: #325343;
+
+        .section-title {
+            h2 {
+                color: var(--whiteColor);
+            }
+        }
+        .box {
+            .icon {
+                background-color: #3a7157;
+                border: none;
+            }
+            .number {
+                color: var(--headingColor);
+                background-color: var(--secondaryColor);
+            }
+            h3 {
+                color: var(--whiteColor);
+            }
+            &::before {
+                background: {
+                    image: url(../../../../assets/images/icons/right-arrow-2.png);
+                };
+            }
+            &:hover {
+                .icon {
+                    background-color: var(--primaryColor);
+                }
+            }
+        }
+    }
+}
+.box {
+    margin-bottom: 25px;
+
+    .icon {
+        width: 150px;
+        height: 150px;
+        line-height: 140px;
+        border-radius: 50%;
+        transition: var(--transition);
+        background-color: var(--whiteColor);
+        border: 1px solid var(--borderColor);
+        margin: {
+            left: auto;
+            right: auto;
+        };
+    }
+    .number {
+        width: 50px;
+        height: 50px;
+        margin-top: -25px;
+        line-height: 50px;
+        border-radius: 50%;
+        color: var(--whiteColor);
+        background-color: var(--primaryColor);
+        margin: {
+            left: auto;
+            right: auto;
+        };
+    }
+    h3 {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    &::before {
+        top: 75px;
+        content: '';
+        width: 102px;
+        height: 14px;
+        right: -63.8px;
+        position: absolute;
+        background: {
+            image: url(../../../../assets/images/icons/right-arrow.png);
+            position: center center;
+            repeat: no-repeat;
+            size: cover;
+        };
+    }
+    &:hover {
+        .icon {
+            border-color: var(--primaryColor);
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .how-jove-works-area {
+        .row {
+            .col {
+                width: 50%;
+            }
+        }
+    }
+    .box {
+        .icon {
+            width: 120px;
+            height: 120px;
+            line-height: 105px;
+        }
+        .number {
+            width: 40px;
+            height: 40px;
+            margin-top: -20px;
+            line-height: 40px;
+        }
+        h3 {
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        &::before {
+            display: none;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .how-jove-works-area {
+        .row {
+            .col {
+                width: 33.3333333333%;
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .box {
+        .icon {
+            width: 120px;
+            height: 120px;
+            line-height: 110px;
+        }
+        .number {
+            width: 40px;
+            height: 40px;
+            margin-top: -20px;
+            line-height: 40px;
+        }
+        h3 {
+            margin-top: 15px;
+        }
+        &::before {
+            display: none;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .box {
+        .icon {
+            width: 140px;
+            height: 140px;
+            line-height: 130px;
+        }
+        .number {
+            margin-top: -20px;
+        }
+        h3 {
+            margin-top: 18px;
+        }
+        &::before {
+            display: none;
+        }
+    }
+
+}

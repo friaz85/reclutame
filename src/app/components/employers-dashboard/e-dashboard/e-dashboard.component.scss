@@ -1,0 +1,625 @@
+// Breadcrumb Title
+.breadcrumb-title {
+    margin-bottom: 25px;
+    
+    h1 {
+        font-size: 24px;
+    }
+}
+
+// Stats
+.single-stats-box {
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    background-color: #e4f4ea;
+
+    .icon {
+        width: 80px;
+        height: 80px;
+        font-size: 35px;
+        text-align: center;
+        border-radius: 50%;
+        position: relative;
+        margin-right: 18px;
+        color: var(--primaryColor);
+        transition: var(--transition);
+        background-color: var(--whiteColor);
+
+        i {
+            left: 0;
+            right: 0;
+            top: 50%;
+            position: absolute;
+            transform: translateY(-50%);
+        }
+    }
+    h3 {
+        font-size: 22px;
+        margin-bottom: 2px;
+    }
+    &:hover {
+        .icon {
+            color: var(--whiteColor);
+            background-color: var(--primaryColor);
+        }
+    }
+}
+.col-lg-3 {
+    &:nth-child(2) {
+        .single-stats-box {
+            background-color: #e9e7e7;
+        }
+    }
+    &:nth-child(3) {
+        .single-stats-box {
+            background-color: #f6ebe7;
+        }
+    }
+    &:nth-child(4) {
+        .single-stats-box {
+            background-color: #f2f2f2;
+        }
+    }
+}
+
+// Card
+.jove-card {
+    background-color: var(--whiteColor);
+    margin-bottom: 25px;
+    border-radius: 15px;
+    padding: 30px;
+
+    .title {
+        font-size: 18px;
+        margin-bottom: 25px;
+        border-bottom: 1px solid var(--borderColor);
+        padding: {
+            left: 30px;
+            right: 30px;
+            bottom: 12px;
+        };
+        margin: {
+            left: -30px;
+            right: -30px;
+        };
+    }
+    .notifications-list {
+        li {
+            margin-bottom: 15px;
+            padding: {
+                top: 6px;
+                left: 44px;
+                bottom: 6px;
+            };
+            .icon {
+                left: 0;
+                top: 50%;
+                width: 35px;
+                height: 35px;
+                position: absolute;
+                border-radius: 50%;
+                text-align: center;
+                color: var(--primaryColor);
+                background-color: #e4f4ea;
+                transform: translateY(-50%);
+                transition: var(--transition);
+
+                i {
+                    left: 0;
+                    right: 0;
+                    top: 50%;
+                    margin-top: -1.4px;
+                    position: absolute;
+                    transform: translateY(-50%);
+                }
+            }
+            span {
+                color: var(--headingColor);
+                font-size: 15.3px;
+
+                &.color {
+                    color: var(--primaryColor);
+                    font-size: var(--fontSize);
+                }
+            }
+            &:hover {
+                .icon {
+                    color: var(--whiteColor);
+                    background-color: var(--primaryColor);
+                }
+            }
+            &.color {
+                .icon {
+                    color: var(--secondaryColor);
+                    background-color: #f6ebe7;
+                }
+                span {
+                    &.color {
+                        color: var(--secondaryColor);
+                    }
+                }
+                &:hover {
+                    .icon {
+                        color: var(--whiteColor);
+                        background-color: var(--secondaryColor);
+                    }
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .recent-applicants {
+        margin-bottom: -25px;
+    }
+    .single-candidate-box {
+        padding: 20px;
+        margin-bottom: 25px;
+        border-radius: 15px;
+        background-color: var(--whiteColor);
+        border: 1px solid var(--borderColor);
+    
+        .image {
+            max-width: 90px;
+        }
+        .content {
+            margin-left: 15px;
+    
+            h3 {
+                font-size: 17px;
+                margin-bottom: 6px;
+            }
+            .designation {
+                margin-bottom: 6px;
+            }
+            .location {
+                span {
+                    color: var(--primaryColor);
+                }
+            }
+        }
+        .view-profile {
+            span {
+                margin-right: 15px;
+            }
+            ul {
+                li {
+                    margin: {
+                        left: 2px;
+                        right: 2px;
+                    };
+                    button {
+                        padding: 0;
+                        width: 32px;
+                        height: 32px;
+                        border: none;
+                        cursor: pointer;
+                        font-size: 16px;
+                        position: relative;
+                        color: var(--primaryColor);
+                        background-color: #f5f9fc;
+                        transition: var(--transition);
+
+                        i {
+                            left: 0;
+                            right: 0;
+                            top: 50%;
+                            position: absolute;
+                            transform: translateY(-50%);
+                        }
+                        &:hover {
+                            color: var(--whiteColor);
+                            background-color: var(--primaryColor);
+                        }
+                    }
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+    .chart {
+        margin: {
+            top: -12px;
+            bottom: -13px;
+        };
+    }
+}
+::ng-deep {
+    .chart {
+        .apexcharts-text {
+            tspan {
+                font-family: var(--fontFamily);
+                font-size: 15px;
+            }
+        }
+        .apexcharts-tooltip {
+            &.apexcharts-theme-light {
+                .apexcharts-tooltip-title {
+                    padding: 5px 10px;
+                    color: var(--headingColor);
+                    background-color: #f5f9fc;
+                    border-color: var(--borderColor);
+                    font: {
+                        size: 15px !important;
+                        family: var(--fontFamily) !important;
+                    };
+                }
+            }
+        }
+        .apexcharts-tooltip * {
+            font: {
+                size: 14px;
+                family: var(--fontFamily);
+            };
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    // Breadcrumb Title
+    .breadcrumb-title {
+        h1 {
+            font-size: 20px;
+        }
+    }
+
+    // Stats
+    .single-stats-box {
+        padding: 20px 15px;
+        border-radius: 5px;
+        text-align: center;
+    
+        .icon {
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+            margin: {
+                left: auto;
+                right: auto;
+                bottom: 15px;
+            };
+        }
+        h3 {
+            font-size: 18px;
+            margin-bottom: 2px;
+        }
+    }
+
+    // Card
+    .jove-card {
+        border-radius: 5px;
+        padding: 20px 15px;
+    
+        .title {
+            font-size: 16px;
+            margin-bottom: 15px;
+            padding: {
+                left: 15px;
+                right: 15px;
+                bottom: 10px;
+            };
+            margin: {
+                left: -15px;
+                right: -15px;
+            };
+        }
+        .notifications-list {
+            li {
+                max-width: 260px;
+                margin-bottom: 12px;
+                padding: {
+                    top: 0;
+                    bottom: 0;
+                    left: 42px;
+                };
+                .icon {
+                    width: 32px;
+                    height: 32px;
+    
+                    i {
+                        margin-top: 0;
+                    }
+                }
+                span {
+                    font-size: 13.7px;
+
+                    &.color {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .recent-applicants {
+            margin-bottom: -15px;
+        }
+        .single-candidate-box {
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 15px;
+        
+            .image {
+                margin: {
+                    left: auto;
+                    right: auto;
+                };
+            }
+            .content {
+                margin: {
+                    left: 0;
+                    top: 15px;
+                };
+                h3 {
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
+                .designation {
+                    margin-bottom: 5px;
+                }
+            }
+            .view-profile {
+                span {
+                    margin: {
+                        bottom: 7px;
+                        top: 5px;
+                        right: 0;
+                    };
+                }
+                ul {
+                    li {
+                        button {
+                            width: 34px;
+                            height: 34px;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+        .chart {
+            margin: {
+                left: -10px;
+                bottom: -20px;
+            };
+        }
+    }
+    ::ng-deep {
+        .chart {
+            .apexcharts-text {
+                tspan {
+                    font-size: 14px;
+                }
+            }
+            .apexcharts-tooltip {
+                &.apexcharts-theme-light {
+                    .apexcharts-tooltip-title {
+                        font-size: 14px !important;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    // Card
+    .jove-card {
+        .notifications-list {
+            li {
+                max-width: 100%;
+                padding: {
+                    top: 5px;
+                    bottom: 5px;
+                };
+            }
+        }
+        .single-candidate-box {
+            text-align: start;
+        
+            .image {
+                margin: {
+                    left: auto;
+                    right: auto;
+                };
+            }
+            .content {
+                margin: {
+                    left: 15px;
+                    top: 0;
+                };
+            }
+            .view-profile {
+                span {
+                    margin: {
+                        top: 0;
+                        bottom: 0;
+                        right: 10px;
+                    };
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    // Breadcrumb Title
+    .breadcrumb-title {
+        h1 {
+            font-size: 22px;
+        }
+    }
+
+    // Stats
+    .single-stats-box {
+        padding: 25px;
+        border-radius: 10px;
+    
+        .icon {
+            width: 70px;
+            height: 70px;
+            font-size: 32px;
+            margin-right: 15px;
+        }
+        h3 {
+            font-size: 20px;
+            margin-bottom: 2px;
+        }
+    }
+
+    // Card
+    .jove-card {
+        border-radius: 10px;
+        padding: 25px;
+    
+        .title {
+            font-size: 18px;
+            padding: {
+                left: 25px;
+                right: 25px;
+                bottom: 12px;
+            };
+            margin: {
+                left: -25px;
+                right: -25px;
+            };
+        }
+        .notifications-list {
+            li {
+                padding: {
+                    top: 5px;
+                    bottom: 5px;
+                };
+                span {
+                    font-size: 15px;
+    
+                    &.color {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+        .single-candidate-box {
+            padding: 20px;
+            border-radius: 10px;
+        
+            .content {
+                h3 {
+                    font-size: 16px;
+                }
+            }
+        }
+        .chart {
+            margin: {
+                bottom: -15px;
+                left: -15px;
+            };
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    // Stats
+    .single-stats-box {
+        padding: 25px;
+    
+        .icon {
+            width: 70px;
+            height: 70px;
+            font-size: 32px;
+            margin-right: 15px;
+        }
+    }
+
+    // Card
+    .jove-card {
+        padding: 25px;
+    
+        .title {
+            padding: {
+                left: 25px;
+                right: 25px;
+            };
+            margin: {
+                left: -25px;
+                right: -25px;
+            };
+        }
+        .notifications-list {
+            li {
+                padding: {
+                    top: 5px;
+                    bottom: 5px;
+                };
+            }
+        }
+        .chart {
+            margin: {
+                left: -15px;
+                bottom: -18px;
+            };
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    // Card
+    .jove-card {
+        .single-candidate-box {
+            padding: 25px;
+        
+            .image {
+                max-width: 100px;
+            }
+            .content {
+                margin-left: 18px;
+        
+                h3 {
+                    font-size: 18px;
+                }
+            }
+            .view-profile {
+                span {
+                    margin-right: 25px;
+                }
+                ul {
+                    li {
+                        margin: {
+                            left: 4px;
+                            right: 4px;
+                        };
+                        button {
+                            width: 35px;
+                            height: 35px;
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

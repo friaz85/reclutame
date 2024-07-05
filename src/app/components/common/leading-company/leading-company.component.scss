@@ -1,0 +1,208 @@
+.leading-company-content {
+    position: relative;
+    z-index: 1;
+
+    .box {
+        background-color: #202037;
+        margin-right: -200px;
+        border-radius: 15px;
+        padding: 65px 85px;
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 14px;
+            color: var(--whiteColor);
+        }
+        p {
+            color: #e0e6e9;
+        }
+        .features-list {
+            margin-top: -7px;
+
+            span {
+                color: var(--whiteColor);
+                padding-left: 27px;
+                margin-top: 15px;
+
+                i {
+                    top: 50%;
+                    left: -3px;
+                    font-size: 22px;
+                    position: absolute;
+                    color: var(--primaryColor);
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+    .content {
+        padding-left: 85px;
+        margin-top: 40px;
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 13px;
+        }
+    }
+}
+.leading-company-image {
+    border-radius: 15px;
+
+    img {
+        border-radius: 15px;
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .leading-company-content {
+        margin-bottom: 25px;
+
+        .box {
+            margin-right: 0;
+            border-radius: 5px;
+            padding: 30px 20px;
+    
+            h2 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            .features-list {
+                margin-top: -10px;
+    
+                span {
+                    padding-left: 23px;
+                    margin-top: 12px;
+    
+                    i {
+                        left: -2px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        .content {
+            padding-left: 0;
+            margin-top: 25px;
+    
+            h2 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .leading-company-image {
+        border-radius: 5px;
+    
+        img {
+            border-radius: 5px;
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .leading-company-content {
+        margin-bottom: 25px;
+
+        .box {
+            margin-right: 0;
+            padding: 35px 30px;
+            border-radius: 10px;
+    
+            h2 {
+                font-size: 22px;
+                margin-bottom: 12px;
+            }
+            .features-list {
+                margin-top: -7px;
+    
+                span {
+                    padding-left: 24px;
+                    margin-top: 12px;
+    
+                    i {
+                        left: -2px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        .content {
+            padding-left: 0;
+            margin-top: 25px;
+    
+            h2 {
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .leading-company-image {
+        border-radius: 10px;
+    
+        img {
+            border-radius: 10px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .leading-company-content {
+        .box {
+            margin-right: -200px;
+            padding: 35px 40px;
+    
+            h2 {
+                font-size: 24px;
+                margin-bottom: 12px;
+            }
+            .features-list {
+                margin-top: -8px;
+    
+                span {
+                    padding-left: 25px;
+                    margin-top: 12px;
+                }
+            }
+        }
+        .content {
+            padding-left: 0;
+            margin-top: 25px;
+    
+            h2 {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .leading-company-content {
+        .box {
+            padding: 50px 65px;
+    
+            .features-list {
+                margin-top: -7px;
+    
+                span {
+                    margin-top: 13px;
+                }
+            }
+        }
+        .content {
+            padding-left: 35px;
+            margin-top: 35px;
+        }
+    }
+
+}

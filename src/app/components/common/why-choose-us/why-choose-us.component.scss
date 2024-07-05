@@ -1,0 +1,206 @@
+.why-choose-us-content {
+    padding-left: 350px;
+    margin-right: -110px;
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 13px;
+    }
+    p {
+        font-size: 17px;
+    }
+    h4 {
+        font-size: 18px;
+        margin: {
+            top: 28px;
+            bottom: 20px;
+        };
+    }
+    .features-list {
+        margin-bottom: 35px;
+
+        li {
+            margin-bottom: 11px;
+            padding-left: 27px;
+            font-size: 17px;
+
+            i {
+                top: 50%;
+                left: -1px;
+                font-size: 22px;
+                position: absolute;
+                color: var(--secondaryColor);
+                transform: translateY(-50%);
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+.shape {
+    top: 0;
+    left: 0;
+    z-index: -1;
+    position: absolute;
+    max-width: 383.8px;
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .why-choose-us-content {
+        padding-left: 0;
+        margin: {
+            right: 0;
+            bottom: 25px;
+        };
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 14px;
+        }
+        h4 {
+            font-size: 16px;
+            margin: {
+                top: 20px;
+                bottom: 15px;
+            };
+        }
+        .features-list {
+            margin-bottom: 20px;
+
+            li {
+                margin-bottom: 10px;
+                padding-left: 24px;
+                font-size: 14px;
+
+                i {
+                    left: 0;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .shape {
+        display: none;
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .why-choose-us-content {
+        padding-left: 0;
+        margin: {
+            bottom: 25px;
+            right: 0;
+        };
+        h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 15px;
+        }
+        h4 {
+            font-size: 17px;
+            margin: {
+                top: 22px;
+                bottom: 15px;
+            };
+        }
+        .features-list {
+            margin-bottom: 25px;
+
+            li {
+                margin-bottom: 10px;
+                padding-left: 25px;
+                font-size: 15px;
+
+                i {
+                    font-size: 21px;
+                }
+            }
+        }
+    }
+    .shape {
+        display: none;
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .why-choose-us-content {
+        padding-left: 0;
+    
+        h2 {
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 16px;
+        }
+        h4 {
+            font-size: 17px;
+            margin: {
+                top: 25px;
+                bottom: 15px;
+            };
+        }
+        .features-list {
+            margin-bottom: 20px;
+
+            li {
+                margin-bottom: 10px;
+                font-size: 16px;
+            }
+        }
+    }
+    .shape {
+        display: none;
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .why-choose-us-content {
+        padding-left: 330px;
+        margin-right: -110px;
+    
+        h2 {
+            margin-bottom: 12px;
+        }
+        p {
+            font-size: 16px;
+        }
+        .features-list {
+            margin-bottom: 25px;
+
+            li {
+                margin-bottom: 10px;
+                font-size: 16px;
+            }
+        }
+    }
+    .shape {
+        max-width: 348.7px;
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    .why-choose-us-content {
+        padding-left: 220px;
+        margin-right: 0;
+    }
+
+}

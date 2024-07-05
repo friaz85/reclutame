@@ -1,0 +1,531 @@
+<app-navbar></app-navbar>
+
+<!-- Page Banner -->
+<div class="page-banner-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 col-md-12">
+                <h1>
+                    There are 58,612 jobs for you
+                </h1>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <ul class="ps-0 mb-0 list-unstyled">
+                    <li class="d-inline-block position-relative">
+                        <a routerLink="/">
+                            Home
+                        </a>
+                    </li>
+                    <li class="d-inline-block position-relative">
+                        Jobs Listing
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Banner -->
+
+<!-- Jobs -->
+<div class="jobs-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <form class="jobs-search-form">
+                    <div class="row mx-0 align-items-center">
+                        <div class="col-4 px-0">
+                            <div class="form-group position-relative">
+                                <i class="ri-search-line"></i>
+                                <input type="text" class="form-control" placeholder="Job title, key words or company">
+                            </div>
+                        </div>
+                        <div class="col-4 px-0">
+                            <div class="form-group position-relative">
+                                <i class="ri-map-pin-line"></i>
+                                <select class="form-select">
+                                    <option selected>All Location</option>
+                                    <option value="1">Tokyo, Japan</option>
+                                    <option value="2">New York, USA</option>
+                                    <option value="3">London, England</option>
+                                    <option value="4">Beijing, China</option>
+                                    <option value="5">Toronto, Canada</option>
+                                    <option value="6">Chicago, USA</option>
+                                    <option value="7">Hong Kong, China</option>
+                                    <option value="8">Los Angeles, USA</option>
+                                    <option value="9">São Paulo, Brazil</option>
+                                    <option value="10">Seoul, South Korea</option>
+                                    <option value="11">Barcelona, Spain</option>
+                                    <option value="12">Istanbul, Turkey</option>
+                                    <option value="13">Osaka, Japan</option>
+                                    <option value="14">Copenhagen, Denmark</option>
+                                    <option value="15">Madrid, Spain</option>
+                                    <option value="16">Bangkok, Thailand</option>
+                                    <option value="17">Dubai, UAE</option>
+                                    <option value="18">Melbourne, Australia</option>
+                                    <option value="19">Amsterdam, Netherlands</option>
+                                    <option value="20">Paris, France</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-4 px-0">
+                            <button type="submit" class="default-btn">
+                                Search Jobs
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div class="jove-grid-sorting row align-items-center">
+                    <div class="col-lg-6 col-md-6 result-count">
+                        <p>
+                            Showing <span class="count">1 – 10</span> of 58,612 results
+                        </p>
+                    </div>
+                    <div class="col-lg-6 col-md-6 ordering">
+                        <div class="select-box">
+                            <label>Sort By:</label>
+                            <select class="form-select">
+                                <option selected="">Default</option>
+                                <option value="1">Popularity</option>
+                                <option value="2">Latest</option>
+                                <option value="3">Price: low to high</option>
+                                <option value="4">Price: high to low</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="assets/images/companies/company8.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="fw-semibold">
+                                            <a routerLink="/job-details">
+                                                Mechanical Engineer
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Topoint in London
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Full Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span class="fw-semibold">Salary:</span>
+                                    <span>$1K - $3K</span>
+                                    /monthly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span class="fw-semibold">Deadline:</span>
+                                    Oct 30, 2023
+                                    <span>(20 mins ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="assets/images/companies/company9.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="fw-semibold">
+                                            <a routerLink="/job-details">
+                                                Senior Support Engineer
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Zayper in Barcelona
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Part Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span class="fw-semibold">Salary:</span>
+                                    <span>$10 - $50</span>
+                                    /hourly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span class="fw-semibold">Deadline:</span>
+                                    Nov 10, 2023
+                                    <span>(1 day ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="assets/images/companies/company10.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="fw-semibold">
+                                            <a routerLink="/job-details">
+                                                Senior C# / .NET Developer
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Doca in São Paulo
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Full Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span class="fw-semibold">Salary:</span>
+                                    <span>$6K - $7K</span>
+                                    /monthly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span class="fw-semibold">Deadline:</span>
+                                    Nov 11, 2023
+                                    <span>(2 days ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="assets/images/companies/company11.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="fw-semibold">
+                                            <a routerLink="/job-details">
+                                                Senior Project Manager
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Techstar in Chicago
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Full Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span class="fw-semibold">Salary:</span>
+                                    <span>$2K - $3K</span>
+                                    /monthly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span class="fw-semibold">Deadline:</span>
+                                    Nov 12, 2023
+                                    <span>(3 days ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="assets/images/companies/company12.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="fw-semibold">
+                                            <a routerLink="/job-details">
+                                                Assistant Manager
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Mund in Seoul
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Full Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span class="fw-semibold">Salary:</span>
+                                    <span>$11K - $23K</span>
+                                    /monthly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span class="fw-semibold">Deadline:</span>
+                                    Nov 13, 2023
+                                    <span>(4 days ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="assets/images/companies/company13.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="fw-semibold">
+                                            <a routerLink="/job-details">
+                                                Junior Banker
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Finix in Hong Kong
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Full Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span class="fw-semibold">Salary:</span>
+                                    <span>$50 - $100</span>
+                                    /hourly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span class="fw-semibold">Deadline:</span>
+                                    Nov 14, 2023
+                                    <span>(5 days ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="assets/images/companies/company14.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="fw-semibold">
+                                            <a routerLink="/job-details">
+                                                Founder Associate
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Aoriv in Toronto
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Full Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span class="fw-semibold">Salary:</span>
+                                    <span>$10K - $33K</span>
+                                    /monthly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span class="fw-semibold">Deadline:</span>
+                                    Nov 15, 2023
+                                    <span>(6 days ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="assets/images/companies/company15.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="fw-semibold">
+                                            <a routerLink="/job-details">
+                                                Marketing Executive
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Dking in Beijing
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Full Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span class="fw-semibold">Salary:</span>
+                                    <span>$3K - $5K</span>
+                                    /monthly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span class="fw-semibold">Deadline:</span>
+                                    Nov 16, 2023
+                                    <span>(7 days ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="assets/images/companies/company16.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="fw-semibold">
+                                            <a routerLink="/job-details">
+                                                Digital Marketing Manager
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Oxygen in New York
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Full Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span class="fw-semibold">Salary:</span>
+                                    <span>$2K - $2.5K</span>
+                                    /monthly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span class="fw-semibold">Deadline:</span>
+                                    Nov 17, 2023
+                                    <span>(8 days ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="assets/images/companies/company17.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="fw-semibold">
+                                            <a routerLink="/job-details">
+                                                Technical SEO Manager
+                                            </a>
+                                        </h3>
+                                        <span class="location d-block">
+                                            Affort in Tokyo
+                                        </span>
+                                        <span class="job-type d-block">
+                                            Full Time
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <a routerLink="/job-details" class="default-btn">
+                                        Apply
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span class="fw-semibold">Salary:</span>
+                                    <span>$15 - $25</span>
+                                    /hourly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span class="fw-semibold">Deadline:</span>
+                                    Nov 18, 2023
+                                    <span>(9 days ago)</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination-area">
+                    <a routerLink="/jobs-listing" class="next page-numbers">
+                        <i class="ri-arrow-left-line"></i>
+                    </a>
+                    <span class="page-numbers current" aria-current="page">1</span>
+                    <a routerLink="/jobs-listing" class="page-numbers">2</a>
+                    <a routerLink="/jobs-listing" class="page-numbers">3</a>
+                    <a routerLink="/jobs-listing" class="next page-numbers">
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <app-jobs-sidebar></app-jobs-sidebar>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-subscribe></app-subscribe>
+
+<app-footer></app-footer>
+
+<ngx-scrolltop></ngx-scrolltop>

@@ -1,0 +1,166 @@
+<div
+    class="talented-experts-area pt-100 pb-75"
+    [ngClass]="{'bg-eaf0f3': router.url === '/index-3'}"
+>
+    <div class="container">
+        <div class="section-title text-start">
+            <h2 class="mb-0">
+                Hire the best-talented experts
+            </h2>
+            <a routerLink="/candidates" class="link-btn d-inline-block fw-medium">
+                Explore all experts <i class="ri-arrow-right-up-line"></i>
+            </a>
+        </div>
+
+        <!-- Default Style -->
+        <div
+            class="row justify-content-center"
+            [ngClass]="{'d-none': router.url === '/index-3'}"
+        >
+            <div class="col-lg-3 col-sm-6" data-aos="fade-in" data-aos-duration="500">
+                <div class="single-expert-box position-relative z-1 text-center">
+                    <div class="image">
+                        <img src="assets/images/experts/expert1.png" class="rounded-circle" alt="expert-image">
+                    </div>
+                    <h3 class="fw-semibold">
+                        <a routerLink="/">
+                            Charles Albers
+                        </a>
+                    </h3>
+                    <span class="d-block">
+                        Software Engineer
+                    </span>
+                    <img src="assets/images/experts/expert-shape.png" class="shape" alt="expert-shape">
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-aos="fade-in" data-aos-duration="500" data-aos-delay="200">
+                <div class="single-expert-box position-relative z-1 text-center">
+                    <div class="image">
+                        <img src="assets/images/experts/expert2.png" class="rounded-circle" alt="expert-image">
+                    </div>
+                    <h3 class="fw-semibold">
+                        <a routerLink="/">
+                            Debora Caperton
+                        </a>
+                    </h3>
+                    <span class="d-block">
+                        Business Developer
+                    </span>
+                    <img src="assets/images/experts/expert-shape.png" class="shape" alt="expert-shape">
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-aos="fade-in" data-aos-duration="500" data-aos-delay="300">
+                <div class="single-expert-box position-relative z-1 text-center">
+                    <div class="image">
+                        <img src="assets/images/experts/expert3.png" class="rounded-circle" alt="expert-image">
+                    </div>
+                    <h3 class="fw-semibold">
+                        <a routerLink="/">
+                            Brandon Tomlinson
+                        </a>
+                    </h3>
+                    <span class="d-block">
+                        Web Design
+                    </span>
+                    <img src="assets/images/experts/expert-shape.png" class="shape" alt="expert-shape">
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-aos="fade-in" data-aos-duration="500" data-aos-delay="400">
+                <div class="single-expert-box position-relative z-1 text-center">
+                    <div class="image">
+                        <img src="assets/images/experts/expert4.png" class="rounded-circle" alt="expert-image">
+                    </div>
+                    <h3 class="fw-semibold">
+                        <a routerLink="/">
+                            Helen Jackson
+                        </a>
+                    </h3>
+                    <span class="d-block">
+                        Senior Executive
+                    </span>
+                    <img src="assets/images/experts/expert-shape.png" class="shape" alt="expert-shape">
+                </div>
+            </div>
+        </div>
+
+        <!-- Only for Home Demo - 3 -->
+        <div
+            class="row justify-content-center"
+            *ngIf="router.url === '/index-3'"
+        >
+            <div class="col-lg-3 col-sm-6" data-aos="fade-in" data-aos-duration="500">
+                <div class="single-expert-member text-center">
+                    <img src="assets/images/experts/expert5.jpg" alt="expert-image">
+                    <div class="content">
+                        <h3 class="fw-semibold">
+                            <a routerLink="/">
+                                Charles Albers
+                            </a>
+                        </h3>
+                        <span class="d-block">
+                            Software Engineer
+                        </span>
+                        <a routerLink="/" class="link-btn">
+                            View Profile <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-aos="fade-in" data-aos-duration="500" data-aos-delay="200">
+                <div class="single-expert-member text-center">
+                    <img src="assets/images/experts/expert6.jpg" alt="expert-image">
+                    <div class="content">
+                        <h3 class="fw-semibold">
+                            <a routerLink="/">
+                                Debora Caperton
+                            </a>
+                        </h3>
+                        <span class="d-block">
+                            Business Developer
+                        </span>
+                        <a routerLink="/" class="link-btn">
+                            View Profile <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-aos="fade-in" data-aos-duration="500" data-aos-delay="300">
+                <div class="single-expert-member text-center">
+                    <img src="assets/images/experts/expert7.jpg" alt="expert-image">
+                    <div class="content">
+                        <h3 class="fw-semibold">
+                            <a routerLink="/">
+                                Brandon Tomlinson
+                            </a>
+                        </h3>
+                        <span class="d-block">
+                            Web Design
+                        </span>
+                        <a routerLink="/" class="link-btn">
+                            View Profile <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6" data-aos="fade-in" data-aos-duration="500" data-aos-delay="400">
+                <div class="single-expert-member text-center">
+                    <img src="assets/images/experts/expert8.jpg" alt="expert-image">
+                    <div class="content">
+                        <h3 class="fw-semibold">
+                            <a routerLink="/">
+                                Helen Jackson
+                            </a>
+                        </h3>
+                        <span class="d-block">
+                            Senior Executive
+                        </span>
+                        <a routerLink="/" class="link-btn">
+                            View Profile <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

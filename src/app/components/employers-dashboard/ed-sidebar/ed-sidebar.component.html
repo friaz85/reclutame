@@ -1,0 +1,83 @@
+<div
+    class="sidebar-area"
+    [class.active]="classApplied"
+>
+    <ul class="ps-0 mb-0 list-unstyled">
+        <li>
+            <a routerLink="/dashboard" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-dashboard-line"></i>
+                Dashboard
+            </a>
+        </li>
+        <li>
+            <a routerLink="/dashboard/company-profile" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-user-line"></i>
+                Company Profile
+            </a>
+        </li>
+        <li>
+            <a routerLink="/dashboard/post-a-new-job" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-send-plane-2-line"></i>
+                Post A New Job
+            </a>
+        </li>
+        <li>
+            <a routerLink="/dashboard/manage-jobs" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-briefcase-line"></i>
+                Manage Jobs
+            </a>
+        </li>
+        <li>
+            <a routerLink="/dashboard/all-applicants" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-file-list-3-line"></i>
+                All Applicants
+            </a>
+        </li>
+        <li>
+            <a routerLink="/dashboard/resumes" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-bookmark-line"></i>
+                Resumes
+            </a>
+        </li>
+        <li>
+            <a routerLink="/dashboard/message" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-chat-2-line"></i>
+                Message
+            </a>
+        </li>
+        <li>
+            <a routerLink="/dashboard/change-password" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-lock-2-line"></i>
+                Change Password
+            </a>
+        </li>
+        <li>
+            <a routerLink="/dashboard/company-profile" class="d-block position-relative">
+                <i class="ri-user-3-line"></i>
+                View Profile
+            </a>
+        </li>
+        <li>
+            <a routerLink="/" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-delete-bin-line"></i>
+                Delete Account
+            </a>
+        </li>
+        <li>
+            <a routerLink="/" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-logout-box-line"></i>
+                Logout
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- Sidebar Button -->
+<div
+    class="sidebar-btn d-xl-none"
+    [class.active]="classApplied"
+>
+    <button (click)="toggleClass()">
+        <span>Menus</span>
+    </button>
+</div>

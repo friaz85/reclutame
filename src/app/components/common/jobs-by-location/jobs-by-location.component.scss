@@ -1,0 +1,222 @@
+.jobs-by-location-area {
+    .container-fluid {
+        left: calc((100% - 1320px)/2);
+        position: relative;
+    }
+}
+.job-item {
+    .image {
+        border-radius: 15px;
+        margin-bottom: 25px;
+        overflow: hidden;
+
+        img {
+            border-radius: 15px;
+            transition: var(--transition);
+        }
+    }
+    h3 {
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+    span {
+        span {
+            color: var(--primaryColor);
+        }
+    }
+    &:hover {
+        .image {
+            img {
+                transform: scale(1.08);
+            }
+        }
+    }
+}
+::ng-deep {
+    .jobsByLocationSlides {
+        .owl-theme {
+            .owl-nav {
+                top: -77px;
+                right: 10.4%;
+                margin-top: 0;
+                position: absolute;
+
+                [class*=owl-] {
+                    padding: 0;
+                    width: 60px;
+                    height: 35px;
+                    margin: 0 5px;
+                    font-size: 20px;
+                    border-radius: 50px;
+                    color: var(--headingColor);
+                    background-color: #f8f8fb;
+                    transition: var(--transition);
+                    border: 1px solid var(--borderColor);
+
+                    &:hover {
+                        background-color: var(--primaryColor);
+                        border-color: var(--primaryColor);
+                        color: var(--whiteColor);
+                    }
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .jobs-by-location-area {
+        .container-fluid {
+            left: 0;
+        }
+    }
+    .job-item {
+        .image {
+            border-radius: 5px;
+            margin-bottom: 18px;
+    
+            img {
+                border-radius: 5px;
+            }
+        }
+        h3 {
+            font-size: 16px;
+        }
+    }
+    ::ng-deep {
+        .jobsByLocationSlides {
+            .owl-theme {
+                .owl-nav {
+                    top: -52px;
+                    right: 0;
+    
+                    [class*=owl-] {
+                        width: 50px;
+                        height: 30px;
+                        line-height: 27px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {
+
+    .jobs-by-location-area {
+        .container-fluid {
+            max-width: 540px;
+        }
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .jobs-by-location-area {
+        .container-fluid {
+            left: 0;
+            max-width: 720px;
+        }
+    }
+    .job-item {
+        .image {
+            border-radius: 10px;
+            margin-bottom: 20px;
+    
+            img {
+                border-radius: 10px;
+            }
+        }
+    }
+    ::ng-deep {
+        .jobsByLocationSlides {
+            .owl-theme {
+                .owl-nav {
+                    top: -65px;
+                    right: 0;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .jobs-by-location-area {
+        .container-fluid {
+            left: 0;
+            max-width: 960px;
+        }
+    }
+    .job-item {
+        .image {
+            margin-bottom: 20px;
+        }
+    }
+    ::ng-deep {
+        .jobsByLocationSlides {
+            .owl-theme {
+                .owl-nav {
+                    top: -72px;
+                    right: 0;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .jobs-by-location-area {
+        .container-fluid {
+            left: calc((100% - 1140px)/2);
+            position: relative;
+        }
+    }
+    .job-item {
+        .image {
+            margin-bottom: 20px;
+        }
+    }
+    ::ng-deep {
+        .jobsByLocationSlides {
+            .owl-theme {
+                .owl-nav {
+                    right: 5.3%;
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    ::ng-deep {
+        .jobsByLocationSlides {
+            .owl-theme {
+                .owl-nav {
+                    right: 31.7%;
+                }
+            }
+        }
+    }
+
+}

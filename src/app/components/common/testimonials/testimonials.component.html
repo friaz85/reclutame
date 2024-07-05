@@ -1,0 +1,733 @@
+<!-- Default -->
+<div
+    class="testimonials-area pb-100"
+    [ngClass]="{'d-none': router.url === '/index-2' || router.url === '/index-3'}"
+>
+    <div class="container">
+        <div class="section-title text-start">
+            <h2 class="mb-0">
+                What they say about us
+            </h2>
+        </div>
+        <ul class="nav nav-tabs d-block border-0">
+            <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab1'}">
+                <button type="button" class="nav-link fw-semibold position-relative shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab1')">
+                    Clients
+                </button>
+            </li>
+            <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab2'}">
+                <button type="button" class="nav-link fw-semibold position-relative shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab2')">
+                    Candidates
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade d-block opacity-100" id="tab1" *ngIf="currentTab === 'tab1'">
+                <owl-carousel-o [options]="testimonialsSlides">
+                    <ng-template carouselSlide>
+                        <div class="testimonial-item position-relative">
+                            <div class="rating">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference. Quis quam ullamcorper rhoncus eu. Eget elementum enim at tortor elementum pretium viverra volutpat. Eu ultrices diam viverra adipiscing tincidunt molestie. Fusce scelerisque tempor ac praesent massa.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user6.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Nina Hargrove
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Aoriv
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="quote">
+                                <i class="ri-double-quotes-r"></i>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="testimonial-item position-relative">
+                            <div class="rating">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference. Quis quam ullamcorper rhoncus eu. Eget elementum enim at tortor elementum pretium viverra volutpat. Eu ultrices diam viverra adipiscing tincidunt molestie. Fusce scelerisque tempor ac praesent massa.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user7.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Daniel Pedersen
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Cirku
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="quote">
+                                <i class="ri-double-quotes-r"></i>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="testimonial-item position-relative">
+                            <div class="rating">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference. Quis quam ullamcorper rhoncus eu. Eget elementum enim at tortor elementum pretium viverra volutpat. Eu ultrices diam viverra adipiscing tincidunt molestie. Fusce scelerisque tempor ac praesent massa.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user1.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Alina Smith
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Nofa
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="quote">
+                                <i class="ri-double-quotes-r"></i>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="testimonial-item position-relative">
+                            <div class="rating">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                                <i class="ri-star-line"></i>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference. Quis quam ullamcorper rhoncus eu. Eget elementum enim at tortor elementum pretium viverra volutpat. Eu ultrices diam viverra adipiscing tincidunt molestie. Fusce scelerisque tempor ac praesent massa.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user2.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        James Andy
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Waza
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="quote">
+                                <i class="ri-double-quotes-r"></i>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="testimonial-item position-relative">
+                            <div class="rating">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference. Quis quam ullamcorper rhoncus eu. Eget elementum enim at tortor elementum pretium viverra volutpat. Eu ultrices diam viverra adipiscing tincidunt molestie. Fusce scelerisque tempor ac praesent massa.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user3.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        David Warner
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Vionix
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="quote">
+                                <i class="ri-double-quotes-r"></i>
+                            </div>
+                        </div>
+                    </ng-template>
+                </owl-carousel-o>
+            </div>
+            <div class="tab-pane fade d-block opacity-100" id="tab2" *ngIf="currentTab === 'tab2'">
+                <owl-carousel-o [options]="testimonialsSlides">
+                    <ng-template carouselSlide>
+                        <div class="testimonial-item position-relative">
+                            <div class="rating">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                                <i class="ri-star-line"></i>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference. Quis quam ullamcorper rhoncus eu. Eget elementum enim at tortor elementum pretium viverra volutpat. Eu ultrices diam viverra adipiscing tincidunt molestie. Fusce scelerisque tempor ac praesent massa.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user2.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        James Andy
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Waza
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="quote">
+                                <i class="ri-double-quotes-r"></i>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="testimonial-item position-relative">
+                            <div class="rating">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference. Quis quam ullamcorper rhoncus eu. Eget elementum enim at tortor elementum pretium viverra volutpat. Eu ultrices diam viverra adipiscing tincidunt molestie. Fusce scelerisque tempor ac praesent massa.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user3.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        David Warner
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Vionix
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="quote">
+                                <i class="ri-double-quotes-r"></i>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="testimonial-item position-relative">
+                            <div class="rating">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference. Quis quam ullamcorper rhoncus eu. Eget elementum enim at tortor elementum pretium viverra volutpat. Eu ultrices diam viverra adipiscing tincidunt molestie. Fusce scelerisque tempor ac praesent massa.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user6.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Nina Hargrove
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Aoriv
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="quote">
+                                <i class="ri-double-quotes-r"></i>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="testimonial-item position-relative">
+                            <div class="rating">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference. Quis quam ullamcorper rhoncus eu. Eget elementum enim at tortor elementum pretium viverra volutpat. Eu ultrices diam viverra adipiscing tincidunt molestie. Fusce scelerisque tempor ac praesent massa.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user7.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Daniel Pedersen
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Cirku
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="quote">
+                                <i class="ri-double-quotes-r"></i>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>
+                        <div class="testimonial-item position-relative">
+                            <div class="rating">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference. Quis quam ullamcorper rhoncus eu. Eget elementum enim at tortor elementum pretium viverra volutpat. Eu ultrices diam viverra adipiscing tincidunt molestie. Fusce scelerisque tempor ac praesent massa.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user1.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Alina Smith
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Nofa
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="quote">
+                                <i class="ri-double-quotes-r"></i>
+                            </div>
+                        </div>
+                    </ng-template>
+                </owl-carousel-o>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Only for Home Demo - 2 -->
+<div
+    class="testimonials-area ptb-100"
+    *ngIf="router.url === '/index-2'"
+>
+    <div class="container">
+        <div class="section-title text-start">
+            <h2 class="mb-0">
+                What they say about us
+            </h2>
+        </div>
+        <ul class="nav nav-tabs d-block border-0">
+            <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab1'}">
+                <button type="button" class="nav-link fw-semibold position-relative shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab1')">
+                    Clients
+                </button>
+            </li>
+            <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab2'}">
+                <button type="button" class="nav-link fw-semibold position-relative shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab2')">
+                    Candidates
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade d-block opacity-100" id="tab1" *ngIf="currentTab === 'tab1'">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-box">
+                            <div class="top-info d-flex align-items-center justify-content-between">
+                                <div class="quote">
+                                    <i class="ri-double-quotes-r"></i>
+                                </div>
+                                <div class="rating">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user6.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Nina Hargrove
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Aoriv
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-box">
+                            <div class="top-info d-flex align-items-center justify-content-between">
+                                <div class="quote">
+                                    <i class="ri-double-quotes-r"></i>
+                                </div>
+                                <div class="rating">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-half-fill"></i>
+                                </div>
+                            </div>
+                            <p>
+                                “Choose your favorite work in such a way that it becomes the playground of your creativity and passion.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user7.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Daniel Pedersen
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Cirku
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-box">
+                            <div class="top-info d-flex align-items-center justify-content-between">
+                                <div class="quote">
+                                    <i class="ri-double-quotes-r"></i>
+                                </div>
+                                <div class="rating">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-line"></i>
+                                </div>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user1.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Hortense Steiner
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Molab
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade d-block opacity-100" id="tab2" *ngIf="currentTab === 'tab2'">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-box">
+                            <div class="top-info d-flex align-items-center justify-content-between">
+                                <div class="quote">
+                                    <i class="ri-double-quotes-r"></i>
+                                </div>
+                                <div class="rating">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-line"></i>
+                                </div>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user1.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Hortense Steiner
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Molab
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-box">
+                            <div class="top-info d-flex align-items-center justify-content-between">
+                                <div class="quote">
+                                    <i class="ri-double-quotes-r"></i>
+                                </div>
+                                <div class="rating">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                </div>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user6.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Nina Hargrove
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Aoriv
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-box">
+                            <div class="top-info d-flex align-items-center justify-content-between">
+                                <div class="quote">
+                                    <i class="ri-double-quotes-r"></i>
+                                </div>
+                                <div class="rating">
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-fill"></i>
+                                    <i class="ri-star-half-fill"></i>
+                                </div>
+                            </div>
+                            <p>
+                                “Choose your favorite work in such a way that it becomes the playground of your creativity and passion.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user7.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Daniel Pedersen
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Cirku
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="feedback-info text-center">
+            <a href="https://www.trustpilot.com/" target="_blank" class="d-inline-block">
+                <img src="assets/images/trustpilot.png" alt="trustpilot">
+            </a>
+            <span class="d-block">
+                486 (4.9) Client reviews
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- Only for Home Demo - 3 -->
+<div
+    class="testimonials-area bg-f4f5f7 ptb-100"
+    *ngIf="router.url === '/index-3'"
+>
+    <div class="container">
+        <div class="section-title text-start">
+            <h2 class="mb-0">
+                What they say about us
+            </h2>
+        </div>
+        <ul class="nav nav-tabs style-two d-block border-0">
+            <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab1'}">
+                <button type="button" class="nav-link fw-semibold position-relative shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab1')">
+                    Clients
+                </button>
+            </li>
+            <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab2'}">
+                <button type="button" class="nav-link fw-semibold position-relative shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab2')">
+                    Candidates
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade d-block opacity-100" id="tab1" *ngIf="currentTab === 'tab1'">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-box style-two">
+                            <div class="rating">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user6.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Nina Hargrove
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Aoriv
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-box style-two">
+                            <div class="rating">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                            </div>
+                            <p>
+                                “Choose your favorite work in such a way that it becomes the playground of your creativity and passion.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user7.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Daniel Pedersen
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Cirku
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-box style-two">
+                            <div class="rating">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user1.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Hortense Steiner
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Molab
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade d-block opacity-100" id="tab2" *ngIf="currentTab === 'tab2'">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-box style-two">
+                            <div class="rating">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-line"></i>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user1.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Hortense Steiner
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Molab
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-box style-two">
+                            <div class="rating">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                            <p>
+                                “When I find a job that ignites my passion, every day is an opportunity to make a difference.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user6.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Nina Hargrove
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Aoriv
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-box style-two">
+                            <div class="rating">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-fill"></i>
+                            </div>
+                            <p>
+                                “Choose your favorite work in such a way that it becomes the playground of your creativity and passion.”
+                            </p>
+                            <div class="info d-flex align-items-center">
+                                <img src="assets/images/users/user7.png" class="rounded-cricle" alt="user-image">
+                                <div>
+                                    <h4 class="fw-semibold">
+                                        Daniel Pedersen
+                                    </h4>
+                                    <span class="d-block">
+                                        Founder, Cirku
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="feedback-info text-center">
+            <a href="https://www.trustpilot.com/" target="_blank" class="d-inline-block">
+                <img src="assets/images/trustpilot.png" alt="trustpilot">
+            </a>
+            <span class="d-block">
+                486 (4.9) Client reviews
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+<div
+    class="sidebar-area"
+    [class.active]="classApplied"
+>
+    <ul class="ps-0 mb-0 list-unstyled">
+        <li>
+            <a routerLink="/candidates-dashboard" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-dashboard-line"></i>
+                Dashboard
+            </a>
+        </li>
+        <li>
+            <a routerLink="/candidates-dashboard/my-profile" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-user-line"></i>
+                My Profile
+            </a>
+        </li>
+        <li>
+            <a routerLink="/candidates-dashboard/resume" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-send-plane-2-line"></i>
+                Resume
+            </a>
+        </li>
+        <li>
+            <a routerLink="/candidates-dashboard/bookmarks" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-briefcase-line"></i>
+                Bookmarks
+            </a>
+        </li>
+        <li>
+            <a routerLink="/candidates-dashboard/applied-jobs" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-file-list-3-line"></i>
+                Applied Jobs
+            </a>
+        </li>
+        <li>
+            <a routerLink="/candidates-dashboard/alert-jobs" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-bookmark-line"></i>
+                Alert Jobs
+            </a>
+        </li>
+        <li>
+            <a routerLink="/candidates-dashboard/message" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-chat-2-line"></i>
+                Message
+            </a>
+        </li>
+        <li>
+            <a routerLink="/candidates-dashboard/change-password" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-lock-2-line"></i>
+                Change Password
+            </a>
+        </li>
+        <li>
+            <a routerLink="/candidates-dashboard/my-profile" class="d-block position-relative">
+                <i class="ri-user-3-line"></i>
+                View Profile
+            </a>
+        </li>
+        <li>
+            <a routerLink="/" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-delete-bin-line"></i>
+                Delete Account
+            </a>
+        </li>
+        <li>
+            <a routerLink="/" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <i class="ri-logout-box-line"></i>
+                Logout
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- Sidebar Button -->
+<div
+    class="sidebar-btn d-xl-none"
+    [class.active]="classApplied"
+>
+    <button (click)="toggleClass()">
+        <span>Menus</span>
+    </button>
+</div>

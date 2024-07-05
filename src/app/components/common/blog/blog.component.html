@@ -1,0 +1,192 @@
+<div class="blog-area pt-100 pb-75">
+    <div class="container">
+        <div class="section-title text-center mx-auto">
+            <h2 class="mb-0">
+                Quick career tips
+            </h2>
+        </div>
+
+        <!-- Default -->
+        <div
+            class="row justify-content-center"
+            [ngClass]="{'d-none': router.url === '/index-2'}"
+        >
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="500">
+                <div class="single-blog-post">
+                    <a routerLink="/blog-details" class="d-block image">
+                        <img src="assets/images/blogs/blog1.jpg" alt="blog-image">
+                    </a>
+                    <div class="content">
+                        <ul class="meta ps-0 list-unstyled">
+                            <li class="d-inline-block">
+                                By:
+                                <a routerLink="/blog">
+                                    Jove
+                                </a>
+                            </li>
+                            <li class="d-inline-block">
+                                25 Oct, 2023
+                            </li>
+                        </ul>
+                        <h3 class="fw-semibold">
+                            <a routerLink="/blog-details">
+                                Define both short-term and long-term career objectives
+                            </a>
+                        </h3>
+                        <p>
+                            Lacus nulla mattis dictum nulla. Ornare enim sed mattis dictum nulla volutpat cursus venenatis. Faucibus et diam consectetur vitae.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
+                <div class="single-blog-post">
+                    <a routerLink="/blog-details" class="d-block image">
+                        <img src="assets/images/blogs/blog2.jpg" alt="blog-image">
+                    </a>
+                    <div class="content">
+                        <ul class="meta ps-0 list-unstyled">
+                            <li class="d-inline-block">
+                                By:
+                                <a routerLink="/blog">
+                                    Jove
+                                </a>
+                            </li>
+                            <li class="d-inline-block">
+                                24 Oct, 2023
+                            </li>
+                        </ul>
+                        <h3 class="fw-semibold">
+                            <a routerLink="/blog-details">
+                                Stay updated and enhance your skills regularly
+                            </a>
+                        </h3>
+                        <p>
+                            Lacus nulla mattis dictum nulla. Ornare enim sed mattis dictum nulla volutpat cursus venenatis. Faucibus et diam consectetur vitae.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
+                <div class="single-blog-post">
+                    <a routerLink="/blog-details" class="d-block image">
+                        <img src="assets/images/blogs/blog3.jpg" alt="blog-image">
+                    </a>
+                    <div class="content">
+                        <ul class="meta ps-0 list-unstyled">
+                            <li class="d-inline-block">
+                                By:
+                                <a routerLink="/blog">
+                                    Jove
+                                </a>
+                            </li>
+                            <li class="d-inline-block">
+                                23 Oct, 2023
+                            </li>
+                        </ul>
+                        <h3 class="fw-semibold">
+                            <a routerLink="/blog-details">
+                                Prioritize tasks and manage your time effectively
+                            </a>
+                        </h3>
+                        <p>
+                            Lacus nulla mattis dictum nulla. Ornare enim sed mattis dictum nulla volutpat cursus venenatis. Faucibus et diam consectetur vitae.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Only for Home Demo - 2 -->
+        <div
+            class="row justify-content-center"
+            *ngIf="router.url === '/index-2'"
+        >
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="500">
+                <div class="single-blog-post style-two">
+                    <a routerLink="/blog-details" class="d-block image">
+                        <img src="assets/images/blogs/blog1.jpg" alt="blog-image">
+                    </a>
+                    <div class="content">
+                        <h3 class="fw-semibold">
+                            <a routerLink="/blog-details">
+                                Define both short-term and long-term career objectives
+                            </a>
+                        </h3>
+                        <ul class="meta ps-0 list-unstyled">
+                            <li class="d-inline-block">
+                                By:
+                                <a routerLink="/blog">
+                                    Jove
+                                </a>
+                            </li>
+                            <li class="d-inline-block">
+                                25 Oct, 2023
+                            </li>
+                        </ul>
+                        <a routerLink="/" class="default-btn two">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
+                <div class="single-blog-post style-two">
+                    <a routerLink="/blog-details" class="d-block image">
+                        <img src="assets/images/blogs/blog2.jpg" alt="blog-image">
+                    </a>
+                    <div class="content">
+                        <h3 class="fw-semibold">
+                            <a routerLink="/blog-details">
+                                Stay updated and enhance your skills regularly
+                            </a>
+                        </h3>
+                        <ul class="meta ps-0 list-unstyled">
+                            <li class="d-inline-block">
+                                By:
+                                <a routerLink="/blog">
+                                    Jove
+                                </a>
+                            </li>
+                            <li class="d-inline-block">
+                                24 Oct, 2023
+                            </li>
+                        </ul>
+                        <a routerLink="/" class="default-btn two">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
+                <div class="single-blog-post style-two">
+                    <a routerLink="/blog-details" class="d-block image">
+                        <img src="assets/images/blogs/blog3.jpg" alt="blog-image">
+                    </a>
+                    <div class="content">
+                        <h3 class="fw-semibold">
+                            <a routerLink="/blog-details">
+                                Prioritize tasks and manage your time effectively
+                            </a>
+                        </h3>
+                        <ul class="meta ps-0 list-unstyled">
+                            <li class="d-inline-block">
+                                By:
+                                <a routerLink="/blog">
+                                    Jove
+                                </a>
+                            </li>
+                            <li class="d-inline-block">
+                                23 Oct, 2023
+                            </li>
+                        </ul>
+                        <a routerLink="/" class="default-btn two">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

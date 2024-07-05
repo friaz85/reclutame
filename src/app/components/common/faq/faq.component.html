@@ -1,0 +1,275 @@
+<!-- Default -->
+<div
+    class="faq-area pt-100 pb-75 position-relative z-1"
+    [ngClass]="{'d-none': router.url === '/index-2' || router.url === '/index-3'}"
+>
+    <div class="container">
+        <div class="section-title text-center mx-auto">
+            <h2 class="mb-0">
+                Frequently asked questions
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-duration="500">
+                <div class="faq-item">
+                    <h3 class="fw-semibold">
+                        <span>Q:</span> How do I search for jobs on this platform?
+                    </h3>
+                    <p>
+                        To search for jobs, simply navigate to the "Search Jobs" section and use filters such as keywords, location, industry, and job type simply navigate to the to narrow down your search.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
+                <div class="faq-item">
+                    <h3 class="fw-semibold">
+                        <span>Q:</span> How do I apply for a job?
+                    </h3>
+                    <p>
+                        To search for jobs, simply navigate to the "Search Jobs" section and use filters such as keywords, location, industry, and job type simply navigate to the to narrow down your search.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-duration="500">
+                <div class="faq-item">
+                    <h3 class="fw-semibold">
+                        <span>Q:</span> Can I save job listings for later?
+                    </h3>
+                    <p>
+                        To search for jobs, simply navigate to the "Search Jobs" section and use filters such as keywords, location, industry, and job type simply navigate to the to narrow down your search.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
+                <div class="faq-item">
+                    <h3 class="fw-semibold">
+                        <span>Q:</span> How do I edit my profile and resume?
+                    </h3>
+                    <p>
+                        To search for jobs, simply navigate to the "Search Jobs" section and use filters such as keywords, location, industry, and job type simply navigate to the to narrow down your search.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-duration="500">
+                <div class="faq-item">
+                    <h3 class="fw-semibold">
+                        <span>Q:</span> How can employers contact me for interviews?
+                    </h3>
+                    <p>
+                        To search for jobs, simply navigate to the "Search Jobs" section and use filters such as keywords, location, industry, and job type simply navigate to the to narrow down your search.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
+                <div class="faq-item">
+                    <h3 class="fw-semibold">
+                        <span>Q:</span> What is the importance of a complete profile?
+                    </h3>
+                    <p>
+                        To search for jobs, simply navigate to the "Search Jobs" section and use filters such as keywords, location, industry, and job type simply navigate to the to narrow down your search.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="assets/images/shapes/shape2.png" class="shape" alt="shape-image">
+</div>
+
+<!-- Only for Home Demo - 2 -->
+<div
+    class="faq-area pt-100 pb-75 bg-image"
+    style="background-image: url(assets/images/shapes/bg1.jpg);"
+    *ngIf="router.url === '/index-2' || router.url === '/faq'"
+>
+    <div class="container">
+        <div class="section-title text-center mx-auto">
+            <h2 class="mb-0">
+                Frequently asked questions
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500">
+                    <div class="accordion-header" (click)="toggleSection(0)" [ngClass]="{ 'open': isSectionOpen(0) }">
+                        How do I search for jobs on this platform?
+                    </div>
+                    <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(0) }">
+                        <p>
+                            To search for jobs, simply navigate to the "Search Jobs" section and use filters such as keywords, location, industry, and job type to narrow down your search.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500" data-aos-delay="200">
+                    <div class="accordion-header" (click)="toggleSection(1)" [ngClass]="{ 'open': isSectionOpen(1) }">
+                        How do I apply for a job?
+                    </div>
+                    <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(1) }">
+                        <p>
+                            To search for jobs, simply navigate to the "Search Jobs" section and use filters such as keywords, location, industry, and job type to narrow down your search.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500" data-aos-delay="300">
+                    <div class="accordion-header" (click)="toggleSection(2)" [ngClass]="{ 'open': isSectionOpen(2) }">
+                        Can I save job listings for later?
+                    </div>
+                    <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(2) }">
+                        <p>
+                            To search for jobs, simply navigate to the "Search Jobs" section and use filters such as keywords, location, industry, and job type to narrow down your search.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500" data-aos-delay="400">
+                    <div class="accordion-header" (click)="toggleSection(3)" [ngClass]="{ 'open': isSectionOpen(3) }">
+                        How do I edit my profile and resume?
+                    </div>
+                    <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(3) }">
+                        <p>
+                            To search for jobs, simply navigate to the "Search Jobs" section and use filters such as keywords, location, industry, and job type to narrow down your search.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500" data-aos-delay="500">
+                    <div class="accordion-header" (click)="toggleSection(4)" [ngClass]="{ 'open': isSectionOpen(4) }">
+                        Are remote or freelance opportunities available?
+                    </div>
+                    <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(4) }">
+                        <p>
+                            To search for jobs, simply navigate to the "Search Jobs" section and use filters such as keywords, location, industry, and job type to narrow down your search.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500">
+                    <div class="accordion-header" (click)="toggleSection(5)" [ngClass]="{ 'open': isSectionOpen(5) }">
+                        How can employers contact me for interviews?
+                    </div>
+                    <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(5) }">
+                        <p>
+                            To search for jobs, simply navigate to the "Search Jobs" section and use filters such as keywords, location, industry, and job type to narrow down your search.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500" data-aos-delay="200">
+                    <div class="accordion-header" (click)="toggleSection(6)" [ngClass]="{ 'open': isSectionOpen(6) }">
+                        Can I apply for multiple jobs?
+                    </div>
+                    <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(6) }">
+                        <p>
+                            To search for jobs, simply navigate to the "Search Jobs" section and use filters such as keywords, location, industry, and job type to narrow down your search.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500" data-aos-delay="300">
+                    <div class="accordion-header" (click)="toggleSection(7)" [ngClass]="{ 'open': isSectionOpen(7) }">
+                        What is the importance of a complete profile?
+                    </div>
+                    <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(7) }">
+                        <p>
+                            To search for jobs, simply navigate to the "Search Jobs" section and use filters such as keywords, location, industry, and job type to narrow down your search.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500" data-aos-delay="400">
+                    <div class="accordion-header" (click)="toggleSection(8)" [ngClass]="{ 'open': isSectionOpen(8) }">
+                        Is my personal information secure on this platform?
+                    </div>
+                    <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(8) }">
+                        <p>
+                            To search for jobs, simply navigate to the "Search Jobs" section and use filters such as keywords, location, industry, and job type to narrow down your search.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500" data-aos-delay="500">
+                    <div class="accordion-header" (click)="toggleSection(9)" [ngClass]="{ 'open': isSectionOpen(9) }">
+                        What is the application process like?
+                    </div>
+                    <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(9) }">
+                        <p>
+                            To search for jobs, simply navigate to the "Search Jobs" section and use filters such as keywords, location, industry, and job type to narrow down your search.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Only for Home Demo - 3 -->
+<div
+    class="faq-area pt-100"
+    *ngIf="router.url === '/index-3' || router.url === '/faq'"
+>
+    <div class="container">
+        <div class="section-title text-center mx-auto">
+            <h2 class="mb-0">
+                Frequently asked questions
+            </h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-12">
+                <div class="accordion-item style-two" data-aos="fade-in" data-aos-duration="500">
+                    <div class="accordion-header" (click)="toggleSection(0)" [ngClass]="{ 'open': isSectionOpen(0) }">
+                        <span>Q:</span> How do I apply for a job?
+                    </div>
+                    <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(0) }">
+                        <p>
+                            Once you've found a job listing that interests you, click on it to view the details. There, you'll find an "Apply Now" button or instructions on how to apply. Follow the provided steps to submit your application.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item style-two" data-aos="fade-in" data-aos-duration="500" data-aos-delay="200">
+                    <div class="accordion-header" (click)="toggleSection(1)" [ngClass]="{ 'open': isSectionOpen(1) }">
+                        <span>Q:</span> Can I save job listings for later?
+                    </div>
+                    <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(1) }">
+                        <p>
+                            Once you've found a job listing that interests you, click on it to view the details. There, you'll find an "Apply Now" button or instructions on how to apply. Follow the provided steps to submit your application.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item style-two" data-aos="fade-in" data-aos-duration="500" data-aos-delay="300">
+                    <div class="accordion-header" (click)="toggleSection(2)" [ngClass]="{ 'open': isSectionOpen(2) }">
+                        <span>Q:</span> How do I edit my profile and resume?
+                    </div>
+                    <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(2) }">
+                        <p>
+                            Once you've found a job listing that interests you, click on it to view the details. There, you'll find an "Apply Now" button or instructions on how to apply. Follow the provided steps to submit your application.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item style-two" data-aos="fade-in" data-aos-duration="500" data-aos-delay="400">
+                    <div class="accordion-header" (click)="toggleSection(3)" [ngClass]="{ 'open': isSectionOpen(3) }">
+                        <span>Q:</span> How can employers contact me for interviews?
+                    </div>
+                    <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(3) }">
+                        <p>
+                            Once you've found a job listing that interests you, click on it to view the details. There, you'll find an "Apply Now" button or instructions on how to apply. Follow the provided steps to submit your application.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item style-two" data-aos="fade-in" data-aos-duration="500" data-aos-delay="500">
+                    <div class="accordion-header" (click)="toggleSection(4)" [ngClass]="{ 'open': isSectionOpen(4) }">
+                        <span>Q:</span> What is the importance of a complete profile?
+                    </div>
+                    <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(4) }">
+                        <p>
+                            Once you've found a job listing that interests you, click on it to view the details. There, you'll find an "Apply Now" button or instructions on how to apply. Follow the provided steps to submit your application.
+                        </p>
+                    </div>
+                </div>
+                <div class="accordion-item style-two" data-aos="fade-in" data-aos-duration="500" data-aos-delay="600">
+                    <div class="accordion-header" (click)="toggleSection(5)" [ngClass]="{ 'open': isSectionOpen(5) }">
+                        <span>Q:</span> How do I search for jobs on this platform?
+                    </div>
+                    <div class="accordion-content" [ngClass]="{ 'open': isSectionOpen(5) }">
+                        <p>
+                            Once you've found a job listing that interests you, click on it to view the details. There, you'll find an "Apply Now" button or instructions on how to apply. Follow the provided steps to submit your application.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

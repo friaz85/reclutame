@@ -1,0 +1,149 @@
+.funfact-box {
+    margin-bottom: 25px;
+    position: relative;
+
+    h2 {
+        display: inline-block;
+        position: relative;
+        font-size: 75px;
+        line-height: 1;
+        margin: {
+            bottom: 7px;
+            top: -2px;
+        };
+        sup {
+            top: 13px;
+            right: -28px;
+            position: absolute;
+            color: var(--primaryColor);
+            font: {
+                size: 45px;
+                weight: normal;
+            };
+        }
+    }
+    &::before {
+        top: 0;
+        bottom: 0;
+        content: '';
+        right: -12px;
+        position: absolute;
+        border-right: 1px dashed var(--borderColor);
+    }
+}
+.col-md-4 {
+    &:nth-child(3) {
+        .funfact-box {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+.funfacts-inner {
+    border-radius: 15px;
+    background: linear-gradient(91deg, #EAF5EE 0%, #E0F3E7 100%);
+
+    .funfact-box {
+        h2 {
+            sup {
+                color: var(--secondaryColor);
+            }
+        }
+        &::before {
+            border-color: #fdc56b;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    .funfact-box {
+        h2 {
+            font-size: 35px;
+            margin: {
+                bottom: 5px;
+                top: 0;
+            };
+            sup {
+                top: 8px;
+                right: -20px;
+                font-size: 30px;
+            }
+        }
+        &::before {
+            display: none;
+        }
+    }
+    .funfacts-inner {
+        border-radius: 5px;
+        padding: {
+            left: 15px;
+            right: 15px;
+        };
+    }
+
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    .funfact-box {
+        h2 {
+            font-size: 45px;
+            margin: {
+                bottom: 8px;
+                top: 0;
+            };
+            sup {
+                top: 10px;
+                right: -25px;
+                font-size: 35px;
+            }
+        }
+    }
+    .funfacts-inner {
+        border-radius: 10px;
+        padding: {
+            left: 15px;
+            right: 15px;
+        };
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .funfact-box {
+        h2 {
+            font-size: 60px;
+            margin: {
+                bottom: 7px;
+                top: -2px;
+            };
+            sup {
+                top: 11px;
+                right: -25px;
+                font-size: 35px;
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    .funfact-box {
+        h2 {
+            font-size: 70px;
+            
+            sup {
+                font-size: 40px;
+            }
+        }
+    }
+
+}

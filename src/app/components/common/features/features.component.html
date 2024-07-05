@@ -1,0 +1,128 @@
+<!-- Default -->
+<div
+    class="features-area pb-100"
+    [ngClass]="{'d-none': router.url === '/index-2'}"
+>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="features-content" data-aos="fade-in" data-aos-duration="500">
+                    <h2>Grow your career, your dream job is waiting</h2>
+                    <p>Welcome to a world of endless possibilities at Jove! It's not just a job search; it's a career evolution. Uncover your potential, chase your ambitions, and step into a realm where your dream job is not just a fantasy – it's waiting for you.</p>
+                    <h3>What we do</h3>
+                    <ul class="features-list ps-0 list-unstyled">
+                        <li class="position-relative">
+                            <div class="icon">
+                                <img src="assets/images/icons/job-seeker.svg" class="mx-auto" alt="job-seeker">
+                            </div>
+                            <h4 class="fw-semibold">For job seekers</h4>
+                            <p>At Jove, we understand that your career journey is a unique and transformative experience.</p>
+                        </li>
+                        <li class="position-relative">
+                            <div class="icon">
+                                <img src="assets/images/icons/employees.svg" class="mx-auto" alt="employees">
+                            </div>
+                            <h4 class="fw-semibold">For employees</h4>
+                            <p>We recognize that every individual in our organization is a unique and valuable contributor to our shared success.</p>
+                        </li>
+                        <li class="position-relative">
+                            <div class="icon">
+                                <img src="assets/images/icons/employers.svg" class="mx-auto" alt="employers">
+                            </div>
+                            <h4 class="fw-semibold">For employers</h4>
+                            <p>At Jove, we understand that your company's success is built upon the strength of your team.</p>
+                        </li>
+                    </ul>
+                    <a routerLink="/dashboard/post-a-new-job" class="default-btn">
+                        Post A Job
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="features-image position-relative text-center" data-aos="fade-in" data-aos-duration="500" data-aos-delay="100">
+                    <img src="assets/images/features/feature1.jpg" class="main-image" alt="features-image">
+                    <div class="box">
+                        <div class="user-image mx-auto">
+                            <img src="assets/images/users/user5.png" class="rounded-circle" alt="user-image">
+                        </div>
+                        <h4 class="fw-semibold">100K+ Recruiters</h4>
+                        <span class="d-block lh-1">Success</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Only for Home Demo - 2 -->
+<div
+    class="features-area pb-100"
+    *ngIf="router.url === '/index-2'"
+>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="features-content-style-two" data-aos="fade-in" data-aos-duration="500">
+                    <h2>
+                        In-platform messaging system for direct communication between candidates and employers/recruiters
+                    </h2>
+                    <p>
+                        Our messaging system is your tool for building connections, fostering relationships, and ultimately, making the right match. Happy messaging, and we wish you success in your journey!
+                    </p>
+                    <h4 class="fw-semibold">
+                        Why use our messaging system?
+                    </h4>
+                    <ul class="features-list ps-0 list-unstyled">
+                        <li class="position-relative fw-medium">
+                            <i class="ri-check-line"></i>
+                            Real-Time interaction
+                        </li>
+                        <li class="position-relative fw-medium">
+                            <i class="ri-check-line"></i>
+                            Private and secure
+                        </li>
+                        <li class="position-relative fw-medium">
+                            <i class="ri-check-line"></i>
+                            Effortless collaboration
+                        </li>
+                        <li class="position-relative fw-medium">
+                            <i class="ri-check-line"></i>
+                            Interview coordination
+                        </li>
+                    </ul>
+                    <a routerLink="/dashboard/post-a-new-job" class="default-btn two">
+                        Post A Job
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="features-image-style-two" data-aos="fade-in" data-aos-duration="500" data-aos-delay="100">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="image">
+                                <img src="assets/images/features/feature2.jpg" alt="features-image">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="quote">
+                                <img src="assets/images/features/down.png" alt="down-icon">
+                                <p>Our messaging system is your tool for building connections, fostering relationships, and ultimately, making the right match.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="quote two">
+                                <img src="assets/images/features/up.png" alt="up-icon">
+                                <p>Maintain a professional and respectful tone in your messages. Politeness goes a long way in building a positive rapport.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <div class="image">
+                                <img src="assets/images/features/feature3.jpg" alt="features-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
