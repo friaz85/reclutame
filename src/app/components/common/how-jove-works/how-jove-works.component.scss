@@ -107,6 +107,12 @@
     }
 }
 
+.icon {
+  img {
+    filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+  }
+}
+
 /* Max width 767px */
 @media only screen and (max-width : 767px) {
 

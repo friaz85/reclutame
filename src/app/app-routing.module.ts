@@ -40,7 +40,7 @@ import { CdMessageComponent } from './components/candidates-dashboard/cd-message
 import { CdChangePasswordComponent } from './components/candidates-dashboard/cd-change-password/cd-change-password.component';
 
 const routes: Routes = [
-    {path: '', component: HomeDemoOneComponent},
+    {path: '', component: HomeDemoThreeComponent},
     {path: 'index-2', component: HomeDemoTwoComponent},
     {path: 'index-3', component: HomeDemoThreeComponent},
     {path: 'about', component: AboutPageComponent},

@@ -2,13 +2,13 @@
 :root {
     --fontFamily: 'Lato', sans-serif;
     --headingFontFamily: 'Montserrat', sans-serif;
-    --primaryColor: #1cbe72;
-    --secondaryColor: #fdc56b;
+    --primaryColor: #005B9C;
+    --secondaryColor: #00ACDD;
     --headingColor: #404145;
     --bodyColor: #62646A;
     --whiteColor: #ffffff;
     --borderColor: #e0e6e9;
-    --transition: all ease 0.5s; 
+    --transition: all ease 0.5s;
     --fontSize: 16px;
 }
 body {
@@ -147,7 +147,7 @@ p {
     max-width: 860px;
     position: relative;
     margin-bottom: 45px;
-    
+
     h2 {
         font-size: 24px;
     }
@@ -295,7 +295,7 @@ p {
 // Pagination CSS
 .pagination-area {
     margin-top: 35px;
-    
+
     .page-numbers {
         width: 50px;
         height: 50px;
@@ -321,6 +321,10 @@ p {
             pointer-events: none;
         }
     }
+}
+
+.logo {
+  max-width: 30%;
 }
 
 /* Max width 767px */
@@ -368,7 +372,7 @@ p {
     .section-title {
         max-width: 100%;
         margin-bottom: 25px;
-        
+
         h2 {
             font-size: 20px;
         }
@@ -417,7 +421,7 @@ p {
     // Pagination CSS
     .pagination-area {
         margin-top: 5px;
-        
+
         .page-numbers {
             width: 35px;
             height: 35px;
@@ -476,7 +480,7 @@ p {
     .section-title {
         max-width: 100%;
         margin-bottom: 35px;
-        
+
         h2 {
             font-size: 22px;
         }
@@ -513,7 +517,7 @@ p {
     // Pagination CSS
     .pagination-area {
         margin-top: 10px;
-        
+
         .page-numbers {
             width: 45px;
             height: 45px;
@@ -536,7 +540,7 @@ p {
     // Pagination CSS
     .pagination-area {
         margin-top: 25px;
-        
+
         .page-numbers {
             width: 45px;
             height: 45px;
