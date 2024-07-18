@@ -78,6 +78,10 @@
         }
     }
 }
+.scroll-job {
+  max-height: 500px;
+  overflow-y: scroll;
+}
 .single-job-item {
     padding: 20px 30px;
     border-radius: 10px;
@@ -340,7 +344,7 @@
     .single-job-box {
         border-radius: 5px;
         padding: 15px 15px 0;
-    
+
         .company-logo {
             width: 90px;
             height: 90px;
@@ -375,7 +379,7 @@
         border-radius: 5px;
         margin-left: 12px;
         padding: 20px;
-    
+
         .company-logo {
             width: 90px;
             height: 90px;
@@ -405,10 +409,10 @@
     }
     .job-item {
         border-radius: 5px;
-    
+
         .content {
             padding: 15px;
-    
+
             .company-logo {
                 width: 90px;
                 height: 90px;
@@ -443,7 +447,7 @@
             padding: 2px 50px;
             left: -49px;
             top: 18px;
-    
+
             &.urgent {
                 top: 17px;
                 left: -42.5px;
@@ -476,7 +480,7 @@
     .single-job-item {
         text-align: start;
         padding-left: 25px;
-    
+
         .content {
             margin: {
                 top: 0;
@@ -496,7 +500,7 @@
 
     .single-job-box {
         border-radius: 10px;
-    
+
         .content {
             h3 {
                 font-size: 18px;
@@ -508,10 +512,10 @@
     }
     .single-job-item {
         padding: 20px 25px;
-    
+
         .content {
             margin-left: 15px;
-    
+
             h3 {
                 font-size: 18px;
             }
