@@ -162,23 +162,11 @@
                     <label>
                         Country
                     </label>
-                    <select class="form-select shadow-none">
-                        <option value="1" selected>Japan</option>
-                        <option value="2">USA</option>
-                        <option value="3">England</option>
-                        <option value="4">China</option>
-                        <option value="5">Canada</option>
-                        <option value="6">Brazil</option>
-                        <option value="7">South Korea</option>
-                        <option value="8">Spain</option>
-                        <option value="9">Turkey</option>
-                        <option value="10">Japan</option>
-                        <option value="11">Denmark</option>
-                        <option value="12">Thailand</option>
-                        <option value="13">UAE</option>
-                        <option value="14">Australia</option>
-                        <option value="15">Netherlands</option>
-                        <option value="16">France</option>
+                    <select class="form-select shadow-none" (change)="getCiudades($event.target.value)">
+                      <option value="0" selected>Seleccionar</option>
+                      <option *ngFor="let item of arrPais" [value]="item.id_pais">
+                        {{ item.descripcion }}
+                      </option>
                     </select>
                 </div>
             </div>
@@ -188,26 +176,9 @@
                         City
                     </label>
                     <select class="form-select shadow-none">
-                        <option value="1" selected>Tokyo</option>
-                        <option value="2">New York</option>
-                        <option value="3">London</option>
-                        <option value="4">Beijing</option>
-                        <option value="5">Toronto</option>
-                        <option value="6">Chicago</option>
-                        <option value="7">Hong Kong</option>
-                        <option value="8">Los Angeles</option>
-                        <option value="9">São Paulo</option>
-                        <option value="10">Seoul</option>
-                        <option value="11">Barcelona</option>
-                        <option value="12">Istanbul</option>
-                        <option value="13">Osaka</option>
-                        <option value="14">Copenhagen</option>
-                        <option value="15">Madrid</option>
-                        <option value="16">Bangkok</option>
-                        <option value="17">Dubai</option>
-                        <option value="18">Melbourne</option>
-                        <option value="19">Amsterdam</option>
-                        <option value="20">Paris</option>
+                        <option *ngFor="let item of arrCiudades" [value]="item.id_ciudad">
+                            {{ item.descripcion }}
+                        </option>
                     </select>
                 </div>
             </div>

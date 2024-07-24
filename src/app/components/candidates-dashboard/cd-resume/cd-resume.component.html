@@ -58,11 +58,10 @@
                         Gender
                     </label>
                     <select class="form-select shadow-none">
-                        <option selected>Select</option>
-                        <option value="1">Male</option>
-                        <option value="2">Female</option>
-                        <option value="3">Custom</option>
-                    </select>
+                      <option selected>Select</option>
+                      <option *ngFor="let item of arrGenero" [value]="item.id_genero">
+                        {{ item.descripcion }}
+                  </select>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -167,11 +166,11 @@
                         Job type
                     </label>
                     <select class="form-select shadow-none">
-                        <option selected>Select</option>
-                        <option value="1">Full Time</option>
-                        <option value="2">Part Time</option>
-                        <option value="3">Hourly</option>
-                    </select>
+                      <option selected>Select</option>
+                      <option *ngFor="let item of arrTipoTrabajo" [value]="item.id_tipo_trabajo">
+                        {{ item.descripcion }}
+                      </option>
+                  </select>
                 </div>
             </div>
         </div>

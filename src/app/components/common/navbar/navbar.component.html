@@ -117,11 +117,11 @@
                                     Job Details
                                 </a>
                             </li> -->
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a routerLink="/categories" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                     Categories
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -335,7 +335,7 @@
                             </li>
                             <li class="nav-item d-inline-block" [ngClass]="{'active': currentInnerTab === 'innerTab2'}">
                                 <button type="button" class="nav-link fw-semibold shadow-none mb-0" (click)="switchInnerTab($event, 'innerTab2')">
-                                    Employer
+                                    Company
                                 </button>
                             </li>
                         </ul>
@@ -447,6 +447,39 @@
                                         </label>
                                         <input type="text" class="form-control shadow-none" placeholder="Enter password">
                                     </div>
+                                    <div class="form-group">
+                                      <label>
+                                          Company name
+                                      </label>
+                                      <input type="text" class="form-control shadow-none" placeholder="Enter company name">
+                                    </div>
+                                    <div class="row">
+                                      <div class="col-sm-6">
+                                          <div class="form-group">
+                                              <label>
+                                                  Company Country
+                                              </label>
+                                              <select class="form-select shadow-none" (change)="getCiudades($event.target.value)">
+                                                <option value="0" selected>Seleccionar</option>
+                                                <option *ngFor="let item of arrPais" [value]="item.id_pais">
+                                                  {{ item.descripcion }}
+                                                </option>
+                                              </select>
+                                          </div>
+                                      </div>
+                                      <div class="col-sm-6">
+                                          <div class="form-group">
+                                              <label>
+                                                Company City
+                                              </label>
+                                              <select class="form-select shadow-none">
+                                                <option *ngFor="let item of arrCiudades" [value]="item.id_ciudad">
+                                                    {{ item.descripcion }}
+                                                </option>
+                                            </select>
+                                          </div>
+                                      </div>
+                                      </div>
                                     <div class="form-check">
                                         <input class="form-check-input shadow-none" type="checkbox" id="termsPrivacyPolicy">
                                         <label class="form-check-label" for="termsPrivacyPolicy">

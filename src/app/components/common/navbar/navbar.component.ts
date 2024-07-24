@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { ReclutameService } from 'src/services/reclutame.service';
 
 @Component({
     selector: 'app-navbar',
@@ -7,7 +8,8 @@ import { Router } from '@angular/router';
     styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-
+    arrPais:any = [];
+    arrCiudades:any = [];
     // Navbar Sticky
     isSticky: boolean = false;
     @HostListener('window:scroll', ['$event'])
@@ -21,8 +23,11 @@ export class NavbarComponent {
     }
 
     constructor(
-        public router: Router
-    ) { }
+        public router: Router,
+        private api: ReclutameService
+    ) {
+      this.getPaises();
+    }
 
     classApplied = false;
     toggleClass() {
@@ -50,6 +55,16 @@ export class NavbarComponent {
     }
     closePopup(): void {
         this.isOpen = false;
+    }
+
+    async getPaises() {
+      const pais = await this.api.getPais();
+      this.arrPais = pais.items;
+    }
+
+    async getCiudades(id: number) {
+      const ciudad = await this.api.getCiudades(id);
+      this.arrCiudades = ciudad.items;
     }
 
 }

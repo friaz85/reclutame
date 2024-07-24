@@ -6,104 +6,26 @@
             </h2>
         </div>
     </div>
-    <div class="container-fluid jobsByLocationSlides" data-aos="fade-up" data-aos-duration="500">
+    <div class="container-fluid jobsByLocationSlides" data-aos="fade-up" data-aos-duration="500" *ngIf="arrPais.length > 0">
         <owl-carousel-o [options]="jobsByLocationSlides">
-            <ng-template carouselSlide>
+          <ng-container *ngFor="let item of arrPais">
+            <ng-template carouselSlide [id]="item.id_pais">
                 <div class="job-item">
                     <a routerLink="/jobs-grid" class="d-block image">
                         <img src="assets/images/locations/location1.jpg" alt="location-image">
                     </a>
                     <h3 class="fw-semibold">
                         <a routerLink="/jobs-grid">
-                            United States
+                            {{ item.descripcion }}
                         </a>
                     </h3>
                     <span class="d-block">
                         Open jobs
-                        <span>(120)</span>
+                        <span>(0)</span>
                     </span>
                 </div>
             </ng-template>
-            <ng-template carouselSlide>
-                <div class="job-item">
-                    <a routerLink="/jobs-grid" class="d-block image">
-                        <img src="assets/images/locations/location2.jpg" alt="location-image">
-                    </a>
-                    <h3 class="fw-semibold">
-                        <a routerLink="/jobs-grid">
-                            United Kingdom
-                        </a>
-                    </h3>
-                    <span class="d-block">
-                        Open jobs
-                        <span>(99)</span>
-                    </span>
-                </div>
-            </ng-template>
-            <ng-template carouselSlide>
-                <div class="job-item">
-                    <a routerLink="/jobs-grid" class="d-block image">
-                        <img src="assets/images/locations/location3.jpg" alt="location-image">
-                    </a>
-                    <h3 class="fw-semibold">
-                        <a routerLink="/jobs-grid">
-                            Canada
-                        </a>
-                    </h3>
-                    <span class="d-block">
-                        Open jobs
-                        <span>(176)</span>
-                    </span>
-                </div>
-            </ng-template>
-            <ng-template carouselSlide>
-                <div class="job-item">
-                    <a routerLink="/jobs-grid" class="d-block image">
-                        <img src="assets/images/locations/location4.jpg" alt="location-image">
-                    </a>
-                    <h3 class="fw-semibold">
-                        <a routerLink="/jobs-grid">
-                            France
-                        </a>
-                    </h3>
-                    <span class="d-block">
-                        Open jobs
-                        <span>(322)</span>
-                    </span>
-                </div>
-            </ng-template>
-            <ng-template carouselSlide>
-                <div class="job-item">
-                    <a routerLink="/jobs-grid" class="d-block image">
-                        <img src="assets/images/locations/location5.jpg" alt="location-image">
-                    </a>
-                    <h3 class="fw-semibold">
-                        <a routerLink="/jobs-grid">
-                            United Arab Emirates
-                        </a>
-                    </h3>
-                    <span class="d-block">
-                        Open jobs
-                        <span>(142)</span>
-                    </span>
-                </div>
-            </ng-template>
-            <ng-template carouselSlide>
-                <div class="job-item">
-                    <a routerLink="/jobs-grid" class="d-block image">
-                        <img src="assets/images/locations/location3.jpg" alt="location-image">
-                    </a>
-                    <h3 class="fw-semibold">
-                        <a routerLink="/jobs-grid">
-                            Canada
-                        </a>
-                    </h3>
-                    <span class="d-block">
-                        Open jobs
-                        <span>(176)</span>
-                    </span>
-                </div>
-            </ng-template>
+          </ng-container>
         </owl-carousel-o>
     </div>
 </div>

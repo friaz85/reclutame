@@ -22,4 +22,41 @@ export class ReclutameService {
     return this.http.get<any>(this.apiUrl + 'categorias').toPromise();
   }
 
+  async getPais(): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'catpaises').toPromise();
+  }
+
+  async getCiudades(idPais: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'catciudades/' + idPais).toPromise();
+  }
+
+  async getSalario(): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'catsalario').toPromise();
+  }
+
+  async getGenero(): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'catgenero').toPromise();
+  }
+
+  async getExperiencia(): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'catexperiencia').toPromise();
+  }
+
+  async getGradoEscolar(): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'catgradoescolar').toPromise();
+  }
+
+  async getIndustria(): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'catindustria').toPromise();
+  }
+
+  async getNivelProfesional(): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'catnivelprofesional').toPromise();
+  }
+
+  async getTipoTrabajo(): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'cattipotrabajo').toPromise();
+  }
+
+
 }

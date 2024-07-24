@@ -53,12 +53,9 @@
                     </label>
                     <select class="form-select shadow-none">
                         <option selected>Category</option>
-                        <option value="1">Engineering</option>
-                        <option value="2">Banking</option>
-                        <option value="3">Beauty Care</option>
-                        <option value="4">Cleaning</option>
-                        <option value="5">Construction</option>
-                        <option value="6">Finance</option>
+                        <option *ngFor="let item of arrCategorias; let i = index;" [value]="item.id_categoria">
+                          {{ item.descripcion }}
+                      </option>
                     </select>
                 </div>
             </div>
@@ -69,12 +66,9 @@
                     </label>
                     <select class="form-select shadow-none">
                         <option selected>Select</option>
-                        <option value="1">Engineering</option>
-                        <option value="2">Banking</option>
-                        <option value="3">Beauty Care</option>
-                        <option value="4">Cleaning</option>
-                        <option value="5">Construction</option>
-                        <option value="6">Finance</option>
+                        <option *ngFor="let item of arrTipoTrabajo" [value]="item.id_tipo_trabajo">
+                          {{ item.descripcion }}
+                        </option>
                     </select>
                 </div>
             </div>
@@ -85,12 +79,9 @@
                     </label>
                     <select class="form-select shadow-none">
                         <option selected>Select</option>
-                        <option value="1">$1000</option>
-                        <option value="2">$2000</option>
-                        <option value="3">$3000</option>
-                        <option value="4">$4000</option>
-                        <option value="5">$5000</option>
-                        <option value="6">$6000</option>
+                        <option *ngFor="let item of arrSalarios" [value]="item.id_salario">
+                          {{ item.rango }}
+                        </option>
                     </select>
                 </div>
             </div>
@@ -101,11 +92,8 @@
                     </label>
                     <select class="form-select shadow-none">
                         <option selected>Select</option>
-                        <option value="1">Manager</option>
-                        <option value="2">Officer</option>
-                        <option value="3">Student</option>
-                        <option value="4">Executive</option>
-                        <option value="5">Others</option>
+                        <option *ngFor="let item of arrNivelProfesional" [value]="item.id_nivel_profesional">
+                          {{ item.descripcion }}
                     </select>
                 </div>
             </div>
@@ -116,11 +104,8 @@
                     </label>
                     <select class="form-select shadow-none">
                         <option selected>Select</option>
-                        <option value="1">Fresher</option>
-                        <option value="2">1 year</option>
-                        <option value="3">2 years</option>
-                        <option value="4">3 years</option>
-                        <option value="5">4 years</option>
+                        <option *ngFor="let item of arrExperiencias" [value]="item.id_experiencia">
+                          {{ item.descripcion }}
                     </select>
                 </div>
             </div>
@@ -131,9 +116,8 @@
                     </label>
                     <select class="form-select shadow-none">
                         <option selected>Select</option>
-                        <option value="1">Male</option>
-                        <option value="2">Female</option>
-                        <option value="3">Custom</option>
+                        <option *ngFor="let item of arrGenero" [value]="item.id_genero">
+                          {{ item.descripcion }}
                     </select>
                 </div>
             </div>
@@ -144,12 +128,8 @@
                     </label>
                     <select class="form-select shadow-none">
                         <option selected>Select</option>
-                        <option value="1">Engineering</option>
-                        <option value="2">Banking</option>
-                        <option value="3">Beauty Care</option>
-                        <option value="4">Cleaning</option>
-                        <option value="5">Construction</option>
-                        <option value="6">Finance</option>
+                        <option *ngFor="let item of arrIndustrias" [value]="item.id_industria">
+                          {{ item.descripcion }}
                     </select>
                 </div>
             </div>
@@ -160,11 +140,8 @@
                     </label>
                     <select class="form-select shadow-none">
                         <option selected>Select</option>
-                        <option value="1">Certificate</option>
-                        <option value="2">Diploma</option>
-                        <option value="3">Bachelor Degree</option>
-                        <option value="4">Master’s Degree</option>
-                        <option value="5">Associate</option>
+                        <option *ngFor="let item of arrGradoEscolar" [value]="item.id_calificacion">
+                          {{ item.descripcion }}
                     </select>
                 </div>
             </div>
@@ -181,23 +158,11 @@
                     <label>
                         Country
                     </label>
-                    <select class="form-select shadow-none">
-                        <option value="1" selected>Japan</option>
-                        <option value="2">USA</option>
-                        <option value="3">England</option>
-                        <option value="4">China</option>
-                        <option value="5">Canada</option>
-                        <option value="6">Brazil</option>
-                        <option value="7">South Korea</option>
-                        <option value="8">Spain</option>
-                        <option value="9">Turkey</option>
-                        <option value="10">Japan</option>
-                        <option value="11">Denmark</option>
-                        <option value="12">Thailand</option>
-                        <option value="13">UAE</option>
-                        <option value="14">Australia</option>
-                        <option value="15">Netherlands</option>
-                        <option value="16">France</option>
+                    <select class="form-select shadow-none" (change)="getCiudades($event.target.value)">
+                      <option value="0" selected>Select</option>
+                      <option *ngFor="let item of arrPais" [value]="item.id_pais">
+                        {{ item.descripcion }}
+                      </option>
                     </select>
                 </div>
             </div>
@@ -207,26 +172,9 @@
                         City
                     </label>
                     <select class="form-select shadow-none">
-                        <option value="1" selected>Tokyo</option>
-                        <option value="2">New York</option>
-                        <option value="3">London</option>
-                        <option value="4">Beijing</option>
-                        <option value="5">Toronto</option>
-                        <option value="6">Chicago</option>
-                        <option value="7">Hong Kong</option>
-                        <option value="8">Los Angeles</option>
-                        <option value="9">São Paulo</option>
-                        <option value="10">Seoul</option>
-                        <option value="11">Barcelona</option>
-                        <option value="12">Istanbul</option>
-                        <option value="13">Osaka</option>
-                        <option value="14">Copenhagen</option>
-                        <option value="15">Madrid</option>
-                        <option value="16">Bangkok</option>
-                        <option value="17">Dubai</option>
-                        <option value="18">Melbourne</option>
-                        <option value="19">Amsterdam</option>
-                        <option value="20">Paris</option>
+                      <option *ngFor="let item of arrCiudades" [value]="item.id_ciudad">
+                        {{ item.descripcion }}
+                      </option>
                     </select>
                 </div>
             </div>

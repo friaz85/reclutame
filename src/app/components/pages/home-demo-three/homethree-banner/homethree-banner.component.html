@@ -25,27 +25,8 @@
                                 <div class="form-group position-relative">
                                     <i class="ri-map-pin-line"></i>
                                     <select class="form-select">
-                                        <option selected>All Location</option>
-                                        <option value="1">Tokyo, Japan</option>
-                                        <option value="2">New York, USA</option>
-                                        <option value="3">London, England</option>
-                                        <option value="4">Beijing, China</option>
-                                        <option value="5">Toronto, Canada</option>
-                                        <option value="6">Chicago, USA</option>
-                                        <option value="7">Hong Kong, China</option>
-                                        <option value="8">Los Angeles, USA</option>
-                                        <option value="9">São Paulo, Brazil</option>
-                                        <option value="10">Seoul, South Korea</option>
-                                        <option value="11">Barcelona, Spain</option>
-                                        <option value="12">Istanbul, Turkey</option>
-                                        <option value="13">Osaka, Japan</option>
-                                        <option value="14">Copenhagen, Denmark</option>
-                                        <option value="15">Madrid, Spain</option>
-                                        <option value="16">Bangkok, Thailand</option>
-                                        <option value="17">Dubai, UAE</option>
-                                        <option value="18">Melbourne, Australia</option>
-                                        <option value="19">Amsterdam, Netherlands</option>
-                                        <option value="20">Paris, France</option>
+                                        <option selected>Todos</option>
+                                        <option *ngFor="let item of arrPais" value="{{ item.id_pais }}">{{ item.descripcion }}</option>
                                     </select>
                                 </div>
                             </div>
