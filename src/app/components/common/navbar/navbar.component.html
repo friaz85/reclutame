@@ -341,14 +341,18 @@
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane fade d-block opacity-100" *ngIf="currentInnerTab === 'innerTab1'">
-                                <form class="authentication-form">
+                                <form class="authentication-form" [formGroup]="frmCandidato">
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>
                                                     First Name
                                                 </label>
-                                                <input type="text" class="form-control shadow-none" placeholder="Enter name">
+                                                <input type="text" class="form-control shadow-none" placeholder="Enter name"
+                                                formControlName="nombreCandidato" [ngClass]="{ 'is-invalid': submittedCandidato && f.nombreCandidato.value == '' }">
+                                                <div *ngIf="submittedCandidato && f.nombreCandidato.value == ''" class="invalid-feedback">
+                                                  <div *ngIf="f.nombreCandidato.errors.required">This field is required</div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
@@ -356,23 +360,31 @@
                                                 <label>
                                                     Last Name
                                                 </label>
-                                                <input type="text" class="form-control shadow-none" placeholder="Enter name">
+                                                <input type="text" class="form-control shadow-none" placeholder="Enter last name"
+                                                formControlName="apellidoCandidato" [ngClass]="{ 'is-invalid': submittedCandidato && f.apellidoCandidato.value == '' }">
+                                                <div *ngIf="submittedCandidato && f.apellidoCandidato.value == ''" class="invalid-feedback">
+                                                  <div *ngIf="f.apellidoCandidato.errors.required">This field is required</div>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-sm-6">
+                                        <!-- <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>
                                                     Username
                                                 </label>
                                                 <input type="text" class="form-control shadow-none" placeholder="Enter username">
                                             </div>
-                                        </div>
-                                        <div class="col-sm-6">
+                                        </div> -->
+                                        <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label>
                                                     Email
                                                 </label>
-                                                <input type="email" class="form-control shadow-none" placeholder="Enter email">
+                                                <input type="email" class="form-control shadow-none" placeholder="Enter email"
+                                                formControlName="emailCandidato" [ngClass]="{ 'is-invalid': submittedCandidato && f.emailCandidato.value == '' }">
+                                                <div *ngIf="submittedCandidato && f.emailCandidato.value == ''" class="invalid-feedback">
+                                                  <div *ngIf="f.emailCandidato.errors.required">This field is required</div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -380,21 +392,29 @@
                                         <label>
                                             Phone number
                                         </label>
-                                        <input type="text" class="form-control shadow-none" placeholder="Enter phone number">
+                                        <input type="text" class="form-control shadow-none" placeholder="Enter phone number"
+                                        formControlName="telefonoCandidato" [ngClass]="{ 'is-invalid': submittedCandidato && f.telefonoCandidato.value == '' }">
+                                        <div *ngIf="submittedCandidato && f.telefonoCandidato.value == ''" class="invalid-feedback">
+                                          <div *ngIf="f.telefonoCandidato.errors.required">This field is required</div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             Password
                                         </label>
-                                        <input type="text" class="form-control shadow-none" placeholder="Enter password">
+                                        <input type="text" class="form-control shadow-none" placeholder="Enter password"
+                                        formControlName="passwordCandidato" [ngClass]="{ 'is-invalid': submittedCandidato && f.passwordCandidato.value == '' }">
+                                        <div *ngIf="submittedCandidato && f.passwordCandidato.value == ''" class="invalid-feedback">
+                                          <div *ngIf="f.passwordCandidato.errors.required">This field is required</div>
+                                        </div>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input shadow-none" type="checkbox" id="termsPrivacyPolicy">
+                                        <input class="form-check-input shadow-none" type="checkbox" id="termsPrivacyPolicy" (change)="checkTyCCandidato($event)">
                                         <label class="form-check-label" for="termsPrivacyPolicy">
                                             Accept the <a routerLink="/">Terms</a> and <a routerLink="/">Privacy Policy</a>
                                         </label>
                                     </div>
-                                    <button type="submit" class="default-btn d-block w-100">
+                                    <button type="button" class="default-btn d-block w-100" (click)="registroCandidato()" *ngIf="checkTerminosCandidato">
                                         Register Now
                                     </button>
                                 </form>
@@ -418,15 +438,15 @@
                                                 <input type="text" class="form-control shadow-none" placeholder="Enter name">
                                             </div>
                                         </div>
-                                        <div class="col-sm-6">
+                                        <!-- <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>
                                                     Username
                                                 </label>
                                                 <input type="text" class="form-control shadow-none" placeholder="Enter username">
                                             </div>
-                                        </div>
-                                        <div class="col-sm-6">
+                                        </div> -->
+                                        <div class="col-sm-12">
                                             <div class="form-group">
                                                 <label>
                                                     Email

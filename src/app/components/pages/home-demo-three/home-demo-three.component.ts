@@ -19,6 +19,7 @@ export class HomeDemoThreeComponent {
     ngOnInit() {
         this.titleService.setTitle(this.title);
         this.getCategorias();
+        this.postCrearVacante();
     }
 
     async getCategorias() {
@@ -26,5 +27,8 @@ export class HomeDemoThreeComponent {
       console.log("Categorías: ", cat);
     }
 
-
+    async postCrearVacante() {
+      const vacante = await this.api.postCrearVacante("Hola");
+      console.log("Vacante creada: ", vacante);
+    }
 }

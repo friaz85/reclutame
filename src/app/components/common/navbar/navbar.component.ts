@@ -1,7 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReclutameService } from 'src/services/reclutame.service';
-
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 @Component({
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
@@ -10,6 +10,11 @@ import { ReclutameService } from 'src/services/reclutame.service';
 export class NavbarComponent {
     arrPais:any = [];
     arrCiudades:any = [];
+    frmCandidato: FormGroup | any;
+    frmCompany: FormGroup | any;
+    submittedCandidato = false;
+    checkTerminosCandidato = false;
+
     // Navbar Sticky
     isSticky: boolean = false;
     @HostListener('window:scroll', ['$event'])
@@ -24,9 +29,32 @@ export class NavbarComponent {
 
     constructor(
         public router: Router,
-        private api: ReclutameService
+        private api: ReclutameService,
+        private formBuilder: FormBuilder,
     ) {
       this.getPaises();
+    }
+
+    ngOnInit(): void {
+      this.frmCandidato = this.formBuilder.group({
+        nombreCandidato: ["", Validators.required],
+        apellidoCandidato: ["", Validators.required],
+        emailCandidato: ["", Validators.required],
+        telefonoCandidato: ["", Validators.required],
+        passwordCandidato: ["", Validators.required],
+      });
+
+      this.frmCompany = this.formBuilder.group({
+        comentario: [],
+      });
+    }
+
+    get f() {
+      return this.frmCandidato.controls;
+    }
+
+    get fCo() {
+      return this.frmCompany.controls;
     }
 
     classApplied = false;
@@ -65,6 +93,25 @@ export class NavbarComponent {
     async getCiudades(id: number) {
       const ciudad = await this.api.getCiudades(id);
       this.arrCiudades = ciudad.items;
+    }
+
+    async registroCandidato() {
+      console.log(this.frmCandidato.value);
+      console.log(this.f.nombreCandidato.value);
+
+      this.submittedCandidato = true;
+      if (this.frmCandidato.invalid) {
+        return;
+      }
+
+      const reg = await this.api.registroUsuario(this.f.emailCandidato.value, this.f.passwordCandidato.value, 2, "", 0);
+      console.log(reg);
+      const regCandidato = await this.api.registroCandidato(this.f.nombreCandidato.value, this.f.apellidoCandidato.value, this.f.emailCandidato.value, this.f.telefonoCandidato.value, reg.ID_USUARIO);
+      console.log(regCandidato);
+    }
+
+    checkTyCCandidato(event: any) {
+      this.checkTerminosCandidato = event.currentTarget.checked;
     }
 
 }
