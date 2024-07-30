@@ -76,13 +76,13 @@ export class ReclutameService {
     }).toPromise();
   }
 
-  async registroEmpresa(nombre: string, id_pais: string, id_ciudad: number, telefono: any): Promise<any> {
+  async registroEmpresa(nombre: string, id_pais: any, id_ciudad: any, telefono: any): Promise<any> {
     return this.http.post<any>(this.apiUrl + 'registroempresa', {
       "NOMBRE_EMPRESA": nombre,
       "EMAIL": "",
-      "TELEFONO": telefono,
+      "TELEFONO": 0,
       "SITIO_WEB": "",
-      "ANIO_EMPRESA": 0,
+      "ANIO_EMPRESA": "",
       "TAMANO_EQUIPO": "",
       "CATEGORIA_EMPRESA": "",
       "ACERCA_EMPRESA": "",
@@ -90,15 +90,15 @@ export class ReclutameService {
       "TWITTER_URL": "",
       "LINKEDIN_URL": "",
       "INSTAGRAM_URL": "",
-      "ID_PAIS": id_pais,
-      "ID_CIUDAD": id_ciudad,
+      "ID_PAIS": parseInt(id_pais),
+      "ID_CIUDAD": parseInt(id_ciudad),
       "DOMICILIO": "",
       "ACTIVO": 1
     }).toPromise();
   }
 
   async registroCandidato(nombre: string, apellido: string, email: string, telefono: any, id_usuario: number): Promise<any> {
-    return this.http.post<any>(this.apiUrl + 'registroempresa', {
+    return this.http.post<any>(this.apiUrl + 'registrocandidato', {
       "NOMBRE": nombre,
       "APELLIDO": apellido,
       "EMAIL": email,
@@ -116,14 +116,15 @@ export class ReclutameService {
     }).toPromise();
   }
 
-  async registroReclutador(nombre: string, apellido: string, email: string, id_usuario: number, id_empresa: number, telefono: any): Promise<any> {
-    return this.http.post<any>(this.apiUrl + 'registroempresa', {
+  async registroReclutador(nombre: string, apellido: string, email: string, id_usuario: any, id_empresa: any, telefono: any): Promise<any> {
+
+    return this.http.post<any>(this.apiUrl + 'registroreclutador', {
       "NOMBRE": nombre,
       "APELLIDOS": apellido,
       "EMAIL": email,
-      "TELEFONO": telefono,
-      "ID_USUARIO": id_usuario,
-      "ID_EMPRESA": id_empresa
+      "TELEFONO": parseInt(telefono),
+      "ID_USUARIO": parseInt(id_usuario),
+      "ID_EMPRESA": parseInt(id_empresa)
     }).toPromise();
   }
 

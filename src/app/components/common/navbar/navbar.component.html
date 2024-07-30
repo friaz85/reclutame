@@ -402,7 +402,7 @@
                                         <label>
                                             Password
                                         </label>
-                                        <input type="text" class="form-control shadow-none" placeholder="Enter password"
+                                        <input type="password" class="form-control shadow-none" placeholder="Enter password"
                                         formControlName="passwordCandidato" [ngClass]="{ 'is-invalid': submittedCandidato && f.passwordCandidato.value == '' }">
                                         <div *ngIf="submittedCandidato && f.passwordCandidato.value == ''" class="invalid-feedback">
                                           <div *ngIf="f.passwordCandidato.errors.required">This field is required</div>
@@ -420,14 +420,18 @@
                                 </form>
                             </div>
                             <div class="tab-pane fade d-block opacity-100" *ngIf="currentInnerTab === 'innerTab2'">
-                                <form class="authentication-form">
+                                <form class="authentication-form" [formGroup]="frmCompany">
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>
                                                     First Name
                                                 </label>
-                                                <input type="text" class="form-control shadow-none" placeholder="Enter name">
+                                                <input type="text" class="form-control shadow-none" placeholder="Enter name"
+                                                formControlName="nombreAdmin" [ngClass]="{ 'is-invalid': submittedCompany && fCo.nombreAdmin.value == '' }">
+                                                <div *ngIf="submittedCompany && fCo.nombreAdmin.value == ''" class="invalid-feedback">
+                                                  <div *ngIf="fCo.nombreAdmin.errors.required">This field is required</div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
@@ -435,7 +439,11 @@
                                                 <label>
                                                     Last Name
                                                 </label>
-                                                <input type="text" class="form-control shadow-none" placeholder="Enter name">
+                                                <input type="text" class="form-control shadow-none" placeholder="Enter last name"
+                                                formControlName="apellidoAdmin" [ngClass]="{ 'is-invalid': submittedCompany && fCo.apellidoAdmin.value == '' }">
+                                                <div *ngIf="submittedCompany && fCo.apellidoAdmin.value == ''" class="invalid-feedback">
+                                                  <div *ngIf="fCo.apellidoAdmin.errors.required">This field is required</div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- <div class="col-sm-6">
@@ -451,7 +459,11 @@
                                                 <label>
                                                     Email
                                                 </label>
-                                                <input type="email" class="form-control shadow-none" placeholder="Enter email">
+                                                <input type="email" class="form-control shadow-none" placeholder="Enter email"
+                                                formControlName="emailAdmin" [ngClass]="{ 'is-invalid': submittedCompany && fCo.emailAdmin.value == '' }">
+                                                <div *ngIf="submittedCompany && fCo.emailAdmin.value == ''" class="invalid-feedback">
+                                                  <div *ngIf="fCo.emailAdmin.errors.required">This field is required</div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -459,19 +471,31 @@
                                         <label>
                                             Phone number
                                         </label>
-                                        <input type="text" class="form-control shadow-none" placeholder="Enter phone number">
+                                        <input type="text" class="form-control shadow-none" placeholder="Enter phone number"
+                                        formControlName="telefonoAdmin" [ngClass]="{ 'is-invalid': submittedCompany && fCo.telefonoAdmin.value == '' }">
+                                        <div *ngIf="submittedCompany && fCo.telefonoAdmin.value == ''" class="invalid-feedback">
+                                          <div *ngIf="fCo.telefonoAdmin.errors.required">This field is required</div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label>
                                             Password
                                         </label>
-                                        <input type="text" class="form-control shadow-none" placeholder="Enter password">
+                                        <input type="password" class="form-control shadow-none" placeholder="Enter password"
+                                        formControlName="passwordAdmin" [ngClass]="{ 'is-invalid': submittedCompany && fCo.passwordAdmin.value == '' }">
+                                        <div *ngIf="submittedCompany && fCo.passwordAdmin.value == ''" class="invalid-feedback">
+                                          <div *ngIf="fCo.passwordAdmin.errors.required">This field is required</div>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                       <label>
                                           Company name
                                       </label>
-                                      <input type="text" class="form-control shadow-none" placeholder="Enter company name">
+                                      <input type="text" class="form-control shadow-none" placeholder="Enter company name"
+                                        formControlName="nombreCompany" [ngClass]="{ 'is-invalid': submittedCompany && fCo.nombreCompany.value == '' }">
+                                        <div *ngIf="submittedCompany && fCo.nombreCompany.value == ''" class="invalid-feedback">
+                                          <div *ngIf="fCo.nombreCompany.errors.required">This field is required</div>
+                                        </div>
                                     </div>
                                     <div class="row">
                                       <div class="col-sm-6">
@@ -479,12 +503,16 @@
                                               <label>
                                                   Company Country
                                               </label>
-                                              <select class="form-select shadow-none" (change)="getCiudades($event.target.value)">
+                                              <select class="form-select shadow-none" (change)="getCiudades($event.target.value)"
+                                              formControlName="paisCompany" [ngClass]="{ 'is-invalid': submittedCompany && fCo.paisCompany.value == '0' }">
                                                 <option value="0" selected>Seleccionar</option>
                                                 <option *ngFor="let item of arrPais" [value]="item.id_pais">
                                                   {{ item.descripcion }}
                                                 </option>
                                               </select>
+                                              <div *ngIf="submittedCompany && fCo.nombreCompany.value == '0'" class="invalid-feedback">
+                                                <div *ngIf="fCo.nombreCompany.errors.required">This field is required</div>
+                                              </div>
                                           </div>
                                       </div>
                                       <div class="col-sm-6">
@@ -492,21 +520,26 @@
                                               <label>
                                                 Company City
                                               </label>
-                                              <select class="form-select shadow-none">
+                                              <select class="form-select shadow-none" formControlName="ciudadCompany"
+                                              [ngClass]="{ 'is-invalid': submittedCompany && fCo.nombreCompany.value == '0' }">
+                                              <option value="0" selected>Seleccionar</option>
                                                 <option *ngFor="let item of arrCiudades" [value]="item.id_ciudad">
                                                     {{ item.descripcion }}
                                                 </option>
                                             </select>
+                                            <div *ngIf="submittedCompany && fCo.nombreCompany.value == '0'" class="invalid-feedback">
+                                              <div *ngIf="fCo.nombreCompany.errors.required">This field is required</div>
+                                            </div>
                                           </div>
                                       </div>
                                       </div>
                                     <div class="form-check">
-                                        <input class="form-check-input shadow-none" type="checkbox" id="termsPrivacyPolicy">
+                                        <input class="form-check-input shadow-none" type="checkbox" id="termsPrivacyPolicy" (change)="checkTyCCompany($event)">
                                         <label class="form-check-label" for="termsPrivacyPolicy">
                                             Accept the <a routerLink="/">Terms</a> and <a routerLink="/">Privacy Policy</a>
                                         </label>
                                     </div>
-                                    <button type="submit" class="default-btn d-block w-100">
+                                    <button type="button" class="default-btn d-block w-100" (click)="registroCompany()" *ngIf="checkTerminosCcompany" >
                                         Register Now
                                     </button>
                                 </form>

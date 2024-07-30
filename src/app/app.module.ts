@@ -78,6 +78,7 @@ import { CdSidebarComponent } from './components/candidates-dashboard/cd-sidebar
 import { CdFooterComponent } from './components/candidates-dashboard/cd-footer/cd-footer.component';
 import { CdHeaderComponent } from './components/candidates-dashboard/cd-header/cd-header.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
     declarations: [
         AppComponent,
@@ -160,7 +161,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
         NgxScrollTopModule,
         NgApexchartsModule,
         BrowserAnimationsModule,
-        HttpClientModule
+        HttpClientModule,
+        ReactiveFormsModule
     ],
     providers: [
       HttpClient
