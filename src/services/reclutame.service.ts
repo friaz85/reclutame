@@ -64,6 +64,14 @@ export class ReclutameService {
     return this.http.get<any>(this.apiUrl + 'cattipotrabajo').toPromise();
   }
 
+  async getEmpresa(idEmpresa: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getempresa/' + idEmpresa).toPromise();
+  }
+
+  async getEmpresas(): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getempresas').toPromise();
+  }
+
   async registroUsuario(email: string, pwd: string, id_rol: number, token: string, id_empresa: number): Promise<any> {
     return this.http.post<any>(this.apiUrl + 'registrousuario', {
         "EMAIL": email,
@@ -125,6 +133,29 @@ export class ReclutameService {
       "TELEFONO": parseInt(telefono),
       "ID_USUARIO": parseInt(id_usuario),
       "ID_EMPRESA": parseInt(id_empresa)
+    }).toPromise();
+  }
+
+  async updateEmpresa (id_empresa: any, nombre: any, email: any, sitioWeb: any, anio: any, tamanoEquipo: any, categoria: any, acerca: any, facebook: any, twitter: any, linkedin: any, instagram: any, id_pais: any, id_ciudad: any, domicilio: any, telefono: any): Promise<any> {
+
+    return this.http.put<any>(this.apiUrl + 'updateempresa', {
+      "ID_EMPRESA": parseInt(id_empresa),
+      "NOMBRE_EMPRESA": nombre,
+      "EMAIL": email,
+      "TELEFONO": parseInt(telefono),
+      "SITIO_WEB": sitioWeb,
+      "ANIO_EMPRESA": parseInt(anio),
+      "TAMANO_EQUIPO": tamanoEquipo,
+      "CATEGORIA_EMPRESA": categoria,
+      "ACERCA_EMPRESA": acerca,
+      "FACEBOOK_URL": facebook,
+      "TWITTER_URL": twitter,
+      "LINKEDIN_URL": linkedin,
+      "INSTAGRAM_URL": instagram,
+      "ID_PAIS": parseInt(id_pais),
+      "ID_CIUDAD": parseInt(id_ciudad),
+      "DOMICILIO": domicilio,
+      "ACTIVO": 1
     }).toPromise();
   }
 

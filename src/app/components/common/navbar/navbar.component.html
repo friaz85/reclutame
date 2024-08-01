@@ -238,11 +238,11 @@
                             Login/Register
                         </span>
                     </div>
-                    <div class="option-item">
+                    <!-- <div class="option-item">
                         <a routerLink="/dashboard/post-a-new-job" class="default-btn">
                             Post A Job
                         </a>
-                    </div>
+                    </div> -->
                     <!-- <div
                         class="option-item"
                         [ngClass]="{'d-none': router.url === '/index-2' || router.url === '/index-3'}"
@@ -283,34 +283,42 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade d-block opacity-100" *ngIf="currentTab === 'tab1'">
-                        <div class="info">
+                        <!-- <div class="info">
                             <p>
                                 Username: <span class="fw-semibold">employer</span> or <span class="fw-semibold">candidate</span>
                             </p>
                             <p>
                                 Password: <span class="fw-semibold">jove</span>
                             </p>
-                        </div>
-                        <form class="authentication-form">
+                        </div> -->
+                        <form class="authentication-form" [formGroup]="frmLogin">
                             <div class="form-group">
                                 <label>
                                     Account or Email
                                 </label>
-                                <input type="text" class="form-control shadow-none" placeholder="Enter account or email">
+                                <input type="text" class="form-control shadow-none" placeholder="Enter account or email"
+                                formControlName="user" [ngClass]="{ 'is-invalid': submittedLogin && fl.user.value == '' }">
+                                <div *ngIf="submittedLogin && fl.user.value == ''" class="invalid-feedback">
+                                  <div *ngIf="fl.user.errors.required">This field is required</div>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label>
                                     Password
                                 </label>
-                                <input type="password" class="form-control shadow-none" placeholder="Enter password">
+                                <input type="password" class="form-control shadow-none" placeholder="Enter password"
+                                formControlName="pwd" [ngClass]="{ 'is-invalid': submittedLogin && fl.pwd.value == '' }">
+                                <div *ngIf="submittedLogin && fl.pwd.value == ''" class="invalid-feedback">
+                                  <div *ngIf="fl.pwd.errors.required">This field is required</div>
+                                </div>
                             </div>
-                            <div class="form-group forgot-password">
+                            <!-- <div class="form-group forgot-password">
                                 Forgot your password? <a routerLink="/">Reset password.</a>
-                            </div>
-                            <button type="submit" class="default-btn d-block w-100">
+                            </div> -->
+                            <button type="button" class="default-btn d-block w-100" (click)="login()">
                                 Login Now
                             </button>
-                            <div class="login-with-socials text-center">
+                            <!-- <div class="login-with-socials text-center">
                                 <span class="d-block fw-medium">
                                     Or Continue with
                                 </span>
@@ -323,7 +331,7 @@
                                 <a href="#" target="_blank" class="linkedin d-inline-block">
                                     <i class="ri-linkedin-fill"></i>
                                 </a>
-                            </div>
+                            </div> -->
                         </form>
                     </div>
                     <div class="tab-pane fade d-block opacity-100" *ngIf="currentTab === 'tab2'">

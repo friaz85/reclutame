@@ -9,7 +9,7 @@ import { ReclutameService } from 'src/services/reclutame.service';
 })
 export class HomeDemoThreeComponent {
 
-    title = 'Home Demo - 3 - Jove';
+    title = 'Reclútame';
 
     constructor(
       private titleService:Title,

@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReclutameService } from 'src/services/reclutame.service';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { AuthService } from 'src/services/auth.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -12,8 +13,10 @@ export class NavbarComponent {
   arrCiudades: any = [];
   frmCandidato: FormGroup | any;
   frmCompany: FormGroup | any;
+  frmLogin: FormGroup | any;
   submittedCandidato = false;
   submittedCompany = false;
+  submittedLogin = false;
   checkTerminosCandidato = false;
   checkTerminosCcompany = false;
 
@@ -33,6 +36,7 @@ export class NavbarComponent {
     public router: Router,
     private api: ReclutameService,
     private formBuilder: FormBuilder,
+    private apiLogin: AuthService
   ) {
     this.getPaises();
   }
@@ -56,6 +60,12 @@ export class NavbarComponent {
       paisCompany: ["", Validators.required],
       ciudadCompany: ["", Validators.required],
     });
+
+    this.frmLogin = this.formBuilder.group({
+      user: ["", Validators.required],
+      pwd: ["", Validators.required],
+    });
+
   }
 
   get f() {
@@ -64,6 +74,10 @@ export class NavbarComponent {
 
   get fCo() {
     return this.frmCompany.controls;
+  }
+
+  get fl() {
+    return this.frmLogin.controls;
   }
 
   classApplied = false;
@@ -120,8 +134,17 @@ export class NavbarComponent {
       const regCandidato = await this.api.registroCandidato(this.f.nombreCandidato.value, this.f.apellidoCandidato.value, this.f.emailCandidato.value, this.f.telefonoCandidato.value, reg.var_id_usuario);
       console.log(regCandidato);
 
-      // Redirect to dashboard candidate
-      this.router.navigate(['/candidates-dashboard']);
+      // Login
+      const login = await (await this.apiLogin.login(this.f.emailCandidato.value, this.f.passwordCandidato.value)).subscribe({
+        next: (data) => {
+          // Redirect to dashboard candidate
+          this.router.navigate(['/candidates-dashboard']);
+        },
+        error: (error) => {
+          console.error('There was an error!', error);
+        },
+      });
+
     } catch (error: any) {
       console.log('Error Status: ', error.status);
     }
@@ -146,14 +169,50 @@ export class NavbarComponent {
 
     try {
       const regC = await this.api.registroEmpresa(this.frmCompany.value.nombreCompany, this.frmCompany.value.paisCompany, this.frmCompany.value.ciudadCompany, this.frmCompany.value.telefonoAdmin);
-      console.log(regC);
-      const reg = await this.api.registroUsuario(this.frmCompany.value.emailAdmin, this.frmCompany.value.passwordAdmin, 1, "1234567890", regC.var_id_empresa);
-      console.log(reg);
-      const regCandidato = await this.api.registroReclutador(this.frmCompany.value.nombreAdmin, this.frmCompany.value.apellidoAdmin, this.frmCompany.value.emailAdmin, reg.var_id_usuario, regC.var_id_empresa, this.frmCompany.value.telefonoAdmin);
-      console.log(regCandidato);
 
-      // Redirect to dashboard
-      this.router.navigate(['/dashboard']);
+      const reg = await this.api.registroUsuario(this.frmCompany.value.emailAdmin, this.frmCompany.value.passwordAdmin, 1, "1234567890", regC.var_id_empresa);
+
+      const regCandidato = await this.api.registroReclutador(this.frmCompany.value.nombreAdmin, this.frmCompany.value.apellidoAdmin, this.frmCompany.value.emailAdmin, reg.var_id_usuario, regC.var_id_empresa, this.frmCompany.value.telefonoAdmin);
+
+      // Login
+      const login = await (await this.apiLogin.login(this.frmCompany.value.emailAdmin, this.frmCompany.value.passwordAdmin)).subscribe({
+        next: (data) => {
+          // Redirect to dashboard
+          this.router.navigate(['/dashboard']);
+        },
+        error: (error) => {
+          console.error('There was an error!', error);
+        },
+      });
+
+    } catch (error: any) {
+      console.log('Error Status: ', error.status);
+    }
+  }
+
+  async login() {
+    this.submittedLogin = true;
+    if (this.frmLogin.invalid) {
+      return;
+    }
+
+    try {
+      const login = await (await this.apiLogin.login(this.fl.user.value, this.fl.pwd.value)).subscribe({
+        next: (data) => {
+          console.log(data);
+          if (data.p_id_rol === 3) {
+            // Redirect to dashboard candidate
+            this.router.navigate(['/candidates-dashboard']);
+          } else {
+            // Redirect to dashboard
+            this.router.navigate(['/dashboard']);
+          }
+        },
+        error: (error) => {
+          console.error('There was an error!', error);
+        },
+      });
+
 
     } catch (error: any) {
       console.log('Error Status: ', error.status);

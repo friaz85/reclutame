@@ -79,6 +79,7 @@ import { CdFooterComponent } from './components/candidates-dashboard/cd-footer/c
 import { CdHeaderComponent } from './components/candidates-dashboard/cd-header/cd-header.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EdAddNewEmployerComponent } from './components/employers-dashboard/ed-add-new-employer/ed-add-new-employer.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -152,7 +153,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         CdSidebarComponent,
         CdFooterComponent,
         CdHeaderComponent,
-
+        EdAddNewEmployerComponent
     ],
     imports: [
         BrowserModule,
