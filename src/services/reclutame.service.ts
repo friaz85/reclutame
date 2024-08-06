@@ -159,6 +159,29 @@ export class ReclutameService {
     }).toPromise();
   }
 
+  async getProfile(token: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getProfile/' + token).toPromise();
+  }
+
+  async getReclutador(idReclutador: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getReclutador/' + idReclutador).toPromise();
+  }
+
+  async getCandidato(idCandidato: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getCandidato/' + idCandidato).toPromise();
+  }
+
+  async getUsuario(idUsuario: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getUsuario/' + idUsuario).toPromise();
+  }
+
+  async getRoles(): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getRoles').toPromise();
+  }
+
+  async getRol(idRol: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getRol/' + idRol).toPromise();
+  }
 
 /***********************************************************************************/
 /***********************************************************************************/
