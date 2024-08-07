@@ -131,7 +131,7 @@ export class NavbarComponent {
     try {
       const reg = await this.api.registroUsuario(this.f.emailCandidato.value, this.f.passwordCandidato.value, 3, "1234567890", 0);
       console.log(reg);
-      const regCandidato = await this.api.registroCandidato(this.f.nombreCandidato.value, this.f.apellidoCandidato.value, this.f.emailCandidato.value, this.f.telefonoCandidato.value, reg.var_id_usuario);
+      const regCandidato = await this.api.registroCandidato(this.f.nombreCandidato.value, this.f.apellidoCandidato.value, this.f.emailCandidato.value, this.f.telefonoCandidato.value, reg.p_id_usuario);
       console.log(regCandidato);
 
       // Login
@@ -170,9 +170,18 @@ export class NavbarComponent {
     try {
       const regC = await this.api.registroEmpresa(this.frmCompany.value.nombreCompany, this.frmCompany.value.paisCompany, this.frmCompany.value.ciudadCompany, this.frmCompany.value.telefonoAdmin);
 
-      const reg = await this.api.registroUsuario(this.frmCompany.value.emailAdmin, this.frmCompany.value.passwordAdmin, 1, "1234567890", regC.var_id_empresa);
+      const reg = await this.api.registroUsuario(this.frmCompany.value.emailAdmin, this.frmCompany.value.passwordAdmin, 1, "1234567890", regC.p_id_empresa);
 
-      const regCandidato = await this.api.registroReclutador(this.frmCompany.value.nombreAdmin, this.frmCompany.value.apellidoAdmin, this.frmCompany.value.emailAdmin, reg.var_id_usuario, regC.var_id_empresa, this.frmCompany.value.telefonoAdmin);
+      const regCandidato = await this.api.registroReclutador(
+        this.frmCompany.value.nombreAdmin,
+        this.frmCompany.value.apellidoAdmin,
+        this.frmCompany.value.emailAdmin,
+        reg.p_id_usuario,
+        regC.p_id_empresa,
+        this.frmCompany.value.telefonoAdmin
+        );
+
+        console.log(regCandidato);
 
       // Login
       const login = await (await this.apiLogin.login(this.frmCompany.value.emailAdmin, this.frmCompany.value.passwordAdmin)).subscribe({
