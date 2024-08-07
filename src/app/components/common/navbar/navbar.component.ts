@@ -191,6 +191,7 @@ export class NavbarComponent {
   }
 
   async login() {
+    console.log('login');
     this.submittedLogin = true;
     if (this.frmLogin.invalid) {
       return;

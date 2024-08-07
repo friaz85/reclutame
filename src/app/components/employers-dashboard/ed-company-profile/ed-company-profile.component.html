@@ -6,209 +6,216 @@
 </div>
 
 <!-- Company Profile -->
-<div class="jove-card">
-    <h3 class="title">
-        My Profile
-    </h3>
-    <form>
-        <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <div class="form-group upload-photo">
-                    <label>
-                        Upload new photo
-                    </label>
-                    <input type="file" id="img" name="img" accept="image/*">
-                    <p>Maximum file size: 2 MB</p>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Company name (optional)
-                    </label>
-                    <input type="text" class="form-control shadow-none" value="Doca">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Email address
-                    </label>
-                    <input type="email" class="form-control shadow-none" value="hello@doca.com">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Phone
-                    </label>
-                    <input type="text" class="form-control shadow-none" value="+1 (514) 312-5678">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Website
-                    </label>
-                    <input type="text" class="form-control shadow-none" value="https://www.doca.com/">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Est. since
-                    </label>
-                    <input type="text" class="form-control shadow-none" value="20 Oct 2008">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Team size
-                    </label>
-                    <select class="form-select shadow-none">
-                        <option selected>10 - 20</option>
-                        <option value="1">20 - 30</option>
-                        <option value="2">30 - 40</option>
-                        <option value="3">50 - 60</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Category
-                    </label>
-                    <input type="text" class="form-control shadow-none" value="Software Engineer">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Allow in search listing
-                    </label>
-                    <select class="form-select shadow-none">
-                        <option selected>Yes</option>
-                        <option value="1">No</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-lg-12 col-md-12">
-                <div class="form-group">
-                    <label>
-                        About company
-                    </label>
-                    <textarea class="form-control shadow-none" cols="30" rows="8">Welcome to a world of endless possibilities at Jove! It's not just a job search; it's a career evolution. Uncover your potential, chase your ambitions, and step into a realm where your dream job is not just a fantasy – it's waiting for you.</textarea>
-                </div>
-            </div>
-        </div>
-        <button type="submit" class="default-btn">
-            Save
-        </button>
-    </form>
-</div>
-<div class="jove-card">
-    <h3 class="title">
-        Social Network
-    </h3>
-    <form>
-        <div class="row">
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Facebook
-                    </label>
-                    <input type="text" class="form-control shadow-none" value="https://www.facebook.com/">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Twitter
-                    </label>
-                    <input type="text" class="form-control shadow-none" value="https://twitter.com/">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Linkedin
-                    </label>
-                    <input type="text" class="form-control shadow-none" value="https://www.linkedin.com/">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Instagram
-                    </label>
-                    <input type="text" class="form-control shadow-none" value="https://www.instagram.com/">
-                </div>
-            </div>
-        </div>
-        <button type="submit" class="default-btn">
-            Save
-        </button>
-    </form>
-</div>
-<div class="jove-card">
-    <h3 class="title">
-        Contact Information
-    </h3>
-    <form>
-        <div class="row">
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Country
-                    </label>
-                    <select class="form-select shadow-none" (change)="getCiudades($event.target.value)">
-                      <option value="0" selected>Seleccionar</option>
-                      <option *ngFor="let item of arrPais" [value]="item.id_pais">
-                        {{ item.descripcion }}
-                      </option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        City
-                    </label>
-                    <select class="form-select shadow-none">
-                        <option *ngFor="let item of arrCiudades" [value]="item.id_ciudad">
-                            {{ item.descripcion }}
+<form [formGroup]="frmCompany">
+  <div class="jove-card">
+      <h3 class="title">
+          My Profile
+      </h3>
+      <div class="row">
+          <div class="col-lg-12 col-md-12">
+              <div class="form-group upload-photo">
+                  <label>
+                      Upload new photo
+                  </label>
+                  <input type="file" id="img" name="img" accept="image/*">
+                  <p>Maximum file size: 2 MB</p>
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label>
+                      Company name
+                  </label>
+                  <input type="text" class="form-control shadow-none" formControlName="nombre_empresa"
+                  [ngClass]="{ 'is-invalid': submitted && fCo.nombre_empresa.value == '' }">
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label>
+                      Email address
+                  </label>
+                  <input type="email" class="form-control shadow-none" formControlName="email"
+                  [ngClass]="{ 'is-invalid': submitted && fCo.email.value == '' }">
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label>
+                      Phone
+                  </label>
+                  <input type="text" class="form-control shadow-none" formControlName="telefono"
+                  [ngClass]="{ 'is-invalid': submitted && fCo.telefono.value == '' }">
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label>
+                      Website
+                  </label>
+                  <input type="text" class="form-control shadow-none" formControlName="sitio_web"
+                  [ngClass]="{ 'is-invalid': submitted && fCo.sitio_web.value == '' }">
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label>
+                      Est. since
+                  </label>
+                  <input type="text" class="form-control shadow-none" formControlName="anio_empresa"
+                  [ngClass]="{ 'is-invalid': submitted && fCo.anio_empresa.value == '' }">
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label>
+                      Team size
+                  </label>
+                  <input class="form-control shadow-none" formControlName="tamano_equipo"
+                  [ngClass]="{ 'is-invalid': submitted && fCo.tamano_equipo.value == '' }">
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label>
+                      Category
+                  </label>
+                  <input type="text" class="form-control shadow-none" formControlName="categoria_empresa"
+                  [ngClass]="{ 'is-invalid': submitted && fCo.categoria_empresa.value == '' }">
+              </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+              <div class="form-group">
+                  <label>
+                      Allow in search listing
+                  </label>
+                  <select class="form-select shadow-none" formControlName="allow"
+                  [ngClass]="{ 'is-invalid': submitted && fCo.allow.value == '' }">
+                      <option selected value="1">Yes</option>
+                      <option value="0">No</option>
+                  </select>
+              </div>
+          </div>
+          <div class="col-lg-12 col-md-12">
+              <div class="form-group">
+                  <label>
+                      About company
+                  </label>
+                  <textarea class="form-control shadow-none" cols="30" rows="8" formControlName="acerca_empresa"
+                  [ngClass]="{ 'is-invalid': submitted && fCo.acerca_empresa.value == '' }"></textarea>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="jove-card">
+      <h3 class="title">
+          Social Network
+      </h3>
+          <div class="row">
+              <div class="col-lg-6 col-md-6">
+                  <div class="form-group">
+                      <label>
+                          Facebook
+                      </label>
+                      <input type="text" class="form-control shadow-none" value="https://www.facebook.com/" formControlName="facebook_url"
+                      [ngClass]="{ 'is-invalid': submitted && fCo.facebook_url.value == '' }">
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="form-group">
+                      <label>
+                          Twitter
+                      </label>
+                      <input type="text" class="form-control shadow-none" value="https://twitter.com/" formControlName="twitter_url"
+                      [ngClass]="{ 'is-invalid': submitted && fCo.twitter_url.value == '' }">
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="form-group">
+                      <label>
+                          Linkedin
+                      </label>
+                      <input type="text" class="form-control shadow-none" value="https://www.linkedin.com/" formControlName="linkedin_url"
+                      [ngClass]="{ 'is-invalid': submitted && fCo.linkedin_url.value == '' }">
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="form-group">
+                      <label>
+                          Instagram
+                      </label>
+                      <input type="text" class="form-control shadow-none" value="https://www.instagram.com/" formControlName="instagram_url"
+                      [ngClass]="{ 'is-invalid': submitted && fCo.instagram_url.value == '' }">
+                  </div>
+              </div>
+          </div>
+  </div>
+  <div class="jove-card">
+      <h3 class="title">
+          Contact Information
+      </h3>
+          <div class="row">
+              <div class="col-lg-6 col-md-6">
+                  <div class="form-group">
+                      <label>
+                          Country
+                      </label>
+                      <select class="form-select shadow-none" (change)="getCiudades($event.target.value)" formControlName="id_pais"
+                      [ngClass]="{ 'is-invalid': submitted && fCo.id_pais.value == 0 }">
+                        <option value="0" selected>Seleccionar</option>
+                        <option *ngFor="let item of arrPais" [value]="item.id_pais">
+                          {{ item.descripcion }}
                         </option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-lg-12 col-md-12">
-                <div class="form-group">
-                    <label>
-                        Complete address
-                    </label>
-                    <input type="text" class="form-control shadow-none" value="84 Wexham Road RH19 8EA, USA">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Latitude
-                    </label>
-                    <input type="text" class="form-control shadow-none">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Longitude
-                    </label>
-                    <input type="text" class="form-control shadow-none">
-                </div>
-            </div>
-        </div>
-        <button type="submit" class="default-btn">
-            Save
-        </button>
-    </form>
-</div>
+                      </select>
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="form-group">
+                      <label>
+                          City
+                      </label>
+                      <select class="form-select shadow-none" formControlName="id_ciudad"
+                      [ngClass]="{ 'is-invalid': submitted && fCo.id_ciudad.value == '' }">
+                          <option *ngFor="let item of arrCiudades" [value]="item.id_ciudad">
+                              {{ item.descripcion }}
+                          </option>
+                      </select>
+                  </div>
+              </div>
+              <div class="col-lg-12 col-md-12">
+                  <div class="form-group">
+                      <label>
+                          Complete address
+                      </label>
+                      <input type="text" class="form-control shadow-none" formControlName="domicilio"
+                      [ngClass]="{ 'is-invalid': submitted && fCo.domicilio.value == '' }">
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="form-group">
+                      <label>
+                          Latitude
+                      </label>
+                      <input type="text" class="form-control shadow-none" formControlName="latitud"
+                      [ngClass]="{ 'is-invalid': submitted && fCo.latitud.value == '' }">
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                  <div class="form-group">
+                      <label>
+                          Longitude
+                      </label>
+                      <input type="text" class="form-control shadow-none" formControlName="longitud"
+                      [ngClass]="{ 'is-invalid': submitted && fCo.longitud.value == '' }">
+                  </div>
+              </div>
+          </div>
+          <div class="row mt-4">
+              <div class="col-12 text-end">
+                  <button type="button" class="default-btn" (click)="updateEmpresa()">
+                      Save
+                  </button>
+              </div>
+          </div>
+  </div>
+</form>

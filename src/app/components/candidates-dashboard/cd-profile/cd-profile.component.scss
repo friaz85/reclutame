@@ -1,7 +1,7 @@
 // Breadcrumb Title
 .breadcrumb-title {
     margin-bottom: 25px;
-    
+
     h1 {
         font-size: 24px;
     }
@@ -28,70 +28,72 @@
             right: -30px;
         };
     }
-    form {
-        .form-group {
-            margin-bottom: 25px;
 
-            label {
-                display: block;
-                margin-bottom: 8px;
-            }
-            .form-control {
-                height: 50px;
-                padding: 10px 20px;
-                border-radius: 5px;
-                font-size: var(--fontSize);
-                color: var(--headingColor);
-                border: 1px solid #e0e6e9;
-                background-color: #f9fafb;
-                transition: var(--transition);
+}
 
-                &::placeholder {
-                    color: var(--bodyColor);
-                }
-                &:focus {
-                    border-color: var(--primaryColor);
-                }
-            }
-            .form-select {
-                height: 50px;
-                cursor: pointer;
-                padding: 10px 20px;
-                border-radius: 5px;
-                font-size: var(--fontSize);
-                color: var(--headingColor);
-                border: 1px solid #e0e6e9;
-                transition: var(--transition);
-                background: {
-                    color: #f9fafb;
-                    position: right 20px center;
-                };
-                &:focus {
-                    border-color: var(--primaryColor);
-                }
-            }
-            textarea.form-control {
-                height: auto;
-                padding-top: 20px;
-            }
-            &.upload-photo {
-                padding-bottom: 25px;
-                border-bottom: 1px solid var(--borderColor);
+form {
+  .form-group {
+      margin-bottom: 25px;
 
-                input[type="file" i] {
-                    margin-top: 5px;
-                }
-                p {
-                    line-height: initial;
-                    margin-top: 12px;
-                    font: {
-                        size: 14px;
-                        style: italic;
-                    };
-                }
-            }
-        }
-    }
+      label {
+          display: block;
+          margin-bottom: 8px;
+      }
+      .form-control {
+          height: 50px;
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: var(--fontSize);
+          color: var(--headingColor);
+          border: 1px solid #e0e6e9;
+          background-color: #f9fafb;
+          transition: var(--transition);
+
+          &::placeholder {
+              color: var(--bodyColor);
+          }
+          &:focus {
+              border-color: var(--primaryColor);
+          }
+      }
+      .form-select {
+          height: 50px;
+          cursor: pointer;
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: var(--fontSize);
+          color: var(--headingColor);
+          border: 1px solid #e0e6e9;
+          transition: var(--transition);
+          background: {
+              color: #f9fafb;
+              position: right 20px center;
+          };
+          &:focus {
+              border-color: var(--primaryColor);
+          }
+      }
+      textarea.form-control {
+          height: auto;
+          padding-top: 20px;
+      }
+      &.upload-photo {
+          padding-bottom: 25px;
+          border-bottom: 1px solid var(--borderColor);
+
+          input[type="file" i] {
+              margin-top: 5px;
+          }
+          p {
+              line-height: initial;
+              margin-top: 12px;
+              font: {
+                  size: 14px;
+                  style: italic;
+              };
+          }
+      }
+  }
 }
 
 /* Max width 767px */
@@ -108,7 +110,7 @@
     .jove-card {
         border-radius: 5px;
         padding: 20px 15px;
-    
+
         .title {
             font-size: 16px;
             margin-bottom: 15px;
@@ -122,39 +124,39 @@
                 right: -15px;
             };
         }
-        form {
-            .form-group {
-                margin-bottom: 15px;
-    
-                label {
-                    margin-bottom: 7px;
-                }
-                .form-control {
-                    height: 48px;
-                    font-size: 15px;
-                    padding: 10px 15px;
-                }
-                .form-select {
-                    height: 48px;
-                    font-size: 15px;
-                    padding: 10px 15px;
-                    background: {
-                        position: right 20px center;
-                    };
-                }
-                textarea.form-control {
-                    padding-top: 15px;
-                }
-                &.upload-photo {
-                    padding-bottom: 15px;
-    
-                    p {
-                        font-size: 13px;
-                    }
-                }
-            }
-        }
-    }
+      }
+      form {
+          .form-group {
+              margin-bottom: 15px;
+
+              label {
+                  margin-bottom: 7px;
+              }
+              .form-control {
+                  height: 48px;
+                  font-size: 15px;
+                  padding: 10px 15px;
+              }
+              .form-select {
+                  height: 48px;
+                  font-size: 15px;
+                  padding: 10px 15px;
+                  background: {
+                      position: right 20px center;
+                  };
+              }
+              textarea.form-control {
+                  padding-top: 15px;
+              }
+              &.upload-photo {
+                  padding-bottom: 15px;
+
+                  p {
+                      font-size: 13px;
+                  }
+              }
+          }
+      }
 
 }
 
@@ -175,7 +177,7 @@
     .jove-card {
         border-radius: 10px;
         padding: 25px;
-    
+
         .title {
             font-size: 18px;
             padding: {
@@ -188,25 +190,25 @@
                 right: -25px;
             };
         }
-        form {
-            .form-group {
-                .form-control {
-                    padding: 10px 18px;
-                    font-size: 15px;
-                }
-                .form-select {
-                    padding: 10px 18px;
-                    font-size: 15px;
-                    background: {
-                        position: right 18px center;
-                    };
-                }
-                textarea.form-control {
-                    padding-top: 18px;
-                }
-            }
-        }
-    }
+      }
+      form {
+          .form-group {
+              .form-control {
+                  padding: 10px 18px;
+                  font-size: 15px;
+              }
+              .form-select {
+                  padding: 10px 18px;
+                  font-size: 15px;
+                  background: {
+                      position: right 18px center;
+                  };
+              }
+              textarea.form-control {
+                  padding-top: 18px;
+              }
+          }
+      }
 
 }
 
@@ -216,7 +218,7 @@
     // Card
     .jove-card {
         padding: 25px;
-    
+
         .title {
             padding: {
                 left: 25px;

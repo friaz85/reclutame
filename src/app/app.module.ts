@@ -4,6 +4,8 @@ import { NgApexchartsModule } from "ng-apexcharts";
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxSpinnerModule } from "ngx-spinner";
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -163,7 +165,8 @@ import { EdAddNewEmployerComponent } from './components/employers-dashboard/ed-a
         NgApexchartsModule,
         BrowserAnimationsModule,
         HttpClientModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        NgxSpinnerModule
     ],
     providers: [
       HttpClient

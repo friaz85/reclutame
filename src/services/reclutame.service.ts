@@ -138,7 +138,7 @@ export class ReclutameService {
 
   async updateEmpresa (id_empresa: any, nombre: any, email: any, sitioWeb: any, anio: any, tamanoEquipo: any, categoria: any, acerca: any, facebook: any, twitter: any, linkedin: any, instagram: any, id_pais: any, id_ciudad: any, domicilio: any, telefono: any): Promise<any> {
 
-    return this.http.put<any>(this.apiUrl + 'updateempresa', {
+    return this.http.post<any>(this.apiUrl + 'updateempresa', {
       "ID_EMPRESA": parseInt(id_empresa),
       "NOMBRE_EMPRESA": nombre,
       "EMAIL": email,

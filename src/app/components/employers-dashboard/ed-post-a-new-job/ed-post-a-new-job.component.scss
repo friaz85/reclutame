@@ -1,7 +1,7 @@
 // Breadcrumb Title
 .breadcrumb-title {
     margin-bottom: 25px;
-    
+
     h1 {
         font-size: 24px;
     }
@@ -94,6 +94,28 @@
     }
 }
 
+.typewriter textarea {
+  font-family: 'Courier New', Courier, monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border: none;
+  resize: none;
+  width: 100%;
+  height: 100px; /* Ajusta la altura según sea necesario */
+  background-color: transparent;
+  outline: none;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-right-color: transparent;
+  }
+  50% {
+    border-right-color: black;
+  }
+}
+
 /* Max width 767px */
 @media only screen and (max-width : 767px) {
 
@@ -108,7 +130,7 @@
     .jove-card {
         border-radius: 5px;
         padding: 20px 15px;
-    
+
         .title {
             font-size: 16px;
             margin-bottom: 15px;
@@ -125,7 +147,7 @@
         form {
             .form-group {
                 margin-bottom: 15px;
-    
+
                 label {
                     margin-bottom: 7px;
                 }
@@ -147,7 +169,7 @@
                 }
                 &.upload-photo {
                     padding-bottom: 15px;
-    
+
                     p {
                         font-size: 13px;
                     }
@@ -175,7 +197,7 @@
     .jove-card {
         border-radius: 10px;
         padding: 25px;
-    
+
         .title {
             font-size: 18px;
             padding: {
@@ -216,7 +238,7 @@
     // Card
     .jove-card {
         padding: 25px;
-    
+
         .title {
             padding: {
                 left: 25px;
