@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/services/auth.service';
 import { ReclutameService } from 'src/services/reclutame.service';
 import Swal from 'sweetalert2';
 @Component({
@@ -15,10 +16,11 @@ export class EdCompanyProfileComponent {
 
   constructor(
     private api: ReclutameService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private auth: AuthService
     ) {
     this.getPaises();
-    this.getEmpresa(9);
+    this.getEmpresa(this.auth.currentUserValue.p_id_empresa);
   }
 
     ngOnInit(): void {

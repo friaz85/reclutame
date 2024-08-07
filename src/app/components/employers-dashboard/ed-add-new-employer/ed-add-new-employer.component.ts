@@ -51,10 +51,10 @@ export class EdAddNewEmployerComponent implements OnInit {
     }
 
     try {
-      let idEmpresa = 0;
+      let idEmpresa = this.auth.currentUserValue.p_id_empresa;
       console.log(this.auth.currentUserValue.p_id_empresa);
       const reg = await this.api.registroUsuario(this.frmReclutador.value.emailAdmin, this.frmReclutador.value.passwordAdmin, 2, "1234567890", idEmpresa);
-      const regReclutador = await this.api.registroReclutador(this.frmReclutador.value.nombreAdmin, this.frmReclutador.value.apellidoAdmin, this.frmReclutador.value.emailAdmin, reg.var_id_usuario, idEmpresa, this.frmReclutador.value.telefonoAdmin);
+      const regReclutador = await this.api.registroReclutador(this.frmReclutador.value.nombreAdmin, this.frmReclutador.value.apellidoAdmin, this.frmReclutador.value.emailAdmin, reg.p_id_usuario, idEmpresa, this.frmReclutador.value.telefonoAdmin);
 
       Swal.fire({
         icon: 'success',
