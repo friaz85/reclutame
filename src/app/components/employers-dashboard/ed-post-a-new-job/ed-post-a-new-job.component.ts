@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { AuthService } from 'src/services/auth.service';
 import { ReclutameService } from 'src/services/reclutame.service';
+import Swal from 'sweetalert2';
 // @ts-ignore
 // import Typewriter from 't-writer.js';
 
@@ -33,7 +35,8 @@ export class EdPostANewJobComponent {
   constructor(
     private api: ReclutameService,
     private formBuilder: FormBuilder,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private auth: AuthService
     ) {
     this.getPaises();
     this.getCategorias();
@@ -50,8 +53,8 @@ export class EdPostANewJobComponent {
   ngOnInit(): void {
     this.frmJob = this.formBuilder.group({
       p_titulo_vacante: ["", Validators.required],
-      p_descripcion_vacante: ["", Validators.required],
-      p_descripcion_vacante_send: ["", Validators.required],
+      p_descripcion_vacante: [""],
+      p_descripcion_vacante_send: [""],
       p_email: ["", Validators.required],
       p_id_categoria: ["", Validators.required],
       p_id_tipo_trabajo: ["", Validators.required],
@@ -138,9 +141,6 @@ export class EdPostANewJobComponent {
     this.spinner.show();
     element.textContent = 'Processing';
     element.disabled = true
-
-    txtJob.disabled = true;
-
     const vacante = await this.api.postCrearVacante(this.frmJob.value.p_descripcion_vacante_send);
     console.log("Vacante creada: ", vacante);
     this.text = vacante.response;
@@ -171,14 +171,29 @@ export class EdPostANewJobComponent {
     }
   }
 
-  registroVacante() {
-    this.submitted = true;
+  async registroVacante(descripcion: any) {
 
+    this.submitted = true;
+    console.log(this.frmJob);
     if (this.frmJob.invalid) {
       return;
     }
-
-    console.log(this.frmJob.value);
+    const reg = await this.api.registroVacante(this.frmJob.value.p_titulo_vacante, descripcion.value, this.frmJob.value.p_email, this.frmJob.value.p_id_categoria, this.frmJob.value.p_id_tipo_trabajo, this.frmJob.value.p_id_salario, this.frmJob.value.p_id_nivel_profesional, this.frmJob.value.p_id_experiencia, this.frmJob.value.p_id_genero, this.frmJob.value.p_id_industria, this.frmJob.value.p_id_grado_escolar, this.frmJob.value.p_fecha_limite_solicitud, this.frmJob.value.p_id_pais, this.frmJob.value.p_id_ciudad, this.frmJob.value.p_direccion, this.auth.currentUserValue.p_id_empresa, this.auth.currentUserValue.p_id_reclutador);
+    if (!reg.p_error_message) {
+      Swal.fire({
+        icon: 'success',
+        title: 'Success',
+        text: 'Vacante registrada con éxito.'
+      });
+      // reiniciar formulario
+      this.frmJob.reset();
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Error al registrar la vacante. ' + reg.p_error_message
+      });
+    }
   }
 
 }

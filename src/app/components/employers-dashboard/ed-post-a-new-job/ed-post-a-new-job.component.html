@@ -40,7 +40,7 @@
                       Job description
                   </label>
                 </div>
-                  <textarea #txtJob class="form-control shadow-none" cols="30" rows="8" placeholder="" [value]="displayedText" disabled ></textarea>
+                  <textarea #txtJob class="form-control shadow-none" cols="30" rows="8" placeholder="" [value]="displayedText"></textarea>
                   <!-- <div class="tw"></div> -->
                   <!-- <div class="typewriter">
                     <p>{{ displayedText }}</p>
@@ -167,7 +167,7 @@
                     <select class="form-select shadow-none" formControlName="p_id_grado_escolar"
                     [ngClass]="{ 'is-invalid': submitted && fCo.p_id_grado_escolar.value == '' }">
                         <option selected>Select</option>
-                        <option *ngFor="let item of arrGradoEscolar" [value]="item.id_calificacion">
+                        <option *ngFor="let item of arrGradoEscolar" [value]="item.id_grado_escolar">
                           {{ item.descripcion }}
                     </select>
                 </div>
@@ -200,9 +200,9 @@
                     <label>
                         City
                     </label>
-                    <select class="form-select shadow-none">
-                      <option *ngFor="let item of arrCiudades" [value]="item.id_ciudad" formControlName="p_id_ciudad"
-                      [ngClass]="{ 'is-invalid': submitted && fCo.p_id_ciudad.value == '' }">
+                    <select class="form-select shadow-none" formControlName="p_id_ciudad"
+                    [ngClass]="{ 'is-invalid': submitted && fCo.p_id_ciudad.value == '' }">
+                      <option *ngFor="let item of arrCiudades" [value]="item.id_ciudad">
                         {{ item.descripcion }}
                       </option>
                     </select>
@@ -234,7 +234,7 @@
                 </div>
             </div> -->
         </div>
-        <button type="submit" class="default-btn" (click)="registroVacante()">
+        <button type="submit" class="default-btn" (click)="registroVacante(txtJob)">
             Next
         </button>
     </form>

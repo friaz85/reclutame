@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ReclutameService } from 'src/services/reclutame.service';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AuthService } from 'src/services/auth.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -131,19 +132,34 @@ export class NavbarComponent {
     try {
       const reg = await this.api.registroUsuario(this.f.emailCandidato.value, this.f.passwordCandidato.value, 3, "1234567890", 0);
       console.log(reg);
-      const regCandidato = await this.api.registroCandidato(this.f.nombreCandidato.value, this.f.apellidoCandidato.value, this.f.emailCandidato.value, this.f.telefonoCandidato.value, reg.p_id_usuario);
-      console.log(regCandidato);
-
-      // Login
-      const login = await (await this.apiLogin.login(this.f.emailCandidato.value, this.f.passwordCandidato.value)).subscribe({
-        next: (data) => {
-          // Redirect to dashboard candidate
-          this.router.navigate(['/candidates-dashboard']);
-        },
-        error: (error) => {
-          console.error('There was an error!', error);
-        },
-      });
+      if (!reg.p_error_message) {
+        const regCandidato = await this.api.registroCandidato(this.f.nombreCandidato.value, this.f.apellidoCandidato.value, this.f.emailCandidato.value, this.f.telefonoCandidato.value, reg.p_id_usuario);
+        console.log(regCandidato);
+        if (!regCandidato.p_error_message) {
+          // Login
+          const login = await (await this.apiLogin.login(this.f.emailCandidato.value, this.f.passwordCandidato.value)).subscribe({
+            next: (data) => {
+              // Redirect to dashboard candidate
+              this.router.navigate(['/candidates-dashboard']);
+            },
+            error: (error) => {
+              console.error('There was an error!', error);
+            },
+          });
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Error al registrar el candidato. ' + regCandidato.p_error_message
+          });
+        }
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Error al registrar el usuario. ' + reg.p_error_message
+        });
+      }
 
     } catch (error: any) {
       console.log('Error Status: ', error.status);
@@ -169,30 +185,53 @@ export class NavbarComponent {
 
     try {
       const regC = await this.api.registroEmpresa(this.frmCompany.value.nombreCompany, this.frmCompany.value.paisCompany, this.frmCompany.value.ciudadCompany, this.frmCompany.value.telefonoAdmin);
+      if (!regC.p_error_message) {
+        const reg = await this.api.registroUsuario(this.frmCompany.value.emailAdmin, this.frmCompany.value.passwordAdmin, 1, "1234567890", regC.p_id_empresa);
+        if (!reg.p_error_message) {
+          const regCandidato = await this.api.registroReclutador(
+            this.frmCompany.value.nombreAdmin,
+            this.frmCompany.value.apellidoAdmin,
+            this.frmCompany.value.emailAdmin,
+            reg.p_id_usuario,
+            regC.p_id_empresa,
+            this.frmCompany.value.telefonoAdmin
+            );
 
-      const reg = await this.api.registroUsuario(this.frmCompany.value.emailAdmin, this.frmCompany.value.passwordAdmin, 1, "1234567890", regC.p_id_empresa);
+            console.log(regCandidato);
+            if (!regCandidato.p_error_message) {
+              // Login
+              const login = await (await this.apiLogin.login(this.frmCompany.value.emailAdmin, this.frmCompany.value.passwordAdmin)).subscribe({
+                next: (data) => {
+                  // Redirect to dashboard
+                  this.router.navigate(['/dashboard']);
+                },
+                error: (error) => {
+                  console.error('There was an error!', error);
+                },
+              });
+            } else {
+              Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Error al registrar el reclutador. ' + regCandidato.p_error_message
+              });
+            }
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Error al registrar el usuario. ' + reg.p_error_message
+          });
+        }
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Error al registrar la empresa. ' + regC.p_error_message
+        });
+      }
 
-      const regCandidato = await this.api.registroReclutador(
-        this.frmCompany.value.nombreAdmin,
-        this.frmCompany.value.apellidoAdmin,
-        this.frmCompany.value.emailAdmin,
-        reg.p_id_usuario,
-        regC.p_id_empresa,
-        this.frmCompany.value.telefonoAdmin
-        );
 
-        console.log(regCandidato);
-
-      // Login
-      const login = await (await this.apiLogin.login(this.frmCompany.value.emailAdmin, this.frmCompany.value.passwordAdmin)).subscribe({
-        next: (data) => {
-          // Redirect to dashboard
-          this.router.navigate(['/dashboard']);
-        },
-        error: (error) => {
-          console.error('There was an error!', error);
-        },
-      });
 
     } catch (error: any) {
       console.log('Error Status: ', error.status);

@@ -159,6 +159,45 @@ export class ReclutameService {
     }).toPromise();
   }
 
+  async registroVacante (
+    p_titulo_vacante: any,
+    p_descripcion_vacante: any,
+    p_email: any,
+    p_id_categoria: any,
+    p_id_tipo_trabajo: any,
+    p_id_salario: any,
+    p_id_nivel_profesional: any,
+    p_id_experiencia: any,
+    p_id_genero: any,
+    p_id_industria: any,
+    p_id_grado_escolar: any,
+    p_fecha_limite_solicitud: any,
+    p_id_pais: any,
+    p_id_ciudad: any,
+    p_direccion: any,
+    p_id_empresa: any,
+    p_id_reclutador: any,){
+    return this.http.post<any>(this.apiUrl + 'registroVacante', {
+      "p_titulo_vacante": p_titulo_vacante,
+      "p_descripcion_vacante": p_descripcion_vacante,
+      "p_email": p_email,
+      "p_id_categoria": parseInt(p_id_categoria),
+      "p_id_tipo_trabajo": parseInt(p_id_tipo_trabajo),
+      "p_id_salario": parseInt(p_id_salario),
+      "p_id_nivel_profesional": parseInt(p_id_nivel_profesional),
+      "p_id_experiencia": parseInt(p_id_experiencia),
+      "p_id_genero": parseInt(p_id_genero),
+      "p_id_industria": parseInt(p_id_industria),
+      "p_id_grado_escolar": parseInt(p_id_grado_escolar),
+      "p_fecha_limite_solicitud": p_fecha_limite_solicitud,
+      "p_id_pais": parseInt(p_id_pais),
+      "p_id_ciudad": parseInt(p_id_ciudad),
+      "p_direccion": p_direccion,
+      "p_id_empresa": parseInt(p_id_empresa),
+      "p_id_reclutador": parseInt(p_id_reclutador),
+    }).toPromise();
+  }
+
   async getProfile(token: any): Promise<any> {
     return this.http.get<any>(this.apiUrl + 'getProfile/' + token).toPromise();
   }
@@ -182,6 +221,16 @@ export class ReclutameService {
   async getRol(idRol: any): Promise<any> {
     return this.http.get<any>(this.apiUrl + 'getRol/' + idRol).toPromise();
   }
+
+  async getVacante(idVacante: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getVacante/' + idVacante).toPromise();
+  }
+
+  async getVacantes(): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getVacantes').toPromise();
+  }
+
+
 
 /***********************************************************************************/
 /***********************************************************************************/
