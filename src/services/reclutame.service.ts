@@ -138,6 +138,26 @@ export class ReclutameService {
 
   async updateEmpresa (id_empresa: any, nombre: any, email: any, sitioWeb: any, anio: any, tamanoEquipo: any, categoria: any, acerca: any, facebook: any, twitter: any, linkedin: any, instagram: any, id_pais: any, id_ciudad: any, domicilio: any, telefono: any): Promise<any> {
 
+    console.log(JSON.stringify({
+      "ID_EMPRESA": parseInt(id_empresa),
+      "NOMBRE_EMPRESA": nombre,
+      "EMAIL": email,
+      "TELEFONO": parseInt(telefono),
+      "SITIO_WEB": sitioWeb,
+      "ANIO_EMPRESA": parseInt(anio),
+      "TAMANO_EQUIPO": tamanoEquipo,
+      "CATEGORIA_EMPRESA": categoria,
+      "ACERCA_EMPRESA": acerca,
+      "FACEBOOK_URL": facebook,
+      "TWITTER_URL": twitter,
+      "LINKEDIN_URL": linkedin,
+      "INSTAGRAM_URL": instagram,
+      "ID_PAIS": parseInt(id_pais),
+      "ID_CIUDAD": parseInt(id_ciudad),
+      "DOMICILIO": domicilio,
+      "ACTIVO": 1
+    }));
+
     return this.http.post<any>(this.apiUrl + 'updateempresa', {
       "ID_EMPRESA": parseInt(id_empresa),
       "NOMBRE_EMPRESA": nombre,
@@ -224,6 +244,10 @@ export class ReclutameService {
 
   async getVacante(idVacante: any): Promise<any> {
     return this.http.get<any>(this.apiUrl + 'getVacante/' + idVacante).toPromise();
+  }
+
+  async getVacantesReclutador(idReclutador: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getVacantesReclutador/' + idReclutador).toPromise();
   }
 
   async getVacantes(): Promise<any> {

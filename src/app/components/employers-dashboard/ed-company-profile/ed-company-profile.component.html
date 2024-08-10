@@ -27,7 +27,7 @@
                       Company name
                   </label>
                   <input type="text" class="form-control shadow-none" formControlName="nombre_empresa"
-                  [ngClass]="{ 'is-invalid': submitted && fCo.nombre_empresa.value == '' }">
+                  [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.nombre_empresa.errors }">
               </div>
           </div>
           <div class="col-lg-6 col-md-6">
@@ -36,7 +36,7 @@
                       Email address
                   </label>
                   <input type="email" class="form-control shadow-none" formControlName="email"
-                  [ngClass]="{ 'is-invalid': submitted && fCo.email.value == '' }">
+                  [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.email.errors }">
               </div>
           </div>
           <div class="col-lg-6 col-md-6">
@@ -45,7 +45,7 @@
                       Phone
                   </label>
                   <input type="text" class="form-control shadow-none" formControlName="telefono"
-                  [ngClass]="{ 'is-invalid': submitted && fCo.telefono.value == '' }">
+                  [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.telefono.errors }">
               </div>
           </div>
           <div class="col-lg-6 col-md-6">
@@ -54,7 +54,7 @@
                       Website
                   </label>
                   <input type="text" class="form-control shadow-none" formControlName="sitio_web"
-                  [ngClass]="{ 'is-invalid': submitted && fCo.sitio_web.value == '' }">
+                  [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.sitio_web.errors }">
               </div>
           </div>
           <div class="col-lg-6 col-md-6">
@@ -63,7 +63,7 @@
                       Est. since
                   </label>
                   <input type="text" class="form-control shadow-none" formControlName="anio_empresa"
-                  [ngClass]="{ 'is-invalid': submitted && fCo.anio_empresa.value == '' }">
+                  [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.anio_empresa.errors }">
               </div>
           </div>
           <div class="col-lg-6 col-md-6">
@@ -72,7 +72,7 @@
                       Team size
                   </label>
                   <input class="form-control shadow-none" formControlName="tamano_equipo"
-                  [ngClass]="{ 'is-invalid': submitted && fCo.tamano_equipo.value == '' }">
+                  [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.tamano_equipo.errors }">
               </div>
           </div>
           <div class="col-lg-6 col-md-6">
@@ -81,7 +81,7 @@
                       Category
                   </label>
                   <input type="text" class="form-control shadow-none" formControlName="categoria_empresa"
-                  [ngClass]="{ 'is-invalid': submitted && fCo.categoria_empresa.value == '' }">
+                  [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.categoria_empresa.errors }">
               </div>
           </div>
           <div class="col-lg-6 col-md-6">
@@ -90,7 +90,7 @@
                       Allow in search listing
                   </label>
                   <select class="form-select shadow-none" formControlName="allow"
-                  [ngClass]="{ 'is-invalid': submitted && fCo.allow.value == '' }">
+                  [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.allow.errors }">
                       <option selected value="1">Yes</option>
                       <option value="0">No</option>
                   </select>
@@ -102,7 +102,7 @@
                       About company
                   </label>
                   <textarea class="form-control shadow-none" cols="30" rows="8" formControlName="acerca_empresa"
-                  [ngClass]="{ 'is-invalid': submitted && fCo.acerca_empresa.value == '' }"></textarea>
+                  [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.acerca_empresa.errors }"></textarea>
               </div>
           </div>
       </div>
@@ -118,7 +118,7 @@
                           Facebook
                       </label>
                       <input type="text" class="form-control shadow-none" value="https://www.facebook.com/" formControlName="facebook_url"
-                      [ngClass]="{ 'is-invalid': submitted && fCo.facebook_url.value == '' }">
+                      [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.facebook_url.errors }">
                   </div>
               </div>
               <div class="col-lg-6 col-md-6">
@@ -127,7 +127,7 @@
                           Twitter
                       </label>
                       <input type="text" class="form-control shadow-none" value="https://twitter.com/" formControlName="twitter_url"
-                      [ngClass]="{ 'is-invalid': submitted && fCo.twitter_url.value == '' }">
+                      [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.twitter_url.errors }">
                   </div>
               </div>
               <div class="col-lg-6 col-md-6">
@@ -136,7 +136,7 @@
                           Linkedin
                       </label>
                       <input type="text" class="form-control shadow-none" value="https://www.linkedin.com/" formControlName="linkedin_url"
-                      [ngClass]="{ 'is-invalid': submitted && fCo.linkedin_url.value == '' }">
+                      [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.linkedin_url.errors }">
                   </div>
               </div>
               <div class="col-lg-6 col-md-6">
@@ -145,7 +145,7 @@
                           Instagram
                       </label>
                       <input type="text" class="form-control shadow-none" value="https://www.instagram.com/" formControlName="instagram_url"
-                      [ngClass]="{ 'is-invalid': submitted && fCo.instagram_url.value == '' }">
+                      [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.instagram_url.errors }">
                   </div>
               </div>
           </div>
@@ -161,7 +161,7 @@
                           Country
                       </label>
                       <select class="form-select shadow-none" (change)="getCiudades($event.target.value)" formControlName="id_pais"
-                      [ngClass]="{ 'is-invalid': submitted && fCo.id_pais.value == 0 }">
+                      [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.id_pais.value == 0 }">
                         <option value="0" selected>Seleccionar</option>
                         <option *ngFor="let item of arrPais" [value]="item.id_pais">
                           {{ item.descripcion }}
@@ -175,7 +175,7 @@
                           City
                       </label>
                       <select class="form-select shadow-none" formControlName="id_ciudad"
-                      [ngClass]="{ 'is-invalid': submitted && fCo.id_ciudad.value == '' }">
+                      [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.id_ciudad.value == 0 }">
                           <option *ngFor="let item of arrCiudades" [value]="item.id_ciudad">
                               {{ item.descripcion }}
                           </option>
@@ -188,25 +188,7 @@
                           Complete address
                       </label>
                       <input type="text" class="form-control shadow-none" formControlName="domicilio"
-                      [ngClass]="{ 'is-invalid': submitted && fCo.domicilio.value == '' }">
-                  </div>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                  <div class="form-group">
-                      <label>
-                          Latitude
-                      </label>
-                      <input type="text" class="form-control shadow-none" formControlName="latitud"
-                      [ngClass]="{ 'is-invalid': submitted && fCo.latitud.value == '' }">
-                  </div>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                  <div class="form-group">
-                      <label>
-                          Longitude
-                      </label>
-                      <input type="text" class="form-control shadow-none" formControlName="longitud"
-                      [ngClass]="{ 'is-invalid': submitted && fCo.longitud.value == '' }">
+                      [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.domicilio.errors }">
                   </div>
               </div>
           </div>

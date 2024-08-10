@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from 'src/services/auth.service';
 import { ReclutameService } from 'src/services/reclutame.service';
 import Swal from 'sweetalert2';
@@ -20,7 +21,8 @@ export class EdAddNewEmployerComponent implements OnInit {
     public router: Router,
     private api: ReclutameService,
     private formBuilder: FormBuilder,
-    private auth: AuthService
+    private auth: AuthService,
+    private spinner: NgxSpinnerService
   ) { }
 
   ngOnInit(): void {
@@ -49,7 +51,7 @@ export class EdAddNewEmployerComponent implements OnInit {
     if (this.frmReclutador.invalid) {
       return;
     }
-
+    this.spinner.show();
     try {
       let idEmpresa = this.auth.currentUserValue.p_id_empresa;
       console.log(this.auth.currentUserValue.p_id_empresa);
@@ -61,12 +63,13 @@ export class EdAddNewEmployerComponent implements OnInit {
         title: 'Success',
         text: 'Successful registration.'
       })
-
+      this.spinner.hide();
       // Redirect to dashboard
       // this.router.navigate(['/dashboard']);
 
     } catch (error: any) {
       console.log('Error Status: ', error.status);
+      this.spinner.hide();
     }
   }
 

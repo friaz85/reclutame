@@ -82,6 +82,7 @@ import { CdHeaderComponent } from './components/candidates-dashboard/cd-header/c
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EdAddNewEmployerComponent } from './components/employers-dashboard/ed-add-new-employer/ed-add-new-employer.component';
+import { ModalJobDetailComponent } from './components/common/modal-job-detail/modal-job-detail.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -155,7 +156,8 @@ import { EdAddNewEmployerComponent } from './components/employers-dashboard/ed-a
         CdSidebarComponent,
         CdFooterComponent,
         CdHeaderComponent,
-        EdAddNewEmployerComponent
+        EdAddNewEmployerComponent,
+        ModalJobDetailComponent
     ],
     imports: [
         BrowserModule,

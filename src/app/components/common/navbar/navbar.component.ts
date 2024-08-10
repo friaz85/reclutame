@@ -4,6 +4,7 @@ import { ReclutameService } from 'src/services/reclutame.service';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AuthService } from 'src/services/auth.service';
 import Swal from 'sweetalert2';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -37,7 +38,8 @@ export class NavbarComponent {
     public router: Router,
     private api: ReclutameService,
     private formBuilder: FormBuilder,
-    private apiLogin: AuthService
+    private apiLogin: AuthService,
+    private spinner: NgxSpinnerService
   ) {
     this.getPaises();
   }
@@ -129,6 +131,7 @@ export class NavbarComponent {
     if (this.frmCandidato.invalid) {
       return;
     }
+    this.spinner.show();
     try {
       const reg = await this.api.registroUsuario(this.f.emailCandidato.value, this.f.passwordCandidato.value, 3, "1234567890", 0);
       console.log(reg);
@@ -140,10 +143,12 @@ export class NavbarComponent {
           const login = await (await this.apiLogin.login(this.f.emailCandidato.value, this.f.passwordCandidato.value)).subscribe({
             next: (data) => {
               // Redirect to dashboard candidate
+              this.spinner.hide();
               this.router.navigate(['/candidates-dashboard']);
             },
             error: (error) => {
               console.error('There was an error!', error);
+              this.spinner.hide();
             },
           });
         } else {
@@ -152,6 +157,7 @@ export class NavbarComponent {
             title: 'Error',
             text: 'Error al registrar el candidato. ' + regCandidato.p_error_message
           });
+          this.spinner.hide();
         }
       } else {
         Swal.fire({
@@ -159,10 +165,12 @@ export class NavbarComponent {
           title: 'Error',
           text: 'Error al registrar el usuario. ' + reg.p_error_message
         });
+        this.spinner.hide();
       }
 
     } catch (error: any) {
       console.log('Error Status: ', error.status);
+      this.spinner.hide();
     }
   }
 
@@ -182,7 +190,7 @@ export class NavbarComponent {
     if (this.frmCompany.invalid) {
       return;
     }
-
+    this.spinner.show();
     try {
       const regC = await this.api.registroEmpresa(this.frmCompany.value.nombreCompany, this.frmCompany.value.paisCompany, this.frmCompany.value.ciudadCompany, this.frmCompany.value.telefonoAdmin);
       if (!regC.p_error_message) {
@@ -202,11 +210,13 @@ export class NavbarComponent {
               // Login
               const login = await (await this.apiLogin.login(this.frmCompany.value.emailAdmin, this.frmCompany.value.passwordAdmin)).subscribe({
                 next: (data) => {
+                  this.spinner.hide();
                   // Redirect to dashboard
                   this.router.navigate(['/dashboard']);
                 },
                 error: (error) => {
                   console.error('There was an error!', error);
+                  this.spinner.hide();
                 },
               });
             } else {
@@ -215,6 +225,7 @@ export class NavbarComponent {
                 title: 'Error',
                 text: 'Error al registrar el reclutador. ' + regCandidato.p_error_message
               });
+              this.spinner.hide();
             }
         } else {
           Swal.fire({
@@ -222,6 +233,7 @@ export class NavbarComponent {
             title: 'Error',
             text: 'Error al registrar el usuario. ' + reg.p_error_message
           });
+          this.spinner.hide();
         }
       } else {
         Swal.fire({
@@ -229,11 +241,11 @@ export class NavbarComponent {
           title: 'Error',
           text: 'Error al registrar la empresa. ' + regC.p_error_message
         });
+        this.spinner.hide();
       }
 
-
-
     } catch (error: any) {
+      this.spinner.hide();
       console.log('Error Status: ', error.status);
     }
   }
@@ -244,26 +256,28 @@ export class NavbarComponent {
     if (this.frmLogin.invalid) {
       return;
     }
-
+    this.spinner.show();
     try {
       const login = await (await this.apiLogin.login(this.fl.user.value, this.fl.pwd.value)).subscribe({
         next: (data) => {
           console.log(data);
           if (data.p_id_rol === 3) {
             // Redirect to dashboard candidate
+            this.spinner.hide();
             this.router.navigate(['/candidates-dashboard']);
           } else {
             // Redirect to dashboard
+            this.spinner.hide();
             this.router.navigate(['/dashboard']);
           }
         },
         error: (error) => {
+          this.spinner.hide();
           console.error('There was an error!', error);
         },
       });
-
-
     } catch (error: any) {
+      this.spinner.hide();
       console.log('Error Status: ', error.status);
     }
   }

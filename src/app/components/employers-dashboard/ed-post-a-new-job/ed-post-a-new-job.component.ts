@@ -55,25 +55,34 @@ export class EdPostANewJobComponent {
       p_titulo_vacante: ["", Validators.required],
       p_descripcion_vacante: [""],
       p_descripcion_vacante_send: [""],
-      p_email: ["", Validators.required],
-      p_id_categoria: ["", Validators.required],
-      p_id_tipo_trabajo: ["", Validators.required],
-      p_id_salario: ["", Validators.required],
-      p_id_nivel_profesional: ["", Validators.required],
-      p_id_experiencia: ["", Validators.required],
-      p_id_genero: ["", Validators.required],
-      p_id_industria: ["", Validators.required],
-      p_id_grado_escolar: ["", Validators.required],
-      p_fecha_limite_solicitud: ["", Validators.required],
-      p_id_pais: ["", Validators.required],
-      p_id_ciudad: ["", Validators.required],
-      p_direccion: ["", Validators.required]
+      // p_email: ["", Validators.required],
+      // p_id_categoria: ["", Validators.required],
+      // p_id_tipo_trabajo: ["", Validators.required],
+      // p_id_salario: ["", Validators.required],
+      // p_id_nivel_profesional: ["", Validators.required],
+      // p_id_experiencia: ["", Validators.required],
+      // p_id_genero: ["", Validators.required],
+      // p_id_industria: ["", Validators.required],
+      // p_id_grado_escolar: ["", Validators.required],
+      // p_fecha_limite_solicitud: ["", Validators.required],
+      // p_id_pais: ["", Validators.required],
+      // p_id_ciudad: ["", Validators.required],
+      // p_direccion: ["", Validators.required]
     });
   }
 
   get fCo() {
     return this.frmJob.controls;
   }
+
+    // Modal Popup
+    isOpen = false;
+    openPopup(): void {
+      this.isOpen = true;
+    }
+    closePopup(): void {
+      this.isOpen = false;
+    }
 
   async getPaises() {
     const pais = await this.api.getPais();
@@ -149,7 +158,11 @@ export class EdPostANewJobComponent {
     this.typeWriterEffect();
     element.textContent = 'Send';
     element.disabled = false
+    txtJob.scrollTop = txtJob.scrollHeight;
     this.spinner.hide();
+    this.frmJob.setValue({
+      p_descripcion_vacante_send : ''
+    });
   }
 
   async bienveniaIA(msg: string) {
@@ -163,10 +176,12 @@ export class EdPostANewJobComponent {
   }
 
   typeWriterEffect() {
+    let textarea = document.getElementById('txtJob') as HTMLTextAreaElement;
 
     if (this.currentIndex < this.text.length) {
       this.displayedText += this.text.charAt(this.currentIndex);
       this.currentIndex++;
+      textarea.scrollTop = textarea.scrollHeight;
       setTimeout(() => this.typeWriterEffect(), 10); // Velocidad del efecto
     }
   }
@@ -178,7 +193,8 @@ export class EdPostANewJobComponent {
     if (this.frmJob.invalid) {
       return;
     }
-    const reg = await this.api.registroVacante(this.frmJob.value.p_titulo_vacante, descripcion.value, this.frmJob.value.p_email, this.frmJob.value.p_id_categoria, this.frmJob.value.p_id_tipo_trabajo, this.frmJob.value.p_id_salario, this.frmJob.value.p_id_nivel_profesional, this.frmJob.value.p_id_experiencia, this.frmJob.value.p_id_genero, this.frmJob.value.p_id_industria, this.frmJob.value.p_id_grado_escolar, this.frmJob.value.p_fecha_limite_solicitud, this.frmJob.value.p_id_pais, this.frmJob.value.p_id_ciudad, this.frmJob.value.p_direccion, this.auth.currentUserValue.p_id_empresa, this.auth.currentUserValue.p_id_reclutador);
+    this.spinner.show();
+    const reg = await this.api.registroVacante(this.frmJob.value.p_titulo_vacante, descripcion.value, "test@test.com", 1, 1, 1, 1, 1, 1, 1, 1, "01-01-2025", 1, 1, "Calle", this.auth.currentUserValue.p_id_empresa, this.auth.currentUserValue.p_id_reclutador);
     if (!reg.p_error_message) {
       Swal.fire({
         icon: 'success',
@@ -186,6 +202,7 @@ export class EdPostANewJobComponent {
         text: 'Vacante registrada con éxito.'
       });
       // reiniciar formulario
+      this.spinner.hide();
       this.frmJob.reset();
     } else {
       Swal.fire({
@@ -193,6 +210,7 @@ export class EdPostANewJobComponent {
         title: 'Error',
         text: 'Error al registrar la vacante. ' + reg.p_error_message
       });
+      this.spinner.hide();
     }
   }
 

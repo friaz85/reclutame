@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from 'src/services/auth.service';
 import { ReclutameService } from 'src/services/reclutame.service';
 import Swal from 'sweetalert2';
@@ -17,7 +18,8 @@ export class EdCompanyProfileComponent {
   constructor(
     private api: ReclutameService,
     private formBuilder: FormBuilder,
-    private auth: AuthService
+    private auth: AuthService,
+    private spinner: NgxSpinnerService
     ) {
     this.getPaises();
     this.getEmpresa(this.auth.currentUserValue.p_id_empresa);
@@ -40,8 +42,6 @@ export class EdCompanyProfileComponent {
       id_pais: ["", Validators.required],
       id_ciudad: ["", Validators.required],
       domicilio: ["", Validators.required],
-      latitud: [""],
-      longitud: [""],
       allow: [""],
     });
   }
@@ -61,6 +61,7 @@ export class EdCompanyProfileComponent {
   }
 
   async getEmpresa(id: number) {
+    this.spinner.show();
     const empresa = await this.api.getEmpresa(id);
     console.log(empresa);
 
@@ -82,23 +83,22 @@ export class EdCompanyProfileComponent {
       id_pais: empresa.items[0].id_pais,
       id_ciudad: empresa.items[0].id_ciudad,
       domicilio: empresa.items[0].domicilio,
-      latitud: 0,
-      longitud: 0,
       allow: 1
     });
+    this.spinner.hide();
   }
 
-  updateEmpresa() {
+ async updateEmpresa() {
     this.submitted = true;
     if (this.frmCompany.invalid) {
       return;
     }
 
     console.log(this.frmCompany.value);
-
+    this.spinner.show();
     try {
-      this.api.updateEmpresa(
-        9,
+     await this.api.updateEmpresa(
+        this.auth.currentUserValue.p_id_empresa,
         this.frmCompany.value.nombre_empresa,
         this.frmCompany.value.email,
         this.frmCompany.value.sitio_web,
@@ -121,9 +121,17 @@ export class EdCompanyProfileComponent {
           title: 'Success',
           text: 'Update completed.'
         })
+        this.spinner.hide();
+        this.getEmpresa(this.auth.currentUserValue.p_id_empresa);
       });
     } catch (error: any) {
+      this.spinner.hide();
       console.log('Error Status: ', error.status);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Error updating the company. ' + error.message
+      });
     }
   }
 
