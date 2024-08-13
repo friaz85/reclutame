@@ -4,7 +4,11 @@
         Manage Jobs
     </h1>
 </div>
-
+<button type="button" class="default-btn" (click)="openPopup()">
+    <i class="fa-regular" data-toggle="tooltip" data-placement="top" title="Preview Job">
+        <i class="fa-regular fa-eye"></i>
+    </i>
+</button>
 <!-- Manage Jobs -->
 <div class="jove-card">
     <div class="row">
@@ -35,7 +39,7 @@
                         </span>
                         <ul class="ps-0 mb-0 list-unstyled">
                             <li class="d-inline-block">
-                                <button type="button" class="d-inline-block rounded-circle">
+                                <button type="button" class="d-inline-block rounded-circle" (click)="openModal(item)">
                                     <i class="ri-eye-line"></i>
                                 </button>
                             </li>
@@ -619,4 +623,20 @@
             </div>
         </div> -->
     </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade loginRegisterModal" tabindex="-1" aria-hidden="true" *ngIf="isOpen">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-body">
+        <app-modal-job-detail [job]="displayedText"></app-modal-job-detail>
+        <button (click)="closePopup()" type="button" class="close-btn">
+          <i class="ri-close-fill"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop fade show"></div>
 </div>
