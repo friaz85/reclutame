@@ -261,11 +261,11 @@ export class NavbarComponent {
       const login = await (await this.apiLogin.login(this.fl.user.value, this.fl.pwd.value)).subscribe({
         next: (data) => {
           console.log(data);
-          if (data.p_id_rol === 3) {
+          if (data.p_id_rol == 3) {
             // Redirect to dashboard candidate
             this.spinner.hide();
             this.router.navigate(['/candidates-dashboard']);
-          } else {
+          } else if (data.p_id_rol == 1 || data.p_id_rol == 2) {
             // Redirect to dashboard
             this.spinner.hide();
             this.router.navigate(['/dashboard']);
