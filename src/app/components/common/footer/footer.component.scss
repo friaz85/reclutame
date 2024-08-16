@@ -1,5 +1,5 @@
 .footer-area {
-    background-color: #f5f9fc;
+    background-color: var(--emphasisColor);
 
     &.bg-color {
         z-index: 1;
@@ -140,6 +140,11 @@
     .logo {
         margin-bottom: 30px;
     }
+    a {
+      img {
+        max-width: 127px;
+      }
+    }
     .socials-link {
         li {
             margin-bottom: 10px;
@@ -183,15 +188,18 @@
         }
     }
     h3 {
-        font-size: 18px;
+        font-size: 24px;
         margin-bottom: 15px;
+        color: var(--blackColor);
     }
     .custom-links {
         li {
             margin-bottom: 12px;
 
             a {
-                color: var(--bodyColor);
+                color: var(--blackColor);
+                font-size: 20px;
+                font-weight: bold;
 
                 &:hover {
                     color: var(--primaryColor);
@@ -224,8 +232,18 @@
         }
     }
 }
+
+.list-unstyled {
+  li {
+    list-style: square;
+  }
+  li::marker {
+    color: var(--secondaryColor);
+    font-size: 20px;
+  }
+}
 .copyright-area {
-    margin-top: 75px;
+    margin-top: 0px;
     border-top: 1px solid rgba(98, 100, 106, .2);
     padding: {
         top: 30px;

@@ -513,7 +513,6 @@
                     .default-btn {
                         background-color: var(--secondaryColor);
                         color: var(--headingColor);
-
                         &:hover {
                             background-color: var(--primaryColor);
                             color: var(--whiteColor);
@@ -546,6 +545,10 @@
         opacity: 1;
         transform: translateZ(0)
     }
+}
+
+.default-btn-secondary, .default-btn {
+  border-radius: 20px !important;
 }
 
 // Modal

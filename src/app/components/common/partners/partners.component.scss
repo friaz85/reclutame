@@ -1,5 +1,5 @@
 .partners-area {
-    background-color: var(--primaryColor);
+    background-color: var(--tertiaryColor);
     padding: {
         top: 50px;
         bottom: 50px;
@@ -17,7 +17,15 @@
 
         h2 {
             color: var(--whiteColor);
+            font-size: 36px;
         }
+    }
+    .default-btn {
+      font-size: 24px;
+      &:hover {
+        background-color: var(--secondaryColor);
+        color: var(--whiteColor);
+      }
     }
 }
 ::ng-deep {

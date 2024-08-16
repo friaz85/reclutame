@@ -1,5 +1,15 @@
+.testimonials-area {
+  background-color: var(--tertiaryColor);
+}
+
+.section-title {
+  h2 {
+    font-size: 35px;;
+  }
+}
+
 .testimonial-item {
-    background-color: #faf6f3;
+    background-color: var(--whiteColor);
     border-radius: 15px;
     padding: 30px;
 
@@ -9,7 +19,7 @@
         i {
             line-height: 1;
             font-size: 20px;
-            color: #fdc56b;
+            color: var(--primaryColor);
             margin-right: 2px;
         }
     }
@@ -33,9 +43,9 @@
         right: 40px;
         bottom: 30px;
         line-height: 1;
-        font-size: 70px;
+        font-size: 120px;
         position: absolute;
-        color: var(--primaryColor);
+        color: var(--secondaryColor);
     }
 }
 .nav {
@@ -64,7 +74,7 @@
                     height: 35px;
                     position: absolute;
                     border-radius: 50px;
-                    background-color: #f8f8fb;
+                    background-color: var(--secondaryColor);
                     transform: translateY(-50%);
                     border: 1px solid var(--borderColor);
                 }
@@ -77,7 +87,7 @@
                     transition: .3s;
                     position: absolute;
                     border-radius: 50%;
-                    background: #325343;
+                    background: var(--whiteColor);
                 }
             }
             &.active {

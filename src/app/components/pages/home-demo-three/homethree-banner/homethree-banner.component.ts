@@ -8,11 +8,13 @@ import { ReclutameService } from 'src/services/reclutame.service';
 })
 export class HomethreeBannerComponent {
   arrPais:any = [];
+  arrCategorias:any = [];
 
   constructor(private api: ReclutameService) { }
 
   ngOnInit() {
     this.getPaises();
+    this.getCategorias();
   }
 
   async getPaises() {
@@ -20,4 +22,10 @@ export class HomethreeBannerComponent {
     this.arrPais = pais.items;
     console.log("Paises: ", this.arrPais);
   }
+
+  async getCategorias() {
+    const cat = await this.api.getCategorias();
+    this.arrCategorias = cat.items;
+    console.log("Categorías: ", this.arrCategorias);
+}
 }

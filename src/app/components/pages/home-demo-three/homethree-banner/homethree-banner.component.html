@@ -4,57 +4,64 @@
 >
     <div class="container-fluid">
         <div class="row align-items-center">
-            <div class="col-xl-7 col-md-12" data-aos="fade-up" data-aos-duration="500">
-                <div class="banner-content position-relative">
+            <div class="col-xl-12 col-md-12" data-aos="fade-up" data-aos-duration="500">
+                <div class="banner-content position-relative text-center">
                     <h1>
-                        Enter the new world through jobs
+                      ¡Encuentra el trabajo que <span class="text-primary-r">mereces</span>!
                     </h1>
-                    <div class="info d-flex align-items-center justify-content-between">
-                        <span class="fw-medium">Find the right job</span>
-                        <span class="fw-medium">Looking to hire talent?</span>
-                    </div>
+                    <h3>Descubre el trabajo que se ajusta a tu estilo de vida y comienza a construir tu futuro.</h3>
+
                     <form class="banner-form">
                         <div class="row mx-0 align-items-center">
-                            <div class="col-4 px-0">
+                            <div class="col-3 px-0">
                                 <div class="form-group position-relative">
                                     <i class="ri-search-line"></i>
-                                    <input type="text" class="form-control" placeholder="Job title, key words or company">
+                                    <input type="text" class="form-control" placeholder="Trabajo">
                                 </div>
                             </div>
-                            <div class="col-4 px-0">
+                            <div class="col-3 px-0">
                                 <div class="form-group position-relative">
                                     <i class="ri-map-pin-line"></i>
                                     <select class="form-select">
-                                        <option selected>Todos</option>
+                                        <option selected>Ubicación</option>
                                         <option *ngFor="let item of arrPais" value="{{ item.id_pais }}">{{ item.descripcion }}</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-4 px-0">
+                            <div class="col-3 px-0">
+                              <div class="form-group position-relative">
+                                  <i class="ri-file-list-line"></i>
+                                  <select class="form-select">
+                                      <option selected>Categoría</option>
+                                      <option *ngFor="let item of arrCategorias" value="{{ item.id_categoria }}">{{ item.descripcion }}</option>
+                                  </select>
+                              </div>
+                          </div>
+                            <div class="col-3 px-0">
                                 <button type="submit" class="default-btn">
-                                    Search Jobs
+                                    Encontrar trabajo
                                 </button>
                             </div>
                         </div>
                     </form>
                     <ul class="features-list ps-0 mb-0 list-unstyled d-flex align-items-center justify-content-between">
                         <li>
-                            Live jobs: <span class="fw-semibold">58,612</span>
+                            Total de vacantes: <span class="fw-semibold">58,612</span>
                         </li>
                         <li>
-                            Companies: <span class="fw-semibold">1,042</span>
+                            Compañías: <span class="fw-semibold">1,042</span>
                         </li>
                         <li>
-                            New jobs: <span class="fw-semibold">169</span>
+                            Vacantes nuevas: <span class="fw-semibold">169</span>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="col-xl-5 col-md-12" data-aos="fade-up" data-aos-duration="500">
+            <!-- <div class="col-xl-5 col-md-12" data-aos="fade-up" data-aos-duration="500">
                 <div class="banner-image text-center">
                     <img src="assets/images/banner/banner2.jpg" alt="banner-image">
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

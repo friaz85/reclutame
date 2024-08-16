@@ -1,12 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'ArialRounded';
+  src: url('assets/arialroundedmtbold.ttf');
+}
+
 :root {
-    --fontFamily: 'Lato', sans-serif;
-    --headingFontFamily: 'Montserrat', sans-serif;
-    --primaryColor: #005B9C;
-    --secondaryColor: #00ACDD;
+    --fontFamily: 'ArialRounded', sans-serif;
+    --headingFontFamily: 'ArialRounded', sans-serif;
+    --primaryColor: #E06526;
+    --secondaryColor: #195C6E;
+    --tertiaryColor: #DAF1F9;
+    --emphasisColor: #FDBF4A;
     --headingColor: #404145;
     --bodyColor: #62646A;
     --whiteColor: #ffffff;
+    --blackColor: #000000;
     --borderColor: #e0e6e9;
     --transition: all ease 0.5s;
     --fontSize: 16px;
@@ -87,6 +95,12 @@ p {
 .pb-75 {
     padding-bottom: 75px;
 }
+.pt-50 {
+  padding-top: 50px;
+}
+.pb-50 {
+  padding-bottom: 50px;
+}
 .bg-eaf0f3 {
     background-color: #eaf0f3;
 }
@@ -113,7 +127,15 @@ p {
 }
 
 div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
-  background-color: #005B9C !important;
+  background-color: #E06526 !important;
+}
+
+.text-primary-r {
+  color: var(--primaryColor);
+}
+
+.text-secondary-r {
+  color: var(--secondaryColor) !important;
 }
 
 // Default Button
@@ -123,7 +145,7 @@ div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
     color: var(--headingColor);
     color: var(--whiteColor);
     display: inline-block;
-    border-radius: 5px;
+    border-radius: 30px;
     padding: 15px 50px;
     box-shadow: unset;
     border: 0;
@@ -144,6 +166,35 @@ div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
             background-color: var(--primaryColor);
         }
     }
+}
+
+// Default Button
+.default-btn-secondary {
+  background-color: var(--secondaryColor);
+  transition: var(--transition);
+  color: var(--whiteColor) !important;
+  display: inline-block;
+  border-radius: 30px;
+  padding: 15px 50px;
+  box-shadow: unset;
+  border: 0;
+  font: {
+      size: var(--fontSize);
+      weight: 600;
+  };
+  &:hover {
+      background-color: var(--primaryColor);
+      color: var(--whiteColor);
+  }
+  &.two {
+      background-color: var(--secondaryColor);
+      color: var(--headingColor);
+
+      &:hover {
+          color: var(--whiteColor);
+          background-color: var(--primaryColor);
+      }
+  }
 }
 
 // Section Title

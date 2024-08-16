@@ -19,11 +19,20 @@
 
     h1 {
         color: var(--whiteColor);
-        font-size: 71px;
+        font-size: 72px;
         margin: {
             bottom: 45px;
             top: -11px;
         };
+    }
+    
+    h3 {
+      color: var(--whiteColor);
+      font-size: 36px;
+      margin: {
+          bottom: 45px;
+          top: -11px;
+      };
     }
     .info {
         margin-bottom: 17px;
@@ -50,8 +59,9 @@
             }
         }
         .form-group {
+          padding: 5px;
             i {
-                left: 0;
+                left: 13px;
                 top: 50%;
                 font-size: 22px;
                 margin-top: -.4px;
@@ -61,10 +71,11 @@
             }
             .form-control {
                 height: auto;
-                border: none;
+                border: 2px solid var(--secondaryColor);
                 font-size: var(--fontSize);
                 color: var(--headingColor);
                 box-shadow: unset !important;
+                border-radius: 25px;
                 padding: {
                     bottom: 13px;
                     left: 30px;
@@ -77,12 +88,13 @@
             }
             .form-select {
                 height: auto;
-                border: none;
+                border: 2px solid var(--secondaryColor);
                 cursor: pointer;
                 color: var(--bodyColor);
                 font-size: var(--fontSize);
                 box-shadow: unset !important;
                 background-position: right 0 center;
+                border-radius: 25px;
                 padding: {
                     bottom: 13px;
                     left: 30px;
@@ -93,6 +105,8 @@
         }
         .default-btn {
             display: block;
+            font-size: 21px;
+            border-radius: 20px;
             width: 100%;
             padding: {
                 left: 30px;
