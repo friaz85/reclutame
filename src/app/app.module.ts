@@ -80,7 +80,7 @@ import { CdSidebarComponent } from './components/candidates-dashboard/cd-sidebar
 import { CdFooterComponent } from './components/candidates-dashboard/cd-footer/cd-footer.component';
 import { CdHeaderComponent } from './components/candidates-dashboard/cd-header/cd-header.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EdAddNewEmployerComponent } from './components/employers-dashboard/ed-add-new-employer/ed-add-new-employer.component';
 import { ModalJobDetailComponent } from './components/common/modal-job-detail/modal-job-detail.component';
 @NgModule({
@@ -168,7 +168,8 @@ import { ModalJobDetailComponent } from './components/common/modal-job-detail/mo
         BrowserAnimationsModule,
         HttpClientModule,
         ReactiveFormsModule,
-        NgxSpinnerModule
+        NgxSpinnerModule,
+        FormsModule
     ],
     providers: [
       HttpClient

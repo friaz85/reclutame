@@ -4,6 +4,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from 'src/services/auth.service';
 import { ReclutameService } from 'src/services/reclutame.service';
 import Swal from 'sweetalert2';
+import * as moment from 'moment';
 // @ts-ignore
 // import Typewriter from 't-writer.js';
 
@@ -13,16 +14,16 @@ import Swal from 'sweetalert2';
   styleUrls: ['./ed-post-a-new-job.component.scss']
 })
 export class EdPostANewJobComponent {
-  arrPais:any = [];
-  arrCiudades:any = [];
-  arrCategorias:any = [];
-  arrSalarios:any = [];
-  arrTipoTrabajo:any = [];
-  arrNivelProfesional:any = [];
-  arrExperiencias:any = [];
-  arrGenero:any = [];
-  arrIndustrias:any = [];
-  arrGradoEscolar:any = [];
+  arrPais: any = [];
+  arrCiudades: any = [];
+  arrCategorias: any = [];
+  arrSalarios: any = [];
+  arrTipoTrabajo: any = [];
+  arrNivelProfesional: any = [];
+  arrExperiencias: any = [];
+  arrGenero: any = [];
+  arrIndustrias: any = [];
+  arrGradoEscolar: any = [];
 
   frmJob: FormGroup | any;
   submitted = false;
@@ -31,13 +32,20 @@ export class EdPostANewJobComponent {
   text: string = 'Este es un efecto de máquina de escribir.';
   displayedText: string = '';
   currentIndex: number = 0;
+  user = '';
+  reclutador:any = [];
+  arrChat: any = [];
+  lastMsg = '';
+  txtIA = '';
+  showError = false;
+  vacanteCompletaIA= false;
 
   constructor(
     private api: ReclutameService,
     private formBuilder: FormBuilder,
     private spinner: NgxSpinnerService,
     private auth: AuthService
-    ) {
+  ) {
     this.getPaises();
     this.getCategorias();
     this.getSalario();
@@ -47,7 +55,9 @@ export class EdPostANewJobComponent {
     this.getGenero();
     this.getIndustria();
     this.getGradoEscolar();
+    this.getReclutador();
     this.bienveniaIA('Hola');
+    this.user = this.auth.currentUserValue.p_nombre;
   }
 
   ngOnInit(): void {
@@ -75,14 +85,26 @@ export class EdPostANewJobComponent {
     return this.frmJob.controls;
   }
 
-    // Modal Popup
-    isOpen = false;
-    openPopup(): void {
-      this.isOpen = true;
+  // Modal Popup
+  isOpen = false;
+  openPopup(): void {
+    this.isOpen = true;
+  }
+  closePopup(): void {
+    this.isOpen = false;
+  }
+
+  async getReclutador() {
+    this.spinner.show();
+    try {
+      const rec = await this.api.getReclutador(this.auth.currentUserValue.p_id_reclutador);
+      console.log(rec);
+      this.reclutador = rec.items[0];
+    } catch (error) {
+      console.log(error);
     }
-    closePopup(): void {
-      this.isOpen = false;
-    }
+    this.spinner.hide();
+  }
 
   async getPaises() {
     const pais = await this.api.getPais();
@@ -146,42 +168,78 @@ export class EdPostANewJobComponent {
     console.log(this.arrGradoEscolar);
   }
 
-  async postCrearVacante(element: any, txtJob: any) {
+  async postCrearVacante() {
+
+    this.showError = false;
+
+    if (this.txtIA == '') {
+      this.showError = true;
+      return;
+    }
+
+
     this.spinner.show();
-    element.textContent = 'Processing';
-    element.disabled = true
-    const vacante = await this.api.postCrearVacante(this.frmJob.value.p_descripcion_vacante_send);
+    // element.textContent = 'Processing';
+    // element.disabled = true
+    this.arrChat.push({
+      p_mensaje: this.txtIA,
+      p_tipo: 'user',
+      p_hora_min: moment(new Date(), "HH:mm").format("hh:mm A")
+    });
+    this.txtIA = '';
+    const vacante = await this.api.postCrearVacante(this.txtIA, this.lastMsg);
     console.log("Vacante creada: ", vacante);
+    if (vacante.response_type == 'text' && vacante.status == 'success') {
+      //  Reemplazar saltos de líenas por <br>
+      this.lastMsg = vacante.response;
+      this.arrChat.push(
+        {
+          p_mensaje: vacante.response.replace(/(?:\r\n|\r|\n)/g, '<br>'),
+          p_tipo: 'ia',
+          p_hora_min: moment(new Date(), "HH:mm").format("hh:mm A")
+        }
+      );
+    } else if (vacante.response_type == 'json' && vacante.status == 'success') {
+      this.vacanteCompletaIA = true;
+    }
     this.text = vacante.response;
+
     this.displayedText = '';
     this.currentIndex = 0;
-    this.typeWriterEffect();
-    element.textContent = 'Send';
-    element.disabled = false
-    txtJob.scrollTop = txtJob.scrollHeight;
+    // this.typeWriterEffect();
+    // element.textContent = 'Send';
+    // element.disabled = false
+    // txtJob.scrollTop = txtJob.scrollHeight;
     this.spinner.hide();
-    this.frmJob.setValue({
-      p_descripcion_vacante_send : ''
-    });
+    // this.frmJob.setValue({
+    //   p_descripcion_vacante_send: ''
+    // });
   }
 
   async bienveniaIA(msg: string) {
     this.spinner.show();
-    const ia = await this.api.postCrearVacante(msg);
+    const ia = await this.api.postCrearVacante(msg, '');
     console.log("Bienvenida IA: ", ia);
     this.text = ia.response;
+    this.arrChat.push(
+      { p_mensaje: ia.response,
+        p_tipo: 'ia',
+        p_hora_min: moment(new Date(), "HH:mm").format("hh:mm A")
+      }
+      );
+    console.log(this.arrChat);
     this.typeWriterEffect();
     this.showSendIA = true;
     this.spinner.hide();
   }
 
   typeWriterEffect() {
-    let textarea = document.getElementById('txtJob') as HTMLTextAreaElement;
+    let textarea = document.getElementById('txtJob') as HTMLUListElement;
 
     if (this.currentIndex < this.text.length) {
       this.displayedText += this.text.charAt(this.currentIndex);
       this.currentIndex++;
-      textarea.scrollTop = textarea.scrollHeight;
+      // textarea.scrollTop = textarea.scrollHeight;
       setTimeout(() => this.typeWriterEffect(), 10); // Velocidad del efecto
     }
   }

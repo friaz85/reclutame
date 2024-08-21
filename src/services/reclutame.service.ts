@@ -263,18 +263,37 @@ export class ReclutameService {
 /***********************************************************************************/
 
 
-  async postCrearVacante(pregunta: string): Promise<any> {
+  async postCrearVacante(pregunta: string, respuesta: string): Promise<any> {
     const headers = {
       'Content-Type': 'application/json',
-      'pwd': 'fabriconsulting2024'
+      'pwd': 'fabriconsulting2024',
+      'openaiapikey': 'sk-proj-RucQoURGSbq669CHHF96T3BlbkFJHcsTu0Poqq1uf2lfIepo'
     };
-    return this.http.post<any>('/api/crear-vacante', {
+
+    let arrSend = {};
+
+    if (respuesta != '') {
+    arrSend = {
+      conversation: [
+        {
+          pregunta: pregunta
+        },
+        {
+          respuesta: respuesta
+        }
+      ]
+    };
+  } else {
+    arrSend = {
       conversation: [
         {
           pregunta: pregunta
         }
       ]
-    }, { headers: headers }).toPromise();
+    };
+  }
+
+    return this.http.post<any>('/api/crear-vacante', arrSend, { headers: headers }).toPromise();
   }
 
 }
