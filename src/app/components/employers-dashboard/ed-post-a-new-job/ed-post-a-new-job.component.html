@@ -63,7 +63,8 @@
                 </ul>
             </div>
             <div class="chat-footer d-md-flex align-items-center">
-                <form class="position-relative">
+                <form>
+                  <div class="d-flex justify-content-around align-items-center">
                     <input type="text" class="input-text" placeholder="Type something..."
                     [ngClass]="{ 'is-invalid': showError && txtIA == '' }"
                     [(ngModel)] = "txtIA" [ngModelOptions]="{standalone: true}" required
@@ -73,6 +74,7 @@
                     [attr.disabled]="arrChat.length > 0 ? null : true"><i class="ri-send-plane-fill"></i></button>
                     <button type="button" *ngIf="vacanteCompletaIA" data-toggle="tooltip" data-placement="top"
                     title="Preview Job" (click)="openPopup()"><i class="fa-regular fa-eye"></i></button>
+                  </div>
                 </form>
             </div>
         </div>
@@ -273,7 +275,7 @@
   <div class="modal-dialog modal-dialog-centered modal-xl">
     <div class="modal-content">
       <div class="modal-body">
-        <app-modal-job-detail [job]="displayedText"></app-modal-job-detail>
+        <app-modal-job-detail [job]="responseVacante" [company]="empresa"></app-modal-job-detail>
         <button (click)="closePopup()" type="button" class="close-btn">
           <i class="ri-close-fill"></i>
         </button>

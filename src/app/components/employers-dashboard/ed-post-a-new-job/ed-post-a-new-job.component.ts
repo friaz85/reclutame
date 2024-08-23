@@ -34,11 +34,13 @@ export class EdPostANewJobComponent {
   currentIndex: number = 0;
   user = '';
   reclutador:any = [];
+  empresa: any = [];
   arrChat: any = [];
   lastMsg = '';
   txtIA = '';
   showError = false;
   vacanteCompletaIA= false;
+  responseVacante: any;
 
   constructor(
     private api: ReclutameService,
@@ -100,6 +102,8 @@ export class EdPostANewJobComponent {
       const rec = await this.api.getReclutador(this.auth.currentUserValue.p_id_reclutador);
       console.log(rec);
       this.reclutador = rec.items[0];
+      const emp = await this.api.getEmpresa(this.reclutador.id_empresa);
+      this.empresa = emp.items[0];
     } catch (error) {
       console.log(error);
     }
@@ -186,8 +190,8 @@ export class EdPostANewJobComponent {
       p_tipo: 'user',
       p_hora_min: moment(new Date(), "HH:mm").format("hh:mm A")
     });
-    this.txtIA = '';
     const vacante = await this.api.postCrearVacante(this.txtIA, this.lastMsg);
+    this.txtIA = '';
     console.log("Vacante creada: ", vacante);
     if (vacante.response_type == 'text' && vacante.status == 'success') {
       //  Reemplazar saltos de líenas por <br>
@@ -201,6 +205,30 @@ export class EdPostANewJobComponent {
       );
     } else if (vacante.response_type == 'json' && vacante.status == 'success') {
       this.vacanteCompletaIA = true;
+      this.lastMsg = JSON.stringify(vacante.response);
+      this.responseVacante = vacante.response;
+      // this.responseVacante.concat("Company: " + this.empresa.nombre_empresa);
+      this.arrChat.push(
+        {
+          p_mensaje: `A continuación te muestro la vacante generada<br><br>
+          Nombre de la empresa: ${this.empresa.nombre_empresa}<br>
+          Título de la vacante: ${vacante.response.vacancy_name}<br>
+          Requisitos técnicos: ${vacante.response.technical_requirements}<br>
+          Área de especialización: ${vacante.response.Specialisms}<br>
+          Tipo de trabajo: ${vacante.response['Job type']}<br>
+          Rango salarial ofrecido: ${vacante.response['Offered salary (monthly)']}<br>
+          Nivel de carrera requerido: ${vacante.response['Career level']}<br>
+          Experiencia requerida: ${vacante.response['Experience']}<br>
+          Género preferido: ${vacante.response.Gender}<br>
+          Industria: ${vacante.response.Industry}<br>
+          Calificación educativa requerida: ${vacante.response['Qualification']}<br>
+          Fecha límite para aplicar: ${vacante.response['Application deadline date']}<br>
+          País donde se ofrece la vacante: ${vacante.response.Country}<br>
+          Ciudad donde se ofrece la vacante: ${vacante.response.City}<br>`,
+          p_tipo: 'ia',
+          p_hora_min: moment(new Date(), "HH:mm").format("hh:mm A")
+        }
+      );
     }
     this.text = vacante.response;
 
