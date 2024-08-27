@@ -742,7 +742,7 @@
                                 &.active {
                                     .nav-link {
                                         color: var(--whiteColor);
-                                        background-color: var(--primaryColor);
+                                        background-color: var(--secondaryColor);
                                     }
                                 }
                                 &:last-child {
@@ -1528,6 +1528,10 @@
         }
     }
 
+}
+
+.vh-90 {
+    height: 90vh;
 }
 
 /* Min width 992px to Max width 1199px */
