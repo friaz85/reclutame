@@ -267,7 +267,7 @@ export class ReclutameService {
     const headers = {
       'Content-Type': 'application/json',
       'pwd': 'fabriconsulting2024',
-      'openaiapikey': 'sk-d1qWIMAtX94R0S42XXWH9kED9WIwZHzG_OIEL9CD24T3BlbkFJhCWyGJgDFVzoEgAG2fKxFwIYAbOQHuBmFgOb3QdLYA'
+      'openaiapikey': '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'
     };
 
     let arrSend = {};
