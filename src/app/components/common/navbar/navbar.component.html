@@ -559,8 +559,10 @@
             </button>
           </div>
         </div>
-        <div class="col-md-6 col-xl-6 col-sm-12 col-12">
-          <img src="assets/images/login.jpg" alt="login" class="w-100 vh-90">
+        <div class="col-md-6 col-xl-6 col-sm-12 col-12 d-flex justify-content-center align-items-center">
+          <img src="assets/images/login.jpg" alt="login" class="w-100 vh-90 animate__animated animate__fadeIn" *ngIf="currentTab == 'tab1'">
+          <img src="assets/images/register-candidate.jpg" alt="login" class="w-100 vh-90 animate__animated animate__fadeIn" *ngIf="currentTab == 'tab2' && currentInnerTab == 'innerTab1'">
+          <img src="assets/images/register-company.jpg" alt="login" class="w-100 vh-100 animate__animated animate__fadeIn" *ngIf="currentTab == 'tab2' && currentInnerTab == 'innerTab2'">
         </div>
       </div>
     </div>

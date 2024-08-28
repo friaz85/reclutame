@@ -254,7 +254,71 @@ export class ReclutameService {
     return this.http.get<any>(this.apiUrl + 'getVacantes').toPromise();
   }
 
+  async registroResumenDP(nombre: string, apellido: string, email: string, telefono: any, idGenero: any, idPais: any, direccion: any, idCandidato: any): Promise<any> {
 
+    return this.http.post<any>(this.apiUrl + 'registroResumenDP', {
+      "p_nombres": nombre,
+      "p_apellidos": apellido,
+      "p_email": email,
+      "p_telefono": telefono,
+      "p_id_genero": parseInt(idGenero),
+      "p_id_pais": parseInt(idPais),
+      "p_direccion": telefono,
+      "p_id_candidato": parseInt(idCandidato),
+
+    }).toPromise();
+  }
+
+  async registroResumenCS(objetivo: string, salarioActual: string, salarioEsperado: string, idTipoTrabajo: any, idCandidato: any): Promise<any> {
+
+    return this.http.post<any>(this.apiUrl + 'registroResumenCS', {
+      "p_objetivo": objetivo,
+      "p_salario_actual":parseFloat(salarioActual),
+      "p_sueldo_esperado": parseFloat(salarioEsperado),
+      "p_id_tipo_trabajo": parseInt(idTipoTrabajo),
+      "p_id_candidato": parseInt(idCandidato),
+
+    }).toPromise();
+  }
+
+  async registroResumenEDU(idGradoEscolar: string, instituto: string, duracion: string, idCandidato: any): Promise<any> {
+
+    return this.http.post<any>(this.apiUrl + 'registroResumenEDU', {
+      "p_id_grado_escolar": parseInt(idGradoEscolar),
+      "p_nombre_instituto": instituto,
+      "p_duracion": duracion,
+      "p_id_candidato": parseInt(idCandidato),
+
+    }).toPromise();
+  }
+
+  async registroResumenEXP(empresa: string, giro: string, preiodo: string, responsabilidades: any, idCandidato: any): Promise<any> {
+
+    return this.http.post<any>(this.apiUrl + 'registroResumenEXP', {
+      "p_nombre_empresa": empresa,
+      "p_giro_empresa": giro,
+      "p_periodo_empleo": responsabilidades,
+      "p_responsabilidades": idCandidato,
+      "p_id_candidato": parseInt(idCandidato),
+
+    }).toPromise();
+  }
+
+  async getResumenCS(idCandidato: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getResumenCS/' + idCandidato).toPromise();
+  }
+
+  async getResumenDP(idCandidato: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getResumenDP/' + idCandidato).toPromise();
+  }
+
+  async getResumenEDU(idCandidato: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getResumenEDU/' + idCandidato).toPromise();
+  }
+
+  async getResumenEXP(idCandidato: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getResumenEXP/' + idCandidato).toPromise();
+  }
 
 /***********************************************************************************/
 /***********************************************************************************/

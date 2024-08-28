@@ -6,18 +6,19 @@
 </div>
 
 <!-- Resume -->
-<div class="jove-card">
+<!-- <div class="jove-card">
     <h3 class="title">
         Personal Details
     </h3>
-    <form>
+    <form [formGroup]="frmPersonal">
         <div class="row">
             <div class="col-lg-6 col-md-6">
                 <div class="form-group">
                     <label>
                         First name
                     </label>
-                    <input type="text" class="form-control shadow-none" value="Alina">
+                    <input type="text" class="form-control shadow-none" formControlName="nombre"
+                    [ngClass]="{ 'is-invalid': submittedPersonal && f.nombre.value == '' }">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -25,7 +26,8 @@
                     <label>
                         Last name
                     </label>
-                    <input type="text" class="form-control shadow-none" value="Smith">
+                    <input type="text" class="form-control shadow-none" formControlName="apellido"
+                    [ngClass]="{ 'is-invalid': submittedPersonal && f.apellido.value == '' }">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -33,7 +35,8 @@
                     <label>
                         Email address
                     </label>
-                    <input type="email" class="form-control shadow-none" value="hello@doca.com">
+                    <input type="email" class="form-control shadow-none" formControlName="email"
+                    [ngClass]="{ 'is-invalid': submittedPersonal && f.email.value == '' }">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -41,15 +44,8 @@
                     <label>
                         Phone
                     </label>
-                    <input type="text" class="form-control shadow-none" value="+1 (514) 312-5678">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Date of birth
-                    </label>
-                    <input type="date" class="form-control shadow-none">
+                    <input type="text" class="form-control shadow-none" formControlName="telefono"
+                    [ngClass]="{ 'is-invalid': submittedPersonal && f.telefono.value == '' }">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -57,8 +53,9 @@
                     <label>
                         Gender
                     </label>
-                    <select class="form-select shadow-none">
-                      <option selected>Select</option>
+                    <select class="form-select shadow-none" formControlName="genero"
+                    [ngClass]="{ 'is-invalid': submittedPersonal && f.genero.value == 0 }">
+                      <option selected value="0">Select</option>
                       <option *ngFor="let item of arrGenero" [value]="item.id_genero">
                         {{ item.descripcion }}
                   </select>
@@ -67,39 +64,14 @@
             <div class="col-lg-6 col-md-6">
                 <div class="form-group">
                     <label>
-                        Marital status
+                        Country
                     </label>
-                    <select class="form-select shadow-none">
-                        <option selected>Select</option>
-                        <option value="1">Married</option>
-                        <option value="2">Single</option>
-                        <option value="3">Complicated</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Nationality
-                    </label>
-                    <select class="form-select shadow-none">
-                        <option selected>Select</option>
-                        <option value="1">Japan</option>
-                        <option value="2">USA</option>
-                        <option value="3">England</option>
-                        <option value="4">China</option>
-                        <option value="5">Canada</option>
-                        <option value="6">Brazil</option>
-                        <option value="7">South Korea</option>
-                        <option value="8">Spain</option>
-                        <option value="9">Turkey</option>
-                        <option value="10">Japan</option>
-                        <option value="11">Denmark</option>
-                        <option value="12">Thailand</option>
-                        <option value="13">UAE</option>
-                        <option value="14">Australia</option>
-                        <option value="15">Netherlands</option>
-                        <option value="16">France</option>
+                    <select class="form-select shadow-none" formControlName="pais"
+                    [ngClass]="{ 'is-invalid': submittedPersonal && f.pais.value == 0 }">
+                      <option selected value="0">Select</option>
+                      <option *ngFor="let item of arrPais" [value]="item.id_pais">
+                        {{ item.descripcion }}
+                      </option>
                     </select>
                 </div>
             </div>
@@ -108,65 +80,57 @@
                     <label>
                         Address details
                     </label>
-                    <textarea class="form-control shadow-none" cols="30" rows="8"></textarea>
+                    <textarea class="form-control shadow-none" cols="30" rows="8" formControlName="direccion"
+                    [ngClass]="{ 'is-invalid': submittedPersonal && f.direccion.value == '' }"></textarea>
                 </div>
             </div>
         </div>
-        <button type="submit" class="default-btn">
+        <button type="button" class="default-btn" (click)="savePersonalDetails()">
             Save
         </button>
     </form>
-</div>
+</div> -->
 <div class="jove-card">
     <h3 class="title">
         Career & Application Information
     </h3>
-    <form>
+    <form [formGroup]="frmCareer">
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="form-group">
                     <label>
                         Objective
                     </label>
-                    <textarea class="form-control shadow-none" cols="30" rows="7"></textarea>
+                    <textarea class="form-control shadow-none" cols="30" rows="7" formControlName="objetivo"
+                    [ngClass]="{ 'is-invalid': submittedCareer && f.objetivo.value == '' }"></textarea>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
                 <div class="form-group">
                     <label>
                         Present salary
                     </label>
-                    <input type="text" class="form-control shadow-none" placeholder="$2000">
+                    <input type="text" class="form-control shadow-none" formControlName="salarioActual"
+                    [ngClass]="{ 'is-invalid': submittedCareer && f.salarioActual.value == '' }">
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
                 <div class="form-group">
                     <label>
                         Expected salary
                     </label>
-                    <input type="text" class="form-control shadow-none" placeholder="$3000">
+                    <input type="text" class="form-control shadow-none" formControlName="salarioEsperado"
+                    [ngClass]="{ 'is-invalid': submittedCareer && f.salarioEsperado.value == '' }">
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Job level
-                    </label>
-                    <select class="form-select shadow-none">
-                        <option selected>Select</option>
-                        <option value="1">High Level</option>
-                        <option value="2">Mid Level</option>
-                        <option value="3">Low Level</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
                 <div class="form-group">
                     <label>
                         Job type
                     </label>
-                    <select class="form-select shadow-none">
-                      <option selected>Select</option>
+                    <select class="form-select shadow-none" formControlName="tipo"
+                    [ngClass]="{ 'is-invalid': submittedCareer && f.tipo.value == 0 }">
+                      <option selected value="0">Select</option>
                       <option *ngFor="let item of arrTipoTrabajo" [value]="item.id_tipo_trabajo">
                         {{ item.descripcion }}
                       </option>
@@ -174,7 +138,7 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="default-btn">
+        <button type="button" class="default-btn" (click)="saveCareer()">
             Save
         </button>
     </form>
@@ -183,70 +147,33 @@
     <h3 class="title">
         Education
     </h3>
-    <form>
+    <form [formGroup]="frmEducation">
         <div class="row">
-            <div class="col-lg-6 col-md-6">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
                 <div class="form-group">
                     <label>
                         Level of education
                     </label>
-                    <select class="form-select shadow-none">
-                        <option value="1" selected>Japan</option>
-                        <option value="2">First Class</option>
-                        <option value="3">Second Class</option>
+                    <select class="form-select shadow-none" formControlName="grado"
+                    [ngClass]="{ 'is-invalid': submittedEducation && fe.grado.value == 0 }">
+                      <option value="0" selected>Select</option>
+                      <option *ngFor="let item of arrGradoEscolar" [value]="item.id_grado_escolar">
+                        {{ item.descripcion }}
+                      </option>
+
                     </select>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Exam / Degree title
-                    </label>
-                    <select class="form-select shadow-none">
-                        <option value="1" selected>Select</option>
-                        <option value="2">B.S.C</option>
-                        <option value="3">C.S.C</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Major/Group
-                    </label>
-                    <input type="text" class="form-control shadow-none">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                 <div class="form-group">
                     <label>
                         Institute name
                     </label>
-                    <input type="text" class="form-control shadow-none">
+                    <input type="text" class="form-control shadow-none" formControlName="instituto"
+                    [ngClass]="{ 'is-invalid': submittedEducation && fe.instituto.value == 0 }">
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Result
-                    </label>
-                    <select class="form-select shadow-none">
-                        <option value="1" selected>Select</option>
-                        <option value="2">CGPA 5</option>
-                        <option value="3">CGPA 4</option>
-                        <option value="4">CGPA 3</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="form-group">
-                    <label>
-                        Marks(%)
-                    </label>
-                    <input type="text" class="form-control shadow-none">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
+            <!-- <div class="col-lg-6 col-md-6">
                 <div class="form-group">
                     <label>
                         Year of passing
@@ -258,33 +185,76 @@
                         <option value="4">2021</option>
                     </select>
                 </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
+            </div> -->
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
                 <div class="form-group">
                     <label>
                         Duration (years)
                     </label>
-                    <input type="text" class="form-control shadow-none">
+                    <input type="text" class="form-control shadow-none" formControlName="duracion"
+                    [ngClass]="{ 'is-invalid': submittedEducation && fe.grado.value == 0 }">
                 </div>
             </div>
         </div>
-        <button type="submit" class="default-btn">
+        <button type="button" class="default-btn" (click)="saveEducation()">
             Save
         </button>
     </form>
+    <div class="row jobs-applied-recently mt-5">
+      <div class="col-xxl-6 col-12 col-sm-12" *ngFor="let item of arrEstudios">
+          <div class="single-job-box">
+              <div class="d-sm-flex align-items-center justify-content-between">
+                  <div class="d-sm-flex align-items-center">
+                      <div class="content">
+                          <h3 class="fw-semibold">
+                              {{ item.instituto }}
+                          </h3>
+                          <span class="location d-block">
+                             {{ item.grado }}
+                          </span>
+                          <span class="job-type d-block mb-3">
+                              {{ item.duracion }} years
+                          </span>
+                      </div>
+                  </div>
+                  <div class="custom-info d-sm-flex align-items-center">
+                      <ul class="ps-0 mb-0 list-unstyled">
+                          <li class="d-inline-block">
+                              <button type="button" class="d-inline-block rounded-circle">
+                                  <i class="ri-edit-line"></i>
+                              </button>
+                          </li>
+                          <!-- <li class="d-inline-block">
+                              <button type="button" class="d-inline-block rounded-circle">
+                                  <i class="ri-check-line"></i>
+                              </button>
+                          </li> -->
+                          <li class="d-inline-block">
+                              <button type="button" class="d-inline-block rounded-circle">
+                                  <i class="ri-close-line"></i>
+                              </button>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+    </div>
 </div>
 <div class="jove-card">
     <h3 class="title">
         Experience
     </h3>
-    <form>
+    <form [formGroup]="frmExperience">
         <div class="row">
             <div class="col-lg-6 col-md-6">
                 <div class="form-group">
                     <label>
                         Company name
                     </label>
-                    <input type="text" class="form-control shadow-none">
+                    <input type="text" class="form-control shadow-none" formControlName="empresa"
+                    [ngClass]="{ 'is-invalid': submittedExperience && fex.empresa.value == '' }">
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -292,10 +262,11 @@
                     <label>
                         Company business
                     </label>
-                    <input type="text" class="form-control shadow-none">
+                    <input type="text" class="form-control shadow-none" formControlName="giro"
+                    [ngClass]="{ 'is-invalid': submittedExperience && fex.giro.value == '' }">
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6">
+            <!-- <div class="col-lg-6 col-md-6">
                 <div class="form-group">
                     <label>
                         Designation
@@ -310,38 +281,84 @@
                     </label>
                     <input type="text" class="form-control shadow-none">
                 </div>
-            </div>
+            </div> -->
             <div class="col-lg-6 col-md-6">
                 <div class="form-group">
                     <label>
                         Responsibilities
                     </label>
-                    <select class="form-select shadow-none">
-                        <option value="1" selected>Japan</option>
-                        <option value="2">10 Roles and their lists of job responsibilities</option>
-                        <option value="3">Should you share job responsibilities in a resume?</option>
-                    </select>
+                    <input type="text" class="form-control shadow-none" formControlName="responsabilidades"
+                    [ngClass]="{ 'is-invalid': submittedExperience && fex.responsabilidades.value == '' }">
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6">
+            <!-- <div class="col-lg-6 col-md-6">
                 <div class="form-group">
                     <label>
                         Company location
                     </label>
                     <input type="text" class="form-control shadow-none">
                 </div>
-            </div>
-            <div class="col-lg-12 col-md-12">
+            </div> -->
+            <div class="col-lg-6 col-md-6">
                 <div class="form-group">
                     <label>
                         Employment period
                     </label>
-                    <input type="text" class="form-control shadow-none">
+                    <input type="text" class="form-control shadow-none" formControlName="periodo"
+                    [ngClass]="{ 'is-invalid': submittedCareer && fex.periodo.value == '' }">
                 </div>
             </div>
         </div>
-        <button type="submit" class="default-btn">
+        <button type="button" class="default-btn" (click)="saveExperience()">
             Save
         </button>
     </form>
+    <div class="row jobs-applied-recently mt-5">
+      <div class="col-xxl-6 col-12 col-sm-12" *ngFor="let item of arrExperiencias">
+          <div class="single-job-box">
+              <div class="d-sm-flex align-items-center justify-content-between">
+                  <div class="d-sm-flex align-items-center">
+                      <div class="content">
+                          <h3 class="fw-semibold">
+                              {{ item.empresa }}
+                          </h3>
+                          <span class="location d-block">
+                             {{ item.giro }}
+                          </span>
+                          <span class="job-type d-block mb-3">
+                              {{ item.periodo }}
+                          </span>
+                      </div>
+                  </div>
+                  <div class="d-sm-flex align-items-center">
+                      <div class="content">
+                          <span class="location d-block">
+                             {{ item.responsabilidades }}
+                          </span>
+                      </div>
+                  </div>
+                  <div class="custom-info d-sm-flex align-items-center">
+                      <ul class="ps-0 mb-0 list-unstyled">
+                          <li class="d-inline-block">
+                              <button type="button" class="d-inline-block rounded-circle">
+                                  <i class="ri-edit-line"></i>
+                              </button>
+                          </li>
+                          <!-- <li class="d-inline-block">
+                              <button type="button" class="d-inline-block rounded-circle">
+                                  <i class="ri-check-line"></i>
+                              </button>
+                          </li> -->
+                          <li class="d-inline-block">
+                              <button type="button" class="d-inline-block rounded-circle">
+                                  <i class="ri-close-line"></i>
+                              </button>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+
+          </div>
+      </div>
+    </div>
 </div>

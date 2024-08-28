@@ -5,6 +5,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { AccordionModule } from 'primeng/accordion';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -169,7 +170,8 @@ import { ModalJobDetailComponent } from './components/common/modal-job-detail/mo
         HttpClientModule,
         ReactiveFormsModule,
         NgxSpinnerModule,
-        FormsModule
+        FormsModule,
+        AccordionModule
     ],
     providers: [
       HttpClient

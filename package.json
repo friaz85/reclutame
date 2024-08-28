@@ -26,6 +26,7 @@
         "ngx-owl-carousel-o": "^17.0.0",
         "ngx-scrolltop": "^7.0.0",
         "ngx-spinner": "^17.0.0",
+        "primeng": "^17.18.9",
         "remixicon": "^4.0.0",
         "rxjs": "~7.8.0",
         "sweetalert2": "^11.12.4",
