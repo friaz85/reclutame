@@ -28,6 +28,7 @@ export class CdResumeComponent {
 
   p_id_resumen_carrera = 0;
   p_id_resumen_educacion = 0;
+  p_id_resumen_experience = 0;
 
   constructor(
     private api: ReclutameService,
@@ -115,13 +116,14 @@ export class CdResumeComponent {
     const edu = await this.api.getResumenEDU(this.auth.currentUserValue.p_id_candidato);
     console.log("EDU", edu);
     if (edu.items.length > 0) {
-      this.p_id_resumen_educacion = edu.items.length;
+      // this.p_id_resumen_educacion = edu.items.length;
       edu.items.forEach((element: any) => {
         this.arrEstudios.push({
-          grado: element.id_grado_escolar,
+          grado: this.arrGradoEscolar.find((x: any) => x.id_grado_escolar == element.id_grado_escolar).descripcion,
           instituto: element.nombre_instituto,
           duracion: element.duracion,
-          id_resumen_educacion: element.id_resumen_educacion
+          id_resumen_educacion: element.id_resumen_educacion,
+          idGrado: element.id_grado_escolar
         });
       });
     }
@@ -158,6 +160,9 @@ export class CdResumeComponent {
       this.frmCareer.reset();
     } else {
       // Actualizo
+      let Cs = await this.api.updateResumenCS(this.frmCareer.value.objetivo, this.frmCareer.value.salarioActual,
+        this.frmCareer.value.salarioEsperado, this.frmCareer.value.tipo, this.auth.currentUserValue.p_id_candidato, this.p_id_resumen_carrera);
+        // this.frmCareer.reset();
     }
     this.spinner.hide();
   }
@@ -170,20 +175,35 @@ export class CdResumeComponent {
     this.spinner.show();
     // Registro
 
-    let edu = await this.api.registroResumenEDU(this.frmEducation.value.grado, this.frmEducation.value.instituto,
-      this.frmEducation.value.duracion, this.auth.currentUserValue.p_id_candidato);
-      console.log("EDU", edu);
-    this.p_id_resumen_educacion = edu.p_id_resumen_educacion;
-    // reset form
+    if (this.p_id_resumen_educacion == 0) {
+      // Guardo
+      let edu = await this.api.registroResumenEDU(this.frmEducation.value.grado, this.frmEducation.value.instituto,
+        this.frmEducation.value.duracion, this.auth.currentUserValue.p_id_candidato);
+        console.log("EDU", edu);
+      this.p_id_resumen_educacion = edu.p_id_resumen_educacion;
+      // reset form
 
-    this.spinner.hide();
-    this.arrEstudios.push({
-      grado: await this.arrGradoEscolar.find((x: any) => x.id_grado_escolar == this.frmEducation.value.grado).descripcion,
-      instituto: this.frmEducation.value.instituto,
-      duracion: this.frmEducation.value.duracion,
-      id_resumen_educacion: this.p_id_resumen_educacion
-    });
-    this.frmEducation.reset();
+      this.spinner.hide();
+      this.arrEstudios.push({
+        grado: await this.arrGradoEscolar.find((x: any) => x.id_grado_escolar == this.frmEducation.value.grado).descripcion,
+        instituto: this.frmEducation.value.instituto,
+        duracion: this.frmEducation.value.duracion,
+        id_resumen_educacion: this.p_id_resumen_educacion
+      });
+      this.frmEducation.reset();
+    } else {
+      // Actualizo
+      let edu = await this.api.updateResumenEDU(this.frmEducation.value.grado, this.frmEducation.value.instituto,
+        this.frmEducation.value.duracion, this.auth.currentUserValue.p_id_candidato, this.p_id_resumen_educacion);
+        console.log("EDU", edu);
+      this.spinner.hide();
+      let i = this.arrEstudios.findIndex((x: any) => x.id_resumen_educacion == this.p_id_resumen_educacion);
+      this.arrEstudios[i].grado = await this.arrGradoEscolar.find((x: any) => x.id_grado_escolar == this.frmEducation.value.grado).descripcion;
+      this.arrEstudios[i].instituto = this.frmEducation.value.instituto;
+      this.arrEstudios[i].duracion = this.frmEducation.value.duracion;
+      this.arrEstudios[i].idGrado = this.frmEducation.value.grado;
+      this.frmEducation.reset();
+    }
   }
 
   async saveExperience() {
@@ -192,21 +212,54 @@ export class CdResumeComponent {
       return;
     }
     this.spinner.show();
-    // Registro
-    let exp = await this.api.registroResumenEXP(this.frmExperience.value.empresa, this.frmExperience.value.giro,
-      this.frmExperience.value.periodo, this.frmExperience.value.responsabilidades, this.auth.currentUserValue.p_id_candidato);
-      console.log("EXP", exp);
-    // reset form
-    this.spinner.hide();
+    if (this.p_id_resumen_experience == 0) {
+      // Registro
+      let exp = await this.api.registroResumenEXP(this.frmExperience.value.empresa, this.frmExperience.value.giro,
+        this.frmExperience.value.periodo, this.frmExperience.value.responsabilidades, this.auth.currentUserValue.p_id_candidato);
+        console.log("EXP", exp);
+      // reset form
+      this.spinner.hide();
 
-    this.arrExperiencias.push({
-      empresa: this.frmExperience.value.empresa,
-      giro: this.frmExperience.value.giro,
-      responsabilidades: this.frmExperience.value.responsabilidades,
-      periodo: this.frmExperience.value.periodo,
-      id_resumen_experiencia: exp.p_id_resumen_experiencia
+      this.arrExperiencias.push({
+        empresa: this.frmExperience.value.empresa,
+        giro: this.frmExperience.value.giro,
+        responsabilidades: this.frmExperience.value.responsabilidades,
+        periodo: this.frmExperience.value.periodo,
+        id_resumen_experiencia: exp.p_id_resumen_experiencia
+      });
+
+      this.frmExperience.reset();
+    } else {
+      // Actualizo
+      let exp = await this.api.updateResumenEXP(this.frmExperience.value.empresa, this.frmExperience.value.giro,
+        this.frmExperience.value.periodo, this.frmExperience.value.responsabilidades, this.auth.currentUserValue.p_id_candidato, this.p_id_resumen_experience);
+        console.log("EXP", exp);
+      this.spinner.hide();
+      let i = this.arrExperiencias.findIndex((x: any) => x.id_resumen_experiencia == this.p_id_resumen_experience);
+      this.arrExperiencias[i].empresa = this.frmExperience.value.empresa;
+      this.arrExperiencias[i].giro = this.frmExperience.value.giro;
+      this.arrExperiencias[i].responsabilidades = this.frmExperience.value.responsabilidades;
+      this.arrExperiencias[i].periodo = this.frmExperience.value.periodo;
+      this.frmExperience.reset();
+    }
+  }
+
+  fillEducation(item: any) {
+    this.frmEducation.patchValue({
+      grado: item.idGrado,
+      instituto: item.instituto,
+      duracion: item.duracion,
     });
+    this.p_id_resumen_educacion = item.id_resumen_educacion;
+  }
 
-    this.frmExperience.reset();
+  fillExperience(item: any) {
+    this.frmExperience.patchValue({
+      empresa: item.empresa,
+      giro: item.giro,
+      responsabilidades: item.responsabilidades,
+      periodo: item.periodo,
+    });
+    this.p_id_resumen_experience = item.id_resumen_experiencia;
   }
 }

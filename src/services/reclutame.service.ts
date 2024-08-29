@@ -320,6 +320,44 @@ export class ReclutameService {
     return this.http.get<any>(this.apiUrl + 'getResumenEXP/' + idCandidato).toPromise();
   }
 
+  async updateResumenCS(objetivo: string, salarioActual: string, salarioEsperado: string, idTipoTrabajo: any, idCandidato: any, idResumenCarrera: any): Promise<any> {
+
+    return this.http.post<any>(this.apiUrl + 'updateResumenCS', {
+      "p_id_resumen_carrera": parseInt(idResumenCarrera),
+      "p_objetivo": objetivo,
+      "p_salario_actual":parseFloat(salarioActual),
+      "p_sueldo_esperado": parseFloat(salarioEsperado),
+      "p_id_tipo_trabajo": parseInt(idTipoTrabajo),
+      "p_id_candidato": parseInt(idCandidato),
+
+    }).toPromise();
+  }
+
+  async updateResumenEDU(idGradoEscolar: string, instituto: string, duracion: string, idCandidato: any, idResumenEducacion: any): Promise<any> {
+
+    return this.http.post<any>(this.apiUrl + 'updateResumenEDU', {
+      "p_id_resumen_educacion": parseInt(idResumenEducacion),
+      "p_id_grado_escolar": parseInt(idGradoEscolar),
+      "p_nombre_instituto": instituto,
+      "p_duracion": duracion,
+      "p_id_candidato": parseInt(idCandidato),
+
+    }).toPromise();
+  }
+
+  async updateResumenEXP(empresa: string, giro: string, preiodo: string, responsabilidades: any, idCandidato: any, idResumenExperiencia: any): Promise<any> {
+
+    return this.http.post<any>(this.apiUrl + 'updateResumenEXP', {
+      "p_id_resumen_experiencia": parseInt(idResumenExperiencia),
+      "p_nombre_empresa": empresa,
+      "p_giro_empresa": giro,
+      "p_periodo_empleo": responsabilidades,
+      "p_responsabilidades": idCandidato,
+      "p_id_candidato": parseInt(idCandidato),
+
+    }).toPromise();
+  }
+
 /***********************************************************************************/
 /***********************************************************************************/
   // Consumos IA
