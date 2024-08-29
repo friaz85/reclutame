@@ -297,8 +297,8 @@ export class ReclutameService {
     return this.http.post<any>(this.apiUrl + 'registroResumenEXP', {
       "p_nombre_empresa": empresa,
       "p_giro_empresa": giro,
-      "p_periodo_empleo": responsabilidades,
-      "p_responsabilidades": idCandidato,
+      "p_periodo_empleo": preiodo,
+      "p_responsabilidades": responsabilidades,
       "p_id_candidato": parseInt(idCandidato),
 
     }).toPromise();
@@ -351,7 +351,26 @@ export class ReclutameService {
       "p_id_resumen_experiencia": parseInt(idResumenExperiencia),
       "p_nombre_empresa": empresa,
       "p_giro_empresa": giro,
-      "p_periodo_empleo": responsabilidades,
+      "p_periodo_empleo": preiodo,
+      "p_responsabilidades": responsabilidades,
+      "p_id_candidato": parseInt(idCandidato),
+
+    }).toPromise();
+  }
+
+  async deleteResumenEDU(idCandidato: any, idResumenEducacion: any): Promise<any> {
+
+    return this.http.post<any>(this.apiUrl + 'deleteResumenEDU', {
+      "p_id_resumen_educacion": parseInt(idResumenEducacion),
+      "p_id_candidato": parseInt(idCandidato),
+
+    }).toPromise();
+  }
+
+  async deleteResumenEXP(idCandidato: any, idResumenExperiencia: any): Promise<any> {
+
+    return this.http.post<any>(this.apiUrl + 'deleteResumenEXP', {
+      "p_id_resumen_experiencia": parseInt(idResumenExperiencia),
       "p_responsabilidades": idCandidato,
       "p_id_candidato": parseInt(idCandidato),
 

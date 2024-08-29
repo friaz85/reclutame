@@ -262,4 +262,18 @@ export class CdResumeComponent {
     });
     this.p_id_resumen_experience = item.id_resumen_experiencia;
   }
+
+  deleteExperience(item: any) {
+    this.spinner.show();
+    let cs = this.api.deleteResumenEXP(this.auth.currentUserValue.p_id_candidato, item.id_resumen_experiencia);
+    this.arrExperiencias = this.arrExperiencias.filter((x: any) => x.id_resumen_experiencia != item.id_resumen_experiencia);
+    this.spinner.hide();
+  }
+
+  deleteEducation(item: any) {
+    this.spinner.show();
+    let cs = this.api.deleteResumenEDU(this.auth.currentUserValue.p_id_candidato, item.id_resumen_educacion);
+    this.arrEstudios = this.arrEstudios.filter((x: any) => x.id_resumen_educacion != item.id_resumen_educacion);
+    this.spinner.hide();
+  }
 }
