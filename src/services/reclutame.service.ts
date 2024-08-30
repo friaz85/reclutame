@@ -124,6 +124,32 @@ export class ReclutameService {
     }).toPromise();
   }
 
+  async updateCandidato(nombre: string, apellido: string, email: string, telefono: any, descripcion: any,
+    facebook: any,
+    tweitter: any,
+    lindein: any,
+    intagram: any,
+    idPais: any,
+    idCiudad: any,
+    domicilio: any, idCandidato: any): Promise<any> {
+    return this.http.post<any>(this.apiUrl + 'updateCandidato', {
+      "p_id_candidato": parseInt(idCandidato),
+      "p_nombre": nombre,
+      "p_apellido": apellido,
+      "p_email": email,
+      "p_telefono": telefono,
+      "p_descripcion": descripcion,
+      "p_facebook_url": facebook,
+      "p_twitter_url": tweitter,
+      "p_linkedin_url":lindein ,
+      "p_instagram_url": intagram,
+      "p_id_pais": parseInt(idPais),
+      "p_id_ciudad": parseInt(idCiudad),
+      "p_domicilio": domicilio,
+      "p_activo": 1
+    }).toPromise();
+  }
+
   async registroReclutador(nombre: string, apellido: string, email: string, id_usuario: any, id_empresa: any, telefono: any): Promise<any> {
 
     return this.http.post<any>(this.apiUrl + 'registroreclutador', {

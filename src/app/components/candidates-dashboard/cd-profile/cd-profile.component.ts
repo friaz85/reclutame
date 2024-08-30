@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { AuthService } from 'src/services/auth.service';
 import { ReclutameService } from 'src/services/reclutame.service';
 
 @Component({
@@ -15,10 +17,12 @@ export class CdProfileComponent {
 
   constructor(
     private api: ReclutameService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private spinner: NgxSpinnerService,
+    private auth: AuthService
     ) {
       this.getPaises();
-      this.getCandidato(15);
+      this.getCandidato(this.auth.currentUserValue.p_id_candidato);
     }
 
     ngOnInit(): void {
@@ -75,6 +79,19 @@ export class CdProfileComponent {
     }
 
     updateCandidato(){
+      this.submitted = true;
+      if (this.frmCandidato.invalid) {
+        return;
+      }
+      this.spinner.show();
+      let update = this.api.updateCandidato(this.frmCandidato.value.nombre, this.frmCandidato.value.apellido,
+        this.frmCandidato.value.email, this.frmCandidato.value.telefono, this.frmCandidato.value.descripcion,
+        this.frmCandidato.value.facebook_url, this.frmCandidato.value.twitter_url, this.frmCandidato.value.linkedin_url,
+        this.frmCandidato.value.instagram_url, this.frmCandidato.value.id_pais, this.frmCandidato.value.id_ciudad,
+        this.frmCandidato.value.domicilio, this.auth.currentUserValue.p_id_candidato);
+
+        this.spinner.hide();
+
 
     }
 
