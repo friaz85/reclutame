@@ -84,6 +84,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EdAddNewEmployerComponent } from './components/employers-dashboard/ed-add-new-employer/ed-add-new-employer.component';
 import { ModalJobDetailComponent } from './components/common/modal-job-detail/modal-job-detail.component';
+import { TanSimpleComoComponent } from './components/common/tan-simple-como/tan-simple-como.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -158,7 +159,8 @@ import { ModalJobDetailComponent } from './components/common/modal-job-detail/mo
         CdFooterComponent,
         CdHeaderComponent,
         EdAddNewEmployerComponent,
-        ModalJobDetailComponent
+        ModalJobDetailComponent,
+        TanSimpleComoComponent
     ],
     imports: [
         BrowserModule,
