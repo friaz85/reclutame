@@ -274,13 +274,37 @@ export class EdPostANewJobComponent {
 
   async registroVacante(descripcion: any) {
 
+    console.log(this.responseVacante);
+    // return;
+
     this.submitted = true;
     console.log(this.frmJob);
     if (this.frmJob.invalid) {
       return;
     }
     this.spinner.show();
-    const reg = await this.api.registroVacante(this.frmJob.value.p_titulo_vacante, descripcion.value, "test@test.com", 1, 1, 1, 1, 1, 1, 1, 1, "01-01-2025", 1, 1, "Calle", this.auth.currentUserValue.p_id_empresa, this.auth.currentUserValue.p_id_reclutador);
+    const reg = await this.api.registroVacante(
+      this.frmJob.value.p_titulo_vacante,
+      this.responseVacante['technical_requirements'],
+      this.reclutador.email,
+      this.responseVacante['Specialisms'],
+      this.responseVacante['Job type'],
+      this.responseVacante['Offered salary (monthly)'],
+      this.responseVacante['Career level'],
+      this.responseVacante['Experience'],
+      this.responseVacante['Gender'],
+      this.responseVacante['Industry'],
+      this.responseVacante['Qualification'],
+      this.responseVacante['Application deadline date'],
+      this.responseVacante['Country'],
+      this.responseVacante['City'],
+      this.responseVacante['City'] + ', ' + this.responseVacante['Country'],
+      this.auth.currentUserValue.p_id_empresa,
+      this.auth.currentUserValue.p_id_reclutador
+      );
+
+    console.log(reg);
+    this.spinner.hide();
     if (!reg.p_error_message) {
       Swal.fire({
         icon: 'success',

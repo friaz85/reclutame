@@ -69,11 +69,13 @@
                     [ngClass]="{ 'is-invalid': showError && txtIA == '' }"
                     [(ngModel)] = "txtIA" [ngModelOptions]="{standalone: true}" required
                     [attr.disabled]="arrChat.length > 0 ? null : true">
-                    <button type="submit" data-toggle="tooltip" data-placement="top" title="Send to IA"
-                    (click)="postCrearVacante()"
-                    [attr.disabled]="arrChat.length > 0 ? null : true"><i class="ri-send-plane-fill"></i></button>
-                    <button type="button" *ngIf="vacanteCompletaIA" data-toggle="tooltip" data-placement="top"
-                    title="Preview Job" (click)="openPopup()"><i class="fa-regular fa-eye"></i></button>
+                    <div class="d-flex justify-content-between align-items-center ms-2">
+                      <button type="submit" data-toggle="tooltip" data-placement="top" title="Send to IA"
+                      (click)="postCrearVacante()"
+                      [attr.disabled]="arrChat.length > 0 ? null : true"><i class="ri-send-plane-fill"></i></button>
+                      <button type="button" *ngIf="vacanteCompletaIA" data-toggle="tooltip" data-placement="top"
+                      title="Preview Job" (click)="openPopup()" class="ms-3"><i class="fa-regular fa-eye"></i></button>
+                    </div>
                   </div>
                 </form>
             </div>
