@@ -277,14 +277,14 @@ export class EdPostANewJobComponent {
     console.log(this.responseVacante);
     // return;
 
-    this.submitted = true;
-    console.log(this.frmJob);
-    if (this.frmJob.invalid) {
-      return;
-    }
+    // this.submitted = true;
+    // console.log(this.frmJob);
+    // if (this.frmJob.invalid) {
+    //   return;
+    // }
     this.spinner.show();
     const reg = await this.api.registroVacante(
-      this.frmJob.value.p_titulo_vacante,
+      this.responseVacante['vacancy_name'],
       this.responseVacante['technical_requirements'],
       this.reclutador.email,
       this.responseVacante['Specialisms'],
@@ -314,6 +314,8 @@ export class EdPostANewJobComponent {
       // reiniciar formulario
       this.spinner.hide();
       this.frmJob.reset();
+      // reload page
+      window.location.reload();
     } else {
       Swal.fire({
         icon: 'error',

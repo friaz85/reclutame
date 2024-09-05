@@ -11,7 +11,9 @@ import Swal from 'sweetalert2';
 })
 export class EdManageJobsComponent {
   arrVacantes = [];
-  displayedText: string = '';
+  displayedText: any = [];
+  reclutador:any = [];
+  empresa: any = [];
 
   constructor(
     private api: ReclutameService,
@@ -39,6 +41,13 @@ export class EdManageJobsComponent {
       const vacantes = await this.api.getVacantesReclutador(idReclutador);
       console.log(vacantes);
       this.arrVacantes = vacantes.p_result;
+
+      const rec = await this.api.getReclutador(this.auth.currentUserValue.p_id_reclutador);
+      console.log(rec);
+      this.reclutador = rec.items[0];
+      const emp = await this.api.getEmpresa(this.reclutador.id_empresa);
+      this.empresa = emp.items[0];
+
     } catch (err) {
       console.error;
       Swal.fire({
@@ -50,8 +59,23 @@ export class EdManageJobsComponent {
     this.spinner.hide();
   }
 
-  openModal (imte: any) {
-    this.displayedText = imte.descripcion_vacante;
+  openModal (item: any) {
+    this.displayedText = {
+      'vacancy_name': item.titulo_vacante,
+      'Job Type': item.nombre_tipo_trabajo,
+      'technical_requirements': item.descripcion_vacante,
+      'Career level': item.nombre_nivel_profesional,
+      'Industry': item.nombre_industria,
+      'Qualification': item.nombre_grado_escolar,
+      'Experience': item.nombre_experiencia,
+      'City': item.nombre_ciudad,
+      'Country': item.nombre_pais,
+      'Specialisms': item.nombre_categoria,
+      'Gender': item.nombre_genero,
+      'Offered salary (monthly)': item.rango,
+      'Application deadline date': item.fecha_limite_solicitud,
+
+    }
     this.openPopup();
     this.ref.detectChanges();
   }

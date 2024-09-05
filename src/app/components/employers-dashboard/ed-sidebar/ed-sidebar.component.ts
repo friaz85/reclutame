@@ -12,4 +12,7 @@ export class EdSidebarComponent {
         this.classApplied = !this.classApplied;
     }
 
+    logOut(){
+      alert('Log out');
+    }
 }

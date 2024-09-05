@@ -55,9 +55,9 @@
                             </div>
                         </div>
                         <div class="apply-btn">
-                            <a href="javascript:void(0);" class="default-btn">
+                            <button class="default-btn" (click)="aplicarVacante()">
                                 Apply
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                       {{arrVacante.p_descripcion_vacante}}
                     </p>
                 </div>
-                <div class="related-jobs">
+                <!-- <div class="related-jobs">
                     <h3>
                         Related jobs
                     </h3>
@@ -159,7 +159,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="col-lg-4 col-md-12">
                 <aside class="sidebar-area">
@@ -169,40 +169,40 @@
                         </h3>
                         <ul class="job-summary ps-0 mb-0 list-unstyled">
                             <li>
-                                <span class="fw-medium">Published on:</span> 29 Oct 2023
+                                <span class="fw-medium">Published on:</span> {{arrVacante.p_fecha_registro | date: 'dd/MM/yyyy'}}
                             </li>
-                            <li>
+                            <!-- <li>
                                 <span class="fw-medium">Vacancy:</span> 01
+                            </li> -->
+                            <li>
+                                <span class="fw-medium">Job type:</span> {{arrVacante.p_nombre_tipo_trabajo}}
                             </li>
                             <li>
-                                <span class="fw-medium">Job type:</span> Full time
+                                <span class="fw-medium">Experience:</span> {{arrVacante.p_nombre_experiencia}}
                             </li>
                             <li>
-                                <span class="fw-medium">Experience:</span> At least 5 Year(s)
+                                <span class="fw-medium">Job location:</span> {{arrVacante.p_nombre_ciudad}}, {{arrVacante.p_nombre_pais}}
                             </li>
                             <li>
-                                <span class="fw-medium">Job location:</span> London
+                                <span class="fw-medium">Category:</span> {{arrVacante.p_nombre_categoria}}
                             </li>
                             <li>
-                                <span class="fw-medium">Category:</span> Engineer
+                                <span class="fw-medium">Gender:</span> {{arrVacante.p_nombre_genero}}
                             </li>
                             <li>
-                                <span class="fw-medium">Gender:</span> Both
+                                <span class="fw-medium">Salary:</span> {{arrVacante.p_rango}}
                             </li>
                             <li>
-                                <span class="fw-medium">Salary:</span> $1K - $3K
-                            </li>
-                            <li>
-                                <span class="fw-medium">Application deadline:</span> 15 Nov 2023
+                                <span class="fw-medium">Application deadline:</span> {{arrVacante.p_fecha_limite_solicitud | date: 'dd/MM/yyyy'}}
                             </li>
                         </ul>
                     </div>
-                    <div class="box">
+                    <!-- <div class="box">
                         <h3>
                             Job location
                         </h3>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.0527637848595!2d-0.012178123402697727!3d51.12593477172904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4875f6256d342681%3A0xb7244723d598f71b!2sRoyal%20Mail!5e0!3m2!1sen!2sbd!4v1696155184932!5m2!1sen!2sbd"></iframe>
-                    </div>
+                    </div> -->
                     <!-- <div class="box">
                         <h3>
                             Share this job
@@ -240,7 +240,198 @@
     </div>
 </div>
 
-<app-subscribe></app-subscribe>
+<!-- Modal -->
+<div class="modal fade loginRegisterModal" tabindex="-1" aria-hidden="true" *ngIf="isOpen">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="row">
+        <div class="col-md-6 col-xl-6 col-sm-12 col-12">
+          <div class="modal-body">
+            <ul class="nav nav-tabs d-block border-0">
+              <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab1'}">
+                <button type="button" class="nav-link fw-semibold position-relative shadow-none mb-0 rounded-0"
+                  (click)="switchTab($event, 'tab1')">
+                  Login
+                </button>
+              </li>
+              <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab2'}">
+                <button type="button" class="nav-link fw-semibold position-relative shadow-none mb-0 rounded-0"
+                  (click)="switchTab($event, 'tab2')">
+                  Register
+                </button>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade d-block opacity-100" *ngIf="currentTab === 'tab1'">
+                <!-- <div class="info">
+                                <p>
+                                    Username: <span class="fw-semibold">employer</span> or <span class="fw-semibold">candidate</span>
+                                </p>
+                                <p>
+                                    Password: <span class="fw-semibold">jove</span>
+                                </p>
+                            </div> -->
+                <form class="authentication-form" [formGroup]="frmLogin">
+                      <div class="form-group">
+                        <label>
+                          Account or Email
+                        </label>
+                        <input type="text" class="form-control shadow-none" placeholder="Enter account or email"
+                          formControlName="user" [ngClass]="{ 'is-invalid': submittedLogin && fl.user.value == '' }">
+                        <div *ngIf="submittedLogin && fl.user.value == ''" class="invalid-feedback">
+                          <div *ngIf="fl.user.errors.required">This field is required</div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>
+                          Password
+                        </label>
+                        <input type="password" class="form-control shadow-none" placeholder="Enter password"
+                          formControlName="pwd" [ngClass]="{ 'is-invalid': submittedLogin && fl.pwd.value == '' }">
+                        <div *ngIf="submittedLogin && fl.pwd.value == ''" class="invalid-feedback">
+                          <div *ngIf="fl.pwd.errors.required">This field is required</div>
+                        </div>
+                      </div>
+                      <!-- <div class="form-group forgot-password">
+                                    Forgot your password? <a routerLink="/">Reset password.</a>
+                                </div> -->
+                      <button type="button" class="default-btn-secondary d-block w-100" (click)="login()">
+                        Login Now
+                      </button>
+                      <!-- <div class="login-with-socials text-center">
+                                    <span class="d-block fw-medium">
+                                        Or Continue with
+                                    </span>
+                                    <a href="#" target="_blank" class="facebook d-inline-block">
+                                        <i class="ri-facebook-fill"></i>
+                                    </a>
+                                    <a href="#" target="_blank" class="google d-inline-block">
+                                        <i class="ri-google-fill"></i>
+                                    </a>
+                                    <a href="#" target="_blank" class="linkedin d-inline-block">
+                                        <i class="ri-linkedin-fill"></i>
+                                    </a>
+                                </div> -->
+                </form>
+              </div>
+              <div class="tab-pane fade d-block opacity-100" *ngIf="currentTab === 'tab2'">
+                <ul class="nav nav-tabs d-block border-0">
+                  <li class="nav-item d-inline-block" [ngClass]="{'active': currentInnerTab === 'innerTab1'}">
+                    <button type="button" class="nav-link fw-semibold shadow-none mb-0"
+                      (click)="switchInnerTab($event, 'innerTab1')">
+                      Candidate
+                    </button>
+                  </li>
+
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane fade d-block opacity-100" *ngIf="currentInnerTab === 'innerTab1'">
+                    <form class="authentication-form" [formGroup]="frmCandidato">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label>
+                              First Name
+                            </label>
+                            <input type="text" class="form-control shadow-none" placeholder="Enter name"
+                              formControlName="nombreCandidato"
+                              [ngClass]="{ 'is-invalid': submittedCandidato && f.nombreCandidato.value == '' }">
+                            <div *ngIf="submittedCandidato && f.nombreCandidato.value == ''" class="invalid-feedback">
+                              <div *ngIf="f.nombreCandidato.errors.required">This field is required</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label>
+                              Last Name
+                            </label>
+                            <input type="text" class="form-control shadow-none" placeholder="Enter last name"
+                              formControlName="apellidoCandidato"
+                              [ngClass]="{ 'is-invalid': submittedCandidato && f.apellidoCandidato.value == '' }">
+                            <div *ngIf="submittedCandidato && f.apellidoCandidato.value == ''" class="invalid-feedback">
+                              <div *ngIf="f.apellidoCandidato.errors.required">This field is required</div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>
+                                                        Username
+                                                    </label>
+                                                    <input type="text" class="form-control shadow-none" placeholder="Enter username">
+                                                </div>
+                                            </div> -->
+                        <div class="col-sm-12">
+                          <div class="form-group">
+                            <label>
+                              Email
+                            </label>
+                            <input type="email" class="form-control shadow-none" placeholder="Enter email"
+                              formControlName="emailCandidato"
+                              [ngClass]="{ 'is-invalid': submittedCandidato && f.emailCandidato.value == '' }">
+                            <div *ngIf="submittedCandidato && f.emailCandidato.value == ''" class="invalid-feedback">
+                              <div *ngIf="f.emailCandidato.errors.required">This field is required</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>
+                          Phone number
+                        </label>
+                        <input type="text" class="form-control shadow-none" placeholder="Enter phone number"
+                          formControlName="telefonoCandidato"
+                          [ngClass]="{ 'is-invalid': submittedCandidato && f.telefonoCandidato.value == '' }">
+                        <div *ngIf="submittedCandidato && f.telefonoCandidato.value == ''" class="invalid-feedback">
+                          <div *ngIf="f.telefonoCandidato.errors.required">This field is required</div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>
+                          Password
+                        </label>
+                        <input type="password" class="form-control shadow-none" placeholder="Enter password"
+                          formControlName="passwordCandidato"
+                          [ngClass]="{ 'is-invalid': submittedCandidato && f.passwordCandidato.value == '' }">
+                        <div *ngIf="submittedCandidato && f.passwordCandidato.value == ''" class="invalid-feedback">
+                          <div *ngIf="f.passwordCandidato.errors.required">This field is required</div>
+                        </div>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input shadow-none" type="checkbox" id="termsPrivacyPolicy"
+                          (change)="checkTyCCandidato($event)">
+                        <label class="form-check-label" for="termsPrivacyPolicy">
+                          Accept the <a routerLink="/">Terms</a> and <a routerLink="/">Privacy Policy</a>
+                        </label>
+                      </div>
+                      <button type="button" class="default-btn-secondary d-block w-100" (click)="registroCandidato()"
+                        *ngIf="checkTerminosCandidato">
+                        Register Now
+                      </button>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <button (click)="closePopup()" type="button" class="close-btn">
+              <i class="ri-close-fill"></i>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-6 col-sm-12 col-12 d-flex justify-content-center align-items-center">
+          <img src="assets/images/login.jpg" alt="login" class="w-100 vh-90 animate__animated animate__fadeIn" *ngIf="currentTab == 'tab1'">
+          <img src="assets/images/register-candidate.jpg" alt="login" class="w-100 vh-90 animate__animated animate__fadeIn" *ngIf="currentTab == 'tab2' && currentInnerTab == 'innerTab1'">
+          <img src="assets/images/register-company.jpg" alt="login" class="w-100 vh-100 animate__animated animate__fadeIn" *ngIf="currentTab == 'tab2' && currentInnerTab == 'innerTab2'">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop fade show"></div>
+</div>
+
+<!-- <app-subscribe></app-subscribe> -->
 
 <app-footer></app-footer>
 
