@@ -48,11 +48,11 @@ export class AuthService {
       );
   }
 
-  // async login(username: any, password: any): Promise<any> {
-  //   return this.http.post<any>(this.url + 'login', {
-  //     "p_email": username,
-  //     "p_password": password
-  //   }).toPromise();
-  // }
+  logout() {
+    // remove user from local storage and set current user to null
+    localStorage.removeItem("User");
+    this.currentUserSubject.next([]);
+    this.router.navigate([""]);
+  }
 
 }

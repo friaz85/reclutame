@@ -21,6 +21,7 @@ export class NavbarComponent {
   submittedLogin = false;
   checkTerminosCandidato = false;
   checkTerminosCcompany = false;
+  isLogged = false;
 
   // Navbar Sticky
   isSticky: boolean = false;
@@ -39,9 +40,11 @@ export class NavbarComponent {
     private api: ReclutameService,
     private formBuilder: FormBuilder,
     private apiLogin: AuthService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    public auth: AuthService
   ) {
     this.getPaises();
+    console.log(this.auth.currentUserValue);
   }
 
   ngOnInit(): void {
@@ -279,6 +282,14 @@ export class NavbarComponent {
     } catch (error: any) {
       this.spinner.hide();
       console.log('Error Status: ', error.status);
+    }
+  }
+
+  goDashboard() {
+      if (this.auth.currentUserValue.p_id_rol == 3) {
+        this.router.navigate(['/candidates-dashboard']);
+      } else if (this.auth.currentUserValue.p_id_rol == 1 || this.auth.currentUserValue.p_id_rol == 2) {
+        this.router.navigate(['/dashboard']);
     }
   }
 

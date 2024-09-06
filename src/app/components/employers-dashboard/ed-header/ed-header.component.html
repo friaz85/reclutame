@@ -156,7 +156,7 @@
                                 class="dropdown-menu"
                                 [class.active]="classApplied2"
                             >
-                                <li>
+                                <!-- <li>
                                     <a routerLink="/dashboard" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                         <i class="ri-dashboard-line"></i>
                                         Dashboard
@@ -191,7 +191,7 @@
                                         <i class="ri-file-list-3-line"></i>
                                         All Applicants
                                     </a>
-                                </li>
+                                </li> -->
                                 <!-- <li>
                                     <a routerLink="/dashboard/resumes" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                         <i class="ri-bookmark-line"></i>
@@ -199,7 +199,7 @@
                                     </a>
                                 </li> -->
                                 <li>
-                                    <a routerLink="/" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    <a class="cursor-pointer" (click) = "logout();">
                                         <i class="ri-logout-box-line"></i>
                                         Logout
                                     </a>

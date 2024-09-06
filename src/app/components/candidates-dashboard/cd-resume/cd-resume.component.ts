@@ -180,7 +180,7 @@ export class CdResumeComponent {
       let edu = await this.api.registroResumenEDU(this.frmEducation.value.grado, this.frmEducation.value.instituto,
         this.frmEducation.value.duracion, this.auth.currentUserValue.p_id_candidato);
         console.log("EDU", edu);
-      this.p_id_resumen_educacion = edu.p_id_resumen_educacion;
+      // this.p_id_resumen_educacion = edu.p_id_resumen_educacion;
       // reset form
 
       this.spinner.hide();
@@ -188,7 +188,8 @@ export class CdResumeComponent {
         grado: await this.arrGradoEscolar.find((x: any) => x.id_grado_escolar == this.frmEducation.value.grado).descripcion,
         instituto: this.frmEducation.value.instituto,
         duracion: this.frmEducation.value.duracion,
-        id_resumen_educacion: this.p_id_resumen_educacion
+        id_resumen_educacion: edu.p_id_resumen_educacion,
+        idGrado: this.frmEducation.value.grado
       });
       this.frmEducation.reset();
     } else {
@@ -203,6 +204,7 @@ export class CdResumeComponent {
       this.arrEstudios[i].duracion = this.frmEducation.value.duracion;
       this.arrEstudios[i].idGrado = this.frmEducation.value.grado;
       this.frmEducation.reset();
+      this.p_id_resumen_educacion = 0;
     }
   }
 
@@ -229,6 +231,7 @@ export class CdResumeComponent {
       });
 
       this.frmExperience.reset();
+      this.p_id_resumen_experience = 0;
     } else {
       // Actualizo
       let exp = await this.api.updateResumenEXP(this.frmExperience.value.empresa, this.frmExperience.value.giro,
@@ -241,10 +244,13 @@ export class CdResumeComponent {
       this.arrExperiencias[i].responsabilidades = this.frmExperience.value.responsabilidades;
       this.arrExperiencias[i].periodo = this.frmExperience.value.periodo;
       this.frmExperience.reset();
+      this.p_id_resumen_experience = 0;
+
     }
   }
 
   fillEducation(item: any) {
+    console.log(item);
     this.frmEducation.patchValue({
       grado: item.idGrado,
       instituto: item.instituto,

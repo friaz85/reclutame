@@ -63,14 +63,14 @@
                 View Profile
             </a>
         </li> -->
-        <li>
+        <!-- <li>
             <a routerLink="/" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <i class="ri-delete-bin-line"></i>
                 Delete Account
             </a>
-        </li>
+        </li> -->
         <li>
-            <a routerLink="/" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a class="d-block position-relative cursor-pointer" (click)="logout();">
                 <i class="ri-logout-box-line"></i>
                 Logout
             </a>

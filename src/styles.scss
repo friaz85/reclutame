@@ -387,6 +387,10 @@ div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
   border-color: #dc3545 !important;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 /* Max width 767px */
 @media only screen and (max-width : 767px) {
 

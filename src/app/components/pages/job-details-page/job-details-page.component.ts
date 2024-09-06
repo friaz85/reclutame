@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from 'src/services/auth.service';
 import { ReclutameService } from 'src/services/reclutame.service';
@@ -36,7 +36,8 @@ export class JobDetailsPageComponent {
       private api: ReclutameService,
       private apiLogin: AuthService,
       private spinner: NgxSpinnerService,
-      private formBuilder: FormBuilder
+      private formBuilder: FormBuilder,
+      public router: Router
       ) {
       this.route.queryParams.subscribe((params:any) => {
         this.idVacante = params['jobId'];
@@ -146,7 +147,8 @@ export class JobDetailsPageComponent {
               next: (data) => {
                 this.idCandidato = data.p_id_candidato;
                 this.spinner.hide();
-                this.aplicarVacante();
+                // this.aplicarVacante();
+                this.router.navigate(['/candidates-dashboard']);
               },
               error: (error) => {
                 console.error('There was an error!', error);
@@ -197,7 +199,42 @@ export class JobDetailsPageComponent {
             console.log(data);
             this.idCandidato = data.p_id_candidato;
             this.spinner.hide();
-            this.aplicarVacante();
+
+            if (data.p_id_rol != 3) {
+              // Redirect to dashboard candidate
+              Swal.fire({
+                icon: 'warning',
+                title: 'Atención',
+                html: "<p>No puedes aplicar a la vacante debido a que tu perfil no es candidato.</p>",
+              });
+              return;
+            }
+
+            if (data.p_bandera == 0) {
+              Swal.fire({
+                icon: 'warning',
+                title: 'Atención',
+                html: "<p>No puedes aplicar a la vacante debido a que tu perfil está incompleto.</p>",
+                showConfirmButton: true,
+                showCancelButton: false,
+                confirmButtonText: `Ok`,
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  // this.aplicarVacante();
+                  if (data.p_id_rol == 3) {
+                    // Redirect to dashboard candidate
+                    this.spinner.hide();
+                    this.router.navigate(['/candidates-dashboard']);
+                  }
+                }
+              });
+            } else if (data.p_bandera == 1) {
+              this.aplicarVacante();
+            }
+
+
           },
           error: (error) => {
             this.spinner.hide();

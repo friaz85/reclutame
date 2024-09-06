@@ -47,7 +47,7 @@
                                     {{arrVacante.p_titulo_vacante}}
                                 </h3>
                                 <span class="location d-block">
-                                  {{arrVacante.p_nombre_ciudad}}, {{arrVacante.p_nombre_pais}}
+                                  {{arrVacante.p_nombre_empresa}}
                                 </span>
                                 <span class="job-type d-block">
                                   {{arrVacante.p_nombre_tipo_trabajo}}
@@ -68,6 +68,18 @@
                     <p>
                       {{arrVacante.p_descripcion_vacante}}
                     </p>
+                    <h3>
+                      Career Level
+                    </h3>
+                    <p>{{ arrVacante.p_nombre_nivel_profesional }}</p>
+                    <h3>
+                      Job Industry
+                    </h3>
+                    <p> {{ arrVacante.p_nombre_industria }} </p>
+                    <h3>
+                      Job Qualification
+                    </h3>
+                    <p> {{ arrVacante.p_nombre_grado_escolar }} </p>
                 </div>
                 <!-- <div class="related-jobs">
                     <h3>

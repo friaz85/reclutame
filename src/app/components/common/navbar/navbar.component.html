@@ -212,10 +212,16 @@
           </li>
         </ul>
         <div class="others-option d-md-flex align-items-center ms-4">
-          <div class="option-item">
+          <div class="option-item" *ngIf="this.auth.currentUserValue.length == 0">
             <span class="d-block login-register default-btn-secondary" (click)="openPopup()">
               <i class="ri-user-line"></i>
               Login/Register
+            </span>
+          </div>
+          <div class="option-item" *ngIf="this.auth.currentUserValue.p_id_rol">
+            <span class="d-block login-register default-btn-secondary" (click)="goDashboard();">
+              <i class="ri-user-line"></i>
+              Dashboard
             </span>
           </div>
           <div class="option-item">

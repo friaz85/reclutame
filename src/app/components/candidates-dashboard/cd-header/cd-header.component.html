@@ -156,7 +156,7 @@
                                 class="dropdown-menu"
                                 [class.active]="classApplied2"
                             >
-                                <li>
+                                <!-- <li>
                                     <a routerLink="/candidates-dashboard" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                         <i class="ri-dashboard-line"></i>
                                         Dashboard
@@ -167,7 +167,7 @@
                                         <i class="ri-user-line"></i>
                                         My Profile
                                     </a>
-                                </li>
+                                </li> -->
                                 <!-- <li>
                                     <a routerLink="/candidates-dashboard/resume" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                         <i class="ri-send-plane-2-line"></i>
@@ -180,14 +180,14 @@
                                         Bookmarks
                                     </a>
                                 </li> -->
-                                <li>
+                                <!-- <li>
                                     <a routerLink="/candidates-dashboard/applied-jobs" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                         <i class="ri-file-list-3-line"></i>
                                         Applied Jobs
                                     </a>
-                                </li>
+                                </li> -->
                                 <li>
-                                    <a routerLink="/" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    <a class="d-block position-relative cursor-pointer" (click)="logout()">
                                         <i class="ri-logout-box-line"></i>
                                         Logout
                                     </a>
