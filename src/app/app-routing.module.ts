@@ -40,6 +40,8 @@ import { CdMessageComponent } from './components/candidates-dashboard/cd-message
 import { CdChangePasswordComponent } from './components/candidates-dashboard/cd-change-password/cd-change-password.component';
 import { EdAddNewEmployerComponent } from './components/employers-dashboard/ed-add-new-employer/ed-add-new-employer.component';
 import { AuthGuard } from './auth.guard';
+import { CdJobsListingComponent } from './components/candidates-dashboard/cd-jobs-listing/cd-jobs-listing.component';
+import { CdEmployersComponent } from './components/candidates-dashboard/cd-employers/cd-employers.component';
 
 const routes: Routes = [
     {path: '', component: HomeDemoThreeComponent},
@@ -90,6 +92,8 @@ const routes: Routes = [
             {path: 'alert-jobs', component: CdAlertJobsComponent},
             {path: 'message', component: CdMessageComponent},
             {path: 'change-password', component: CdChangePasswordComponent},
+            {path: 'jobs-listing', component: CdJobsListingComponent},
+            {path: 'employers', component: CdEmployersComponent},
         ]
     },
     // Here add new pages component

@@ -35,6 +35,11 @@
                               </span>
                           </div>
                       </div>
+                      <div class="apply-btn" *ngIf="this.auth.currentUserValue.p_id_candidato">
+                        <button class="default-btn" (click)="aplicarVacante()">
+                            Apply
+                        </button>
+                    </div>
                   </div>
               </div>
               <div class="job-details-description">
@@ -185,15 +190,22 @@
                           </li>
                       </ul>
                   </div>
-                  <!-- <div class="box">
+                  <div class="box">
                       <h3>
                           Job location
                       </h3>
-                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.0527637848595!2d-0.012178123402697727!3d51.12593477172904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4875f6256d342681%3A0xb7244723d598f71b!2sRoyal%20Mail!5e0!3m2!1sen!2sbd!4v1696155184932!5m2!1sen!2sbd"></iframe>
-                  </div> -->
+                      <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.0527637848595!2d-0.012178123402697727!3d51.12593477172904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4875f6256d342681%3A0xb7244723d598f71b!2sRoyal%20Mail!5e0!3m2!1sen!2sbd!4v1696155184932!5m2!1sen!2sbd"></iframe> -->
+                      <iframe [src]='getMapURL() | safe'></iframe>
+                  </div>
 
               </aside>
           </div>
+      </div>
+      <div class="row" *ngIf="origen == 1">
+        <div class="col-12 text-end">
+          <button class="default-btn" (click)="goBack()">
+              Back
+          </button>
       </div>
   </div>
 </div>

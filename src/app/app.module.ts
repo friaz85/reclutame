@@ -85,6 +85,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EdAddNewEmployerComponent } from './components/employers-dashboard/ed-add-new-employer/ed-add-new-employer.component';
 import { ModalJobDetailComponent } from './components/common/modal-job-detail/modal-job-detail.component';
 import { TanSimpleComoComponent } from './components/common/tan-simple-como/tan-simple-como.component';
+import { CdJobsListingComponent } from './components/candidates-dashboard/cd-jobs-listing/cd-jobs-listing.component';
+import { CdEmployersComponent } from './components/candidates-dashboard/cd-employers/cd-employers.component';
+import { SafePipe } from './components/pipes/safe.pipe';
 @NgModule({
     declarations: [
         AppComponent,
@@ -160,7 +163,10 @@ import { TanSimpleComoComponent } from './components/common/tan-simple-como/tan-
         CdHeaderComponent,
         EdAddNewEmployerComponent,
         ModalJobDetailComponent,
-        TanSimpleComoComponent
+        TanSimpleComoComponent,
+        CdJobsListingComponent,
+        CdEmployersComponent,
+        SafePipe
     ],
     imports: [
         BrowserModule,
