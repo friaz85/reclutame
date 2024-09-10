@@ -443,6 +443,14 @@ export class ReclutameService {
     return this.http.get<any>(this.apiUrl + 'getVacantesAplicados/' + idCandidato).toPromise();
   }
 
+  async getTarjetasDashboard(idReclutador: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getTarjetasDashboardReclutador/' + idReclutador).toPromise();
+  }
+
+  async geNotificaciones(idReclutador: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getNotificaciones/' + idReclutador).toPromise();
+  }
+
 /***********************************************************************************/
 /***********************************************************************************/
   // Consumos IA

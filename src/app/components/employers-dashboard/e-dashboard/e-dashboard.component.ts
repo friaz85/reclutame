@@ -38,6 +38,9 @@ export class EDashboardComponent {
     public chartOptions: Partial<ChartOptions>;
 
     reclutador:any = [];
+    totalCandidatos = 0;
+    totalVacantes = 0;
+    arrNotificaciones: any = [];
 
     constructor(
       private api: ReclutameService,
@@ -46,6 +49,8 @@ export class EDashboardComponent {
       private auth: AuthService
       ) {
         this.getReclutador();
+        this.getTarjetasDashboard();
+        this.geNotificaciones();
 
         this.chartOptions = {
             series: [
@@ -132,5 +137,31 @@ export class EDashboardComponent {
         }
         this.spinner.hide();
     }
+
+    async getTarjetasDashboard() {
+        this.spinner.show();
+        try{
+          const tarjetas = await this.api.getTarjetasDashboard(this.auth.currentUserValue.p_id_reclutador);
+          //console.log("VALOR DE TARJETAS",tarjetas);
+          //this.reclutador = rec.items[0];
+          this.totalCandidatos = tarjetas.p_total_candidatos;
+          this.totalVacantes = tarjetas.p_total_vacantes;
+        } catch (error) {
+          console.log(error);
+        }
+        this.spinner.hide();
+    }
+
+    async geNotificaciones() {
+        this.spinner.show();
+        try {
+          const notificaciones = await this.api.geNotificaciones(this.auth.currentUserValue.p_id_reclutador);
+          //console.log(arrNotificaciones);
+          this.arrNotificaciones = notificaciones.p_result;
+        } catch (err) {
+          console.error;
+        }
+        this.spinner.hide(); 
+      }
 
 }
