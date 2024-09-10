@@ -5,7 +5,7 @@
             [class.active]="classApplied"
         >
             <a class="navbar-brand" routerLink="/dashboard">
-                <img src="assets/images/logo.png" alt="logo">
+                <img src="assets/images/logo_full.png" alt="logo" class="logo">
             </a>
             <button
                 class="navbar-toggler"
@@ -21,10 +21,10 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                             Home
                         </a>
-                        <ul class="dropdown-menu">
+                        <!-- <ul class="dropdown-menu">
                             <li class="nav-item">
                                 <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                     Home Demo - 1
@@ -40,9 +40,9 @@
                                     Home Demo - 3
                                 </a>
                             </li>
-                        </ul>
+                        </ul> -->
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                             Jobs
                         </a>
@@ -68,8 +68,8 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
+                    </li> -->
+                    <!-- <li class="nav-item">
                         <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                             Employers
                         </a>
@@ -90,7 +90,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                             Candidates
@@ -101,7 +101,7 @@
                                     Candidates
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a routerLink="/candidate-details" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                     Candidate Details
                                 </a>
@@ -110,35 +110,35 @@
                                 <a routerLink="/candidates-dashboard" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                     Candidates Dashboard
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </li>
                 </ul>
                 <div class="others-option d-md-flex align-items-center">
-                    <div class="option-item">
+                    <!-- <div class="option-item">
                         <form class="search-box position-relative">
                             <input type="text" class="input-search" placeholder="Search....">
                             <button type="submit">
                                 <i class="ri-search-line"></i>
                             </button>
                         </form>
-                    </div>
-                    <div class="option-item d-inline-block">
+                    </div> -->
+                    <!-- <div class="option-item d-inline-block">
                         <a routerLink="/dashboard/message" class="message-icon d-inline-block position-relative">
                             <i class="ri-message-2-line"></i>
                             <span>
                                 2
                             </span>
                         </a>
-                    </div>
-                    <div class="option-item d-inline-block">
+                    </div> -->
+                    <!-- <div class="option-item d-inline-block">
                         <a routerLink="/dashboard/resumes" class="notification-icon d-inline-block position-relative">
                             <i class="ri-notification-line"></i>
                             <span>
                                 1
                             </span>
                         </a>
-                    </div>
+                    </div> -->
                     <div class="option-item">
                         <div class="dropdown">
                             <button
@@ -156,7 +156,7 @@
                                 class="dropdown-menu"
                                 [class.active]="classApplied2"
                             >
-                                <li>
+                                <!-- <li>
                                     <a routerLink="/dashboard" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                         <i class="ri-dashboard-line"></i>
                                         Dashboard
@@ -164,10 +164,16 @@
                                 </li>
                                 <li>
                                     <a routerLink="/dashboard/company-profile" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                                        <i class="ri-user-line"></i>
+                                        <i class="ri-building-4-line"></i>
                                         Company Profile
                                     </a>
                                 </li>
+                                <li>
+                                  <a routerLink="/dashboard/add-new-employer" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                      <i class="ri-user-add-line"></i>
+                                      Add A New Employer
+                                  </a>
+                              </li>
                                 <li>
                                     <a routerLink="/dashboard/post-a-new-job" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                         <i class="ri-send-plane-2-line"></i>
@@ -185,15 +191,15 @@
                                         <i class="ri-file-list-3-line"></i>
                                         All Applicants
                                     </a>
-                                </li>
-                                <li>
+                                </li> -->
+                                <!-- <li>
                                     <a routerLink="/dashboard/resumes" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                         <i class="ri-bookmark-line"></i>
                                         Resumes
                                     </a>
-                                </li>
+                                </li> -->
                                 <li>
-                                    <a routerLink="/" class="d-block position-relative" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    <a class="cursor-pointer" (click) = "logout();">
                                         <i class="ri-logout-box-line"></i>
                                         Logout
                                     </a>

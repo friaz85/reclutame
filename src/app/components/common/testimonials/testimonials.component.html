@@ -1,23 +1,23 @@
 <!-- Default -->
 <div
-    class="testimonials-area pb-100"
+    class="testimonials-area pb-100 pt-5"
     [ngClass]="{'d-none': router.url === '/index-2' || router.url === '/index-3'}"
 >
     <div class="container">
         <div class="section-title text-start">
-            <h2 class="mb-0">
-                What they say about us
+            <h2 class="mb-0 text-secondary-r">
+              Conoce lo que opinan de nosotros
             </h2>
         </div>
         <ul class="nav nav-tabs d-block border-0">
             <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab1'}">
-                <button type="button" class="nav-link fw-semibold position-relative shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab1')">
-                    Clients
+                <button type="button" class="nav-link fw-semibold position-relative shadow-none border-0 mb-0 rounded-0 text-secondary-r" (click)="switchTab($event, 'tab1')">
+                  Clientes
                 </button>
             </li>
             <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab2'}">
-                <button type="button" class="nav-link fw-semibold position-relative shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab2')">
-                    Candidates
+                <button type="button" class="nav-link fw-semibold position-relative shadow-none border-0 mb-0 rounded-0 text-secondary-r" (click)="switchTab($event, 'tab2')">
+                  Empresas
                 </button>
             </li>
         </ul>

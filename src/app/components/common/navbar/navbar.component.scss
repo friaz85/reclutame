@@ -45,7 +45,7 @@
             button {
                 padding: 10px 0 10px 27px;
                 color: var(--headingColor);
-                
+
                 i {
                     left: 0;
                     top: 50%;
@@ -96,7 +96,7 @@
         }
         .navbar-nav {
             margin-left: 60px;
-    
+
             .nav-item {
                 position: relative;
                 margin: {
@@ -123,7 +123,7 @@
                 }
                 .dropdown-toggle {
                     padding-right: 16px;
-    
+
                     &::after {
                         display: none;
                     }
@@ -156,14 +156,14 @@
                     background: var(--whiteColor);
                     transition: all 0.2s ease-in-out;
                     box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
-    
+
                     .nav-item {
                         margin: 0;
-                        
+
                         .nav-link {
                             padding: 7px 25px;
                             color: var(--headingColor);
-                            
+
                             &.dropdown-toggle {
                                 &::before {
                                     top: 50%;
@@ -181,11 +181,11 @@
                             left: 100%;
                             visibility: hidden;
                             transform: rotateX(-90deg);
-                            
+
                             .nav-item {
                                 .nav-link {
                                     color: var(--headingColor);
-    
+
                                     &.active, &:hover {
                                         color: var(--primaryColor);
                                     }
@@ -196,11 +196,11 @@
                                     left: -100%;
                                     visibility: hidden;
                                     transform: rotateX(-90deg);
-        
+
                                     .nav-item {
                                         .nav-link {
                                             color: var(--headingColor);
-        
+
                                             &.active, &:hover {
                                                 color: var(--primaryColor);
                                             }
@@ -211,11 +211,11 @@
                                             left: 100%;
                                             visibility: hidden;
                                             transform: rotateX(-90deg);
-                
+
                                             .nav-item {
                                                 .nav-link {
                                                     color: var(--headingColor);
-                
+
                                                     &.active, &:hover {
                                                         color: var(--primaryColor);
                                                     }
@@ -297,10 +297,10 @@
         }
         .others-option {
             margin-left: auto;
-    
+
             .option-item {
                 margin-left: 30px;
-    
+
                 .login-register {
                     cursor: pointer;
                     color: var(--headingColor);
@@ -374,11 +374,11 @@
                             .nav-item {
                                 .dropdown-menu {
                                     left: -100%;
-    
+
                                     .nav-item {
                                         .dropdown-menu {
                                             left: -100%;
-    
+
                                             .nav-item {
                                                 .dropdown-menu {
                                                     left: 100%;
@@ -415,7 +415,7 @@
                 .nav-item {
                     .nav-link {
                         color: var(--whiteColor);
-                        
+
                         &:hover, &.active {
                             color: var(--secondaryColor);
                         }
@@ -424,7 +424,7 @@
                         .nav-item {
                             .nav-link {
                                 color: var(--headingColor);
-                                
+
                                 &.active, &:hover {
                                     color: var(--secondaryColor);
                                 }
@@ -433,7 +433,7 @@
                                 .nav-item {
                                     .nav-link {
                                         color: var(--headingColor);
-        
+
                                         &.active, &:hover {
                                             color: var(--secondaryColor);
                                         }
@@ -442,7 +442,7 @@
                                         .nav-item {
                                             .nav-link {
                                                 color: var(--headingColor);
-            
+
                                                 &.active, &:hover {
                                                     color: var(--secondaryColor);
                                                 }
@@ -451,7 +451,7 @@
                                                 .nav-item {
                                                     .nav-link {
                                                         color: var(--headingColor);
-                    
+
                                                         &.active, &:hover {
                                                             color: var(--secondaryColor);
                                                         }
@@ -497,7 +497,7 @@
                 .option-item {
                     .login-register {
                         color: var(--whiteColor);
-    
+
                         i {
                             color: var(--secondaryColor);
 
@@ -513,7 +513,6 @@
                     .default-btn {
                         background-color: var(--secondaryColor);
                         color: var(--headingColor);
-                        
                         &:hover {
                             background-color: var(--primaryColor);
                             color: var(--whiteColor);
@@ -537,6 +536,7 @@
         }
     }
 }
+
 @keyframes fadeInDown {
     0% {
         opacity: 0;
@@ -545,6 +545,10 @@
         opacity: 1;
         transform: translateZ(0)
     }
+}
+
+.default-btn-secondary, .default-btn {
+  border-radius: 20px !important;
 }
 
 // Modal
@@ -720,7 +724,7 @@
                     .nav {
                         &.nav-tabs {
                             margin-bottom: 25px;
-        
+
                             .nav-item {
                                 margin: {
                                     left: 10px;
@@ -738,7 +742,7 @@
                                 &.active {
                                     .nav-link {
                                         color: var(--whiteColor);
-                                        background-color: var(--primaryColor);
+                                        background-color: var(--secondaryColor);
                                     }
                                 }
                                 &:last-child {
@@ -926,10 +930,10 @@
                 box-shadow: unset;
                 border: none;
                 padding: 0;
-    
+
                 .burger-menu {
                     cursor: pointer;
-    
+
                     span {
                         height: 3px;
                         width: 30px;
@@ -978,7 +982,7 @@
                     .nav-item {
                         .nav-link {
                             color: var(--headingColor);
-                            
+
                             &:hover, &.active {
                                 color: var(--secondaryColor);
                             }
@@ -987,7 +991,7 @@
                             .nav-item {
                                 .nav-link {
                                     color: var(--headingColor);
-                                    
+
                                     &.active, &:hover {
                                         color: var(--secondaryColor);
                                     }
@@ -996,7 +1000,7 @@
                                     .nav-item {
                                         .nav-link {
                                             color: var(--headingColor);
-            
+
                                             &.active, &:hover {
                                                 color: var(--secondaryColor);
                                             }
@@ -1005,7 +1009,7 @@
                                             .nav-item {
                                                 .nav-link {
                                                     color: var(--headingColor);
-                
+
                                                     &.active, &:hover {
                                                         color: var(--secondaryColor);
                                                     }
@@ -1014,7 +1018,7 @@
                                                     .nav-item {
                                                         .nav-link {
                                                             color: var(--headingColor);
-                        
+
                                                             &.active, &:hover {
                                                                 color: var(--secondaryColor);
                                                             }
@@ -1058,7 +1062,7 @@
             .navbar {
                 .navbar-toggler {
                     color: var(--whiteColor);
-        
+
                     .burger-menu {
                         span {
                             background: var(--whiteColor);
@@ -1074,14 +1078,14 @@
         .modal-content {
             .modal-body {
                 padding: 20px;
-    
+
                 .nav {
                     &.nav-tabs {
                         margin-bottom: 25px;
-    
+
                         .nav-item {
                             margin-right: 20px;
-    
+
                             .nav-link {
                                 padding-bottom: 2px;
                                 font-size: 16px;
@@ -1098,7 +1102,7 @@
                         .authentication-form {
                             .form-group {
                                 margin-bottom: 18px;
-    
+
                                 label {
                                     margin-bottom: 7px;
                                 }
@@ -1122,7 +1126,7 @@
                             }
                             .login-with-socials {
                                 margin-top: 20px;
-    
+
                                 a {
                                     width: 38px;
                                     height: 38px;
@@ -1133,7 +1137,7 @@
                         .nav {
                             &.nav-tabs {
                                 margin-bottom: 20px;
-            
+
                                 .nav-item {
                                     margin: {
                                         left: 5px;
@@ -1310,10 +1314,10 @@
                 box-shadow: unset;
                 border: none;
                 padding: 0;
-    
+
                 .burger-menu {
                     cursor: pointer;
-    
+
                     span {
                         height: 3px;
                         width: 30px;
@@ -1362,7 +1366,7 @@
                     .nav-item {
                         .nav-link {
                             color: var(--headingColor);
-                            
+
                             &:hover, &.active {
                                 color: var(--secondaryColor);
                             }
@@ -1371,7 +1375,7 @@
                             .nav-item {
                                 .nav-link {
                                     color: var(--headingColor);
-                                    
+
                                     &.active, &:hover {
                                         color: var(--secondaryColor);
                                     }
@@ -1380,7 +1384,7 @@
                                     .nav-item {
                                         .nav-link {
                                             color: var(--headingColor);
-            
+
                                             &.active, &:hover {
                                                 color: var(--secondaryColor);
                                             }
@@ -1389,7 +1393,7 @@
                                             .nav-item {
                                                 .nav-link {
                                                     color: var(--headingColor);
-                
+
                                                     &.active, &:hover {
                                                         color: var(--secondaryColor);
                                                     }
@@ -1398,7 +1402,7 @@
                                                     .nav-item {
                                                         .nav-link {
                                                             color: var(--headingColor);
-                        
+
                                                             &.active, &:hover {
                                                                 color: var(--secondaryColor);
                                                             }
@@ -1442,7 +1446,7 @@
             .navbar {
                 .navbar-toggler {
                     color: var(--whiteColor);
-        
+
                     .burger-menu {
                         span {
                             background: var(--whiteColor);
@@ -1458,11 +1462,11 @@
         .modal-content {
             .modal-body {
                 padding: 25px;
-    
+
                 .nav {
                     &.nav-tabs {
                         margin-bottom: 25px;
-    
+
                         .nav-item {
                             .nav-link {
                                 font-size: 18px;
@@ -1479,7 +1483,7 @@
                         .authentication-form {
                             .form-group {
                                 margin-bottom: 18px;
-    
+
                                 .form-control {
                                     height: 54px;
                                     font-size: 15px;
@@ -1505,7 +1509,7 @@
                         .nav {
                             &.nav-tabs {
                                 margin-bottom: 20px;
-            
+
                                 .nav-item {
                                     .nav-link {
                                         font-size: 14px;
@@ -1524,6 +1528,10 @@
         }
     }
 
+}
+
+.vh-90 {
+    height: 90vh;
 }
 
 /* Min width 992px to Max width 1199px */

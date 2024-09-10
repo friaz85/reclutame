@@ -1,5 +1,5 @@
 <!-- Default -->
-<div
+<!-- <div
     class="faq-area pt-100 pb-75 position-relative z-1"
     [ngClass]="{'d-none': router.url === '/index-2' || router.url === '/index-3'}"
 >
@@ -73,23 +73,23 @@
         </div>
     </div>
     <img src="assets/images/shapes/shape2.png" class="shape" alt="shape-image">
-</div>
+</div> -->
 
 <!-- Only for Home Demo - 2 -->
 <div
     class="faq-area pt-100 pb-75 bg-image"
-    style="background-image: url(assets/images/shapes/bg1.jpg);"
     *ngIf="router.url === '/index-2' || router.url === '/faq'"
 >
+  <img src="../../../../assets/images/Pregunta.png" class="robot">
     <div class="container">
         <div class="section-title text-center mx-auto">
-            <h2 class="mb-0">
-                Frequently asked questions
+            <h2 class="mb-0 title">
+              Preguntas frecuentes
             </h2>
         </div>
         <div class="row">
             <div class="col-lg-6 col-md-12">
-                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500">
+                <div class="accordion-item style1" data-aos="fade-in" data-aos-duration="500">
                     <div class="accordion-header" (click)="toggleSection(0)" [ngClass]="{ 'open': isSectionOpen(0) }">
                         How do I search for jobs on this platform?
                     </div>
@@ -99,7 +99,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500" data-aos-delay="200">
+                <div class="accordion-item style2" data-aos="fade-in" data-aos-duration="500" data-aos-delay="200">
                     <div class="accordion-header" (click)="toggleSection(1)" [ngClass]="{ 'open': isSectionOpen(1) }">
                         How do I apply for a job?
                     </div>
@@ -109,7 +109,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500" data-aos-delay="300">
+                <div class="accordion-item style1" data-aos="fade-in" data-aos-duration="500" data-aos-delay="300">
                     <div class="accordion-header" (click)="toggleSection(2)" [ngClass]="{ 'open': isSectionOpen(2) }">
                         Can I save job listings for later?
                     </div>
@@ -119,7 +119,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500" data-aos-delay="400">
+                <div class="accordion-item style2" data-aos="fade-in" data-aos-duration="500" data-aos-delay="400">
                     <div class="accordion-header" (click)="toggleSection(3)" [ngClass]="{ 'open': isSectionOpen(3) }">
                         How do I edit my profile and resume?
                     </div>
@@ -129,7 +129,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500" data-aos-delay="500">
+                <div class="accordion-item style1" data-aos="fade-in" data-aos-duration="500" data-aos-delay="500">
                     <div class="accordion-header" (click)="toggleSection(4)" [ngClass]="{ 'open': isSectionOpen(4) }">
                         Are remote or freelance opportunities available?
                     </div>
@@ -141,7 +141,7 @@
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">
-                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500">
+                <div class="accordion-item style2" data-aos="fade-in" data-aos-duration="500">
                     <div class="accordion-header" (click)="toggleSection(5)" [ngClass]="{ 'open': isSectionOpen(5) }">
                         How can employers contact me for interviews?
                     </div>
@@ -151,7 +151,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500" data-aos-delay="200">
+                <div class="accordion-item style1" data-aos="fade-in" data-aos-duration="500" data-aos-delay="200">
                     <div class="accordion-header" (click)="toggleSection(6)" [ngClass]="{ 'open': isSectionOpen(6) }">
                         Can I apply for multiple jobs?
                     </div>
@@ -161,7 +161,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500" data-aos-delay="300">
+                <div class="accordion-item style2" data-aos="fade-in" data-aos-duration="500" data-aos-delay="300">
                     <div class="accordion-header" (click)="toggleSection(7)" [ngClass]="{ 'open': isSectionOpen(7) }">
                         What is the importance of a complete profile?
                     </div>
@@ -171,7 +171,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500" data-aos-delay="400">
+                <div class="accordion-item style1" data-aos="fade-in" data-aos-duration="500" data-aos-delay="400">
                     <div class="accordion-header" (click)="toggleSection(8)" [ngClass]="{ 'open': isSectionOpen(8) }">
                         Is my personal information secure on this platform?
                     </div>
@@ -181,7 +181,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="accordion-item" data-aos="fade-in" data-aos-duration="500" data-aos-delay="500">
+                <div class="accordion-item style2" data-aos="fade-in" data-aos-duration="500" data-aos-delay="500">
                     <div class="accordion-header" (click)="toggleSection(9)" [ngClass]="{ 'open': isSectionOpen(9) }">
                         What is the application process like?
                     </div>
@@ -197,7 +197,7 @@
 </div>
 
 <!-- Only for Home Demo - 3 -->
-<div
+<!-- <div
     class="faq-area pt-100"
     *ngIf="router.url === '/index-3' || router.url === '/faq'"
 >
@@ -272,4 +272,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->

@@ -1,0 +1,154 @@
+<div class="page-banner-area">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-lg-8 col-md-12">
+              <h1>
+                  There are {{arrVacantes.length}} jobs for you
+              </h1>
+          </div>
+          <div class="col-lg-4 col-md-12">
+              <ul class="ps-0 mb-0 list-unstyled">
+                  <li class="d-inline-block position-relative">
+                      <a routerLink="/candidates-dashboard">
+                          Dashboard
+                      </a>
+                  </li>
+                  <li class="d-inline-block position-relative">
+                      Jobs Listing
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- End Page Banner -->
+
+<!-- Jobs -->
+<div class="jove-card">
+  <div class="jobs-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <form class="jobs-search-form">
+                    <div class="row mx-0 align-items-center">
+                        <div class="col-4 px-0">
+                            <div class="form-group position-relative">
+                                <i class="ri-search-line"></i>
+                                <input type="text" class="form-control" placeholder="Job title, key words or company">
+                            </div>
+                        </div>
+                        <div class="col-4 px-0">
+                            <div class="form-group position-relative">
+                                <i class="ri-map-pin-line"></i>
+                                <select class="form-select">
+                                    <option selected>All Location</option>
+                                    <option *ngFor="let item of arrPais" value="{{item.id_pais}}">{{item.descripcion}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-4 px-0">
+                            <button type="submit" class="default-btn">
+                                Search Jobs
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div class="jove-grid-sorting row align-items-center">
+                    <!-- <div class="col-lg-6 col-md-6 result-count">
+                        <p>
+                            Showing <span class="count">1 – 10</span> of {{arrVacantes.length}} results
+                        </p>
+                    </div> -->
+                    <div class="col-lg-6 col-md-6 ordering">
+                        <div class="select-box">
+                            <label>Sort By:</label>
+                            <select class="form-select">
+                                <option selected="">Default</option>
+                                <option value="1">Popularity</option>
+                                <option value="2">Latest</option>
+                                <option value="3">Price: low to high</option>
+                                <option value="4">Price: high to low</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12" *ngFor="let job of arrVacantes">
+                        <div class="single-job-box">
+                            <div class="d-sm-flex align-items-center justify-content-between">
+                                <div class="d-sm-flex align-items-center">
+                                    <div class="company-logo">
+                                        <img src="assets/images/companies/company8.png" alt="company-image">
+                                    </div>
+                                    <div class="content">
+                                        <h3 class="fw-semibold">
+                                          {{job.titulo_vacante}}
+                                        </h3>
+                                        <span class="location d-block">
+                                            {{job.nombre_ciudad}}, {{job.nombre_pais}}
+                                        </span>
+                                        <span class="job-type d-block">
+                                            {{job.nombre_tipo_trabajo}}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="apply-btn">
+                                    <button (click)="openPopup(job)" class="default-btn">
+                                        View details
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="info d-sm-flex align-items-center justify-content-between">
+                                <span class="salary d-block">
+                                    <span class="fw-semibold">Salary:</span>
+                                    <span>{{job.rango}}</span>
+                                    /monthly
+                                </span>
+                                <span class="deadline d-block">
+                                    <span class="fw-semibold">Deadline:</span>
+                                    {{job.fecha_limite_solicitud | date: 'dd/MM/yyyy'}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="pagination-area">
+                    <a routerLink="/jobs-listing" class="next page-numbers">
+                        <i class="ri-arrow-left-line"></i>
+                    </a>
+                    <span class="page-numbers current" aria-current="page">1</span>
+                    <a routerLink="/jobs-listing" class="page-numbers">2</a>
+                    <a routerLink="/jobs-listing" class="page-numbers">3</a>
+                    <a routerLink="/jobs-listing" class="next page-numbers">
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div> -->
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <app-jobs-sidebar></app-jobs-sidebar>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade loginRegisterModal" tabindex="-1" aria-hidden="true" *ngIf="isOpen">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-body">
+        <app-modal-job-detail [job]="responseVacante" [company]="empresa"></app-modal-job-detail>
+        <button (click)="closePopup()" type="button" class="close-btn">
+          <i class="ri-close-fill"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop fade show"></div>
+</div>
+
+<!-- <app-subscribe></app-subscribe> -->
+
+<!-- <app-footer></app-footer> -->
+
+<ngx-scrolltop></ngx-scrolltop>

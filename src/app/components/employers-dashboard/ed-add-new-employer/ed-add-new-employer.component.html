@@ -1,0 +1,84 @@
+<!-- Title -->
+<div class="breadcrumb-title">
+  <h1 class="mb-0 fw-semibold">
+    Add a new employer
+  </h1>
+</div>
+
+<div class="jove-card">
+  <form class="authentication-form" [formGroup]="frmReclutador">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label>
+            First Name
+          </label>
+          <input type="text" class="form-control shadow-none" placeholder="Enter name" formControlName="nombreAdmin"
+            [ngClass]="{ 'is-invalid': submittedReclutador && fCo.nombreAdmin.value == '' }">
+          <div *ngIf="submittedReclutador && fCo.nombreAdmin.value == ''" class="invalid-feedback">
+            <div *ngIf="fCo.nombreAdmin.errors.required">This field is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label>
+            Last Name
+          </label>
+          <input type="text" class="form-control shadow-none" placeholder="Enter last name"
+            formControlName="apellidoAdmin"
+            [ngClass]="{ 'is-invalid': submittedReclutador && fCo.apellidoAdmin.value == '' }">
+          <div *ngIf="submittedReclutador && fCo.apellidoAdmin.value == ''" class="invalid-feedback">
+            <div *ngIf="fCo.apellidoAdmin.errors.required">This field is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="form-group">
+          <label>
+            Email
+          </label>
+          <input type="email" class="form-control shadow-none" placeholder="Enter email" formControlName="emailAdmin"
+            [ngClass]="{ 'is-invalid': submittedReclutador && fCo.emailAdmin.value == '' }">
+          <div *ngIf="submittedReclutador && fCo.emailAdmin.value == ''" class="invalid-feedback">
+            <div *ngIf="fCo.emailAdmin.errors.required">This field is required</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>
+        Phone number
+      </label>
+      <input type="text" class="form-control shadow-none" placeholder="Enter phone number"
+        formControlName="telefonoAdmin" [ngClass]="{ 'is-invalid': submittedReclutador && fCo.telefonoAdmin.value == '' }">
+      <div *ngIf="submittedReclutador && fCo.telefonoAdmin.value == ''" class="invalid-feedback">
+        <div *ngIf="fCo.telefonoAdmin.errors.required">This field is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>
+        Password
+      </label>
+      <input type="password" class="form-control shadow-none" placeholder="Enter password"
+        formControlName="passwordAdmin" [ngClass]="{ 'is-invalid': submittedReclutador && fCo.passwordAdmin.value == '' }">
+      <div *ngIf="submittedReclutador && fCo.passwordAdmin.value == ''" class="invalid-feedback">
+        <div *ngIf="fCo.passwordAdmin.errors.required">This field is required</div>
+      </div>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input shadow-none" type="checkbox" id="termsPrivacyPolicy"
+        (change)="checkTyCReclutador($event)">
+      <label class="form-check-label" for="termsPrivacyPolicy">
+        Accept the <a routerLink="/">Terms</a> and <a routerLink="/">Privacy Policy</a>
+      </label>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3 col-12">
+        <button type="button" class="default-btn d-block w-100" (click)="registroReclutador()" *ngIf="checkTerminosReclutador">
+          Add employer
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

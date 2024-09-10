@@ -1,81 +1,57 @@
-<div
-    class="navbar-area"
-    [ngClass]="{'white-navbar': router.url === '/index-2', 'sticky': isSticky}"
->
-    <div class="container-fluid">
-        <nav
-            class="navbar navbar-expand-lg"
-            [class.active]="classApplied"
-        >
-            <a
-                class="navbar-brand"
-                routerLink="/"
-                [ngClass]="{'d-none': router.url === '/index-2'}"
-            >
-                <img src="assets/images/logo.png" alt="logo">
-            </a>
-            <a
-                class="navbar-brand"
-                routerLink="/"
-                *ngIf="router.url === '/index-2'"
-            >
-                <img src="assets/images/white-logo2.png" alt="white-logo">
-            </a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                (click)="toggleClass()"
-            >
-                <span class="burger-menu">
-                    <span class="top-bar"></span>
-                    <span class="middle-bar"></span>
-                    <span class="bottom-bar"></span>
-                </span>
-            </button>
-            <div
-                class="collapse navbar-collapse"
-                [ngClass]="{'style-two': router.url === '/index-3'}"
-            >
-                <div
-                    class="navbar-categories d-none d-xl-block"
-                    *ngIf="router.url === '/index-3'"
-                >
-                    <button type="button" class="d-inline-block bg-transparent position-relative border-0">
-                        <i class="ri-grid-fill"></i>
-                        Browse Category
-                    </button>
-                    <ul class="categories-menu mb-0 list-unstyled">
-                        <li>
-                            <a routerLink="/">Engineering</a>
-                        </li>
-                        <li>
-                            <a routerLink="/">Banking</a>
-                        </li>
-                        <li>
-                            <a routerLink="/">Beauty Care</a>
-                        </li>
-                        <li>
-                            <a routerLink="/">Cleaning</a>
-                        </li>
-                        <li>
-                            <a routerLink="/">Construction</a>
-                        </li>
-                        <li>
-                            <a routerLink="/">Finance</a>
-                        </li>
-                        <li>
-                            <a routerLink="/">Technology</a>
-                        </li>
-                        <li>
-                            <a routerLink="/">Healthcare</a>
-                        </li>
-                        <li>
-                            <a routerLink="/">IT Consultant</a>
-                        </li>
-                    </ul>
-                </div>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
+<div class="navbar-area" [ngClass]="{'white-navbar': router.url === '/index-2', 'sticky': isSticky}">
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg" [class.active]="classApplied">
+      <a class="navbar-brand" routerLink="/" [ngClass]="{'d-none': router.url === '/index-2'}">
+        <img src="assets/images/logo_full.png" alt="logo" class="logo">
+      </a>
+      <a class="navbar-brand" routerLink="/" *ngIf="router.url === '/index-2'">
+        <img src="assets/images/white-logo2.png" alt="white-logo">
+      </a>
+      <button class="navbar-toggler" type="button" (click)="toggleClass()">
+        <span class="burger-menu">
+          <span class="top-bar"></span>
+          <span class="middle-bar"></span>
+          <span class="bottom-bar"></span>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse" [ngClass]="{'style-two': router.url === '/index-3'}">
+        <div class="navbar-categories d-none d-xl-block" *ngIf="router.url === '/index-3'">
+          <button type="button" class="d-inline-block bg-transparent position-relative border-0">
+            <i class="ri-grid-fill"></i>
+            Browse Category
+          </button>
+          <ul class="categories-menu mb-0 list-unstyled">
+            <li>
+              <a routerLink="/">Engineering</a>
+            </li>
+            <li>
+              <a routerLink="/">Banking</a>
+            </li>
+            <li>
+              <a routerLink="/">Beauty Care</a>
+            </li>
+            <li>
+              <a routerLink="/">Cleaning</a>
+            </li>
+            <li>
+              <a routerLink="/">Construction</a>
+            </li>
+            <li>
+              <a routerLink="/">Finance</a>
+            </li>
+            <li>
+              <a routerLink="/">Technology</a>
+            </li>
+            <li>
+              <a routerLink="/">Healthcare</a>
+            </li>
+            <li>
+              <a routerLink="/">IT Consultant</a>
+            </li>
+          </ul>
+        </div>
+        <ul class="navbar-nav">
+          <!-- <li class="nav-item">
                         <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                             Home
                         </a>
@@ -96,35 +72,36 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                            Jobs
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item">
+                    </li> -->
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+              Jobs
+            </a>
+            <ul class="dropdown-menu">
+              <!-- <li class="nav-item">
                                 <a routerLink="/jobs-grid" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                     Jobs Grid
                                 </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/jobs-listing" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                                    Jobs Listing
-                                </a>
-                            </li>
-                            <li class="nav-item">
+                            </li> -->
+              <li class="nav-item">
+                <a routerLink="/jobs-listing" class="nav-link" routerLinkActive="active"
+                  [routerLinkActiveOptions]="{exact: true}">
+                  Jobs Listing
+                </a>
+              </li>
+              <!-- <li class="nav-item">
                                 <a routerLink="/job-details" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                     Job Details
                                 </a>
-                            </li>
-                            <li class="nav-item">
+                            </li> -->
+              <!-- <li class="nav-item">
                                 <a routerLink="/categories" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                     Categories
                                 </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
+                            </li> -->
+            </ul>
+          </li>
+          <!-- <li class="nav-item">
                         <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                             Employers
                         </a>
@@ -145,8 +122,8 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
+                    </li> -->
+          <!-- <li class="nav-item">
                         <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                             Candidates
                         </a>
@@ -167,50 +144,56 @@
                                 </a>
                             </li>
                         </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                            Pages
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item">
-                                <a routerLink="/about" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                                    About Us
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/pricing" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                                    Pricing
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/contact" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                                    Contact Us
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a routerLink="/faq" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                                    FAQ
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                                    Blog
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="nav-item">
-                                        <a routerLink="/blog" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                                            Blog
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a routerLink="/blog-details" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                                            Blog Details
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
+                    </li> -->
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+              Pages
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item">
+                <a routerLink="/about" class="nav-link" routerLinkActive="active"
+                  [routerLinkActiveOptions]="{exact: true}">
+                  About Us
+                </a>
+              </li>
+              <!-- <li class="nav-item">
+                <a routerLink="/pricing" class="nav-link" routerLinkActive="active"
+                  [routerLinkActiveOptions]="{exact: true}">
+                  Pricing
+                </a>
+              </li> -->
+              <li class="nav-item">
+                <a routerLink="/contact" class="nav-link" routerLinkActive="active"
+                  [routerLinkActiveOptions]="{exact: true}">
+                  Contact Us
+                </a>
+              </li>
+              <li class="nav-item">
+                <a routerLink="/faq" class="nav-link" routerLinkActive="active"
+                  [routerLinkActiveOptions]="{exact: true}">
+                  FAQ
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                  Blog
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a routerLink="/blog" class="nav-link" routerLinkActive="active"
+                      [routerLinkActiveOptions]="{exact: true}">
+                      Blog
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/blog-details" class="nav-link" routerLinkActive="active"
+                      [routerLinkActiveOptions]="{exact: true}">
+                      Blog Details
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <!-- <li class="nav-item">
                                 <a routerLink="/privacy-policy" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                     Privacy Policy
                                 </a>
@@ -224,26 +207,29 @@
                                 <a routerLink="/not-found" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                                     404 Error Page
                                 </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="others-option d-md-flex align-items-center">
-                    <div class="option-item">
-                        <span
-                            class="d-block login-register"
-                            (click)="openPopup()"
-                        >
-                            <i class="ri-user-line"></i>
-                            Login/Register
-                        </span>
-                    </div>
-                    <div class="option-item">
-                        <a routerLink="/dashboard/post-a-new-job" class="default-btn">
-                            Post A Job
-                        </a>
-                    </div>
-                    <div
+                            </li> -->
+            </ul>
+          </li>
+        </ul>
+        <div class="others-option d-md-flex align-items-center ms-4">
+          <div class="option-item" *ngIf="this.auth.currentUserValue.length == 0">
+            <span class="d-block login-register default-btn-secondary" (click)="openPopup()">
+              <i class="ri-user-line"></i>
+              Login/Register
+            </span>
+          </div>
+          <div class="option-item" *ngIf="this.auth.currentUserValue.p_id_rol">
+            <span class="d-block login-register default-btn-secondary" (click)="goDashboard();">
+              <i class="ri-user-line"></i>
+              Dashboard
+            </span>
+          </div>
+          <div class="option-item">
+            <a routerLink="/index-1" class="default-btn">
+              Employers
+            </a>
+          </div>
+          <!-- <div
                         class="option-item"
                         [ngClass]="{'d-none': router.url === '/index-2' || router.url === '/index-3'}"
                     >
@@ -254,222 +240,338 @@
                             </span>
                             +1 (514) 312-5678
                         </a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
+                    </div> -->
+        </div>
+      </div>
+    </nav>
+  </div>
 </div>
 
 <!-- Modal -->
-<div
-    class="modal fade loginRegisterModal" tabindex="-1" aria-hidden="true"
-    *ngIf="isOpen"
->
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body">
+<div class="modal fade loginRegisterModal" tabindex="-1" aria-hidden="true" *ngIf="isOpen">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="row">
+        <div class="col-md-6 col-xl-6 col-sm-12 col-12">
+          <div class="modal-body">
+            <ul class="nav nav-tabs d-block border-0">
+              <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab1'}">
+                <button type="button" class="nav-link fw-semibold position-relative shadow-none mb-0 rounded-0"
+                  (click)="switchTab($event, 'tab1')">
+                  Login
+                </button>
+              </li>
+              <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab2'}">
+                <button type="button" class="nav-link fw-semibold position-relative shadow-none mb-0 rounded-0"
+                  (click)="switchTab($event, 'tab2')">
+                  Register
+                </button>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane fade d-block opacity-100" *ngIf="currentTab === 'tab1'">
+                <!-- <div class="info">
+                                <p>
+                                    Username: <span class="fw-semibold">employer</span> or <span class="fw-semibold">candidate</span>
+                                </p>
+                                <p>
+                                    Password: <span class="fw-semibold">jove</span>
+                                </p>
+                            </div> -->
+                <form class="authentication-form" [formGroup]="frmLogin">
+                      <div class="form-group">
+                        <label>
+                          Account or Email
+                        </label>
+                        <input type="text" class="form-control shadow-none" placeholder="Enter account or email"
+                          formControlName="user" [ngClass]="{ 'is-invalid': submittedLogin && fl.user.value == '' }">
+                        <div *ngIf="submittedLogin && fl.user.value == ''" class="invalid-feedback">
+                          <div *ngIf="fl.user.errors.required">This field is required</div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>
+                          Password
+                        </label>
+                        <input type="password" class="form-control shadow-none" placeholder="Enter password"
+                          formControlName="pwd" [ngClass]="{ 'is-invalid': submittedLogin && fl.pwd.value == '' }">
+                        <div *ngIf="submittedLogin && fl.pwd.value == ''" class="invalid-feedback">
+                          <div *ngIf="fl.pwd.errors.required">This field is required</div>
+                        </div>
+                      </div>
+                      <!-- <div class="form-group forgot-password">
+                                    Forgot your password? <a routerLink="/">Reset password.</a>
+                                </div> -->
+                      <button type="button" class="default-btn-secondary d-block w-100" (click)="login()">
+                        Login Now
+                      </button>
+                      <!-- <div class="login-with-socials text-center">
+                                    <span class="d-block fw-medium">
+                                        Or Continue with
+                                    </span>
+                                    <a href="#" target="_blank" class="facebook d-inline-block">
+                                        <i class="ri-facebook-fill"></i>
+                                    </a>
+                                    <a href="#" target="_blank" class="google d-inline-block">
+                                        <i class="ri-google-fill"></i>
+                                    </a>
+                                    <a href="#" target="_blank" class="linkedin d-inline-block">
+                                        <i class="ri-linkedin-fill"></i>
+                                    </a>
+                                </div> -->
+                </form>
+              </div>
+              <div class="tab-pane fade d-block opacity-100" *ngIf="currentTab === 'tab2'">
                 <ul class="nav nav-tabs d-block border-0">
-                    <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab1'}">
-                        <button type="button" class="nav-link fw-semibold position-relative shadow-none mb-0 rounded-0" (click)="switchTab($event, 'tab1')">
-                            Login
-                        </button>
-                    </li>
-                    <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab2'}">
-                        <button type="button" class="nav-link fw-semibold position-relative shadow-none mb-0 rounded-0" (click)="switchTab($event, 'tab2')">
-                            Register
-                        </button>
-                    </li>
+                  <li class="nav-item d-inline-block" [ngClass]="{'active': currentInnerTab === 'innerTab1'}">
+                    <button type="button" class="nav-link fw-semibold shadow-none mb-0"
+                      (click)="switchInnerTab($event, 'innerTab1')">
+                      Candidate
+                    </button>
+                  </li>
+                  <li class="nav-item d-inline-block" [ngClass]="{'active': currentInnerTab === 'innerTab2'}">
+                    <button type="button" class="nav-link fw-semibold shadow-none mb-0"
+                      (click)="switchInnerTab($event, 'innerTab2')">
+                      Company
+                    </button>
+                  </li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane fade d-block opacity-100" *ngIf="currentTab === 'tab1'">
-                        <div class="info">
-                            <p>
-                                Username: <span class="fw-semibold">employer</span> or <span class="fw-semibold">candidate</span>
-                            </p>
-                            <p>
-                                Password: <span class="fw-semibold">jove</span>
-                            </p>
+                  <div class="tab-pane fade d-block opacity-100" *ngIf="currentInnerTab === 'innerTab1'">
+                    <form class="authentication-form" [formGroup]="frmCandidato">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label>
+                              First Name
+                            </label>
+                            <input type="text" class="form-control shadow-none" placeholder="Enter name"
+                              formControlName="nombreCandidato"
+                              [ngClass]="{ 'is-invalid': submittedCandidato && f.nombreCandidato.value == '' }">
+                            <div *ngIf="submittedCandidato && f.nombreCandidato.value == ''" class="invalid-feedback">
+                              <div *ngIf="f.nombreCandidato.errors.required">This field is required</div>
+                            </div>
+                          </div>
                         </div>
-                        <form class="authentication-form">
-                            <div class="form-group">
-                                <label>
-                                    Account or Email
-                                </label>
-                                <input type="text" class="form-control shadow-none" placeholder="Enter account or email">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label>
+                              Last Name
+                            </label>
+                            <input type="text" class="form-control shadow-none" placeholder="Enter last name"
+                              formControlName="apellidoCandidato"
+                              [ngClass]="{ 'is-invalid': submittedCandidato && f.apellidoCandidato.value == '' }">
+                            <div *ngIf="submittedCandidato && f.apellidoCandidato.value == ''" class="invalid-feedback">
+                              <div *ngIf="f.apellidoCandidato.errors.required">This field is required</div>
                             </div>
-                            <div class="form-group">
-                                <label>
-                                    Password
-                                </label>
-                                <input type="password" class="form-control shadow-none" placeholder="Enter password">
-                            </div>
-                            <div class="form-group forgot-password">
-                                Forgot your password? <a routerLink="/">Reset password.</a>
-                            </div>
-                            <button type="submit" class="default-btn d-block w-100">
-                                Login Now
-                            </button>
-                            <div class="login-with-socials text-center">
-                                <span class="d-block fw-medium">
-                                    Or Continue with
-                                </span>
-                                <a href="#" target="_blank" class="facebook d-inline-block">
-                                    <i class="ri-facebook-fill"></i>
-                                </a>
-                                <a href="#" target="_blank" class="google d-inline-block">
-                                    <i class="ri-google-fill"></i>
-                                </a>
-                                <a href="#" target="_blank" class="linkedin d-inline-block">
-                                    <i class="ri-linkedin-fill"></i>
-                                </a>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="tab-pane fade d-block opacity-100" *ngIf="currentTab === 'tab2'">
-                        <ul class="nav nav-tabs d-block border-0">
-                            <li class="nav-item d-inline-block" [ngClass]="{'active': currentInnerTab === 'innerTab1'}">
-                                <button type="button" class="nav-link fw-semibold shadow-none mb-0" (click)="switchInnerTab($event, 'innerTab1')">
-                                    Candidate
-                                </button>
-                            </li>
-                            <li class="nav-item d-inline-block" [ngClass]="{'active': currentInnerTab === 'innerTab2'}">
-                                <button type="button" class="nav-link fw-semibold shadow-none mb-0" (click)="switchInnerTab($event, 'innerTab2')">
-                                    Employer
-                                </button>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane fade d-block opacity-100" *ngIf="currentInnerTab === 'innerTab1'">
-                                <form class="authentication-form">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>
-                                                    First Name
-                                                </label>
-                                                <input type="text" class="form-control shadow-none" placeholder="Enter name">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>
-                                                    Last Name
-                                                </label>
-                                                <input type="text" class="form-control shadow-none" placeholder="Enter name">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>
-                                                    Username
-                                                </label>
-                                                <input type="text" class="form-control shadow-none" placeholder="Enter username">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>
-                                                    Email
-                                                </label>
-                                                <input type="email" class="form-control shadow-none" placeholder="Enter email">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>
-                                            Phone number
-                                        </label>
-                                        <input type="text" class="form-control shadow-none" placeholder="Enter phone number">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>
-                                            Password
-                                        </label>
-                                        <input type="text" class="form-control shadow-none" placeholder="Enter password">
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input shadow-none" type="checkbox" id="termsPrivacyPolicy">
-                                        <label class="form-check-label" for="termsPrivacyPolicy">
-                                            Accept the <a routerLink="/">Terms</a> and <a routerLink="/">Privacy Policy</a>
-                                        </label>
-                                    </div>
-                                    <button type="submit" class="default-btn d-block w-100">
-                                        Register Now
-                                    </button>
-                                </form>
-                            </div>
-                            <div class="tab-pane fade d-block opacity-100" *ngIf="currentInnerTab === 'innerTab2'">
-                                <form class="authentication-form">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>
-                                                    First Name
-                                                </label>
-                                                <input type="text" class="form-control shadow-none" placeholder="Enter name">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>
-                                                    Last Name
-                                                </label>
-                                                <input type="text" class="form-control shadow-none" placeholder="Enter name">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>
-                                                    Username
-                                                </label>
-                                                <input type="text" class="form-control shadow-none" placeholder="Enter username">
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <label>
-                                                    Email
-                                                </label>
-                                                <input type="email" class="form-control shadow-none" placeholder="Enter email">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>
-                                            Phone number
-                                        </label>
-                                        <input type="text" class="form-control shadow-none" placeholder="Enter phone number">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>
-                                            Password
-                                        </label>
-                                        <input type="text" class="form-control shadow-none" placeholder="Enter password">
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input shadow-none" type="checkbox" id="termsPrivacyPolicy">
-                                        <label class="form-check-label" for="termsPrivacyPolicy">
-                                            Accept the <a routerLink="/">Terms</a> and <a routerLink="/">Privacy Policy</a>
-                                        </label>
-                                    </div>
-                                    <button type="submit" class="default-btn d-block w-100">
-                                        Register Now
-                                    </button>
-                                </form>
-                            </div>
+                          </div>
                         </div>
-                    </div>
+                        <!-- <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>
+                                                        Username
+                                                    </label>
+                                                    <input type="text" class="form-control shadow-none" placeholder="Enter username">
+                                                </div>
+                                            </div> -->
+                        <div class="col-sm-12">
+                          <div class="form-group">
+                            <label>
+                              Email
+                            </label>
+                            <input type="email" class="form-control shadow-none" placeholder="Enter email"
+                              formControlName="emailCandidato"
+                              [ngClass]="{ 'is-invalid': submittedCandidato && f.emailCandidato.value == '' }">
+                            <div *ngIf="submittedCandidato && f.emailCandidato.value == ''" class="invalid-feedback">
+                              <div *ngIf="f.emailCandidato.errors.required">This field is required</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>
+                          Phone number
+                        </label>
+                        <input type="text" class="form-control shadow-none" placeholder="Enter phone number"
+                          formControlName="telefonoCandidato"
+                          [ngClass]="{ 'is-invalid': submittedCandidato && f.telefonoCandidato.value == '' }">
+                        <div *ngIf="submittedCandidato && f.telefonoCandidato.value == ''" class="invalid-feedback">
+                          <div *ngIf="f.telefonoCandidato.errors.required">This field is required</div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>
+                          Password
+                        </label>
+                        <input type="password" class="form-control shadow-none" placeholder="Enter password"
+                          formControlName="passwordCandidato"
+                          [ngClass]="{ 'is-invalid': submittedCandidato && f.passwordCandidato.value == '' }">
+                        <div *ngIf="submittedCandidato && f.passwordCandidato.value == ''" class="invalid-feedback">
+                          <div *ngIf="f.passwordCandidato.errors.required">This field is required</div>
+                        </div>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input shadow-none" type="checkbox" id="termsPrivacyPolicy"
+                          (change)="checkTyCCandidato($event)">
+                        <label class="form-check-label" for="termsPrivacyPolicy">
+                          Accept the <a routerLink="/">Terms</a> and <a routerLink="/">Privacy Policy</a>
+                        </label>
+                      </div>
+                      <button type="button" class="default-btn-secondary d-block w-100" (click)="registroCandidato()"
+                        *ngIf="checkTerminosCandidato">
+                        Register Now
+                      </button>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade d-block opacity-100" *ngIf="currentInnerTab === 'innerTab2'">
+                    <form class="authentication-form" [formGroup]="frmCompany">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label>
+                              First Name
+                            </label>
+                            <input type="text" class="form-control shadow-none" placeholder="Enter name"
+                              formControlName="nombreAdmin"
+                              [ngClass]="{ 'is-invalid': submittedCompany && fCo.nombreAdmin.value == '' }">
+                            <div *ngIf="submittedCompany && fCo.nombreAdmin.value == ''" class="invalid-feedback">
+                              <div *ngIf="fCo.nombreAdmin.errors.required">This field is required</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label>
+                              Last Name
+                            </label>
+                            <input type="text" class="form-control shadow-none" placeholder="Enter last name"
+                              formControlName="apellidoAdmin"
+                              [ngClass]="{ 'is-invalid': submittedCompany && fCo.apellidoAdmin.value == '' }">
+                            <div *ngIf="submittedCompany && fCo.apellidoAdmin.value == ''" class="invalid-feedback">
+                              <div *ngIf="fCo.apellidoAdmin.errors.required">This field is required</div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>
+                                                        Username
+                                                    </label>
+                                                    <input type="text" class="form-control shadow-none" placeholder="Enter username">
+                                                </div>
+                                            </div> -->
+                        <div class="col-sm-12">
+                          <div class="form-group">
+                            <label>
+                              Email
+                            </label>
+                            <input type="email" class="form-control shadow-none" placeholder="Enter email"
+                              formControlName="emailAdmin"
+                              [ngClass]="{ 'is-invalid': submittedCompany && fCo.emailAdmin.value == '' }">
+                            <div *ngIf="submittedCompany && fCo.emailAdmin.value == ''" class="invalid-feedback">
+                              <div *ngIf="fCo.emailAdmin.errors.required">This field is required</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>
+                          Phone number
+                        </label>
+                        <input type="text" class="form-control shadow-none" placeholder="Enter phone number"
+                          formControlName="telefonoAdmin"
+                          [ngClass]="{ 'is-invalid': submittedCompany && fCo.telefonoAdmin.value == '' }">
+                        <div *ngIf="submittedCompany && fCo.telefonoAdmin.value == ''" class="invalid-feedback">
+                          <div *ngIf="fCo.telefonoAdmin.errors.required">This field is required</div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>
+                          Password
+                        </label>
+                        <input type="password" class="form-control shadow-none" placeholder="Enter password"
+                          formControlName="passwordAdmin"
+                          [ngClass]="{ 'is-invalid': submittedCompany && fCo.passwordAdmin.value == '' }">
+                        <div *ngIf="submittedCompany && fCo.passwordAdmin.value == ''" class="invalid-feedback">
+                          <div *ngIf="fCo.passwordAdmin.errors.required">This field is required</div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label>
+                          Company name
+                        </label>
+                        <input type="text" class="form-control shadow-none" placeholder="Enter company name"
+                          formControlName="nombreCompany"
+                          [ngClass]="{ 'is-invalid': submittedCompany && fCo.nombreCompany.value == '' }">
+                        <div *ngIf="submittedCompany && fCo.nombreCompany.value == ''" class="invalid-feedback">
+                          <div *ngIf="fCo.nombreCompany.errors.required">This field is required</div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label>
+                              Company Country
+                            </label>
+                            <select class="form-select shadow-none" (change)="getCiudades($event.target.value)"
+                              formControlName="paisCompany"
+                              [ngClass]="{ 'is-invalid': submittedCompany && fCo.paisCompany.value == '0' }">
+                              <option value="0" selected>Seleccionar</option>
+                              <option *ngFor="let item of arrPais" [value]="item.id_pais">
+                                {{ item.descripcion }}
+                              </option>
+                            </select>
+                            <div *ngIf="submittedCompany && fCo.nombreCompany.value == '0'" class="invalid-feedback">
+                              <div *ngIf="fCo.nombreCompany.errors.required">This field is required</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                            <label>
+                              Company City
+                            </label>
+                            <select class="form-select shadow-none" formControlName="ciudadCompany"
+                              [ngClass]="{ 'is-invalid': submittedCompany && fCo.nombreCompany.value == '0' }">
+                              <option value="0" selected>Seleccionar</option>
+                              <option *ngFor="let item of arrCiudades" [value]="item.id_ciudad">
+                                {{ item.descripcion }}
+                              </option>
+                            </select>
+                            <div *ngIf="submittedCompany && fCo.nombreCompany.value == '0'" class="invalid-feedback">
+                              <div *ngIf="fCo.nombreCompany.errors.required">This field is required</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input shadow-none" type="checkbox" id="termsPrivacyPolicy"
+                          (change)="checkTyCCompany($event)">
+                        <label class="form-check-label" for="termsPrivacyPolicy">
+                          Accept the <a routerLink="/">Terms</a> and <a routerLink="/">Privacy Policy</a>
+                        </label>
+                      </div>
+                      <button type="button" class="default-btn-secondary d-block w-100" (click)="registroCompany()"
+                        *ngIf="checkTerminosCcompany">
+                        Register Now
+                      </button>
+                    </form>
+                  </div>
                 </div>
-                <button
-                    (click)="closePopup()"
-                    type="button"
-                    class="close-btn"
-                >
-                    <i class="ri-close-fill"></i>
-                </button>
+              </div>
             </div>
+            <button (click)="closePopup()" type="button" class="close-btn">
+              <i class="ri-close-fill"></i>
+            </button>
+          </div>
         </div>
+        <div class="col-md-6 col-xl-6 col-sm-12 col-12 d-flex justify-content-center align-items-center">
+          <img src="assets/images/login.jpg" alt="login" class="w-100 vh-90 animate__animated animate__fadeIn" *ngIf="currentTab == 'tab1'">
+          <img src="assets/images/register-candidate.jpg" alt="login" class="w-100 vh-90 animate__animated animate__fadeIn" *ngIf="currentTab == 'tab2' && currentInnerTab == 'innerTab1'">
+          <img src="assets/images/register-company.jpg" alt="login" class="w-100 vh-100 animate__animated animate__fadeIn" *ngIf="currentTab == 'tab2' && currentInnerTab == 'innerTab2'">
+        </div>
+      </div>
     </div>
-    <div class="modal-backdrop fade show"></div>
+  </div>
+  <div class="modal-backdrop fade show"></div>
 </div>
