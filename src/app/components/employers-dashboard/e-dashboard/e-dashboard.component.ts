@@ -1,4 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
+import { FormBuilder } from "@angular/forms";
 import {
     ChartComponent,
     ApexAxisChartSeries,
@@ -10,6 +11,9 @@ import {
     ApexStroke,
     ApexGrid
 } from "ng-apexcharts";
+import { NgxSpinnerService } from "ngx-spinner";
+import { AuthService } from "src/services/auth.service";
+import { ReclutameService } from "src/services/reclutame.service";
 
 export type ChartOptions = {
     series: ApexAxisChartSeries;
@@ -33,7 +37,16 @@ export class EDashboardComponent {
     @ViewChild("chart") chart: ChartComponent | undefined;
     public chartOptions: Partial<ChartOptions>;
 
-    constructor() {
+    reclutador:any = [];
+
+    constructor(
+      private api: ReclutameService,
+      private formBuilder: FormBuilder,
+      private spinner: NgxSpinnerService,
+      private auth: AuthService
+      ) {
+        this.getReclutador();
+
         this.chartOptions = {
             series: [
                 {
@@ -106,6 +119,18 @@ export class EDashboardComponent {
                 }
             }
         };
+    }
+
+    async getReclutador() {
+        this.spinner.show();
+        try{
+          const rec = await this.api.getReclutador(this.auth.currentUserValue.p_id_reclutador);
+          console.log(rec);
+          this.reclutador = rec.items[0];
+        } catch (error) {
+          console.log(error);
+        }
+        this.spinner.hide();
     }
 
 }

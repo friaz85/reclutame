@@ -1,10 +1,24 @@
+.title {
+  font-size: 72px;
+  color: var(--primaryColor);
+}
+
 .faq-area {
+  position: relative;
     &.bg-image {
         background: {
             position: center center;
             repeat: no-repeat;
             size: cover;
+            color: var(--tertiaryColor);
         };
+    }
+    .robot {
+      position: absolute;
+      right: -176px;
+      bottom: -46px;
+      max-width: 30%;
+      rotate: -18deg;
     }
 }
 .faq-item {
@@ -52,10 +66,10 @@
     .accordion-header {
         cursor: pointer;
         position: relative;
-        color: var(--headingColor);
+        color: var(--whiteColor);
         padding: 20px 80px 20px 25px;
         font: {
-            size: 18px;
+            size: 23px;
             weight: 600;
             family: var(--headingFontFamily);
         };
@@ -69,12 +83,13 @@
             line-height: 35px;
             border-radius: 50%;
             position: absolute;
-            color: var(--headingColor);
+            color: var(--whiteColor);
             transform: translateY(-50%);
             transition: var(--transition);
             background-color: var(--secondaryColor);
             font: {
                 family: remixicon;
+                font-size: 24px;
             };
         }
         &.open {
@@ -93,12 +108,15 @@
         &.open {
             display: block;
         }
+        p {
+          color: var(--whiteColor);
+        }
     }
     &.style-two {
         border: 1px solid #e0e6e9;
         background: #f9fafb;
         margin-bottom: 10px;
-        
+
         .accordion-header {
             &::before {
                 color: var(--whiteColor);
@@ -123,13 +141,26 @@
     }
 }
 
+.style1 {
+  background-color: var(--primaryColor) !important;
+}
+
+.style2 {
+  background-color: var(--darkColor) !important;
+  .accordion-header{
+    &::before {
+      background-color: var(--primaryColor) !important;
+    }
+  }
+}
+
 /* Max width 767px */
 @media only screen and (max-width : 767px) {
 
     .faq-item {
         padding: 20px;
         border-radius: 5px;
-    
+
         h3 {
             font-size: 15px;
             margin-bottom: 11px;
@@ -140,11 +171,11 @@
     }
     .accordion-item {
         border-radius: 5px;
-    
+
         .accordion-header {
             font-size: 15px;
             padding: 15px 55px 15px 18px;
-            
+
             &::before {
                 right: 18px;
                 width: 28px;
@@ -165,7 +196,7 @@
     .faq-item {
         padding: 25px;
         border-radius: 10px;
-    
+
         h3 {
             font-size: 16px;
             margin-bottom: 12px;
@@ -178,7 +209,7 @@
         .accordion-header {
             font-size: 16px;
             padding: 18px 70px 18px 20px;
-            
+
             &::before {
                 right: 20px;
             }
@@ -192,10 +223,10 @@
 
 /* Min width 992px to Max width 1199px */
 @media only screen and (min-width : 992px) and (max-width : 1199px) {
-    
+
     .faq-item {
         padding: 25px;
-    
+
         h3 {
             font-size: 17px;
             margin-bottom: 12px;
@@ -208,7 +239,7 @@
         .accordion-header {
             font-size: 17px;
             padding: 18px 68px 18px 20px;
-            
+
             &::before {
                 right: 20px;
             }

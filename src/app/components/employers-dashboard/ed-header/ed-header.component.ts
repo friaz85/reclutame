@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/services/auth.service';
 
 @Component({
     selector: 'app-ed-header',
@@ -7,7 +8,9 @@ import { Component } from '@angular/core';
 })
 export class EdHeaderComponent {
 
-    constructor() { }
+    constructor(
+      private auth: AuthService
+    ) { }
 
     classApplied = false;
     toggleClass() {
@@ -17,6 +20,10 @@ export class EdHeaderComponent {
     classApplied2 = false;
     toggleClass2() {
         this.classApplied2 = !this.classApplied2;
+    }
+
+    logout() {
+      this.auth.logout();
     }
 
 }

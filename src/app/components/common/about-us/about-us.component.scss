@@ -1,4 +1,5 @@
 .about-area {
+  background-color: var(--tertiaryColor) !important;
     &.bg-e9e7e7 {
         &::before {
             left: 0;
@@ -17,18 +18,20 @@
 }
 .about-content {
     h2 {
-        font-size: 24px;
+        font-size: 36px;
         margin-bottom: 14px;
+        color: var(--darkColor)
     }
     p {
         font-size: 17px;
         margin-bottom: 30px;
+        color: var(--darkColor)
     }
     .box {
         margin-top: 25px;
         border-radius: 15px;
-        background-color: #f1e9e8;
-        padding: 30px 30px 30px 100px;
+        background-color: var(--primaryColor);
+        padding: 30px 30px 30px 30px;
         transition: var(--transition);
 
         img {
@@ -37,15 +40,17 @@
             position: absolute;
         }
         h3 {
-            font-size: 18px;
+            font-size: 36px;
             margin-bottom: 8px;
+            color: var(--whiteColor);
         }
         p {
-            font-size: 16px;
+            font-size: 19px;
             margin-bottom: 0;
+            color: var(--whiteColor);
         }
         &:hover {
-            background-color: var(--whiteColor);
+            background-color: var(--darkColor);
         }
     }
 }
@@ -135,7 +140,7 @@
             padding: 20px;
             margin-top: 20px;
             border-radius: 5px;
-    
+
             img {
                 top: 0;
                 left: 0;
@@ -164,7 +169,7 @@
     .about-text {
         height: auto;
         display: unset;
-    
+
         .funfacts-box {
             .funfact-box {
                 margin-top: 25px;
@@ -206,7 +211,7 @@
         .box {
             border-radius: 10px;
             padding: 25px 25px 25px 95px;
-    
+
             img {
                 top: 25px;
                 left: 25px;
@@ -228,7 +233,7 @@
     .about-text {
         height: auto;
         display: unset;
-    
+
         .funfacts-box {
             margin-top: 25px;
 
@@ -276,7 +281,7 @@
         .box {
             margin-top: 20px;
             padding: 25px 25px 25px 95px;
-    
+
             img {
                 top: 25px;
                 left: 25px;
@@ -331,7 +336,7 @@
     }
     .about-img {
         margin-right: 30px;
-    
+
         .shape {
             right: -30px;
         }

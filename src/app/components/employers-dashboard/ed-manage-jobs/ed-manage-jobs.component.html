@@ -8,7 +8,7 @@
 <!-- Manage Jobs -->
 <div class="jove-card">
     <div class="row">
-        <div class="col-xxl-12">
+        <div class="col-xxl-12" *ngFor="let item of arrVacantes">
             <div class="single-job-box">
                 <div class="d-sm-flex align-items-center justify-content-between">
                     <div class="d-sm-flex align-items-center">
@@ -18,14 +18,14 @@
                         <div class="content">
                             <h3 class="fw-semibold">
                                 <a routerLink="/job-details">
-                                    Mechanical Engineer
+                                    {{item.titulo_vacante}}
                                 </a>
                             </h3>
                             <span class="location d-block">
-                                Topoint in London
+                                {{item.nombre_ciudad}}
                             </span>
                             <span class="job-type d-block">
-                                Full Time
+                                {{item.nombre_tipo_trabajo}}
                             </span>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                         </span>
                         <ul class="ps-0 mb-0 list-unstyled">
                             <li class="d-inline-block">
-                                <button type="button" class="d-inline-block rounded-circle">
+                                <button type="button" class="d-inline-block rounded-circle" (click)="openModal(item)">
                                     <i class="ri-eye-line"></i>
                                 </button>
                             </li>
@@ -55,21 +55,21 @@
                 <div class="info d-sm-flex align-items-center justify-content-between">
                     <span class="salary d-block">
                         <span class="fw-semibold">Salary:</span>
-                        <span>$1K - $3K</span>
+                        <span>{{item.rango}}</span>
                         /monthly
                     </span>
                     <span class="created d-block">
                         <span class="fw-semibold">Created:</span>
-                        Oct 21, 2023
+                        {{item.fecha_registro | date: 'MMM dd, yyyy'}}
                     </span>
                     <span class="deadline d-block">
                         <span class="fw-semibold">Deadline:</span>
-                        Oct 30, 2023
+                        {{item.fecha_limite_solicitud | date: 'MMM dd, yyyy'}}
                     </span>
                 </div>
             </div>
         </div>
-        <div class="col-xxl-12">
+        <!-- <div class="col-xxl-12">
             <div class="single-job-box">
                 <div class="d-sm-flex align-items-center justify-content-between">
                     <div class="d-sm-flex align-items-center">
@@ -617,6 +617,22 @@
                     </span>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade loginRegisterModal" tabindex="-1" aria-hidden="true" *ngIf="isOpen">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-body">
+        <app-modal-job-detail [job]="displayedText" [company]="empresa"></app-modal-job-detail>
+        <button (click)="closePopup()" type="button" class="close-btn">
+          <i class="ri-close-fill"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop fade show"></div>
 </div>

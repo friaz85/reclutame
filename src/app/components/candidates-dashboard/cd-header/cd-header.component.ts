@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/services/auth.service';
 
 @Component({
     selector: 'app-cd-header',
@@ -7,7 +8,9 @@ import { Component } from '@angular/core';
 })
 export class CdHeaderComponent {
 
-    constructor() { }
+    constructor(
+      private auth: AuthService
+    ) { }
 
     classApplied = false;
     toggleClass() {
@@ -17,6 +20,10 @@ export class CdHeaderComponent {
     classApplied2 = false;
     toggleClass2() {
         this.classApplied2 = !this.classApplied2;
+    }
+
+    logout() {
+      this.auth.logout();
     }
 
 }

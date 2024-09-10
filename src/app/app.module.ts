@@ -1,9 +1,12 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { NgApexchartsModule } from "ng-apexcharts";
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { AccordionModule } from 'primeng/accordion';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -77,7 +80,11 @@ import { CdMessageComponent } from './components/candidates-dashboard/cd-message
 import { CdSidebarComponent } from './components/candidates-dashboard/cd-sidebar/cd-sidebar.component';
 import { CdFooterComponent } from './components/candidates-dashboard/cd-footer/cd-footer.component';
 import { CdHeaderComponent } from './components/candidates-dashboard/cd-header/cd-header.component';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EdAddNewEmployerComponent } from './components/employers-dashboard/ed-add-new-employer/ed-add-new-employer.component';
+import { ModalJobDetailComponent } from './components/common/modal-job-detail/modal-job-detail.component';
+import { TanSimpleComoComponent } from './components/common/tan-simple-como/tan-simple-como.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -150,7 +157,10 @@ import { CdHeaderComponent } from './components/candidates-dashboard/cd-header/c
         CdMessageComponent,
         CdSidebarComponent,
         CdFooterComponent,
-        CdHeaderComponent
+        CdHeaderComponent,
+        EdAddNewEmployerComponent,
+        ModalJobDetailComponent,
+        TanSimpleComoComponent
     ],
     imports: [
         BrowserModule,
@@ -158,9 +168,17 @@ import { CdHeaderComponent } from './components/candidates-dashboard/cd-header/c
         AppRoutingModule,
         NgxScrollTopModule,
         NgApexchartsModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        NgxSpinnerModule,
+        FormsModule,
+        AccordionModule
     ],
-    providers: [],
+    providers: [
+      HttpClient
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

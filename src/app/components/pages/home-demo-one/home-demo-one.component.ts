@@ -8,10 +8,10 @@ import { Title } from '@angular/platform-browser';
 })
 export class HomeDemoOneComponent {
 
-    title = 'Home Demo - 1 - Jove';
- 
+    title = 'Reclútame';
+
     constructor(private titleService:Title) {}
-    
+
     ngOnInit() {
         this.titleService.setTitle(this.title);
     }

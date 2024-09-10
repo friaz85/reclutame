@@ -26,51 +26,11 @@
                     </label>
                 </div>
             </li>
-            <li>
+            <li *ngFor="let item of arrTipoTrabajo">
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="jobTypeOptions" id="jb-full-time">
                     <label class="form-check-label d-flex align-items-center justify-content-between" for="jb-full-time">
-                        Full time <span>(1,210)</span>
-                    </label>
-                </div>
-            </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="jobTypeOptions" id="jb-part-time">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="jb-part-time">
-                        Part time <span>(568)</span>
-                    </label>
-                </div>
-            </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="jobTypeOptions" id="jb-temporary">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="jb-temporary">
-                        Temporary <span>(19)</span>
-                    </label>
-                </div>
-            </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="jobTypeOptions" id="jb-contract">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="jb-contract">
-                        Contract <span>(48)</span>
-                    </label>
-                </div>
-            </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="jobTypeOptions" id="jb-internship">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="jb-internship">
-                        Internship <span>(51)</span>
-                    </label>
-                </div>
-            </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="jobTypeOptions" id="jb-freelancer">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="jb-freelancer">
-                        Freelancer <span>(458)</span>
+                        {{ item.descripcion }} <span>(0)</span>
                     </label>
                 </div>
             </li>
@@ -136,56 +96,22 @@
             Salary
         </h3>
         <select class="form-select shadow-none">
-            <option selected>All</option>
-            <option value="1">$0 - $2000</option>
-            <option value="2">$2000 - $3000</option>
-            <option value="3">$3000 - $4000</option>
-            <option value="4">$4000 - $5000</option>
-            <option value="5">$5000 - $6000</option>
-        </select>
+          <option selected>Select</option>
+          <option *ngFor="let item of arrSalarios" [value]="item.id_salario">
+            {{ item.rango }}
+          </option>
+      </select>
     </div>
     <div class="widget">
         <h3 class="widget-title fw-semibold">
             Career level
         </h3>
         <ul class="ps-0 mb-0 list-unstyled">
-            <li>
+            <li *ngFor="let item of arrNivelProfesional">
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="careerLevelOptions" id="cl-manager">
                     <label class="form-check-label d-flex align-items-center justify-content-between" for="cl-manager">
-                        Manager
-                    </label>
-                </div>
-            </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="careerLevelOptions" id="cl-officer">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="cl-officer">
-                        Officer
-                    </label>
-                </div>
-            </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="careerLevelOptions" id="cl-student">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="cl-student">
-                        Student
-                    </label>
-                </div>
-            </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="careerLevelOptions" id="cl-executive">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="cl-executive">
-                        Executive
-                    </label>
-                </div>
-            </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="careerLevelOptions" id="cl-others">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="cl-others">
-                        Others
+                        {{item.descripcion}}
                     </label>
                 </div>
             </li>
@@ -196,43 +122,11 @@
             Experience
         </h3>
         <ul class="ps-0 mb-0 list-unstyled">
-            <li>
+            <li *ngFor="let item of arrExperiencias">
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="experienceOptions" id="experience-fresher">
                     <label class="form-check-label d-flex align-items-center justify-content-between" for="experience-fresher">
-                        Fresher
-                    </label>
-                </div>
-            </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="experienceOptions" id="experience-one-year">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="experience-one-year">
-                        1 year
-                    </label>
-                </div>
-            </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="experienceOptions" id="experience-three-years">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="experience-three-years">
-                        3 years
-                    </label>
-                </div>
-            </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="experienceOptions" id="experience-five-years">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="experience-five-years">
-                        5 years
-                    </label>
-                </div>
-            </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="experienceOptions" id="experience-ten-years">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="experience-ten-years">
-                        10 years
+                        {{ item.descripcion}}
                     </label>
                 </div>
             </li>
@@ -243,46 +137,15 @@
             Qualifications
         </h3>
         <ul class="ps-0 mb-0 list-unstyled">
-            <li>
+            <li *ngFor="let item of arrGradoEscolar">
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="qualificationsOptions" id="qualifications-certificate">
                     <label class="form-check-label d-flex align-items-center justify-content-between" for="qualifications-certificate">
-                        Certificate
+                        {{ item.descripcion }}
                     </label>
                 </div>
             </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="qualificationsOptions" id="qualifications-diploma">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="qualifications-diploma">
-                        Diploma
-                    </label>
-                </div>
-            </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="qualificationsOptions" id="qualifications-bachelor-degree">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="qualifications-bachelor-degree">
-                        Bachelor degree
-                    </label>
-                </div>
-            </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="qualificationsOptions" id="qualifications-masters-degree">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="qualifications-masters-degree">
-                        Master’s degree
-                    </label>
-                </div>
-            </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="qualificationsOptions" id="qualifications-associate">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="qualifications-associate">
-                        Associate
-                    </label>
-                </div>
-            </li>
+
         </ul>
     </div>
     <div class="widget">
@@ -290,19 +153,11 @@
             Gender
         </h3>
         <ul class="ps-0 mb-0 list-unstyled">
-            <li>
+            <li *ngFor="let item of arrGenero">
                 <div class="form-check">
                     <input type="radio" class="form-check-input" name="genderOptions" id="gender-male">
                     <label class="form-check-label d-flex align-items-center justify-content-between" for="gender-male">
-                        Male
-                    </label>
-                </div>
-            </li>
-            <li>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="genderOptions" id="gender-female">
-                    <label class="form-check-label d-flex align-items-center justify-content-between" for="gender-female">
-                        Female
+                        {{item.descripcion}}
                     </label>
                 </div>
             </li>

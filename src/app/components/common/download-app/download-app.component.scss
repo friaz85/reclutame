@@ -7,6 +7,11 @@
         };
     }
 }
+
+.app-store {
+  filter: sepia(100%) hue-rotate(190deg) saturate(500%);
+}
+
 .app-inner {
     padding-top: 100px;
     border-radius: 15px;
@@ -176,7 +181,7 @@
     }
     .app-text {
         max-width: 100%;
-    
+
         h2 {
             font-size: 20px;
             margin-bottom: 12px;
@@ -190,7 +195,7 @@
         }
         .btn-box {
             margin-top: 20px;
-    
+
             a {
                 margin: {
                     left: 5px;
@@ -273,7 +278,7 @@
     }
     .app-text {
         max-width: 100%;
-    
+
         h2 {
             font-size: 22px;
             margin-bottom: 14px;

@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "target": "https://reclutame-proj.uc.r.appspot.com",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

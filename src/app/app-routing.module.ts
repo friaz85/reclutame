@@ -38,11 +38,13 @@ import { CdAppliedJobsComponent } from './components/candidates-dashboard/cd-app
 import { CdAlertJobsComponent } from './components/candidates-dashboard/cd-alert-jobs/cd-alert-jobs.component';
 import { CdMessageComponent } from './components/candidates-dashboard/cd-message/cd-message.component';
 import { CdChangePasswordComponent } from './components/candidates-dashboard/cd-change-password/cd-change-password.component';
+import { EdAddNewEmployerComponent } from './components/employers-dashboard/ed-add-new-employer/ed-add-new-employer.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-    {path: '', component: HomeDemoOneComponent},
+    {path: '', component: HomeDemoThreeComponent},
     {path: 'index-2', component: HomeDemoTwoComponent},
-    {path: 'index-3', component: HomeDemoThreeComponent},
+    {path: 'index-1', component: HomeDemoOneComponent},
     {path: 'about', component: AboutPageComponent},
     {path: 'pricing', component: PricingPageComponent},
     {path: 'jobs-grid', component: JobsGridPageComponent},
@@ -62,6 +64,7 @@ const routes: Routes = [
     {
         path: 'dashboard',
         component: EmployersDashboardComponent,
+        canActivate: [AuthGuard],
         children: [
             {path: '', component: EDashboardComponent},
             {path: 'company-profile', component: EdCompanyProfileComponent},
@@ -71,11 +74,13 @@ const routes: Routes = [
             {path: 'resumes', component: EdResumesComponent},
             {path: 'message', component: EdMessageComponent},
             {path: 'change-password', component: EdChangePasswordComponent},
+            {path: 'add-new-employer', component: EdAddNewEmployerComponent},
         ]
     },
     {
         path: 'candidates-dashboard',
         component: CandidatesDashboardComponent,
+        canActivate: [AuthGuard],
         children: [
             {path: '', component: CDashboardComponent},
             {path: 'my-profile', component: CdProfileComponent},

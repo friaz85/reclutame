@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { ReclutameService } from 'src/services/reclutame.service';
 
 @Component({
     selector: 'app-jobs-by-location',
@@ -7,13 +8,13 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
     styleUrls: ['./jobs-by-location.component.scss']
 })
 export class JobsByLocationComponent {
-
+    arrPais:any = [];
     jobsByLocationSlides: OwlOptions = {
 		nav: true,
 		margin: 25,
 		loop: true,
 		dots: false,
-		autoplay: false,
+		autoplay: true,
 		autoplayHoverPause: true,
 		navText: [
 			"<i class='ri-arrow-left-line'></i>",
@@ -33,9 +34,31 @@ export class JobsByLocationComponent {
 				items: 3
 			},
 			1200: {
-				items: 5
+				items: 4
 			}
 		}
     }
+
+    constructor(
+      private api: ReclutameService,
+      private el: ElementRef) {
+        this.getPaises();
+
+      }
+
+  ngOnInit() {
+
+  }
+
+  ngAfterViewInit() {
+    let myTag = this.el.nativeElement.querySelector(".owl-nav");
+    console.log
+  }
+
+  async getPaises() {
+    const pais = await this.api.getPais();
+    this.arrPais = pais.items;
+    console.log("Paises: ", this.arrPais);
+  }
 
 }
