@@ -451,6 +451,10 @@ export class ReclutameService {
     return this.http.get<any>(this.apiUrl + 'getNotificaciones/' + idReclutador).toPromise();
   }
 
+  async getCandidatosPostulaciones(idReclutador: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getCandidatosPostulaciones/' + idReclutador).toPromise();
+  }
+
 /***********************************************************************************/
 /***********************************************************************************/
   // Consumos IA
@@ -462,7 +466,7 @@ export class ReclutameService {
     const headers = {
       'Content-Type': 'application/json',
       'pwd': 'fabriconsulting2024',
-      'openaiapikey': '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'
+      'openaiapikey': 'sk-svcacct-m-sfS1MmN1QrDZGK1mTcosGU6JeQETfsgN9IDtqC8z3hACLTg5p96e15O_GMx6W_7sljQShJYO0T3BlbkFJh2Q-MeMRUQowNdsAlMX3PBcfX1pwnMood5oTxoAB6Go_-GP7KUQwBinxCAdxooim59YfYYItfAA'
     };
 
     let arrSend = {};

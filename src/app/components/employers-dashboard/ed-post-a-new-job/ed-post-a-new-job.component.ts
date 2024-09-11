@@ -274,8 +274,29 @@ export class EdPostANewJobComponent {
 
   async registroVacante(descripcion: any) {
 
+    // Validar que la fecha no sea menor a la actual
+    const fecha = moment(this.responseVacante['Application deadline date'], "YYYY-MM-DD").format("YYYY-MM-DD");
+    if (fecha < moment(new Date(), "YYYY-MM-DD").format("YYYY-MM-DD")) {
+      Swal.fire({
+        icon: 'warning',
+        title: '¡Atención!',
+        text: 'Fecha límite para aplicar es menor a la actual.'
+      });
+      return;
+    }
+
+      // Swal.fire({
+      //   icon: 'warning',
+      //   title: '¡Atención!',
+      //   text: 'Fecha límite para aplicar es menor a la actual.'
+      // }).then(result => {
+      //   if (result.isConfirmed) {
+      //     return;
+      //   }
+      // });
+
     console.log(this.responseVacante);
-    // return;
+    return;
 
     // this.submitted = true;
     // console.log(this.frmJob);

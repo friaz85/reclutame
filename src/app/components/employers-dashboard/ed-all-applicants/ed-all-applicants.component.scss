@@ -1,7 +1,7 @@
 // Breadcrumb Title
 .breadcrumb-title {
     margin-bottom: 25px;
-    
+
     h1 {
         font-size: 24px;
     }
@@ -37,13 +37,13 @@
         border-radius: 15px;
         background-color: var(--whiteColor);
         border: 1px solid var(--borderColor);
-    
+
         .image {
             max-width: 90px;
         }
         .content {
             margin-left: 15px;
-    
+
             h3 {
                 font-size: 17px;
                 margin-bottom: 6px;
@@ -103,6 +103,240 @@
     }
 }
 
+// Modal
+.loginRegisterModal {
+  display: block;
+
+  &.fade {
+      &:not(.show) {
+          opacity: 1;
+      }
+      .modal-dialog {
+          transform: none;
+      }
+  }
+  .modal-content {
+      border-radius: 5px;
+      padding: 0;
+      border: 0;
+
+      .modal-body {
+          padding: 35px;
+
+          .nav {
+              &.nav-tabs {
+                  margin-bottom: 30px;
+
+                  .nav-item {
+                      margin-right: 25px;
+
+                      .nav-link {
+                          padding: 0;
+                          border: none;
+                          color: #8d8d8d;
+                          padding-bottom: 3px;
+                          border-bottom: 2px solid transparent;
+                          font: {
+                              family: var(--headingFontFamily);
+                              size: 20px;
+                          };
+                      }
+                      &.active {
+                          .nav-link {
+                              color: var(--headingColor);
+                              border-color: var(--headingColor);
+                          }
+                      }
+                      &:last-child {
+                          margin-right: 0;
+                      }
+                  }
+              }
+          }
+          .tab-content {
+              .tab-pane {
+                  .info {
+                      background-color: #edf2f1;
+                      margin-bottom: 25px;
+                      border-radius: 5px;
+                      padding: 15px 20px;
+
+                      p {
+                          margin-bottom: 0;
+
+                          span {
+                              color: var(--headingColor);
+                          }
+                      }
+                  }
+                  .authentication-form {
+                      .form-group {
+                          margin-bottom: 22px;
+
+                          label {
+                              display: block;
+                              font-weight: 500;
+                              margin-bottom: 8px;
+                              color: var(--headingColor);
+                          }
+                          .form-control {
+                              height: 54px;
+                              border-radius: 5px;
+                              font-size: var(--fontSize);
+                              color: var(--headingColor);
+                              background-color: var(--whiteColor);
+                              border: 1px solid var(--borderColor);
+                              padding: {
+                                  left: 20px;
+                                  right: 20px;
+                              };
+                              &::placeholder {
+                                  color: #8d8d8d;
+                                  transition: var(--transition);
+                              }
+                              &:focus {
+                                  &::placeholder {
+                                      color: transparent;
+                                  }
+                              }
+                          }
+                          &.forgot-password {
+                              margin-top: -3px;
+
+                              a {
+                                  color: var(--primaryColor);
+
+                                  &:hover {
+                                      text-decoration: underline;
+                                  }
+                              }
+                          }
+                      }
+                      .form-check {
+                          margin: {
+                              bottom: 22px;
+                              top: -3px;
+                          };
+                          .form-check-input {
+                              &:checked {
+                                  background-color: var(--primaryColor);
+                                  border-color: var(--primaryColor);
+                              }
+                          }
+                          .form-check-label {
+                              cursor: pointer;
+                              color: var(--bodyColor);
+
+                              a {
+                                  color: var(--headingColor);
+
+                                  &:hover {
+                                      color: var(--primaryColor);
+                                  }
+                              }
+                          }
+                      }
+                      .login-with-socials {
+                          margin-top: 25px;
+
+                          span {
+                              margin-bottom: 10px;
+                          }
+                          a {
+                              width: 40px;
+                              height: 40px;
+                              font-size: 18px;
+                              border-radius: 50%;
+                              position: relative;
+                              color: var(--whiteColor);
+                              background-color: var(--primaryColor);
+                              margin: {
+                                  left: 5px;
+                                  right: 5px;
+                              };
+                              i {
+                                  left: 0;
+                                  right: 0;
+                                  top: 50%;
+                                  position: absolute;
+                                  transform: translateY(-50%);
+                              }
+                              &.facebook {
+                                  background-color: #1877f2;
+                              }
+                              &.linkedin {
+                                  background-color: #0077b5;
+                              }
+                              &.google {
+                                  background-color: #ea4335;
+                              }
+                          }
+                      }
+                  }
+                  .nav {
+                      &.nav-tabs {
+                          margin-bottom: 25px;
+
+                          .nav-item {
+                              margin: {
+                                  left: 10px;
+                                  right: 10px;
+                              };
+                              .nav-link {
+                                  padding: 0;
+                                  border: none;
+                                  font-size: 15px;
+                                  border-radius: 5px;
+                                  padding: 11px 30px;
+                                  color: var(--headingColor);
+                                  background-color: #f2f2f2;
+                              }
+                              &.active {
+                                  .nav-link {
+                                      color: var(--whiteColor);
+                                      background-color: var(--primaryColor);
+                                  }
+                              }
+                              &:last-child {
+                                  margin-right: 0;
+                              }
+                              &:first-child {
+                                  margin-left: 0;
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+          .close-btn {
+              top: 33px;
+              border: 0;
+              padding: 0;
+              width: 35px;
+              right: 35px;
+              height: 35px;
+              font-size: 20px;
+              border-radius: 50%;
+              position: absolute;
+              background-color: #f2f2f2;
+              transition: var(--transition);
+
+              i {
+                  position: relative;
+                  top: -1px;
+              }
+              &:hover {
+                  color: var(--whiteColor);
+                  background-color: var(--primaryColor);
+              }
+          }
+      }
+  }
+  .modal-backdrop {
+      z-index: -1;
+  }
+}
+
 /* Max width 767px */
 @media only screen and (max-width : 767px) {
 
@@ -117,7 +351,7 @@
     .jove-card {
         border-radius: 5px;
         padding: 20px 15px;
-    
+
         .title {
             font-size: 16px;
             margin-bottom: 15px;
@@ -139,7 +373,7 @@
             border-radius: 5px;
             text-align: center;
             margin-bottom: 15px;
-        
+
             .image {
                 margin: {
                     left: auto;
@@ -189,7 +423,7 @@
     .jove-card {
         .single-candidate-box {
             text-align: start;
-        
+
             .image {
                 margin: {
                     left: auto;
@@ -230,7 +464,7 @@
     .jove-card {
         border-radius: 10px;
         padding: 25px;
-    
+
         .title {
             font-size: 18px;
             padding: {
@@ -246,7 +480,7 @@
         .single-candidate-box {
             padding: 20px;
             border-radius: 10px;
-        
+
             .content {
                 h3 {
                     font-size: 16px;
@@ -263,7 +497,7 @@
     // Card
     .jove-card {
         padding: 25px;
-    
+
         .title {
             padding: {
                 left: 25px;
@@ -288,13 +522,13 @@
     .jove-card {
         .single-candidate-box {
             padding: 25px;
-        
+
             .image {
                 max-width: 100px;
             }
             .content {
                 margin-left: 18px;
-        
+
                 h3 {
                     font-size: 18px;
                 }
