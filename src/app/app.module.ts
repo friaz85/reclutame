@@ -88,6 +88,7 @@ import { TanSimpleComoComponent } from './components/common/tan-simple-como/tan-
 import { CdJobsListingComponent } from './components/candidates-dashboard/cd-jobs-listing/cd-jobs-listing.component';
 import { CdEmployersComponent } from './components/candidates-dashboard/cd-employers/cd-employers.component';
 import { SafePipe } from './components/pipes/safe.pipe';
+import { ModalCandidateDetailsComponent } from './components/common/modal-candidate-details/modal-candidate-details.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -166,7 +167,8 @@ import { SafePipe } from './components/pipes/safe.pipe';
         TanSimpleComoComponent,
         CdJobsListingComponent,
         CdEmployersComponent,
-        SafePipe
+        SafePipe,
+        ModalCandidateDetailsComponent
     ],
     imports: [
         BrowserModule,

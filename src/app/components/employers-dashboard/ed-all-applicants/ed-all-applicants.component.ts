@@ -11,6 +11,7 @@ import { ReclutameService } from 'src/services/reclutame.service';
 })
 export class EdAllApplicantsComponent {
   arrAplicantes: any = [];
+  aplicante: any  = {};
 
   constructor(
     private api: ReclutameService,
@@ -21,6 +22,17 @@ export class EdAllApplicantsComponent {
   ) {
     this.getAplicantes(this.auth.currentUserValue.p_id_reclutador);
   }
+
+    // Modal Popup
+    isOpen = false;
+    openPopup(arr: any): void {
+      this.isOpen = true;
+      this.aplicante  = arr;
+      this.ref.detectChanges();
+    }
+    closePopup(): void {
+      this.isOpen = false;
+    }
 
   async getAplicantes(idReclutador: any) {
     this.spinner.show();

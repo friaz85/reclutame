@@ -85,8 +85,8 @@
                     <span class="fw-semibold">{{ noti.candidato_nombre }}</span> applied for a job <span class="color">{{ noti.titulo_vacante }}</span>
                   </li>
 
-                
-                
+
+
                 <!-- <li class="position-relative">
                     <div class="icon">
                         <i class="ri-briefcase-line"></i>
@@ -102,15 +102,15 @@
                 Profile views
             </h3>
             <div class="chart">
-                <apx-chart
-                    [series]="chartOptions.series!"
-                    [chart]="chartOptions.chart!"
-                    [xaxis]="chartOptions.xaxis!"
-                    [dataLabels]="chartOptions.dataLabels!"
-                    [grid]="chartOptions.grid!"
-                    [yaxis]="chartOptions.yaxis!"
-                    [stroke]="chartOptions.stroke!"
-                    [colors]="chartOptions.colors!"
+                <apx-chart *ngIf="chartOptions"
+                    [series]="chartOptions?.series"
+                    [chart]="chartOptions?.chart"
+                    [xaxis]="chartOptions?.xaxis"
+                    [dataLabels]="chartOptions?.dataLabels"
+                    [grid]="chartOptions?.grid"
+                    [yaxis]="chartOptions?.yaxis"
+                    [stroke]="chartOptions?.stroke"
+                    [colors]="chartOptions?.colors"
                 ></apx-chart>
             </div>
         </div>
