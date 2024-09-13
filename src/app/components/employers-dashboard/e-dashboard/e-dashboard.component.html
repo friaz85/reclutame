@@ -6,7 +6,7 @@
 </div>
 
 <!-- Stats -->
-<div class="row">
+<div class="row justify-content-center">
     <div class="col-xxl-3 col-xl-6 col-lg-3 col-6">
         <div class="single-stats-box d-md-flex align-items-center">
             <div class="icon">
@@ -14,7 +14,7 @@
             </div>
             <div>
                 <h3>
-                    70
+                    {{totalVacantes}}
                 </h3>
                 <span class="d-block">
                     Posted jobs
@@ -29,7 +29,7 @@
             </div>
             <div>
                 <h3>
-                    2839
+                    {{totalCandidatos}}
                 </h3>
                 <span class="d-block">
                     Application
@@ -37,7 +37,7 @@
             </div>
         </div>
     </div>
-    <div class="col-xxl-3 col-xl-6 col-lg-3 col-6">
+    <!-- <div class="col-xxl-3 col-xl-6 col-lg-3 col-6">
         <div class="single-stats-box d-md-flex align-items-center">
             <div class="icon">
                 <i class="ri-message-2-line"></i>
@@ -51,8 +51,8 @@
                 </span>
             </div>
         </div>
-    </div>
-    <div class="col-xxl-3 col-xl-6 col-lg-3 col-6">
+    </div> -->
+    <!-- <div class="col-xxl-3 col-xl-6 col-lg-3 col-6">
         <div class="single-stats-box d-md-flex align-items-center">
             <div class="icon">
                 <i class="ri-bookmark-line"></i>
@@ -66,7 +66,7 @@
                 </span>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <!-- Profile Views & Notifications -->
@@ -77,48 +77,22 @@
                 Notifications
             </h3>
             <ul class="mb-0 list-unstyled ps-0 notifications-list">
-                <li class="position-relative">
+
+                <li *ngFor="let noti of arrNotificaciones" class="position-relative" >
                     <div class="icon">
-                        <i class="ri-briefcase-line"></i>
+                      <i class="ri-briefcase-line"></i>
                     </div>
-                    <span class="fw-semibold">Donald Darnell</span> applied for a job <span class="color">Software Engineer</span>
-                </li>
-                <li class="position-relative">
-                    <div class="icon">
-                        <i class="ri-briefcase-line"></i>
-                    </div>
-                    <span class="fw-semibold">Olivie Riquier</span> applied for a job <span class="color">Accountant</span>
-                </li>
-                <li class="position-relative color">
-                    <div class="icon">
-                        <i class="ri-briefcase-line"></i>
-                    </div>
-                    <span class="fw-semibold">Edwin Lloyd</span> applied for a job <span class="color">Data Scientist</span>
-                </li>
-                <li class="position-relative">
-                    <div class="icon">
-                        <i class="ri-briefcase-line"></i>
-                    </div>
-                    <span class="fw-semibold">Bryant Hills</span> applied for a job <span class="color">UI/UX Designer</span>
-                </li>
-                <li class="position-relative color">
-                    <div class="icon">
-                        <i class="ri-briefcase-line"></i>
-                    </div>
-                    <span class="fw-semibold">Melissa Rodgers</span> applied for a job <span class="color">Pharmacist</span>
-                </li>
-                <li class="position-relative">
-                    <div class="icon">
-                        <i class="ri-briefcase-line"></i>
-                    </div>
-                    <span class="fw-semibold">Jeanne Richardson</span> applied for a job <span class="color">Marketing Manager</span>
-                </li>
-                <li class="position-relative">
+                    <span class="fw-semibold">{{ noti.candidato_nombre }}</span> applied for a job <span class="color">{{ noti.titulo_vacante }}</span>
+                  </li>
+
+
+
+                <!-- <li class="position-relative">
                     <div class="icon">
                         <i class="ri-briefcase-line"></i>
                     </div>
                     <span class="fw-semibold">Bruce Saunders</span> applied for a job <span class="color">Systems Analyst</span>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
@@ -128,15 +102,15 @@
                 Profile views
             </h3>
             <div class="chart">
-                <apx-chart
-                    [series]="chartOptions.series!"
-                    [chart]="chartOptions.chart!"
-                    [xaxis]="chartOptions.xaxis!"
-                    [dataLabels]="chartOptions.dataLabels!"
-                    [grid]="chartOptions.grid!"
-                    [yaxis]="chartOptions.yaxis!"
-                    [stroke]="chartOptions.stroke!"
-                    [colors]="chartOptions.colors!"
+                <apx-chart *ngIf="chartOptions"
+                    [series]="chartOptions?.series"
+                    [chart]="chartOptions?.chart"
+                    [xaxis]="chartOptions?.xaxis"
+                    [dataLabels]="chartOptions?.dataLabels"
+                    [grid]="chartOptions?.grid"
+                    [yaxis]="chartOptions?.yaxis"
+                    [stroke]="chartOptions?.stroke"
+                    [colors]="chartOptions?.colors"
                 ></apx-chart>
             </div>
         </div>

@@ -1,0 +1,53 @@
+<!-- Page Banner -->
+<div class="page-banner-area">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8 col-md-12">
+        <h1>
+          Candidates Details
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Page Banner -->
+
+<!-- Candidate Details Area -->
+
+<div class="candidate-details-area ptb-75">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-12" *ngFor="let item of arrCandidates">
+        <div class="card">
+          <div class="card-body">
+            <div class="row d-flex justify-content-center align-items-center">
+              <div class="col-2">
+                <div class="image">
+                  <img src="assets/images/candidates/candidate1.jpg" class="rounded-circle" alt="candidate-image">
+                </div>
+              </div>
+              <div class="col-6">
+                <h5 class="fw-semibold cursor-pointer">
+                  {{item.nombre}} {{item.apellido}}
+                </h5>
+                <span class="location d-block">
+                  {{item.email}}
+                </span>
+                <span class="job-type d-block">
+                  {{item.telefono}}
+                </span>
+              </div>
+              <div class="col-4">
+                <select class="form-select" aria-label="Default select example" (change)="updateEstatusPostualacion($event.target.value, item.id_candidato)">
+                  <option selected value="0">Selecciona</option>
+                  <option *ngFor="let item of arrEstatusPostulacion" value="{{item.id_estatus_postulacion}}">{{item.descripcion}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ngx-scrolltop></ngx-scrolltop>

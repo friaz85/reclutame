@@ -16,9 +16,7 @@
                     </div>
                     <div class="content">
                         <h3 class="fw-semibold">
-                            <a routerLink="/candidate-details">
                                 {{ item.nombre_candidato }} {{ item.apellido_candidato }}
-                            </a>
                         </h3>
                         <span class="designation d-block">
                             {{ item.email_candidato }}
@@ -34,7 +32,7 @@
                     </span>
                     <ul class="ps-0 mb-0 list-unstyled d-flex justify-content-center">
                         <li class="d-inline-block">
-                            <button type="button" class="d-inline-block rounded-circle">
+                            <button type="button" class="d-inline-block rounded-circle" (click)="openPopup(item)">
                                 <i class="ri-eye-line"></i>
                             </button>
                         </li>
@@ -53,4 +51,19 @@
             </div>
         </div>
     </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade loginRegisterModal" tabindex="-1" aria-hidden="true" *ngIf="isOpen">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-body">
+        <app-modal-candidate-details [aplicante]="aplicante"></app-modal-candidate-details>
+        <button (click)="closePopup()" type="button" class="close-btn">
+          <i class="ri-close-fill"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop fade show"></div>
 </div>
