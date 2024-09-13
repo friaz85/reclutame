@@ -295,8 +295,8 @@ export class EdPostANewJobComponent {
       //   }
       // });
 
-    console.log(this.responseVacante);
-    return;
+    //console.log(this.responseVacante);
+    //return;
 
     // this.submitted = true;
     // console.log(this.frmJob);

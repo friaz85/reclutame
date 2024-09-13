@@ -42,6 +42,8 @@ export class EDashboardComponent implements OnInit {
     totalVacantes = 0;
     arrNotificaciones: any = [];
     arrDatosGrafica: any = [];
+    arrCandidatosRecientes: any = [];
+
     meses = [
       { id: 1, name: 'Ene' },
       { id: 2, name: 'Feb' },
@@ -67,7 +69,7 @@ export class EDashboardComponent implements OnInit {
         this.getReclutador();
         this.getTarjetasDashboard();
         this.geNotificaciones();
-
+        this.getAplicantesRecientes();
 
 
     }
@@ -194,5 +196,17 @@ export class EDashboardComponent implements OnInit {
           // this.ref.detectChanges();
 
         }
+
+        async getAplicantesRecientes() {
+            this.spinner.show();
+            try {
+              const candidatosRecientes = await this.api.getAplicantesRecientes(this.auth.currentUserValue.p_id_reclutador);
+              console.log('candidatos recientes',candidatosRecientes);
+              this.arrCandidatosRecientes = candidatosRecientes.p_result;
+            } catch (err) {
+              console.error;
+            }
+            this.spinner.hide();
+          }
 
 }

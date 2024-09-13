@@ -473,6 +473,10 @@ export class ReclutameService {
     }).toPromise();
   }
 
+  async getAplicantesRecientes(idReclutador: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getAplicantesRecientes/' + idReclutador).toPromise();
+  }
+
 /***********************************************************************************/
 /***********************************************************************************/
   // Consumos IA
