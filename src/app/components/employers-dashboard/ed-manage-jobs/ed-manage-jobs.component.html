@@ -16,7 +16,7 @@
                             <img src="assets/images/companies/company8.png" alt="company-image">
                         </div>
                         <div class="content">
-                            <h3 class="fw-semibold">
+                            <h3 class="fw-semibold cursor-pointer" (click)="openModal(item)">
                                     {{item.titulo_vacante}}
                             </h3>
                             <span class="location d-block">
@@ -33,11 +33,11 @@
                         </span>
                         <ul class="ps-0 mb-0 list-unstyled">
                             <li class="d-inline-block">
-                                <button type="button" class="d-inline-block rounded-circle" (click)="openModal(item)">
+                                <button type="button" class="d-inline-block rounded-circle" (click)="openModalCandidate(item)">
                                     <i class="ri-eye-line"></i>
                                 </button>
                             </li>
-                            <li class="d-inline-block">
+                            <!-- <li class="d-inline-block">
                                 <button type="button" class="d-inline-block rounded-circle">
                                     <i class="ri-check-line"></i>
                                 </button>
@@ -46,7 +46,7 @@
                                 <button type="button" class="d-inline-block rounded-circle">
                                     <i class="ri-close-line"></i>
                                 </button>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -634,3 +634,19 @@
   </div>
   <div class="modal-backdrop fade show"></div>
 </div>
+
+<!-- Modal Candidate -->
+<div class="modal fade loginRegisterModal" tabindex="-1" aria-hidden="true" *ngIf="isOpenCandidate">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-body">
+        <app-modal-all-candidates [job]="vacante"></app-modal-all-candidates>
+        <button (click)="closePopupCandidate()" type="button" class="close-btn">
+          <i class="ri-close-fill"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop fade show"></div>
+</div>
+

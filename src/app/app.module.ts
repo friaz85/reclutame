@@ -89,6 +89,7 @@ import { CdJobsListingComponent } from './components/candidates-dashboard/cd-job
 import { CdEmployersComponent } from './components/candidates-dashboard/cd-employers/cd-employers.component';
 import { SafePipe } from './components/pipes/safe.pipe';
 import { ModalCandidateDetailsComponent } from './components/common/modal-candidate-details/modal-candidate-details.component';
+import { ModalAllCandidatesComponent } from './components/common/modal-all-candidates/modal-all-candidates.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -168,7 +169,8 @@ import { ModalCandidateDetailsComponent } from './components/common/modal-candid
         CdJobsListingComponent,
         CdEmployersComponent,
         SafePipe,
-        ModalCandidateDetailsComponent
+        ModalCandidateDetailsComponent,
+        ModalAllCandidatesComponent
     ],
     imports: [
         BrowserModule,
