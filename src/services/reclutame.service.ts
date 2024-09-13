@@ -455,6 +455,24 @@ export class ReclutameService {
     return this.http.get<any>(this.apiUrl + 'getCandidatosPostulaciones/' + idReclutador).toPromise();
   }
 
+  async getCandidatosPorVacante(idCandidato: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getCandidatosPorVacante/' + idCandidato).toPromise();
+  }
+
+  async getEstatusPostulacion(): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getEstatusPostulacion').toPromise();
+  }
+
+  async updateEstatusPostulacion(idCandidato: any, idVacante: any, p_id_estatus_postulacion: any): Promise<any> {
+
+    return this.http.post<any>(this.apiUrl + 'updateEstatusPostulacion', {
+      "p_id_candidato": parseInt(idCandidato),
+      "p_id_vacante": parseInt(idVacante),
+      "p_id_estatus_postulacion": parseInt(p_id_estatus_postulacion),
+
+    }).toPromise();
+  }
+
 /***********************************************************************************/
 /***********************************************************************************/
   // Consumos IA

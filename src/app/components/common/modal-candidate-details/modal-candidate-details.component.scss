@@ -52,10 +52,11 @@
       }
   }
 }
-.employer-details-description {
+.candidate-details-description {
   h3 {
       font-size: 20px;
       margin-bottom: 14px;
+      color: var(--primaryColor);
 
       &:not(:first-child) {
           margin-top: 30px;
@@ -69,6 +70,7 @@
       };
       li {
           margin-bottom: 12px;
+          list-style-type: disc;
 
           &:last-child {
               margin-bottom: 0;

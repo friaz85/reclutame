@@ -14,14 +14,14 @@
 
 <!-- Candidate Details Area -->
 
-<div class="candidate-details-area ptb-50">
+<div class="candidate-details-area ptb-75">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-12">
                 <div class="single-candidate-box d-sm-flex align-items-center justify-content-between">
                     <div class="d-sm-flex align-items-center">
                         <div class="image">
-                            <img src="assets/images/candidates/candidate1.jpg" class="rounded-circle" alt="candidate-image">
+                            <img src="assets/images/candidates/candidate1.jpg" class="rounded-circle me-3" alt="candidate-image">
                         </div>
                         <div class="content">
                             <h3 class="fw-semibold">
@@ -41,94 +41,44 @@
                         </a>
                     </div>
                 </div>
-                <div class="candidate-details-description">
-                    <h3>
+                <div class="candidate-details-description mt-5">
+                    <h2>
                         About me
-                    </h3>
+                    </h2>
                     <p>
                         {{aplicante.descripcion}}
                     </p>
-                    <h3>
+                    <h2 class="mt-3">
                         Education
-                    </h3>
+                    </h2>
                     <ul class="ps-0 list-unstyled">
-                        <li class="position-relative">
-                            <div class="number">
-                                1
-                            </div>
-                            <h4>
-                                Masters in Fine Arts
-                            </h4>
+                        <li class="position-relative" *ngFor="let item of arrEducacion">
+                            <h5>
+                                {{item.nombre_instituto}}
+                            </h5>
                             <span class="d-block designation">
-                                <span>Walters University</span> - (2020-2021)
+                                {{item.duracion}} años
                             </span>
-                            <p>
-                                Commodo volutpat euismod nec duis iaculis mattis quam diam. Sollicitudin eu mi aliquet at tellus sed pellentesque. Id non in pharetra massa urna ullamcorper tempor. Leo tempus pharetra mi mattis ut porttitor viverra. Suspendisse massa eros pulvinar eu tortor semper sit.
-                            </p>
-                        </li>
-                        <li class="position-relative">
-                            <div class="number">
-                                2
-                            </div>
-                            <h4>
-                                Bachelors in Fine Arts
-                            </h4>
-                            <span class="d-block designation">
-                                <span>University of California</span> - (2016-2020)
-                            </span>
-                            <p>
-                                Viverra tortor sit volutpat elementum nibh leo rhoncus viverra vestibulum. At non nunc fames vulputate nibh pharetra eu nulla aenean. Fusce pretium purus pellentesque faucibus sed neque diam a maecenas.
-                            </p>
+
                         </li>
                     </ul>
-                    <h3>
+                    <h2>
                         Background and expertise
-                    </h3>
+                    </h2>
                     <ul class="ps-0 list-unstyled">
-                        <li class="position-relative">
-                            <div class="number">
-                                1
-                            </div>
-                            <h4>
-                                Sr. Software Engineer
-                            </h4>
+                        <li class="position-relative" *ngFor="let item of arrExperiencia">
+                            <h5>
+                                {{item.nombre_empresa}}
+                            </h5>
                             <span class="d-block designation">
-                                <span>Jove</span> - (2020-2023)
+                               {{item.periodo_empleo}}
                             </span>
                             <p>
-                                Commodo volutpat euismod nec duis iaculis mattis quam diam. Sollicitudin eu mi aliquet at tellus sed pellentesque. Id non in pharetra massa urna ullamcorper tempor. Leo tempus pharetra mi mattis ut porttitor viverra. Suspendisse massa eros pulvinar eu tortor semper sit.
-                            </p>
-                        </li>
-                        <li class="position-relative">
-                            <div class="number">
-                                2
-                            </div>
-                            <h4>
-                                Product Designer
-                            </h4>
-                            <span class="d-block designation">
-                                <span>Cirku</span> - (2018-2020)
-                            </span>
-                            <p>
-                                Sollicitudin eu mi aliquet at tellus sed pellentesque. Id non in pharetra massa urna ullamcorper tempor. Leo tempus pharetra mi mattis ut porttitor viverra. Suspendisse massa eros pulvinar eu tortor semper sit. In tempus euismod id scelerisque convallis praesent.
-                            </p>
-                        </li>
-                        <li class="position-relative">
-                            <div class="number">
-                                3
-                            </div>
-                            <h4>
-                                Web Designer
-                            </h4>
-                            <span class="d-block designation">
-                                <span>HiBootstrap</span> - (2016-2018)
-                            </span>
-                            <p>
-                                Sollicitudin eu mi aliquet at tellus sed pellentesque. Id non in pharetra massa urna ullamcorper tempor. Leo tempus pharetra mi mattis ut porttitor viverra. Suspendisse massa eros pulvinar eu tortor semper sit. In tempus euismod id scelerisque convallis praesent.
+                                {{item.responsabilidades}}
                             </p>
                         </li>
                     </ul>
-                    <h3>
+                    <!-- <h3>
                         Passion and future goals
                     </h3>
                     <p>
@@ -136,7 +86,7 @@
                     </p>
                     <p>
                         Viverra tortor sit volutpat elementum nibh leo rhoncus viverra vestibulum. At non nunc fames vulputate nibh pharetra eu nulla aenean. Fusce pretium purus pellentesque faucibus sed neque diam a maecenas.
-                    </p>
+                    </p> -->
                 </div>
             </div>
             <div class="col-lg-4 col-md-12">

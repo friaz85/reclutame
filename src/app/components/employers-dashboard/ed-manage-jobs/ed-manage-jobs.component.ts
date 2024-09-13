@@ -14,6 +14,7 @@ export class EdManageJobsComponent {
   displayedText: any = [];
   reclutador:any = [];
   empresa: any = [];
+  vacante: any = [];
 
   constructor(
     private api: ReclutameService,
@@ -27,12 +28,21 @@ export class EdManageJobsComponent {
 
   // Modal Popup
   isOpen = false;
+  isOpenCandidate = false;
   openPopup(): void {
     this.isOpen = true;
     this.ref.detectChanges();
   }
   closePopup(): void {
     this.isOpen = false;
+  }
+
+  openPopupCandidate(): void {
+    this.isOpenCandidate = true;
+    this.ref.detectChanges();
+  }
+  closePopupCandidate(): void {
+    this.isOpenCandidate = false;
   }
 
   async getVacatntesReclutador(idReclutador: any) {
@@ -77,6 +87,12 @@ export class EdManageJobsComponent {
 
     }
     this.openPopup();
+    this.ref.detectChanges();
+  }
+
+  openModalCandidate (item: any) {
+    this.vacante = item;
+    this.openPopupCandidate();
     this.ref.detectChanges();
   }
 }
