@@ -13,6 +13,9 @@ export class ModalAllCandidatesComponent implements OnInit {
   arrEstatusPostulacion: any = [];
   candidate: any = [];
 
+  arrAplicantes: any = [];
+  aplicante: any  = {};
+
   constructor(
     private api: ReclutameService
   ) { }
@@ -32,6 +35,26 @@ export class ModalAllCandidatesComponent implements OnInit {
   async updateEstatusPostualacion (idEstatusPostulacion: any, idCandidato: any) {
     const resp = await this.api.updateEstatusPostulacion(idCandidato, this.job.id_vacante, idEstatusPostulacion);
     console.log(resp);
+  }
+
+  // Modal Popup
+  isOpen = false;
+  openPopup(arr: any): void {
+
+    console.log(arr);
+    // Add item "email_candidato" to the array aplicante
+    arr.email_candidato = arr.email;
+    arr.nombre_candidato = arr.nombre;
+    arr.apellido_candidato = arr.apellido;
+    arr.pais = arr.nombre_pais;
+    arr.ciudad = arr.nombre_ciudad;
+    arr
+
+    this.isOpen = true;
+    this.aplicante  = arr;
+  }
+  closePopup(): void {
+    this.isOpen = false;
   }
 
 }
