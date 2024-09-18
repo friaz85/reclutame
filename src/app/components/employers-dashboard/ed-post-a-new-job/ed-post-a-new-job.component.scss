@@ -490,6 +490,10 @@
   animation: blink-caret 0.75s step-end infinite;
 }
 
+.text-reclutame {
+  color: var(--primaryColor);
+}
+
 // Modal
 .loginRegisterModal {
   display: block;

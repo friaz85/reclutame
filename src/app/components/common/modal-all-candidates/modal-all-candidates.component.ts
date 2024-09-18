@@ -16,6 +16,8 @@ export class ModalAllCandidatesComponent implements OnInit {
   arrAplicantes: any = [];
   aplicante: any  = {};
 
+  cmbEstatus: any;
+
   constructor(
     private api: ReclutameService
   ) { }
@@ -30,6 +32,10 @@ export class ModalAllCandidatesComponent implements OnInit {
     const estaus = await this.api.getEstatusPostulacion();
     console.log(estaus);
     this.arrEstatusPostulacion = estaus.items;
+
+
+
+
   }
 
   async updateEstatusPostualacion (idEstatusPostulacion: any, idCandidato: any) {
