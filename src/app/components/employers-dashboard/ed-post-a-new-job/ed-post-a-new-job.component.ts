@@ -90,6 +90,15 @@ export class EdPostANewJobComponent {
   // Modal Popup
   isOpen = false;
   openPopup(): void {
+    const fecha = moment(this.responseVacante['Application deadline date'], "YYYY-MM-DD").format("YYYY-MM-DD");
+    if (fecha < moment(new Date(), "YYYY-MM-DD").format("YYYY-MM-DD")) {
+      Swal.fire({
+        icon: 'warning',
+        title: '¡Atención!',
+        text: 'Fecha límite para aplicar es menor a la actual.'
+      });
+      return;
+    }
     this.isOpen = true;
   }
   closePopup(): void {
