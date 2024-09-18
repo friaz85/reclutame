@@ -14,7 +14,7 @@ import { Observable, throwError } from "rxjs";
 })
 export class ReclutameService {
 
-  private apiUrl = "https://apex.oracle.com/pls/apex/reclutame/apirest/";
+  private apiUrl = "https://gfc4159951c9acf-adbreclutamedev.adb.us-ashburn-1.oraclecloudapps.com/ords/workspace_reclutame_dev/apirest/";
   private apiIA = "https://fc-rh-dot-future-surge-426221-i6.uc.r.appspot.com/crear-vacante";
   private headers = new HttpHeaders({
     "Content-Type": "application/json",
@@ -475,6 +475,10 @@ export class ReclutameService {
 
   async getAplicantesRecientes(idReclutador: any): Promise<any> {
     return this.http.get<any>(this.apiUrl + 'getAplicantesRecientes/' + idReclutador).toPromise();
+  }
+
+  async getTamanoEquipo(): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'catTamanoEquipo').toPromise();
   }
 
 /***********************************************************************************/
