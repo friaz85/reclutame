@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  url: "https://apex.oracle.com/pls/apex/reclutame/apirest/"
+  url: "https://gfc4159951c9acf-adbreclutamedev.adb.us-ashburn-1.oraclecloudapps.com/ords/workspace_reclutame_dev/apirest/"
 };
