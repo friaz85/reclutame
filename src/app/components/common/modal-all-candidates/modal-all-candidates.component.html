@@ -26,7 +26,7 @@
                   <img src="assets/images/candidates/candidate1.jpg" class="rounded-circle" alt="candidate-image">
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-6" (click)="openPopup(item)">
                 <h5 class="fw-semibold cursor-pointer">
                   {{item.nombre}} {{item.apellido}}
                 </h5>
@@ -51,3 +51,18 @@
   </div>
 </div>
 <ngx-scrolltop></ngx-scrolltop>
+
+<!-- Modal -->
+<div class="modal fade loginRegisterModal" tabindex="-1" aria-hidden="true" *ngIf="isOpen">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-body">
+        <app-modal-candidate-details [aplicante]="aplicante"></app-modal-candidate-details>
+        <button (click)="closePopup()" type="button" class="close-btn">
+          <i class="ri-close-fill"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop fade show"></div>
+</div>

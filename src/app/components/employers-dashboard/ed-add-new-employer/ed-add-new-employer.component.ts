@@ -16,6 +16,7 @@ export class EdAddNewEmployerComponent implements OnInit {
   frmReclutador: FormGroup | any;
   submittedReclutador = false;
   checkTerminosReclutador = false;
+  arrHijos: any = [];
 
   constructor(
     public router: Router,
@@ -23,7 +24,9 @@ export class EdAddNewEmployerComponent implements OnInit {
     private formBuilder: FormBuilder,
     private auth: AuthService,
     private spinner: NgxSpinnerService
-  ) { }
+  ) {
+    this.getReclutadoresHijos();
+  }
 
   ngOnInit(): void {
     this.frmReclutador = this.formBuilder.group({
@@ -71,6 +74,11 @@ export class EdAddNewEmployerComponent implements OnInit {
       console.log('Error Status: ', error.status);
       this.spinner.hide();
     }
+  }
+
+  async getReclutadoresHijos(){
+    const reg = await this.api.getReclutadoresHijos(this.auth.currentUserValue.p_id_empresa);
+    this.arrHijos = reg.p_result;
   }
 
 }

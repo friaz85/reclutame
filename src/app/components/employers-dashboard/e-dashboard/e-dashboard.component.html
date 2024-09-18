@@ -131,9 +131,9 @@
                     </div>
                     <div class="content">
                         <h3 class="fw-semibold">
-                            <a [routerLink]="['/candidate-details', candidate.id_candidato]">
+                            <!-- <a [routerLink]="['/candidate-details', candidate.id_candidato]"> -->
                                 {{ candidate.nombre_candidato + ' ' + candidate.apellido_candidato }}
-                            </a>
+                            <!-- </a> -->
                         </h3>
                         <span class="designation d-block">
                             {{ candidate.email_candidato }}
@@ -149,11 +149,11 @@
                     </span>
                     <ul class="ps-0 mb-0 list-unstyled">
                         <li class="d-inline-block">
-                            <button type="button" class="d-inline-block rounded-circle" (click)="viewProfile(candidate.id_candidato)">
+                            <button type="button" class="d-inline-block rounded-circle" (click)="openPopup(candidate)">
                                 <i class="ri-eye-line"></i>
                             </button>
                         </li>
-                        <li class="d-inline-block">
+                        <!-- <li class="d-inline-block">
                             <button type="button" class="d-inline-block rounded-circle" (click)="acceptCandidate(candidate.id_candidato)">
                                 <i class="ri-check-line"></i>
                             </button>
@@ -162,12 +162,27 @@
                             <button type="button" class="d-inline-block rounded-circle" (click)="rejectCandidate(candidate.id_candidato)">
                                 <i class="ri-close-line"></i>
                             </button>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
-            
+
         </div>
 
     </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade loginRegisterModal" tabindex="-1" aria-hidden="true" *ngIf="isOpen">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content">
+      <div class="modal-body">
+        <app-modal-candidate-details [aplicante]="aplicante"></app-modal-candidate-details>
+        <button (click)="closePopup()" type="button" class="close-btn">
+          <i class="ri-close-fill"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop fade show"></div>
 </div>
