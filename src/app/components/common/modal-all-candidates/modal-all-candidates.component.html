@@ -38,9 +38,12 @@
                 </span>
               </div>
               <div class="col-4">
-                <select class="form-select" aria-label="Default select example" (change)="updateEstatusPostualacion($event.target.value, item.id_candidato)">
+
+                <select class="form-select" aria-label="Default select example"
+                (change)="updateEstatusPostualacion($event.target.value, item.id_candidato)">
                   <option selected value="0">Selecciona</option>
-                  <option *ngFor="let item of arrEstatusPostulacion" value="{{item.id_estatus_postulacion}}">{{item.descripcion}}</option>
+                  <option *ngFor="let estatus of arrEstatusPostulacion" value="{{estatus.id_estatus_postulacion}}"
+                  [selected]="estatus.id_estatus_postulacion ==  item.id_estatus_postulacion">{{estatus.descripcion}}</option>
                 </select>
               </div>
             </div>
