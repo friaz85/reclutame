@@ -78,6 +78,7 @@ export class EdAddNewEmployerComponent implements OnInit {
 
   async getReclutadoresHijos(){
     const reg = await this.api.getReclutadoresHijos(this.auth.currentUserValue.p_id_empresa);
+    console.log(reg.p_result);
     this.arrHijos = reg.p_result;
   }
 

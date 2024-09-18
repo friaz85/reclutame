@@ -85,10 +85,12 @@
 
 <div class="jove-card mt-3">
   <div class="row">
-    <div class="col-md-6 col-12" *ngIf="let item of arrHijos">
-      <h4>{{item.nombre_completo_reclutador}}</h4>
-      <h5>{{item.email}}</h5>
-      <h6>{{item.telefono}}</h6>
+    <div class="col-md-6 col-12 card" *ngFor="let item of arrHijos">
+      <div class="card-body">
+        <h4>{{item.nombre_completo_reclutador}}</h4>
+        <h5>{{item.email}}</h5>
+        <h6>{{item.telefono}}</h6>
+      </div>
     </div>
   </div>
 </div>
