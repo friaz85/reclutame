@@ -117,13 +117,23 @@ export class ModalJobDetailComponent implements OnInit {
       Swal.fire({
         icon: 'success',
         title: 'Success',
-        text: 'Vacante registrada con éxito.'
+        text: 'Vacante registrada con éxito.',
+        showConfirmButton: true,
+        showCancelButton: false,
+        showCloseButton:false,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+      }).then(result => {
+        /* Read more about isConfirmed, isDenied below */
+        this.spinner.hide();
+        if (result.isConfirmed) {
+          window.location.reload();
+        }
       });
       // reiniciar formulario
-      this.spinner.hide();
       // this.frmJob.reset();
       // reload page
-      window.location.reload();
+
     } else {
       Swal.fire({
         icon: 'error',
