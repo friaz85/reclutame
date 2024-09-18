@@ -481,6 +481,10 @@ export class ReclutameService {
     return this.http.get<any>(this.apiUrl + 'getReclutadoresHijos/' + idEmpresa).toPromise();
   }
 
+  async getTamanoEquipo(): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'catTamanoEquipo').toPromise();
+  }
+
 
 /***********************************************************************************/
 /***********************************************************************************/

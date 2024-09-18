@@ -6,7 +6,7 @@
 </div>
 
 <!-- Company Profile -->
-<form [formGroup]="frmCompany">
+<form [formGroup]="frmCompany"> 
   <div class="jove-card">
       <h3 class="title">
           My Profile
@@ -71,8 +71,10 @@
                   <label>
                       Team size
                   </label>
-                  <input class="form-control shadow-none" formControlName="tamano_equipo"
+                <select class="form-select shadow-none" formControlName="tamano_equipo"
                   [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.tamano_equipo.errors }">
+                  <option *ngFor="let item of arrTamanoEquipo" value="{{ item.id_tamano_equipo }}">{{ item.descripcion }}</option>
+                </select>
               </div>
           </div>
           <div class="col-lg-6 col-md-6">
@@ -80,8 +82,10 @@
                   <label>
                       Category
                   </label>
-                  <input type="text" class="form-control shadow-none" formControlName="categoria_empresa"
+                <select class="form-select shadow-none" formControlName="categoria_empresa"
                   [ngClass]="{ 'is-invalid': submitted && frmCompany.controls.categoria_empresa.errors }">
+                  <option *ngFor="let item of arrCategorias" value="{{ item.id_categoria }}">{{ item.nombre_categoria }}</option>
+                </select>
               </div>
           </div>
           <div class="col-lg-6 col-md-6">

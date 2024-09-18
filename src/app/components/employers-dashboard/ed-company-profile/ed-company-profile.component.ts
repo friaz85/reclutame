@@ -14,6 +14,8 @@ export class EdCompanyProfileComponent {
   arrCiudades:any = [];
   frmCompany: FormGroup | any;
   submitted = false;
+  arrCategorias:any = [];
+  arrTamanoEquipo:any = [];
 
   constructor(
     private api: ReclutameService,
@@ -23,6 +25,8 @@ export class EdCompanyProfileComponent {
     ) {
     this.getPaises();
     this.getEmpresa(this.auth.currentUserValue.p_id_empresa);
+    this.getCategorias();
+    this.getTamanoEquipo();
   }
 
     ngOnInit(): void {
@@ -134,5 +138,17 @@ export class EdCompanyProfileComponent {
       });
     }
   }
+
+  async getCategorias() {
+    const cat = await this.api.getCategorias();
+    this.arrCategorias = cat.items;
+    console.log("Categorías: ", this.arrCategorias);
+}
+
+async getTamanoEquipo() {
+  const cte = await this.api.getTamanoEquipo();
+  this.arrTamanoEquipo = cte.items;
+  console.log("getTamanoEquipo: ", this.arrTamanoEquipo);
+}
 
 }
