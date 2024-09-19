@@ -4,7 +4,7 @@
     <div class="row align-items-center">
       <div class="col-lg-8 col-md-12">
         <h1>
-          Candidates Details
+          Candidates {{job.titulo_vacante}}
         </h1>
       </div>
     </div>
@@ -14,10 +14,57 @@
 
 <!-- Candidate Details Area -->
 
+
 <div class="candidate-details-area ptb-75">
+  <div class="row mb-3">
+    <div class="col-lg-12 text-end">
+      <button type="button" class="default-btn">
+        IA
+      </button>
+    </div>
+  </div>
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 col-md-12" *ngFor="let item of arrCandidates">
+      <p-table [value]="arrCandidates"
+      styleClass="p-datatable-gridlines p-datatable-striped"
+      [paginator]="true"
+      [rows]="10"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      [rowsPerPageOptions]="[10, 15, 20, 50, 100, 200, 500]">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Last name</th>
+            <th>Score</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-item>
+          <tr>
+            <td>{{ item.id_candidato }}</td>
+            <td>{{ item.nombre }}</td>
+            <td>{{ item.apellido }}</td>
+            <td>{{ item.activo }}</td>
+            <td class="text-center">
+              <select class="form-select" aria-label="Default select example"
+                  (change)="updateEstatusPostualacion($event.target.value, item.id_candidato)">
+                  <option selected value="0">Selecciona</option>
+                  <option *ngFor="let estatus of arrEstatusPostulacion" value="{{estatus.id_estatus_postulacion}}"
+                    [selected]="estatus.id_estatus_postulacion ==  item.id_estatus_postulacion">{{estatus.descripcion}}
+                  </option>
+                </select>
+            </td>
+            <td class="text-center">
+              <button type="button" class="d-inline-block rounded-circle" (click)="openPopup(item)">
+                <i class="ri-eye-line"></i>
+              </button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+      <!-- <div class="col-lg-6 col-md-12" *ngFor="let item of arrCandidates">
         <div class="card">
           <div class="card-body">
             <div class="row d-flex justify-content-center align-items-center">
@@ -40,16 +87,17 @@
               <div class="col-4">
 
                 <select class="form-select" aria-label="Default select example"
-                (change)="updateEstatusPostualacion($event.target.value, item.id_candidato)">
+                  (change)="updateEstatusPostualacion($event.target.value, item.id_candidato)">
                   <option selected value="0">Selecciona</option>
                   <option *ngFor="let estatus of arrEstatusPostulacion" value="{{estatus.id_estatus_postulacion}}"
-                  [selected]="estatus.id_estatus_postulacion ==  item.id_estatus_postulacion">{{estatus.descripcion}}</option>
+                    [selected]="estatus.id_estatus_postulacion ==  item.id_estatus_postulacion">{{estatus.descripcion}}
+                  </option>
                 </select>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
