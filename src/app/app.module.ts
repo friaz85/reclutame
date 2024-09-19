@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { AccordionModule } from 'primeng/accordion';
+import { TableModule } from 'primeng/table';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -183,7 +184,8 @@ import { ModalAllCandidatesComponent } from './components/common/modal-all-candi
         ReactiveFormsModule,
         NgxSpinnerModule,
         FormsModule,
-        AccordionModule
+        AccordionModule,
+        TableModule
     ],
     providers: [
       HttpClient

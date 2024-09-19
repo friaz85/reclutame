@@ -52,6 +52,11 @@
       }
   }
 }
+
+.modal-dialog {
+  max-width: 85% !important;
+}
+
 .candidate-details-description {
   h3 {
       font-size: 20px;
@@ -461,50 +466,41 @@
               }
           }
       }
-      .view-profile {
-          span {
-              margin-right: 15px;
-          }
-          ul {
-              li {
-                  margin: {
-                      left: 2px;
-                      right: 2px;
-                  };
-                  button {
-                      padding: 0;
-                      width: 32px;
-                      height: 32px;
-                      border: none;
-                      cursor: pointer;
-                      font-size: 16px;
-                      position: relative;
-                      color: var(--primaryColor);
-                      background-color: #f5f9fc;
-                      transition: var(--transition);
-
-                      i {
-                          left: 0;
-                          right: 0;
-                          top: 50%;
-                          position: absolute;
-                          transform: translateY(-50%);
-                      }
-                      &:hover {
-                          color: var(--whiteColor);
-                          background-color: var(--primaryColor);
-                      }
-                  }
-                  &:first-child {
-                      margin-left: 0;
-                  }
-                  &:last-child {
-                      margin-right: 0;
-                  }
-              }
-          }
-      }
   }
+}
+
+button {
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  color: var(--primaryColor);
+  background-color: #f5f9fc;
+  transition: var(--transition);
+
+  i {
+      left: 0;
+      right: 0;
+      top: 50%;
+      position: absolute;
+      transform: translateY(-50%);
+  }
+  &:hover {
+      color: var(--whiteColor);
+      background-color: var(--primaryColor);
+  }
+}
+
+.default-btn {
+  padding: 8px 80px 13px;
+  font-weight: normal;
+  color: #fff;
+  background-color: var(--primaryColor);
+  width: -1px !important;
+  height: 40px !important;;
 }
 
 .location {

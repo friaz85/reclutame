@@ -163,6 +163,7 @@
       }
       .modal-dialog {
           transform: none;
+          max-width: 85% !important;
       }
   }
   .modal-content {
