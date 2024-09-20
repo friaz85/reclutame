@@ -15,6 +15,7 @@ export class EdManageJobsComponent {
   reclutador:any = [];
   empresa: any = [];
   vacante: any = [];
+  arrEstatusVacante: any = [];
 
   constructor(
     private api: ReclutameService,
@@ -23,6 +24,7 @@ export class EdManageJobsComponent {
     private auth: AuthService,
     private ref: ChangeDetectorRef
   ) {
+    this.getEstatusVacante();
     this.getVacatntesReclutador(this.auth.currentUserValue.p_id_reclutador);
   }
 
@@ -43,6 +45,21 @@ export class EdManageJobsComponent {
   }
   closePopupCandidate(): void {
     this.isOpenCandidate = false;
+  }
+
+  async getEstatusVacante() {
+    try {
+      const estatus = await this.api.getEstatusVacante();
+      console.log(estatus);
+      this.arrEstatusVacante = estatus.items;
+    } catch (err) {
+      console.error;
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Algo salió mal!',
+      });
+    }
   }
 
   async getVacatntesReclutador(idReclutador: any) {
@@ -67,6 +84,11 @@ export class EdManageJobsComponent {
       });
     }
     this.spinner.hide();
+  }
+
+  async updateEstatusVacante (idEstatus: any, idVacante: any) {
+    const resp = await this.api.updateEstatusVacante(idVacante, idEstatus);
+    console.log(resp);
   }
 
   openModal (item: any) {

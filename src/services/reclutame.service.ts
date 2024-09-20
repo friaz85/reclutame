@@ -485,6 +485,24 @@ export class ReclutameService {
     return this.http.get<any>(this.apiUrl + 'catTamanoEquipo').toPromise();
   }
 
+  async getEstatusVacante(): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getEstatusVacante').toPromise();
+  }
+
+  async updateEstatusVacante(idVacante: any, p_id_estatus: any): Promise<any> {
+    return this.http.post<any>(this.apiUrl + 'updateEstatusVacante/{id_vacante}', {
+      "p_id_vacante": parseInt(idVacante),
+      "p_id_estatus": parseInt(p_id_estatus),
+    }).toPromise();
+  }
+
+  async updatePassword(idUsuario: any, pwd: any): Promise<any> {
+    return this.http.post<any>(this.apiUrl + 'cambiarPassword/{id_usuario}', {
+      "p_id_usuario": parseInt(idUsuario),
+      "p_nueva_password": pwd,
+    }).toPromise();
+  }
+
 
 /***********************************************************************************/
 /***********************************************************************************/
