@@ -1,43 +1,50 @@
 <!-- Title -->
 <div class="breadcrumb-title">
-    <h1 class="mb-0 fw-semibold">
-        Manage Jobs
-    </h1>
+  <h1 class="mb-0 fw-semibold">
+    Manage Jobs
+  </h1>
 </div>
 
 <!-- Manage Jobs -->
 <div class="jove-card">
-    <div class="row">
-        <div class="col-xxl-12" *ngFor="let item of arrVacantes">
-            <div class="single-job-box">
-                <div class="d-sm-flex align-items-center justify-content-between">
-                    <div class="d-sm-flex align-items-center">
-                        <div class="image">
-                            <img src="assets/images/companies/company8.png" alt="company-image">
-                        </div>
-                        <div class="content">
-                            <h3 class="fw-semibold cursor-pointer" (click)="openModal(item)">
-                                    {{item.titulo_vacante}}
-                            </h3>
-                            <span class="location d-block">
-                                {{item.nombre_ciudad}}
-                            </span>
-                            <span class="job-type d-block">
-                                {{item.nombre_tipo_trabajo}}
-                            </span>
-                        </div>
-                    </div>
-                    <div class="custom-info d-sm-flex align-items-center">
-                        <span class="active fw-medium d-block">
+  <div class="row">
+    <div class="col-xxl-12" *ngFor="let item of arrVacantes">
+      <div class="single-job-box">
+        <div class="d-sm-flex align-items-center justify-content-between">
+          <div class="d-sm-flex align-items-center">
+            <div class="image">
+              <img src="assets/images/companies/company8.png" alt="company-image">
+            </div>
+            <div class="content">
+              <h3 class="fw-semibold cursor-pointer" (click)="openModal(item)">
+                {{item.titulo_vacante}}
+              </h3>
+              <span class="location d-block">
+                {{item.nombre_ciudad}}
+              </span>
+              <span class="job-type d-block">
+                {{item.nombre_tipo_trabajo}}
+              </span>
+            </div>
+          </div>
+          <div class="custom-info d-sm-flex align-items-center">
+            <select class="form-select me-2" aria-label="Default select example"
+              (change)="updateEstatusVacante($event.target.value, item.id_vacante)">
+              <option selected value="0">Selecciona</option>
+              <option *ngFor="let estatus of arrEstatusVacante" value="{{estatus.id_estatus}}"
+                [selected]="estatus.id_estatus ==  item.id_estatus">{{estatus.descripcion}}
+              </option>
+            </select>
+            <!-- <span class="active fw-medium d-block">
                             Active
-                        </span>
-                        <ul class="ps-0 mb-0 list-unstyled">
-                            <li class="d-inline-block">
-                                <button type="button" class="d-inline-block rounded-circle" (click)="openModalCandidate(item)">
-                                    <i class="ri-eye-line"></i>
-                                </button>
-                            </li>
-                            <!-- <li class="d-inline-block">
+                        </span> -->
+            <ul class="ps-0 mb-0 list-unstyled">
+              <li class="d-inline-block">
+                <button type="button" class="d-inline-block rounded-circle" (click)="openModalCandidate(item)">
+                  <i class="ri-eye-line"></i>
+                </button>
+              </li>
+              <!-- <li class="d-inline-block">
                                 <button type="button" class="d-inline-block rounded-circle">
                                     <i class="ri-check-line"></i>
                                 </button>
@@ -47,27 +54,27 @@
                                     <i class="ri-close-line"></i>
                                 </button>
                             </li> -->
-                        </ul>
-                    </div>
-                </div>
-                <div class="info d-sm-flex align-items-center justify-content-between">
-                    <span class="salary d-block">
-                        <span class="fw-semibold">Salary:</span>
-                        <span>{{item.rango}}</span>
-                        /monthly
-                    </span>
-                    <span class="created d-block">
-                        <span class="fw-semibold">Created:</span>
-                        {{item.fecha_registro | date: 'MMM dd, yyyy'}}
-                    </span>
-                    <span class="deadline d-block">
-                        <span class="fw-semibold">Deadline:</span>
-                        {{item.fecha_limite_solicitud | date: 'MMM dd, yyyy'}}
-                    </span>
-                </div>
-            </div>
+            </ul>
+          </div>
         </div>
-        <!-- <div class="col-xxl-12">
+        <div class="info d-sm-flex align-items-center justify-content-between">
+          <span class="salary d-block">
+            <span class="fw-semibold">Salary:</span>
+            <span>{{item.rango}}</span>
+            /monthly
+          </span>
+          <span class="created d-block">
+            <span class="fw-semibold">Created:</span>
+            {{item.fecha_registro | date: 'MMM dd, yyyy'}}
+          </span>
+          <span class="deadline d-block">
+            <span class="fw-semibold">Deadline:</span>
+            {{item.fecha_limite_solicitud | date: 'MMM dd, yyyy'}}
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-xxl-12">
             <div class="single-job-box">
                 <div class="d-sm-flex align-items-center justify-content-between">
                     <div class="d-sm-flex align-items-center">
@@ -616,7 +623,7 @@
                 </div>
             </div>
         </div> -->
-    </div>
+  </div>
 </div>
 
 
@@ -649,4 +656,3 @@
   </div>
   <div class="modal-backdrop fade show"></div>
 </div>
-
