@@ -14,7 +14,7 @@ import { Observable, throwError } from "rxjs";
 })
 export class ReclutameService {
 
-  private apiUrl = "https://gfc4159951c9acf-adbreclutamedev.adb.us-ashburn-1.oraclecloudapps.com/ords/workspace_reclutame_dev/apirest/";
+  private apiUrl = "https://gfc4159951c9acf-adbreclutamedev.adb.us-ashburn-1.oraclecloudapps.com/ords/reclutame/apirest/";
   private apiIA = "https://fc-rh-dot-future-surge-426221-i6.uc.r.appspot.com/crear-vacante";
   private headers = new HttpHeaders({
     "Content-Type": "application/json",
