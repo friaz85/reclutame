@@ -137,6 +137,23 @@
                   </select>
                 </div>
             </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                <div class="form-group">
+                    <label>
+                        Vacant category
+                    </label>
+                    <select class="form-select shadow-none" formControlName="categoria"
+                    [ngClass]="{ 'is-invalid': submittedCareer && f.categoria.value == 0 }">
+                    <option selected>All</option>
+                    <option *ngFor="let item of arrCategorias; let i = index;" [value]="item.id_categoria">
+                        {{ item.nombre_categoria }}
+                    </option>
+                  </select>
+                  
+                </div>
+            </div>
+            
         </div>
         <button type="button" class="default-btn" (click)="saveCareer()">
             Save

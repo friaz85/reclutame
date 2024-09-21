@@ -30,6 +30,8 @@ export class CdResumeComponent {
   p_id_resumen_educacion = 0;
   p_id_resumen_experience = 0;
 
+  arrCategorias:any = [];
+
   constructor(
     private api: ReclutameService,
     private formBuilder: FormBuilder,
@@ -41,6 +43,7 @@ export class CdResumeComponent {
     this.getPais();
     this.getGradoEscolar();
     this.getDatos();
+    this.getCategorias();
   }
 
   ngOnInit(): void {
@@ -49,6 +52,8 @@ export class CdResumeComponent {
       salarioActual: ["", Validators.required],
       salarioEsperado: ["", Validators.required],
       tipo: ["", Validators.required],
+      categoria: ["", Validators.required],
+
     });
 
     this.frmEducation = this.formBuilder.group({
@@ -108,7 +113,8 @@ export class CdResumeComponent {
         objetivo: cs.items[0].objetivo,
         salarioActual: cs.items[0].salario_actual,
         salarioEsperado: cs.items[0].sueldo_esperado,
-        tipo: cs.items[0].id_tipo_trabajo
+        tipo: cs.items[0].id_tipo_trabajo,
+        categoria: cs.items[0].id_categoria
       });
     }
 
@@ -153,7 +159,7 @@ export class CdResumeComponent {
     // Registro
     if (this.p_id_resumen_carrera == 0) {
       let Cs = await this.api.registroResumenCS(this.frmCareer.value.objetivo, this.frmCareer.value.salarioActual,
-        this.frmCareer.value.salarioEsperado, this.frmCareer.value.tipo, this.auth.currentUserValue.p_id_candidato);
+        this.frmCareer.value.salarioEsperado, this.frmCareer.value.tipo, this.auth.currentUserValue.p_id_candidato, this.frmCareer.value.categoria);
         console.log("Cs", Cs);
       this.p_id_resumen_carrera = Cs.p_id_resumen_carrera;
       // reset form
@@ -161,7 +167,7 @@ export class CdResumeComponent {
     } else {
       // Actualizo
       let Cs = await this.api.updateResumenCS(this.frmCareer.value.objetivo, this.frmCareer.value.salarioActual,
-        this.frmCareer.value.salarioEsperado, this.frmCareer.value.tipo, this.auth.currentUserValue.p_id_candidato, this.p_id_resumen_carrera);
+        this.frmCareer.value.salarioEsperado, this.frmCareer.value.tipo, this.auth.currentUserValue.p_id_candidato, this.p_id_resumen_carrera, this.frmCareer.value.categoria);
         // this.frmCareer.reset();
     }
     this.spinner.hide();
@@ -281,5 +287,11 @@ export class CdResumeComponent {
     let cs = this.api.deleteResumenEDU(this.auth.currentUserValue.p_id_candidato, item.id_resumen_educacion);
     this.arrEstudios = this.arrEstudios.filter((x: any) => x.id_resumen_educacion != item.id_resumen_educacion);
     this.spinner.hide();
+  }
+
+  async getCategorias() {
+    const cat = await this.api.getCategorias();
+    this.arrCategorias = cat.items;
+    console.log("Categorías: ", this.arrCategorias);
   }
 }
