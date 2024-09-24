@@ -318,7 +318,7 @@ export class ReclutameService {
     }).toPromise();
   }
 
-  async registroResumenCS(objetivo: string, salarioActual: string, salarioEsperado: string, idTipoTrabajo: any, idCandidato: any): Promise<any> {
+  async registroResumenCS(objetivo: string, salarioActual: string, salarioEsperado: string, idTipoTrabajo: any, idCandidato: any, idCategoria: any): Promise<any> {
 
     return this.http.post<any>(this.apiUrl + 'registroResumenCS', {
       "p_objetivo": objetivo,
@@ -326,6 +326,7 @@ export class ReclutameService {
       "p_sueldo_esperado": parseFloat(salarioEsperado),
       "p_id_tipo_trabajo": parseInt(idTipoTrabajo),
       "p_id_candidato": parseInt(idCandidato),
+      "p_id_categoria": parseInt(idCategoria),
 
     }).toPromise();
   }
@@ -369,7 +370,8 @@ export class ReclutameService {
     return this.http.get<any>(this.apiUrl + 'getResumenEXP/' + idCandidato).toPromise();
   }
 
-  async updateResumenCS(objetivo: string, salarioActual: string, salarioEsperado: string, idTipoTrabajo: any, idCandidato: any, idResumenCarrera: any): Promise<any> {
+  async updateResumenCS(objetivo: string, salarioActual: string, salarioEsperado: string, idTipoTrabajo: any, idCandidato: any, idResumenCarrera: any, 
+    idCategoria: any): Promise<any> {
 
     return this.http.post<any>(this.apiUrl + 'updateResumenCS', {
       "p_id_resumen_carrera": parseInt(idResumenCarrera),
@@ -378,6 +380,7 @@ export class ReclutameService {
       "p_sueldo_esperado": parseFloat(salarioEsperado),
       "p_id_tipo_trabajo": parseInt(idTipoTrabajo),
       "p_id_candidato": parseInt(idCandidato),
+      "p_id_categoria": parseInt(idCategoria),
 
     }).toPromise();
   }
@@ -503,6 +506,18 @@ export class ReclutameService {
     }).toPromise();
   }
 
+  async getTarjetasDashboardCandidato(idCandidato: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getTarjetasDashboardCandidato/' + idCandidato).toPromise();
+  }
+
+  async geNotificacionesCandidato(idCandidato: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getNotificacionesCandidato/' + idCandidato).toPromise();
+  }
+
+  async getPostulacionesMes(idCandidato: any): Promise<any> {
+    return this.http.get<any>(this.apiUrl + 'getPostulacionesMes/' + idCandidato).toPromise();
+  }
+
 
 /***********************************************************************************/
 /***********************************************************************************/
@@ -541,7 +556,9 @@ export class ReclutameService {
     };
   }
 
+  console.log('RESPUESTA',this.http.post<any>('/api/crear-vacante', arrSend, { headers: headers }).toPromise());
     return this.http.post<any>('/api/crear-vacante', arrSend, { headers: headers }).toPromise();
+    
   }
 
 }
