@@ -556,7 +556,9 @@ export class ReclutameService {
     };
   }
 
+  console.log('RESPUESTA',this.http.post<any>('/api/crear-vacante', arrSend, { headers: headers }).toPromise());
     return this.http.post<any>('/api/crear-vacante', arrSend, { headers: headers }).toPromise();
+    
   }
 
 }
